@@ -1,0 +1,7 @@
+# Tempfiles
+*.swp
+
+# Minified user-facing files
+*.css
+*.html
+*.js

@@ -6,8 +6,10 @@ About
 
 Description
 ================================================================================
-| This repository comprises the current official website of the
-  Technocratic Republic of Theodia.
+| This repository comprises the current official website of the Technocratic
+  Republic of Theodia.
+| Files that are not meant to be part of the live website, are ``chmod o-r`` and
+  usually in hidden directories.
 
 Licenses
 ================================================================================
@@ -22,6 +24,7 @@ Webstack
 ================================================================================
 - nginx + apache (webserver)
 - Node.js (backend)
+- Cassandra (database)
 
 Development
 ================================================================================

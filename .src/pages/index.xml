@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-us" xml:lang="en-us" xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<meta charset="utf-8"/>
@@ -9,10 +9,10 @@
 		<title>Theodia, the Technocratic Republic - Home</title>
 		<link     rel="icon"       type="image/x-icon"   href="favicon.ico"/>
 	<!--<base                    target="_blank"         href="https://en.theodia.tech"/>-->
-		<meta    name="viewport"                      content="width=device-width, initial-scale=1.0"/>
-		<link     rel="stylesheet" type="text/css"       href="style.css"/>
-		<script                    type="text/javascript" src="index.js"></script>
 		<meta    name="author"                        content="Miles Bradley Huff"/>
+		<meta    name="viewport"                      content="width=device-width, initial-scale=1.0"/>
+		<link     rel="stylesheet" type="text/css"       href="master.css"/>
+		<script                    type="text/javascript" src="index.js"></script>
 	</head>
 	<body onload="main()" class="grid">
 		<p style="grid-area:1/1/span 1/span 2">header</p>

@@ -25,6 +25,7 @@ function deploy {
 			;;
 	esac
 	for F in $(find -type f | grep "$EXTIN"); do
+		[[ "$1" == 'styles' ]] && [[ "$(echo $F | sed 's/^.*[/]//gm')" == '_'* ]] && continue
 		NEWPATH="../../$(echo $F | sed 's/^[.][/]//gm' | sed 's/[.]'$EXTIN'$/.'$EXTOUT'/gm')"
 		echo "$NEWPATH" | sed 's/^[.][.][/][.][.]//gm'
 		case "$1" in

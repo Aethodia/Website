@@ -58,7 +58,7 @@
 		"preserve_line": false,
 		"quote_keys": false,
 		"quote_style": 0,
-		"semicolons": true,
+		"semicolons": false,
 		"shebang": true,
 		"webkit": true,
 		"width": 80,

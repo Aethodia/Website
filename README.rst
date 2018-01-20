@@ -8,8 +8,9 @@ Description
 ================================================================================
 | This repository comprises the current official website of the Technocratic
   Republic of Theodia.
-| Files that are not meant to be part of the live website, are ``chmod o-r`` and
-  usually in hidden directories.
+| Files that are not meant to be part of the live website, are ``chmod o-r``.
+| With the exceptions of ``src`` and ``res``, non-hidden subdirectories and
+  symlinks are to be subdomains.
 
 Licenses
 ================================================================================

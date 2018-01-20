@@ -12,7 +12,7 @@ function deploy {
 	## Transpile and minify files
 	case "$1" in
 		'pages')
-			EXTIN='xml'
+			EXTIN='xhtml'
 			EXTOUT='html'
 			;;
 		'scripts')

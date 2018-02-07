@@ -8,7 +8,8 @@ Description
 ================================================================================
 | This repository comprises the current official website of the Technocratic
   Republic of Theodia.
-| Files that are not meant to be part of the live website, are ``chmod o-r``.
+| The live website will consist of everything under ``/bin`` after
+  ``/deploy.bash`` has been run.
 | With the exceptions of ``src`` and ``res``, non-hidden subdirectories and
   symlinks are to be subdomains.
 
@@ -20,6 +21,10 @@ Licenses
 
 Technologies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Meta
+================================================================================
+- Organize by feature
 
 Webstack
 ================================================================================
@@ -33,8 +38,14 @@ Development
 - Sass
 - Coffeescript
 
+Documentation
+================================================================================
+- ngDoc (used in Sass and Coffeescript)
+- reStructuredText (used for standalone documentation files, and for comments)
+
 Deployment
 ================================================================================
-- HTML5 (minified)
-- CSS3 (minified)
-- JavaScript (minified)
+- HTML5 (minified) (from XHTML)
+- CSS3 (minified) (from Sass)
+- JavaScript (minified) (from Coffeescript)
+- PDF (from raw documentation)

@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
-#=require _common.coffee
-#=require _strings.coffee
+#=require <_common.coffee>
+#=require <_strings.coffee>
 
 ###
 # Global

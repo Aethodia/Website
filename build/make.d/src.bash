@@ -53,15 +53,16 @@ for F in $(find -type f | grep "$EXTIN"); do
 	## Transpile and minify
 	case "$F" in
 		*".$PAGES")
-			html-minifier -c "../build/conf/mini-html.json" -o "$NEWPATH" "$F"
+			../node_modules/html-minifier/cli.js -c "../build/conf/mini-html.json" -o "$NEWPATH" "$F"
 			;;
 		*".$SCRIPTS")
-			coffee -bo "$NEWPATH" -c "$F"
-			uglifyjs --config-file "../build/conf/mini-js.json" -o "$NEWPATH" "$NEWPATH"
+			../node_modules/coffeescript-concat/coffeescript-concat $(for D in $(find -type d); do echo "-I $D"; done) -o "$NEWPATH" "$F"
+			../node_modules/coffeescript/bin/coffee -bo "$NEWPATH" -c "$NEWPATH"
+			../node_modules/uglify-es/bin/uglifyjs --config-file "../build/conf/mini-js.json" -o "$NEWPATH" "$NEWPATH"
 			;;
 		*".$STYLES")
-			node-sass "$F" > "$NEWPATH"
-			cleancss -O2 -o "$NEWPATH" "$NEWPATH"
+			../node_modules/node-sass/bin/node-sass "$F" > "$NEWPATH"
+			../node_modules/clean-css-cli/bin/cleancss -O2 -o "$NEWPATH" "$NEWPATH"
 			;;
 	esac
 	chmod 0664 "$NEWPATH"

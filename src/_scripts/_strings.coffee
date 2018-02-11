@@ -1,5 +1,5 @@
 #!/usr/bin/env coffee
-#=require common.coffee
+#=require <_common.coffee>
 
 ###
 # Strings

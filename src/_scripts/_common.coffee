@@ -9,9 +9,3 @@ class Common
 	@setField: (id, html) ->
 		document.getElementById(id)?.innerHTML = html
 		0
-
-###
-## main
-This function runs when this script is included.
-###
-0

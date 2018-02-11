@@ -1,5 +1,6 @@
 #!/usr/bin/env coffee
-#=require common.coffee
+#=require _common.coffee
+#=require _strings.coffee
 
 ###
 # Global
@@ -22,5 +23,6 @@ class Global
 Runs when this script is loaded.
 ###
 window.onLoad = () ->
+	window.onLoad()
 	Global.activateTheme()
 	0

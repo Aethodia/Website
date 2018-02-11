@@ -43,8 +43,8 @@ for F in $(find -type f | grep "$EXTIN"); do
 			;;
 	esac
 
-	## Exclude include-only styles
-	[[ "$F" == *".$STYLES" ]] && [[ "$(echo $F | sed 's/^.*[/]//gm')" == '_'* ]] && continue
+	## Exclude include-only files
+	[[ "$(echo $F | sed 's/^.*[/]//gm')" == '_'* ]] && continue
 
 	## Calculate the new path
 	NEWPATH="../bin/$(echo $F | sed 's/^[.][/]//gm' | sed 's/[.]'$EXTIN'$/.'$EXTOUT'/gm')"

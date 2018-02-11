@@ -28,9 +28,11 @@ Meta
 
 Webstack
 ================================================================================
-- nginx + apache (webserver)
-- Node.js (backend)
-- Cassandra (database)
+- nginx (webserver)
+- Node.js (appserver)
+- Ignite (database)
+- CDN (for static content and libraries)
+- SSH (remote access)
 
 Development
 ================================================================================
@@ -40,8 +42,9 @@ Development
 
 Documentation
 ================================================================================
-- ngDoc (used in Sass and Coffeescript)
-- reStructuredText (used for standalone documentation files, and for comments)
+- Codo (used in Coffeescript)
+- ngDoc (used in Sass)
+- reStructuredText (used for standalone documentation files, and for comments in other languages)
 
 Deployment
 ================================================================================
@@ -49,3 +52,9 @@ Deployment
 - CSS3 (minified) (from Sass)
 - JavaScript (minified) (from Coffeescript)
 - PDF (from raw documentation)
+
+Security
+================================================================================
+- Content Security Policy
+- Let's Encrypt SSL
+- SSH port-knocking

@@ -1,0 +1,33 @@
+{	"name": "theodia-tech",
+	"version": "0.0.0",
+	"license": "LGPLv3",
+	"author": "Miles Huff",
+	"description": "The backend for the national website of the Technocratic Republic of Theodia",
+	"keywords": [
+		"micronation",
+		"Theodia",
+		"website"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/TheodiaGov/Website"
+	},
+
+	"engines": {
+		"node": "^0.0.0"
+	},
+	"main": "bin/node.js",
+	"scripts": {
+		"make": "Makefile.bash make",
+		"clean": "Makefile.bash clean"
+	},
+
+	"dependencies": {
+		"clean-css": "^0.0.0",
+		"clean-css-cli": "^0.0.0",
+		"coffeescript": "^0.0.0",
+		"html-minifier": "^0.0.0",
+		"node-sass": "^0.0.0",
+		"uglify-es": "^0.0.0",
+	},
+}

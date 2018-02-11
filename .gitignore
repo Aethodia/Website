@@ -1,13 +1,16 @@
-# Files and directories from external projects
-node_modules/
+# Version control
+.git/
 package-lock.json
+
+# Files sourced from other projects
+node_modules/
+.gitattributes
 
 # Tempfiles
 *.swp
 tmp/
 
 # Minified/binary files
-.git/
 *.css
 *.html
 *.js

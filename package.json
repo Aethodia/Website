@@ -9,12 +9,14 @@
 		"Theodia",
 		"website"
 	],
+	"homepage": "https://theodia.tech",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/TheodiaGov/Website"
 	},
 	"engines": {
-		"node": "latest"
+		"node": "latest",
+		"npm": "latest"
 	},
 	"main": "bin/node.js",
 	"scripts": {

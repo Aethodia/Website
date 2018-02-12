@@ -23,6 +23,5 @@ class Global
 Runs when this script is loaded.
 ###
 window.onLoad = () ->
-	window.onLoad()
 	Global.activateTheme()
 	0

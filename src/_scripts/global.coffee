@@ -1,4 +1,8 @@
 #!/usr/bin/env coffee
+## Copyright © from the date of the last git commit to this file in this git branch,
+## by all persons with git blame to this file in this git branch, per the terms of
+## the GNU AGPL 3.0 with the additional allowances of the GNU LGPL 3.0.
+
 #=require <_common.coffee>
 #=require <_strings.coffee>
 

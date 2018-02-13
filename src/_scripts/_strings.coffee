@@ -1,4 +1,8 @@
 #!/usr/bin/env coffee
+## Copyright © from the date of the last git commit to this file in this git branch,
+## by all persons with git blame to this file in this git branch, per the terms of
+## the GNU AGPL 3.0 with the additional allowances of the GNU LGPL 3.0.
+
 #=require <_common.coffee>
 
 ###
@@ -12,6 +16,8 @@ class Strings
 	## strings
 	An object containing translations for many IDs.
 	The first translation under each ID is the "default" for that ID.
+	The other translations should come in alphabetical order per their ISO code.
+	Translations may include HTML.
 	###
 	@strings:
 		placeholderShort:

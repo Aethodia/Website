@@ -49,6 +49,8 @@ for F in $(find -type f | grep "$EXTIN"); do
 
 	## Exclude include-only files
 	[[ "$(echo $F | sed 's/^.*[/]//gm')" == '_'* ]] && continue
+	## Exclude temporary files
+	[[ "$(echo $F | sed 's/^.*[/]//gm')" == '.keep' ]] && continue
 
 	## Calculate the new path
 	NEWPATH="../bin/$(echo $F | sed 's/^[.][/]//gm' | sed 's/[.]'$EXTIN'$/.'$EXTOUT'/gm')"

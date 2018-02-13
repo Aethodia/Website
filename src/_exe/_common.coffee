@@ -14,5 +14,5 @@ class Common
 	Change the innerHTML of a tag.
 	###
 	@setField: (id, html) ->
-		document.getElementById(id)?.innerHTML = html
+		document.getElementById(id).innerHTML = html
 		0

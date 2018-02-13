@@ -18,6 +18,7 @@ class Strings
 	The first translation under each ID is the "default" for that ID.
 	The other translations should come in alphabetical order per their ISO code.
 	Translations may include HTML.
+	TODO:  Load this variable from a .json document.
 	###
 	@strings:
 		placeholderShort:
@@ -28,8 +29,8 @@ class Strings
 	Injects text into the page for IDed elements.
 	###
 	@injectText: () ->
-		for id, texts of @strings
-			if document.getElementById(id)?
+		for id, texts of Strings.strings
+			if document.getElementById(id)
 				Common.setField id,
 					do () ->
 						userLang = (navigator.language || navigator.userLanguage).toLowerCase()
@@ -42,3 +43,9 @@ class Strings
 						## Grab the first language available
 						for lang, text of texts
 							return text
+
+###
+## main
+Runs when this script is loaded.
+###
+document.addEventListener("DOMContentLoaded", Strings.injectText)

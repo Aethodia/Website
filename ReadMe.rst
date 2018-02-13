@@ -9,7 +9,7 @@ Description
 | This repository comprises the current official website of the Technocratic
   Republic of Theodia.
 | The live website will consist of everything under ``/bin`` after
-  ``/deploy.bash`` has been run.
+  ``/Makefile.bash make`` has been run.
 
 Copyright
 ================================================================================
@@ -35,9 +35,9 @@ Development
 
 Deployment
 ================================================================================
-- HTML5 (minified) (from XHTML)
-- CSS3 (minified) (from Sass)
-- JavaScript (minified) (from Coffeescript)
+- HTML v5, minified (from XHTML)
+- CSS v3, minified (from Sass)
+- JavaScript vES6, minified (from Coffeescript)
 - PDF (from raw documentation)
 
 Webstack

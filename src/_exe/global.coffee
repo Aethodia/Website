@@ -17,15 +17,13 @@ class Global
 	Injects a header, sidebar, and footer into the page.
 	###
 	@activateTheme: () ->
-		Common.setField('header',  'HEADER' )
-		Common.setField('sidebar', 'SIDEBAR')
-		Common.setField('footer',  'FOOTER' )
+		Common.setField("header",  "HEADER" )
+		Common.setField("sidebar", "SIDEBAR")
+		Common.setField("footer",  "FOOTER" )
 		0
 
 ###
 ## main
 Runs when this script is loaded.
 ###
-window.onLoad = () ->
-	Global.activateTheme()
-	0
+document.addEventListener("DOMContentLoaded", Global.activateTheme)

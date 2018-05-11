@@ -14,49 +14,49 @@ STYLES='sass'
 
 ## Main
 ## =============================================================================
-echo -e "\e[34;1m::\e[0;1m Compiling source code...\e[0m"
+echo -e "\e[34;1m::\e[0;1m Compiling source code and copying blobs...\e[0m"
 cd ../../src
-
-## Make directories
-## -----------------------------------------------------------------------------
-for D in $(find -type d); do
-	case "$D" in
-		'.')
-			;;
-		*)
-			mkdir -p "../bin/$D"
-			;;
-	esac
-done
 
 ## Find files
 ## -----------------------------------------------------------------------------
-for F in $(find -type f | grep "$EXTIN"); do
+for F in $(find -type f); do
+
+	## Exclude include-only files and directories
+	[[ "$(echo $F |                      sed 's/^.*[/]//gm')" == '_'* ]] && continue
+#	[[ "$(echo $F | sed 's/[/].*$//gm' | sed 's/^.*[/]//gm')" == '_'* ]] && continue
+
+	## Exclude temporary files
+	[[ "$(echo $F | sed 's/^.*[/]//gm')" == '.keep' ]] && continue
+
 	case "$F" in
 		*".$PAGES")
+			TYPE='Page'
 			EXTIN="$PAGES"
 			EXTOUT='html'
 			;;
 		*".$SCRIPTS")
+			TYPE='Script'
 			EXTIN="$SCRIPTS"
 			EXTOUT='js'
 			;;
 		*".$STYLES")
+			TYPE='Style'
 			EXTIN="$STYLES"
 			EXTOUT='css'
 			;;
+		*)
+			TYPE='Blob'
+			EXTIN='res'
+			EXTOUT='res'
+			;;
 	esac
 
-	## Exclude include-only files
-	[[ "$(echo $F | sed 's/^.*[/]//gm')" == '_'* ]] && continue
-	## Exclude temporary files
-	[[ "$(echo $F | sed 's/^.*[/]//gm')" == '.keep' ]] && continue
-
 	## Calculate the new path
-	NEWPATH="../bin/$(echo $F | sed 's/^[.][/]//gm' | sed 's/[.]'$EXTIN'$/.'$EXTOUT'/gm')"
-	echo "$NEWPATH" | sed 's/^[.][.][/]//gm'
+	NEWPATH="../bin/$(echo $F | sed 's/^[.][/]//gm')"
+	[[ $TYPE != 'Res' ]] && NEWPATH="$(echo $NEWPATH | sed 's/[.]'$EXTIN'$/.'$EXTOUT'/gm')"
+	echo "${TYPE}:	$(echo $NEWPATH | sed 's/^[.][.][/]//gm')"
 
-	## Transpile and minify
+	## Transpile and minify source, and move blobs
 	case "$F" in
 		*".$PAGES")
 			../node_modules/html-minifier/cli.js -c "../build/conf/mini-html.json" -o "$NEWPATH" "$F"
@@ -69,6 +69,9 @@ for F in $(find -type f | grep "$EXTIN"); do
 		*".$STYLES")
 			../node_modules/node-sass/bin/node-sass "$F" > "$NEWPATH"
 			../node_modules/clean-css-cli/bin/cleancss -O2 -o "$NEWPATH" "$NEWPATH"
+			;;
+		*)
+			cp "$F" "$NEWPATH"
 			;;
 	esac
 	chmod 0664 "$NEWPATH"

@@ -12,13 +12,13 @@
 ## meta
 ## -----------------------------------------------------------------------------
 function meta {
-	echo
+#	echo
 	PRE='build'
 	if [[ -d "$PRE/$1" ]]; then
 		cd "$PRE/$1"
 		for F in $(echo *); do
 			[[ -f "$F" ]] && ./"$F"
-			echo
+#			echo
 		done
 		cd ../..
 	else
@@ -27,16 +27,22 @@ function meta {
 	fi
 }
 
+## clean
+## -----------------------------------------------------------------------------
+function clean {
+	meta 'clean.d'
+}
+
 ## make
 ## -----------------------------------------------------------------------------
 function make {
 	meta 'make.d'
 }
 
-## clean
+## update
 ## -----------------------------------------------------------------------------
-function clean {
-	meta 'clean.d'
+function update {
+	meta 'update.d'
 }
 
 ## main
@@ -44,15 +50,18 @@ function clean {
 if [[ $1 ]]; then
 	INPUT="$1"
 else
-	echo "Type 'make' or 'clean':"
+	echo "Type 'clean', 'make', or 'update':"
 	read INPUT
 fi
 case "$INPUT" in
+	'clean')
+		clean
+		;;
 	'make')
 		make
 		;;
-	'clean')
-		clean
+	'update')
+		update
 		;;
 	*)
 		echo 'ERROR:  Invalid command!' >&2

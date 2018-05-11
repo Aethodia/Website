@@ -9,11 +9,11 @@
 ## Functions
 ## =============================================================================
 
-## Regex
+## Strip unsightly bits from paths
 ## -----------------------------------------------------------------------------
-function regex {
+function strip {
 	read INPUT
-	echo "$INPUT" | sed "s/[\']$//gm" | sed "s/^.*[\'][.][/]//gm"
+	echo "$INPUT" | sed "s/[\']$//gm" | sed "s/^.*[\']//gm" | sed "s/\.[/]//gm"
 }
 
 ## Main
@@ -24,25 +24,42 @@ cd ../../bin
 ## Remove compiled code
 ## -----------------------------------------------------------------------------
 echo -e "\e[34;1m::\e[0m Removing binaries..."
-for F in $(find -type f | grep "$EXTIN"); do
+for F in $(find -type f); do
 	case "$F" in
 		*.html)
-			rm -fv "$F" | regex
+			echo -n 'bin/'
+			rm -fv "$F" | strip
 			;;
 		*.js)
-			rm -fv "$F" | regex
+			echo -n 'bin/'
+			rm -fv "$F" | strip
 			;;
 		*.css)
-			rm -fv "$F" | regex
+			echo -n 'bin/'
+			rm -fv "$F" | strip
 			;;
 	esac
 done
+
+## Remove resources present in /src
+## -----------------------------------------------------------------------------
+echo -e "\e[34;1m::\e[0m Removing resources..."
+cd ../src/_res
+for F in $(find -type f); do
+	[[ "$(echo $F | sed 's/^.*[/]//gm')" == '.keep' ]] && continue ## Exclude temporary files
+	echo -n 'bin/_res/'
+	rm -fv ../../bin/_res/"$F" | sed 's/^.*\.\.[/]\.\.[/]bin[/]\_res[/]//gm' | strip
+done
+cd ../../bin
 
 ## Remove empty directories
 ## -----------------------------------------------------------------------------
 echo -e "\e[34;1m::\e[0m Removing empty directories..."
 for D in $(find -type d); do
-	[[ "$D" != '.' ]] && rmdir -v --ignore-fail-on-non-empty "$D" | regex
+	if [[ "$D" != '.' ]]; then
+		echo -n 'bin/'
+		rmdir -v --ignore-fail-on-non-empty "$D" | strip
+	fi
 done
 
 ## Cleanup

@@ -1,15 +1,15 @@
 {
-	"name": "Aethodia.org",
+	"name": "theodia.tech",
 	"version": "0.0.0",
 	"license": "LGPL-3.0",
 	"author": "Miles Huff",
-	"description": "The backend for the national website of the Technocratic Republic of Aethodia",
+	"description": "The backend for the national website of the Technocratic Republic of Theodia",
 	"keywords": [
 		"micronation",
-		"Aethodia",
+		"Theodia",
 		"website"
 	],
-	"homepage": "https://Aethodia.org",
+	"homepage": "https://theodia.tech",
 	"repository": {
 		"type": "git",
 		"url": "https://GitHub.com/TheodiaGov/Website"

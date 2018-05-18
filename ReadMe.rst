@@ -8,14 +8,20 @@ Description
 ================================================================================
 | This repository comprises the current official website of the Technocratic
   Republic of Theodia.
-| The live website will consist of everything under ``/bin`` after
-  ``/Makefile.bash make`` has been run.
+| The live website will consist of everything under ``/bin`` after building.
 
 Copyright
 ================================================================================
 | (See ``/Copyright.txt`` for more info)
 - Code is licensed under the GNU Lesser Affero General Public License 3.0 (LAGPL 3).
 - Non-code is licensed under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4) license.
+
+Usage
+================================================================================
+- ``npm install``:  Install dependencies.
+- ``npm run make``:  Build the website from sources.
+- ``npm run clean``:  Clean the ``/bin`` directory for a fresh build.
+- ``npm run update``:  Update dependencies, including non-npm deps.
 
 Technologies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -32,6 +38,7 @@ Development
 - XHTML5 (polyglot)
 - Sass
 - Coffeescript
+- bash
 
 Deployment
 ================================================================================

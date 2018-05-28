@@ -11,6 +11,10 @@ node_modules/
 tmp/
 
 # Minified/binary files
+bin/
 *.css
 *.html
 *.js
+
+# Exceptions
+!.keep

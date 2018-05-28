@@ -1,0 +1,5 @@
+var Common,Global,Strings
+Common=class Common{static setField(id,html){return document.getElementById(id).innerHTML=html,0}},Strings=(function(){class Strings{static injectText(){var id,ref,results,texts
+for(id in results=[],ref=Strings.strings)texts=ref[id],document.getElementById(id)?results.push(Common.setField(id,(function(){var lang,text,userLang
+for(lang in userLang=(navigator.language||navigator.userLanguage).toLowerCase(),texts)if(text=texts[lang],userLang.length>=lang.length)switch(userLang.substring(0,lang.length)){case lang:return text}for(lang in texts)return text=texts[lang]})())):results.push(void 0)
+return results}}return Strings.strings={placeholderShort:{la:"Lorem ipsum dolor sit amet."}},Strings}).call(this),document.addEventListener("DOMContentLoaded",Strings.injectText),Global=class Global{static activateTheme(){return Common.setField("header","HEADER"),Common.setField("sidebar","SIDEBAR"),Common.setField("footer","FOOTER"),0}},document.addEventListener("DOMContentLoaded",Global.activateTheme)

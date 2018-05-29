@@ -11,7 +11,7 @@ node_modules/
 tmp/
 
 # Minified/binary files
-bin/
+bin/*
 *.css
 *.html
 *.js

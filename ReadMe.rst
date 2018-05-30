@@ -8,7 +8,9 @@ Description
 ================================================================================
 | This repository comprises the current official website of the Technocratic
   Republic of Theodia.
-| The live website will consist of everything under ``/bin`` after building.
+| The completed website consists of everything under ``/bin`` after a build.
+  The contents of ``/bin`` are stored in the ``gh-pages`` branch, are are
+  continuously deployed at TheodiaGov.GitHub.com/Website.
 
 Copyright
 ================================================================================
@@ -18,13 +20,28 @@ Copyright
 
 Usage
 ================================================================================
-- ``npm install``:  Install dependencies.
+- ``npm install``:  Install npm dependencies.
+- ``npm run update``:  Update dependencies, including non-npm non-system
+  dependencies, and perform maintenance.
 - ``npm run make``:  Build the website from sources.
 - ``npm run clean``:  Clean the ``/bin`` directory for a fresh build.
-- ``npm run update``:  Update dependencies, including non-npm deps.
 
 Technologies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+System dependencies
+================================================================================
+| The following programs must be present on the system in order to build or run
+  this software.  Dependencies that are both runtime and build dependencies, are
+  only shown in the "Runtime dependencies" section.
+- Runtime dependencies
+
+  - npm
+  - nodejs	
+
+- Build dependencies
+
+  - (no additional dependencies)
 
 Documentation
 ================================================================================

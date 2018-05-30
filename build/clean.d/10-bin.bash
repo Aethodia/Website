@@ -44,19 +44,24 @@ done
 ## Remove resources present in /src
 ## -----------------------------------------------------------------------------
 echo -e "\e[34;1m::\e[0m Removing resources..."
-cd ../src/_res
-for F in $(find -type f); do
-	[[ "$(echo $F | sed 's/^.*[/]//gm')" == '.keep' ]] && continue ## Exclude temporary files
-	echo -n 'bin/_res/'
-	rm -fv ../../bin/_res/"$F" | sed 's/^.*\.\.[/]\.\.[/]bin[/]\_res[/]//gm' | strip
-done
-cd ../../bin
+if [[ -d '../../_res' ]]; then
+	cd '../../_res'
+	for F in $(find -type f); do
+		[[ "$(echo $F | sed 's/^.*[/]//gm')" == '.keep' ]] && continue ## Exclude temporary files
+		echo -n 'bin/_res/'
+		rm -fv "../../bin/_res/$F" | sed 's/^.*\.\.[/]\.\.[/]bin[/]\_res[/]//gm' | strip
+	done
+	cd ../../bin
+fi
 
 ## Remove empty directories
 ## -----------------------------------------------------------------------------
 echo -e "\e[34;1m::\e[0m Removing empty directories..."
 for D in $(find -type d); do
-	if [[ "$D" != '.' ]]; then
+	if [[ ! "$(ls -A "$D")" ]] &&\
+	   [[ "$D" != '.'       ]] &&\
+	   [[ "$D" != './.'*    ]]
+	then
 		echo -n 'bin/'
 		rmdir -v --ignore-fail-on-non-empty "$D" | strip
 	fi

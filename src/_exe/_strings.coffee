@@ -21,6 +21,8 @@ class Strings
 	TODO:  Load this variable from a .json document.
 	###
 	@strings:
+		error404:
+			en: "The page you were trying to reach does not exist."
 		placeholderShort:
 			la: "Lorem ipsum dolor sit amet."
 

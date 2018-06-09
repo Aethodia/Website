@@ -14,9 +14,13 @@ Description
 
 Copyright
 ================================================================================
-| (See ``/Copyright.txt`` for more info)
+| (See ``/Copyright.txt`` for more info.)
 - Code is licensed under the GNU Lesser Affero General Public License 3.0 (LAGPL 3).
 - Non-code is licensed under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4) license.
+
+Contributors
+================================================================================
+| See ``/src/humans.txt`` for more info.
 
 Usage
 ================================================================================

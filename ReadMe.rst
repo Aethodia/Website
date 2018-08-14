@@ -79,5 +79,5 @@ Webstack
 ToDo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 - Content Security Policy
-- Let's Encrypt SSL
+- Let's Encrypt SSL (Eventually:  Extended Validation through a real cert authority)
 - SSH port-knocking

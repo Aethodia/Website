@@ -26,11 +26,12 @@
 	},
 	"devDependencies": {
 		"clean-css": "latest",
-		"clean-css-cli": "latest",
+		"clean-css-cli": "^4.2.1",
 		"coffeescript": "latest",
 		"coffeescript-concat": "latest",
-		"html-minifier": "latest",
-		"node-sass": "latest",
+		"html-minifier": "^3.5.20",
+		"node-sass": "^4.9.3",
 		"uglify-es": "latest"
-	}
+	},
+	"dependencies": {}
 }

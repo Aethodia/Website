@@ -3,7 +3,7 @@
 	"version": "0.0.0",
 	"license": "LGPL-3.0",
 	"author": "Miles Huff",
-	"description": "The backend for the national website of the Technocratic Republic of Theodia",
+	"description": "The national website of the Technocratic Republic of Theodia",
 	"keywords": [
 		"micronation",
 		"Theodia",
@@ -26,11 +26,11 @@
 	},
 	"devDependencies": {
 		"clean-css": "latest",
-		"clean-css-cli": "^4.2.1",
+		"clean-css-cli": "latest",
 		"coffeescript": "latest",
 		"coffeescript-concat": "latest",
-		"html-minifier": "^3.5.20",
-		"node-sass": "^4.9.3",
+		"html-minifier": "latest",
+		"node-sass": "latest",
 		"uglify-es": "latest"
 	},
 	"dependencies": {}

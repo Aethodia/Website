@@ -1,0 +1,42 @@
+## Defaults
+## -----------------------------------------------------------------------------
+* text=auto eol=lf
+
+## Web
+## -----------------------------------------------------------------------------
+*.css   text diff=css
+*.scss  text diff=css
+*.htm   text diff=html
+*.html  text diff=html
+*.js    text
+*.jsx   text
+*.ts    text
+*.tsx   text
+*.xhtml text diff=html
+
+## Configuration
+## -----------------------------------------------------------------------------
+*.conf       text
+*.ini        text
+*.json       text
+*.jsonc      text
+*.xml        text diff=xml
+*.yml        text
+
+## Documentation
+## -----------------------------------------------------------------------------
+*.md  text
+*.rst text
+*.txt text
+
+## Images
+## -----------------------------------------------------------------------------
+*.ico binary
+*.png binary
+*.svg binary
+
+## Other
+## -----------------------------------------------------------------------------
+*.sql text
+package-lock.json   binary
+npm-shrinkwrap.json binary

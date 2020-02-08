@@ -17,7 +17,7 @@
 	"engines": {
 		"npm": ">6"
 	},
-	"main": "src/app/main.ts",
+	"main": "src/index.ts",
 	"directories": {
 		"bin": "dist",
 		"lib": "src"
@@ -38,7 +38,6 @@
 		"@angular/platform-browser": "^9",
 		"@angular/platform-browser-dynamic": "^9",
 		"@angular/router": "^9",
-		"eslint": "^6.8.0",
 		"rxjs": "^6",
 		"tslib": "^1",
 		"zone.js": "^0.10"
@@ -50,6 +49,7 @@
 		"@angular/language-service": "^9",
 		"@types/node": "^12",
 		"codelyzer": "^5",
+		"eslint": "^6",
 		"ts-node": "^8",
 		"typescript": "^3"
 	}

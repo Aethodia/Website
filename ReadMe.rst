@@ -6,11 +6,13 @@ About
 
 Description
 ================================================================================
-| This repository comprises the current official website of the Technocratic
-  Republic of Theodia.
-| The completed website consists of everything under ``/bin`` after a build.
-  The contents of ``/bin`` are stored in the ``gh-pages`` branch, are are
-  continuously deployed at TheodiaGov.GitHub.com/Website.
+
+This repository comprises the current official website of the Technocratic Republic of Theodia.
+
+The completed front-end consists of everything under ``/frontend/dist``.
+The contents of this directory are stored in the ``gh-pages`` branch, are are continuously deployed at TheodiaGov.GitHub.com/Website.
+
+The completed back-end consists of everything under ``/backend/dist``.
 
 Copyright
 ================================================================================
@@ -20,64 +22,51 @@ Copyright
 
 Contributors
 ================================================================================
-| See ``/src/humans.txt`` for more info.
+| See ``/frontend/res/humans.txt`` for more info.
 
 Usage
 ================================================================================
-- ``npm install``:  Install npm dependencies.
-- ``npm run update``:  Update dependencies, including non-npm non-system
-  dependencies, and perform maintenance.
-- ``npm run make``:  Build the website from sources.
-- ``npm run clean``:  Clean the ``/bin`` directory for a fresh build.
+
+TODO
 
 Technologies
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-System dependencies
+Stack
 ================================================================================
-| The following programs must be present on the system in order to build or run
-  this software.  Dependencies that are both runtime and build dependencies, are
-  only shown in the "Runtime dependencies" section.
-- Runtime dependencies
 
-  - npm
-  - nodejs	
+- Node.js (webserver)
+- Ignite (database)
+- Angular (front-end framework)
+- NestJS (back-end framework)
 
-- Build dependencies
+Code
+================================================================================
 
-  - (no additional dependencies)
+Source
+--------------------------------------------------------------------------------
+
+- TypeScript
+- Sass
+- XHTML5 (polyglot)
+
+Compiled
+--------------------------------------------------------------------------------
+
+- JavaScript (ES6), minified, from TypeScript
+- CSS v3, minified, from Sass
+- HTML v5, minified, from XHTML
 
 Documentation
 ================================================================================
-- reStructuredText (used for standalone documentation files, and for comments in
-  other languages)
-- ngDoc (used in Sass)
-- Codo (used in Coffeescript)
 
-Development
-================================================================================
-- XHTML5 (polyglot)
-- Sass
-- Coffeescript
-- bash
+Source
+--------------------------------------------------------------------------------
 
-Deployment
-================================================================================
-- HTML v5, minified (from XHTML)
-- CSS v3, minified (from Sass)
-- JavaScript vES6, minified (from Coffeescript)
-- PDF (from raw documentation)
+- reStructuredText (used for standalone documentation files, and for comments in other languages)
+- ngDoc (used in TypeScript, *etc*)
 
-Webstack
-================================================================================
-- nginx (webserver)
-- Node.js (appserver)
-- Ignite (database)
-- CDN (for static content and libraries)
-- SSH (remote access)
+Compiled
+--------------------------------------------------------------------------------
 
-ToDo
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-- Content Security Policy
-- Let's Encrypt SSL (Eventually:  Extended Validation through a real cert authority)
-- SSH port-knocking
+- PDF

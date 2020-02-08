@@ -18,22 +18,11 @@
 		"node": "latest",
 		"npm": "latest"
 	},
-	"main": "bin/node.js",
+	"main": "",
 	"scripts": {
-		"clean": "build/Makefile.bash clean",
-		"make": "build/Makefile.bash make",
-		"update": "build/Makefile.bash update"
 	},
 	"devDependencies": {
-		"clean-css": "latest",
-		"clean-css-cli": "latest",
-		"coffeescript": "latest",
-		"coffeescript-concat": "latest",
-		"html-minifier": "latest",
-		"node-sass": "latest",
-		"uglify-es": "latest"
 	},
 	"dependencies": {
-		"webpack": "^4.38.0"
 	}
 }

@@ -1,8 +1,7 @@
 {
-	"name": "theodia.tech",
+	"name": "@theodia/frontend",
 	"version": "0.0.0",
-	"license": "LGPL-3.0",
-	"author": "Miles Huff",
+	"license": "SEE LICENSE IN ../Copyright.txt",
 	"description": "The national website of the Technocratic Republic of Theodia",
 	"keywords": [
 		"micronation",
@@ -10,19 +9,48 @@
 		"website"
 	],
 	"homepage": "https://theodia.tech",
+	"private": true,
 	"repository": {
 		"type": "git",
 		"url": "https://GitHub.com/TheodiaGov/Website"
 	},
 	"engines": {
-		"node": "latest",
-		"npm": "latest"
+		"npm": ">6"
 	},
-	"main": "",
+	"main": "src/app/main.ts",
+	"directories": {
+		"bin": "dist",
+		"lib": "src"
+	},
 	"scripts": {
-	},
-	"devDependencies": {
+		"start": "npx ng serve",
+		"build": "npx build",
+		"test": "npx test",
+		"lint": "npx lint",
+		"e2e": "npx e2e"
 	},
 	"dependencies": {
+		"@angular/animations": "^9",
+		"@angular/common": "^9",
+		"@angular/compiler": "^9",
+		"@angular/core": "^9",
+		"@angular/forms": "^9",
+		"@angular/platform-browser": "^9",
+		"@angular/platform-browser-dynamic": "^9",
+		"@angular/router": "^9",
+		"eslint": "^6.8.0",
+		"rxjs": "^6",
+		"tslib": "^1",
+		"zone.js": "^0.10"
+	},
+	"devDependencies": {
+		"@angular-devkit/build-angular": "^0.900",
+		"@angular/cli": "^9",
+		"@angular/compiler-cli": "^9",
+		"@angular/language-service": "^9",
+		"@types/node": "^12",
+		"codelyzer": "^5",
+		"ts-node": "^8",
+		"typescript": "^3"
 	}
 }

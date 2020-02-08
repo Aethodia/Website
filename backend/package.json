@@ -1,0 +1,32 @@
+{
+	"name": "@theodia/backend",
+	"version": "0.0.0",
+	"license": "SEE LICENSE IN ../Copyright.txt",
+	"description": "The national website of the Technocratic Republic of Theodia",
+	"keywords": [
+		"micronation",
+		"Theodia",
+		"website"
+	],
+	"homepage": "https://theodia.tech",
+	"private": true,
+	"repository": {
+		"type": "git",
+		"url": "https://GitHub.com/TheodiaGov/Website"
+	},
+	"engines": {
+        "node": "latest",
+        "npm": ">6"
+	},
+	"main": "src/app/main.ts",
+	"directories": {
+		"bin": "dist",
+		"lib": "src"
+	},
+	"scripts": {
+	},
+	"devDependencies": {
+	},
+	"dependencies": {
+	}
+}

@@ -3,18 +3,14 @@
 package-lock.json
 
 # Files sourced from other projects
-node_modules/
-.gitattributes
+**/node_modules/
 
 # Tempfiles
 *.swp
 tmp/
 
 # Minified/binary files
-bin/*
-*.css
-*.html
-*.js
+**/dist/*
 
 # Exceptions
 !.keep

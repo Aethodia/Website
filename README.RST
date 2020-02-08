@@ -16,13 +16,13 @@ The completed back-end consists of everything under ``/backend/dist``.
 
 Copyright
 ================================================================================
-| (See ``/Copyright.txt`` for more info.)
+| (See ``/LICENSE.TXT`` for more info.)
 - Code is licensed under the GNU Lesser Affero General Public License 3.0 (LAGPL 3).
 - Non-code is licensed under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4) license.
 
 Contributors
 ================================================================================
-| See ``/frontend/res/humans.txt`` for more info.
+| See ``/AUTHORS.TXT`` for more info.
 
 Usage
 ================================================================================

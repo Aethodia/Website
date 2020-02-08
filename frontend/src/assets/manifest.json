@@ -1,7 +1,8 @@
-{	"start_url": "/",
+{
+	"start_url": "/",
 	"icons": [{
-		"src":   "icon.png",
-		"type":  "image/png",
+		"src": "icon.png",
+		"type": "image/png",
 		"sizes": "192x192"
 	}]
 }

@@ -1,35 +1,36 @@
-// Copyright © from the date of the last git commit to this file in this git branch,
-// by all persons with git blame to this file in this git branch, per the terms of
-// the GNU AGPL 3.0 with the additional allowances of the GNU LGPL 3.0.
-
 // Colors
 // -----------------------------------------------------------------------------
+
 // Window
-$bg-win: #212121
-$sel-win: #585858
-$fg-win: #979797
-$link-win: #E95CE9
+$bg-win: #212121;
+$sel-win: #585858;
+$fg-win: #979797;
+$link-win: #E95CE9;
+
 // View
-$bg-view: #585858
-$sel-view: #979797
-$fg-view: #DBDBDB
-$link-view: #FFA5FF
+$bg-view: #585858;
+$sel-view: #979797;
+$fg-view: #DBDBDB;
+$link-view: #FFA5FF;
 
 // Others
 // -----------------------------------------------------------------------------
+
 // Fonts
-$font-sans: sans-serif
-$font-mono: monospace
-$font-th-sans: TheodicSans
+$font-sans: sans-serif;
+$font-mono: monospace;
+$font-th-sans: TheodicSans;
+
 // Spacing
-$pad-1-1: 1em
-$pad-1-2: $pad-1-1 / 2
-$pad-2-1: $pad-1-1 * 2
+$pad-1-1: 1em;
+$pad-1-2: $pad-1-1 / 2;
+$pad-2-1: $pad-1-1 * 2;
 
 // Definitions
 // -----------------------------------------------------------------------------
 // Fonts
-@font-face
-	font-family: "TheodicSans"
-	src: url("../_res/TheodicSans.ttf")
-	font-weight: 400
+@font-face {
+	font-family: "TheodicSans";
+	src: url("../_res/TheodicSans.ttf");
+	font-weight: 400;
+}

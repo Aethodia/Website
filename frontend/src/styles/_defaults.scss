@@ -1,22 +1,20 @@
-// Copyright © from the date of the last git commit to this file in this git branch,
-// by all persons with git blame to this file in this git branch, per the terms of
-// the GNU AGPL 3.0 with the additional allowances of the GNU LGPL 3.0.
-*
-	background: $bg-view
-	border: 0em solid $fg-view
-	border-collapse: collapse
-	border-image-width: 0em
-	border-spacing: 0em
-	box-sizing: border-box
-	color: $fg-view
-	font: 100% $font-sans
-	line-height: 1em
-	margin: 0em
-	overflow: none
-	padding: 0em
-	text-align: justify
-	text-decoration: none
-	text-indent: 0em
-	vertical-align: top
-	width: auto
-	z-index: 0
+* {
+	background: $bg-view;
+	border: 0em solid $fg-view;
+	border-collapse: collapse;
+	border-image-width: 0em;
+	border-spacing: 0em;
+	box-sizing: border-box;
+	color: $fg-view;
+	font: 100% $font-sans;
+	line-height: 1em;
+	margin: 0em;
+	overflow: none;
+	padding: 0em;
+	text-align: justify;
+	text-decoration: none;
+	text-indent: 0em;
+	vertical-align: top;
+	width: auto;
+	z-index: 0;
+}

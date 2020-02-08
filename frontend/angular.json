@@ -24,7 +24,7 @@
                         "tsConfig": "tsconfig.app.json",
                         "aot": true,
                         "assets": [
-                            "src/assets"
+                            "src/res"
                         ],
                         "styles": [
                             "src/index.scss"
@@ -35,8 +35,8 @@
                         "production": {
                             "fileReplacements": [
                                 {
-                                    "replace": "src/environments/environment.ts",
-                                    "with": "src/environments/environment.prod.ts"
+                                    "replace": "src/env/env.ts",
+                                    "with": "src/env/env.prod.ts"
                                 }
                             ],
                             "optimization": true,

@@ -1,16 +1,26 @@
-# Version control
+## Version control
 .git/
 package-lock.json
 
-# Files sourced from other projects
-**/node_modules/
-
-# Tempfiles
-*.swp
-tmp/
-
-# Minified/binary files
+## Unversionable
 **/dist/*
+**/node_modules/
+**.bak
+**.db
+**.jar
+**.old
+**.swp
+**.tmp
+
+## IDEs
+**/.vscode/
+
+## System files
+**/.directory
+**/.DS_Store
+**/desktop.ini
+**/thumbs.db
+**.fuse_hidden*
 
 # Exceptions
 !.keep

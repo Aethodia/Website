@@ -2,6 +2,7 @@ import {NgModule, ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 // Services
+import {ConsoleService} from './services/console.service';
 import {VariableService} from './services/variable.service';
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -11,6 +12,7 @@ import {VariableService} from './services/variable.service';
     ],
     exports: [],
     declarations: [
+        ConsoleService,
         VariableService,
     ],
     providers: [],
@@ -24,6 +26,7 @@ export class AppSharedModule {
         return {
             ngModule: AppSharedModule,
             providers: [
+                ConsoleService,
                 VariableService,
             ],
         };

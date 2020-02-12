@@ -1,4 +1,5 @@
-import {Injectable, isDevMode} from '@angular/core';
+import {Injectable, isDevMode, EventEmitter} from '@angular/core';
+import {ConsoleService} from './console.service';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
@@ -6,12 +7,20 @@ import {Injectable, isDevMode} from '@angular/core';
  *  A great way to share data across the app.
  */
 export class VariableService {
-    private variables: AnyObj;
+    private variables: {
+        isDevMode: {
+            value: boolean;
+            emitter: EventEmitter<boolean>
+        }
+    };
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor() {
         this.variables = {
-            isDevMode: isDevMode(),
+            isDevMode: {
+                value: isDevMode(),
+                emitter: new EventEmitter(true),
+            },
         };
         return this;
     }
@@ -21,18 +30,20 @@ export class VariableService {
      * @param  key The name of the variable you want to access.
      * @return the requested variable.
      */
-    //TODO: Observablize
-    public readonly getVar = (key: string): any => {
-        return this.variables[key];
+    public readonly getVar = (key: string): EventEmitter<any> => {
+        if(this.variables[key] === undefined) {
+            throw new TypeError(`this.variables['${key}'] === undefined`);
+        }
+        return this.variables[key].emitter;
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Gets an environment variable
-     * @param key The name of the variable you want to modify.
-     * @param val What you want to set the variable to.
+     * @param key   The name of the variable you want to modify.
+     * @param value What you want to set the variable to.
      */
-    //TODO: Observablize
-    public readonly setVar = (key: string, val: any): void => {
-        this.variables[key] = val;
+    public readonly setVar = (key: string, value: any): void => {
+        this.variables[key].value = value;
+        this.variables[key].emitter.emit(this.variables[key].value);
     }
 }

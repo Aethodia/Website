@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {VariableService} from './variable.service';
+import { UtilityCode } from '../misc/utility-code';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
@@ -22,7 +23,7 @@ class ConsoleService extends Console {
                         case 'error':
                             break; //TODO: Wrap these functions to remove all parameters.
                         default:
-                            this[key] = null; //TODO: Instead of null, set to an empty thing with a matching typeof.
+                            this[key] = UtilityCode.new(key);
                     }
                 }
             }

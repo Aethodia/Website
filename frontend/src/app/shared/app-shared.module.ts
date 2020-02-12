@@ -6,7 +6,6 @@ import {AnalyticsService} from './services/analytics.service';
 import {BackendService} from './services/backend.service';
 import {ConsoleService} from './services/console.service';
 import {LocaleService} from './services/locale.service';
-import {UtilityService} from './services/utility.service';
 import {VariableService} from './services/variable.service';
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -33,7 +32,6 @@ class AppSharedModule {
                 BackendService,
                 ConsoleService,
                 LocaleService,
-                UtilityService,
                 VariableService,
             ],
         };

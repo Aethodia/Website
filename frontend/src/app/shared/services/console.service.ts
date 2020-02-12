@@ -15,25 +15,29 @@ class ConsoleService extends Console {
         super();
 
         // If not dev mode, replace all the properties.
-        if(!this.varSvc.getVar('isDevMode')) {
-            for(const key in this) {
-                if(this.hasOwnProperty(key)) {
-                    switch(key) {
+        !this.varSvc.getVar('isDevMode').subscribe(
+            (isDevMode: boolean): void => {
+                if(isDevMode) {
+                    for(const key in this) {
+                        if(this.hasOwnProperty(key)) {
+                            switch(key) {
 
-                        // Remove parameters from functions we want to keep
-                        case 'warn':
-                        case 'error':
-                            //@ts-ignore (We're essentially setting these to themselves -- this should always be safe.)
-                            this[key] = (message?: any, ...optionalParams: any[]): void => console[key]()
-                            break;
+                                // Remove parameters from functions we want to keep
+                                case 'warn':
+                                case 'error':
+                                    //@ts-ignore (We're essentially setting these to themselves -- this should always be safe.)
+                                    this[key] = (message?: any, ...optionalParams: any[]): void => console[key]()
+                                    break;
 
-                        // Wipe functions we do not want to keep
-                        default:
-                            this[key] = UtilityCode.new(key);
+                                // Wipe functions we do not want to keep
+                                default:
+                                    this[key] = UtilityCode.new(key);
+                            }
+                        }
                     }
                 }
             }
-        }
+        )
 
         // Done
         return this;

@@ -23,4 +23,9 @@ import {AppMainModule} from './main/app-main.module';
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-export class AppModule {}
+class AppModule {}
+
+////////////////////////////////////////////////////////////////////////////////
+export {
+    AppModule,
+}

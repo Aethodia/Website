@@ -6,7 +6,7 @@ import {BehaviorSubject} from 'rxjs';
 /** Asynchonously stores and distributes variables.
  *  A great way to share data across the app.
  */
-export class VariableService {
+class VariableService {
     private variables: {
         [key: string]: BehaviorSubject<any>,
         isDevMode: BehaviorSubject<boolean>,
@@ -40,4 +40,9 @@ export class VariableService {
     public readonly setVar = (key: string, value: any): void => {
         this.variables[key].next(value);
     }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+export {
+    VariableService,
 }

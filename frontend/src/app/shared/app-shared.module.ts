@@ -28,7 +28,7 @@ import {VariableService} from './services/variable.service';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 /** Contains code that is common to or shared between all or most other modules. */
-export class AppSharedModule {
+class AppSharedModule {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Provides singleton services that should only be initialized once. */
@@ -45,4 +45,9 @@ export class AppSharedModule {
             ],
         };
     }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+export {
+    AppSharedModule,
 }

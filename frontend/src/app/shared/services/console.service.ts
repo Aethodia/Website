@@ -4,7 +4,7 @@ import {VariableService} from './variable.service';
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
 /** Wraps the console object.  Primary purpose is to disable logging in prod. */
-export class ConsoleService extends Console {
+class ConsoleService extends Console {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
@@ -31,4 +31,9 @@ export class ConsoleService extends Console {
         // Done
         return this;
     }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+export {
+    ConsoleService,
 }

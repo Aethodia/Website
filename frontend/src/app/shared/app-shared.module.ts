@@ -15,14 +15,7 @@ import {VariableService} from './services/variable.service';
         CommonModule,
     ],
     exports: [],
-    declarations: [
-        AnalyticsService,
-        BackendService,
-        ConsoleService,
-        LocaleService,
-        UtilityService,
-        VariableService,
-    ],
+    declarations: [],
     providers: [],
 })
 

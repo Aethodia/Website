@@ -2,6 +2,7 @@ import {NgModule, ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {AnalyticsService} from './services/analytics.service';
 import {BackendService} from './services/backend.service';
 import {ConsoleService} from './services/console.service';
 import {LocaleService} from './services/locale.service';
@@ -15,6 +16,7 @@ import {VariableService} from './services/variable.service';
     ],
     exports: [],
     declarations: [
+        AnalyticsService,
         BackendService,
         ConsoleService,
         LocaleService,
@@ -34,6 +36,7 @@ class AppSharedModule {
         return {
             ngModule: AppSharedModule,
             providers: [
+                AnalyticsService,
                 BackendService,
                 ConsoleService,
                 LocaleService,

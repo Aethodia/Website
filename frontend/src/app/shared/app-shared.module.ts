@@ -4,7 +4,6 @@ import {CommonModule} from '@angular/common';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {BackendService} from './services/backend.service';
 import {ConsoleService} from './services/console.service';
-import {I18nService} from './services/i18n.service';
 import {LocaleService} from './services/locale.service';
 import {UtilityService} from './services/utility.service';
 import {VariableService} from './services/variable.service';
@@ -18,7 +17,6 @@ import {VariableService} from './services/variable.service';
     declarations: [
         BackendService,
         ConsoleService,
-        I18nService,
         LocaleService,
         UtilityService,
         VariableService,
@@ -38,7 +36,6 @@ class AppSharedModule {
             providers: [
                 BackendService,
                 ConsoleService,
-                I18nService,
                 LocaleService,
                 UtilityService,
                 VariableService,

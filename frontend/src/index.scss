@@ -1,12 +1,12 @@
-$styles: './styles';
+//NOTE: We can't use variables in @import paths until this GitHub issue is closed:  https://github.com/sass/sass/issues/739
 
 // Essentials
 // -----------------------------------------------------------------------------
-@import '#{$styles}/_variables';
-@import '#{$styles}/_defaults';
+@import './styles/_variables';
+@import './styles/_defaults';
 
 // Classes
 // -----------------------------------------------------------------------------
-@import '#{$styles}/_fonts';
-@import '#{$styles}/_grids';
-@import '#{$styles}/_spacing';
+@import './styles/_fonts';
+@import './styles/_grids';
+@import './styles/_spacing';

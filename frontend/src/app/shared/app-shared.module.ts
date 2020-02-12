@@ -24,7 +24,7 @@ class AppSharedModule {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Provides singleton services that should only be initialized once. */
-    static readonly forRoot = (): ModuleWithProviders => {
+    public static forRoot(): ModuleWithProviders<AppSharedModule> {
         return {
             ngModule: AppSharedModule,
             providers: [

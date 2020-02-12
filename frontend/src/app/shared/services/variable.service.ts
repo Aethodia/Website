@@ -1,5 +1,5 @@
-import {Injectable, isDevMode, EventEmitter} from '@angular/core';
-import {ConsoleService} from './console.service';
+import {Injectable, isDevMode} from '@angular/core';
+import {BehaviorSubject} from 'rxjs';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
@@ -8,19 +8,14 @@ import {ConsoleService} from './console.service';
  */
 export class VariableService {
     private variables: {
-        isDevMode: {
-            value: boolean;
-            emitter: EventEmitter<boolean>
-        }
+        [key: string]: BehaviorSubject<any>,
+        isDevMode: BehaviorSubject<boolean>,
     };
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor() {
         this.variables = {
-            isDevMode: {
-                value: isDevMode(),
-                emitter: new EventEmitter(true),
-            },
+            isDevMode: new BehaviorSubject(isDevMode()),
         };
         return this;
     }
@@ -28,13 +23,13 @@ export class VariableService {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Gets an environment variable
      * @param  key The name of the variable you want to access.
-     * @return the requested variable.
+     * @return the requested variable inside of a Subject.
      */
-    public readonly getVar = (key: string): EventEmitter<any> => {
+    public readonly getVar = (key: string): BehaviorSubject<any> => {
         if(this.variables[key] === undefined) {
             throw new TypeError(`this.variables['${key}'] === undefined`);
         }
-        return this.variables[key].emitter;
+        return this.variables[key];
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -43,7 +38,6 @@ export class VariableService {
      * @param value What you want to set the variable to.
      */
     public readonly setVar = (key: string, value: any): void => {
-        this.variables[key].value = value;
-        this.variables[key].emitter.emit(this.variables[key].value);
+        this.variables[key].next(value);
     }
 }

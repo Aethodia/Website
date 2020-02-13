@@ -2,7 +2,7 @@
 	"start_url": "theodia.tech",
 	"scope": "/",
 
-	"background_color": "#585858",
+	"background_color": "#212121",
 	"theme_color": "#9a4d9a",
 
 	"display": "browser",

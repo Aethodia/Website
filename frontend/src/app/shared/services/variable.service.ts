@@ -25,7 +25,7 @@ class VariableService {
      * @param  key The name of the variable you want to access.
      * @return the requested variable inside of a Subject.
      */
-    public readonly getVar = (key: string): BehaviorSubject<any> => {
+    public readonly getVar = <T>(key: string): BehaviorSubject<T> => {
         if(this.variables[key] === undefined) {
             throw new ReferenceError(`this.variables['${key}'] === undefined`);
         }
@@ -37,7 +37,7 @@ class VariableService {
      * @param key   The name of the variable you want to modify.
      * @param value What you want to set the variable to.
      */
-    public readonly setVar = (key: string, value: any): void => {
+    public readonly setVar = <T>(key: string, value: T): void => {
         this.variables[key].next(value);
     }
 }

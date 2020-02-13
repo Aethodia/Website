@@ -23,14 +23,12 @@
                         "polyfills": "src/env/effects.ts",
                         "tsConfig": "tsconfig.app.json",
                         "aot": true,
-                        "assets": [
-                            {
-                                "input": "src/res",
-                                "output": "/",
-                                "glob": "**/*",
-                                "ignore": ["**/.*"]
-                            }
-                        ],
+                        "assets": [{
+                            "input": "src/assets",
+                            "output": "/",
+                            "glob": "**/*",
+                            "ignore": ["**/.*"]
+                        }],
                         "styles": [
                             "src/index.scss"
                         ],

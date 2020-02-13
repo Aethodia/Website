@@ -1,15 +1,12 @@
 {
-	"name": "The official website of the Technocratic Republic of Theodia",
-	"short_name": "Official Website of Theodia",
+	"start_url": "theodia.tech",
+	"scope": "/",
 
-	"theme_color": "#585858",
-	"background_color": "#212121",
-
-	"Scope": "/",
-	"start_url": "/",
+	"background_color": "#585858",
+	"theme_color": "#9a4d9a",
 
 	"display": "browser",
-	"splash_pages": null,
+	"orientation": "portrait-primary",
 
 	"icons": [{
 		"type": "image/png",
@@ -43,5 +40,20 @@
 		"type": "image/png",
 		"src": "/res/ico/sq/512.png",
 		"sizes": "512x512"
-	}]
+	}],
+
+	"lang": "en-US",
+	"dir": "ltr",
+
+	"short_name": "Theodia.tech",
+	"name": "Official website of Theodia",
+	"description": "The official website of the Technocratic Republic of Theodia",
+
+	"iarc_rating_id": "",
+	"categories": ["government"],
+
+	"related_applications": [],
+	"prefer_related_applications": false,
+
+	"screenshots": []
 }

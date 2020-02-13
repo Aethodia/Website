@@ -27,7 +27,7 @@ class VariableService {
      */
     public readonly getVar = (key: string): BehaviorSubject<any> => {
         if(this.variables[key] === undefined) {
-            throw new TypeError(`this.variables['${key}'] === undefined`);
+            throw new ReferenceError(`this.variables['${key}'] === undefined`);
         }
         return this.variables[key];
     }

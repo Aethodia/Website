@@ -1,8 +1,3 @@
 #!/usr/bin/env npx browserslist
 ## https://github.com/browserslist/browserslist/README.md
-
-## Inclusions
-maintained node versions
-
-## Exclusions
-not current node #NOTE: LTSs only.
+current node

@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Route, RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppRoutingComponent} from './app-routing.component';
+import {AppRoutingComponent} from './routing.component';
 import {AppMainComponent} from './main/main.module';
 
 ////////////////////////////////////////////////////////////////////////////////

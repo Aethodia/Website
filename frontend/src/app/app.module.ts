@@ -2,12 +2,12 @@ import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppRoutingModule} from './app-routing.module';
+import {AppRoutingModule} from './routing.module';
 import {AppSharedModule} from './shared/shared.module';
 import {AppMainModule} from './main/main.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppRoutingComponent} from './app-routing.module';
+import {AppRoutingComponent} from './routing.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({

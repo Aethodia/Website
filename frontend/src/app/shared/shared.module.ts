@@ -13,9 +13,6 @@ import {AppVariableService} from './services/variable.service';
     imports: [
         CommonModule,
     ],
-    exports: [],
-    declarations: [],
-    providers: [],
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

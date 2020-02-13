@@ -39,7 +39,7 @@
                         }],
 
                         "aot": true,
-                        "extractCss": true
+                        "extractCss": false
                     },
 
                     "configurations": {

@@ -1,18 +1,13 @@
 #!/usr/bin/env npx browserslist
-## https://github.com/browserslist/browserslist
+## https://github.com/browserslist/browserslist/README.md
 
-## Explicit matching
+## Inclusions
+> 0%
 maintained node versions
-Firefox ESR
-
-## Generic matching
-cover 95.45%    #NOTE: This is 2σ in normal distribution.
-last 0.5 years  #NOTE: Anything released in the past half-year deserves a chance.
-last 2 versions #NOTE: This gives people time to update.
 
 ## Exclusions
-not dead
 not < 0.27%      #NOTE: This is -3σ in normal distribution.
+not current node #NOTE: LTSs only.
+not dead
 not ie >= 0      #NOTE: We explicitly unsupport IE.
 not ie_mob >= 0  #NOTE: We explicitly unsupport IE.
-not current node #NOTE: LTSs only.

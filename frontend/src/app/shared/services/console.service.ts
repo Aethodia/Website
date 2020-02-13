@@ -15,9 +15,9 @@ class ConsoleService extends Console {
         super();
 
         // If not dev mode, replace all the properties.
-        !this.varSvc.getVar('isDevMode').subscribe(
+        this.varSvc.getVar('isDevMode').subscribe(
             (isDevMode: boolean): void => {
-                if(isDevMode) {
+                if(!isDevMode) {
                     for(const key in this) {
                         if(this.hasOwnProperty(key)) {
                             switch(key) {
@@ -31,7 +31,7 @@ class ConsoleService extends Console {
 
                                 // Wipe functions we do not want to keep
                                 default:
-                                    this[key] = UtilityCode.new(key);
+                                    this[key] = UtilityCode.new(this[key]);
                             }
                         }
                     }

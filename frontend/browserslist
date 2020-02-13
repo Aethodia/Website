@@ -1,9 +1,11 @@
-# npx browserslist
+#!/usr/bin/env npx browserslist
 
-> 0.5%
-last 2 versions
+## Explicit matching
+# node 10
 
-Firefox ESR
+## Generic matching
+last 0.5 years
+cover 95% in World ## (95% is 2σ in normal distribution)
 
-not dead
-not IE 9-11
+## Exclusions
+not IE < 99

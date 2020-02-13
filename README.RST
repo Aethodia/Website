@@ -48,7 +48,8 @@ Source
 
 - TypeScript
 - Sass
-- XHTML5 (polyglot)
+- `XHTML5 (polyglot)`_
+.. _`XHTML5 (polyglot)`: https://dev.w3.org/html5/html-polyglot/html-polyglot.html
 
 Compiled
 --------------------------------------------------------------------------------

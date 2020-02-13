@@ -1,23 +1,27 @@
 {
     "compileOnSave": false,
     "compilerOptions": {
+
         "baseUrl": "./",
         "outDir": "./out-tsc",
-        "sourceMap": true,
-        "declaration": false,
-        "downlevelIteration": true,
-        "experimentalDecorators": true,
-        "module": "esnext",
+
         "moduleResolution": "node",
-        "importHelpers": true,
-        "target": "es2015",
+        "module": "ESNext",
+        "target": "ES6",
+
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
         "typeRoots": [
             "node_modules/@types"
         ],
-        "lib": [
-            "esnext",
-            "dom"
-        ]
+
+        "declaration": false,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "sourceMap": true,
     },
     "angularCompilerOptions": {
         "fullTemplateTypeCheck": true,

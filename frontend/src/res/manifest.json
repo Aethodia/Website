@@ -1,8 +1,47 @@
 {
+	"name": "The official website of the Technocratic Republic of Theodia",
+	"short_name": "Official Website of Theodia",
+
+	"theme_color": "#585858",
+	"background_color": "#212121",
+
+	"Scope": "/",
 	"start_url": "/",
+
+	"display": "browser",
+	"splash_pages": null,
+
 	"icons": [{
-		"src": "icon.png",
 		"type": "image/png",
+		"src": "/res/ico/sq/72.png",
+		"sizes": "72x72"
+	}, {
+		"type": "image/png",
+		"src": "/res/ico/sq/96.png",
+		"sizes": "96x96"
+	}, {
+		"type": "image/png",
+		"src": "/res/ico/sq/128.png",
+		"sizes": "128x128"
+	}, {
+		"type": "image/png",
+		"src": "/res/ico/sq/144.png",
+		"sizes": "144x144"
+	}, {
+		"type": "image/png",
+		"src": "/res/ico/sq/152.png",
+		"sizes": "152x152"
+	}, {
+		"type": "image/png",
+		"src": "/res/ico/sq/192.png",
 		"sizes": "192x192"
+	}, {
+		"type": "image/png",
+		"src": "/res/ico/sq/384.png",
+		"sizes": "384x384"
+	}, {
+		"type": "image/png",
+		"src": "/res/ico/sq/512.png",
+		"sizes": "512x512"
 	}]
 }

@@ -10,36 +10,36 @@
 
 	"icons": [{
 		"type": "image/png",
-		"src": "/res/ico/tran/72.png",
-		"sizes": "72x72"
+		"sizes": "72x72",
+		"src": "/res/ico/tran/72.png"
 	}, {
 		"type": "image/png",
-		"src": "/res/ico/tran/96.png",
-		"sizes": "96x96"
+		"sizes": "96x96",
+		"src": "/res/ico/tran/96.png"
 	}, {
 		"type": "image/png",
-		"src": "/res/ico/tran/128.png",
-		"sizes": "128x128"
+		"sizes": "128x128",
+		"src": "/res/ico/tran/128.png"
 	}, {
 		"type": "image/png",
-		"src": "/res/ico/tran/144.png",
-		"sizes": "144x144"
+		"sizes": "144x144",
+		"src": "/res/ico/tran/144.png"
 	}, {
 		"type": "image/png",
-		"src": "/res/ico/tran/152.png",
-		"sizes": "152x152"
+		"sizes": "152x152",
+		"src": "/res/ico/tran/152.png"
 	}, {
 		"type": "image/png",
-		"src": "/res/ico/tran/192.png",
-		"sizes": "192x192"
+		"sizes": "192x192",
+		"src": "/res/ico/tran/192.png"
 	}, {
 		"type": "image/png",
-		"src": "/res/ico/tran/384.png",
-		"sizes": "384x384"
+		"sizes": "384x384",
+		"src": "/res/ico/tran/384.png"
 	}, {
 		"type": "image/png",
-		"src": "/res/ico/tran/512.png",
-		"sizes": "512x512"
+		"sizes": "512x512",
+		"src": "/res/ico/tran/512.png"
 	}],
 
 	"lang": "en-US",

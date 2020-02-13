@@ -2,12 +2,12 @@
 ## https://github.com/browserslist/browserslist/README.md
 
 ## Inclusions
-> 0%
-maintained node versions
+> 99.73%              #NOTE: This is 3σ in normal distribution.
+last 2 major versions #NOTE: This gives people time to update.
+last 0.5 years        #NOTE: This gives new and actively-developed browsers a chance.
+Firefox ESR
 
 ## Exclusions
-not < 0.27%      #NOTE: This is -3σ in normal distribution.
-not current node #NOTE: LTSs only.
 not dead
 not ie >= 0      #NOTE: We explicitly unsupport IE.
 not ie_mob >= 0  #NOTE: We explicitly unsupport IE.

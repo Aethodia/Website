@@ -3,10 +3,10 @@ import {BehaviorSubject} from 'rxjs';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
-/** Asynchonously stores and distributes variables.
+/** Asynchronously stores and distributes variables.
  *  A great way to share data across the app.
  */
-class VariableService {
+class AppVariableService {
     private variables: {
         [key: string]: BehaviorSubject<any>,
         isDevMode: BehaviorSubject<boolean>,
@@ -44,5 +44,5 @@ class VariableService {
 
 ////////////////////////////////////////////////////////////////////////////////
 export {
-    VariableService,
+    AppVariableService,
 }

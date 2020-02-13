@@ -3,8 +3,11 @@ import {BrowserModule} from '@angular/platform-browser';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AppRoutingModule} from './app-routing.module';
-import {AppSharedModule} from './shared/app-shared.module';
-import {AppMainModule} from './main/app-main.module';
+import {AppSharedModule} from './shared/shared.module';
+import {AppMainModule} from './main/main.module';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {AppRoutingComponent} from './app-routing.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -16,10 +19,9 @@ import {AppMainModule} from './main/app-main.module';
         AppSharedModule.forRoot(),
         AppMainModule,
     ],
-    exports: [],
-    declarations: [],
-    providers: [],
-    bootstrap: [],
+    bootstrap: [
+        AppRoutingComponent,
+    ],
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

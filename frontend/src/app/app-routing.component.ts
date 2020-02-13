@@ -1,13 +1,12 @@
-import {Injectable} from '@angular/core';
+import {Component} from "@angular/core";
 
 ////////////////////////////////////////////////////////////////////////////////
-@Injectable()
-/** Handles analytics. */
-class AppAnalyticsService {
-    //TODO
-}
+@Component({
+    template: '<router-outlet></router-outlet>',
+})
+class AppRoutingComponent {}
 
 ////////////////////////////////////////////////////////////////////////////////
 export {
-    AppAnalyticsService,
+    AppRoutingComponent,
 }

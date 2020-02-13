@@ -1,13 +1,27 @@
 import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
+import {Route, RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-const routes: Routes = [];
+import {AppRoutingComponent} from './app-routing.component';
+import {AppMainComponent} from './main/main.module';
+
+////////////////////////////////////////////////////////////////////////////////
+const routes: Route[] = [{
+    path: '',
+    component: AppMainComponent,
+}];
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
-    imports: [RouterModule.forRoot(routes)],
-    exports: [RouterModule]
+    imports: [
+        RouterModule.forRoot(routes),
+    ],
+    exports: [
+        RouterModule,
+    ],
+    declarations: [
+        AppRoutingComponent,
+    ],
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -16,4 +30,5 @@ class AppRoutingModule {}
 ////////////////////////////////////////////////////////////////////////////////
 export {
     AppRoutingModule,
+    AppRoutingComponent,
 }

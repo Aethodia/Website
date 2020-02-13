@@ -9,25 +9,27 @@
 		"website"
 	],
 	"homepage": "https://theodia.tech",
-	"private": true,
+	"bugs": "https://GitHub.com/TheodiaGov/Website/issues",
 	"repository": {
 		"type": "git",
 		"url": "https://GitHub.com/TheodiaGov/Website"
 	},
-	"engines": {
-		"npm": ">6"
-	},
-	"main": "src/index.ts",
+	"private": true,
 	"directories": {
-		"bin": "dist",
-		"lib": "src"
+		"bin": "./dist",
+		"lib": "./src"
 	},
+	"main": "./src/index.ts",
 	"scripts": {
 		"start": "npx ng serve",
 		"build": "npx build",
 		"test": "npx test",
 		"lint": "npx lint",
-		"e2e": "npx e2e"
+		"e2e": "npx e2e",
+		"postinstall": "npm rebuild && npm dedupe"
+	},
+	"engines": {
+		"npm": ">6"
 	},
 	"dependencies": {
 		"@angular/animations": "^9",

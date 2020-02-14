@@ -32,6 +32,4 @@ import {AppComponent} from './app.component';
 class AppModule {}
 
 ////////////////////////////////////////////////////////////////////////////////
-export {
-    AppModule,
-}
+export {AppModule}

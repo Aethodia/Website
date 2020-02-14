@@ -7,6 +7,4 @@ import {Component} from "@angular/core";
 class AppMainComponent {}
 
 ////////////////////////////////////////////////////////////////////////////////
-export {
-    AppMainComponent,
-}
+export {AppMainComponent}

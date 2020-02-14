@@ -1,67 +1,69 @@
 {
-	"name": "@theodia/frontend",
-	"version": "0.0.0",
-	"license": "SEE LICENSE IN ../Copyright.txt",
-	"description": "The national website of the Technocratic Republic of Theodia",
-	"keywords": [
-		"micronation",
-		"Theodia",
-		"website"
-	],
-	"homepage": "https://theodia.tech",
-	"bugs": "https://GitHub.com/TheodiaGov/Website/issues",
-	"repository": {
-		"type": "git",
-		"url": "https://GitHub.com/TheodiaGov/Website"
-	},
-	"private": true,
-	"directories": {
-		"bin": "./dist",
-		"lib": "./src"
-	},
-	"main": "./src/index.ts",
-	"scripts": {
-		"start": "npx ng serve",
-		"build": "npx build",
-		"test": "npx test",
-		"lint": "npx lint",
-		"e2e": "npx e2e",
-		"postinstall": "npm rebuild && npm dedupe"
-	},
-	"engines": {
-		"npm": ">6"
-	},
-	"dependencies": {
-		"@angular/animations": "^9",
-		"@angular/common": "^9",
-		"@angular/compiler": "^9",
-		"@angular/core": "^9",
-		"@angular/forms": "^9",
-		"@angular/platform-browser": "^9",
-		"@angular/platform-browser-dynamic": "^9",
-		"@angular/router": "^9",
-		"lodash": "^4",
-		"rxjs": "^6",
-		"tslib": "^1",
-		"zone.js": "~0.10"
-	},
-	"devDependencies": {
-		"@angular-devkit/build-angular": "~0.900",
-		"@angular/cli": "^9",
-		"@angular/compiler-cli": "^9",
-		"@angular/language-service": "^9",
-		"@types/lodash": "^4",
-		"@types/node": "^12",
-		"@typescript-eslint/eslint-plugin": "^2",
-		"@typescript-eslint/parser": "^2",
-		"codelyzer": "^5",
-		"eslint": "^6",
-		"eslint-config-standard": "^14",
-		"eslint-plugin-import": "^2",
-		"eslint-plugin-node": "^11",
-		"eslint-plugin-promise": "^4",
-		"eslint-plugin-standard": "^4",
-		"ts-node": "^8",
-		"typescript": "^3"
-	}
+  "name": "@theodia/frontend",
+  "version": "0.0.0",
+  "license": "SEE LICENSE IN ../Copyright.txt",
+  "description": "The national website of the Technocratic Republic of Theodia",
+  "keywords": [
+    "micronation",
+    "Theodia",
+    "website"
+  ],
+  "homepage": "https://theodia.tech",
+  "bugs": "https://GitHub.com/TheodiaGov/Website/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://GitHub.com/TheodiaGov/Website"
+  },
+  "private": true,
+  "directories": {
+    "bin": "./dist",
+    "lib": "./src"
+  },
+  "main": "./src/index.ts",
+  "scripts": {
+    "start": "npx ng serve",
+    "build": "npx build",
+    "test": "npx test",
+    "lint": "npx lint",
+    "e2e": "npx e2e",
+    "postinstall": "npm rebuild && npm dedupe"
+  },
+  "engines": {
+    "npm": ">6"
+  },
+  "dependencies": {
+    "@angular/animations": "^9",
+    "@angular/cdk": "^9",
+    "@angular/common": "^9",
+    "@angular/compiler": "^9",
+    "@angular/core": "^9",
+    "@angular/forms": "^9",
+    "@angular/material": "^9",
+    "@angular/platform-browser": "^9",
+    "@angular/platform-browser-dynamic": "^9",
+    "@angular/router": "^9",
+    "lodash": "^4",
+    "rxjs": "^6",
+    "tslib": "^1",
+    "zone.js": "~0.10"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.900",
+    "@angular/cli": "^9",
+    "@angular/compiler-cli": "^9",
+    "@angular/language-service": "^9",
+    "@types/lodash": "^4",
+    "@types/node": "^12",
+    "@typescript-eslint/eslint-plugin": "^2",
+    "@typescript-eslint/parser": "^2",
+    "codelyzer": "^5",
+    "eslint": "^6",
+    "eslint-config-standard": "^14",
+    "eslint-plugin-import": "^2",
+    "eslint-plugin-node": "^11",
+    "eslint-plugin-promise": "^4",
+    "eslint-plugin-standard": "^4",
+    "ts-node": "^8",
+    "typescript": "^3"
+  }
 }

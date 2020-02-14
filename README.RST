@@ -37,8 +37,9 @@ Stack
 
 - Node.js (webserver)
 - Ignite (database)
-- Angular (front-end framework)
 - NestJS (back-end framework)
+- Angular (front-end framework)
+- Angular Material (UI suite)
 
 Code
 ================================================================================

@@ -16,14 +16,14 @@ import {AppVariableService} from './services/variable.service';
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-/** Contains code that is common to or shared between all or most other modules. */
-class AppSharedModule {
+/** Contains code that is essential to the basic functioning of the application. */
+class AppMetaModule {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Provides singleton services that should only be initialized once. */
-    public static forRoot(): ModuleWithProviders<AppSharedModule> {
+    public static forRoot(): ModuleWithProviders<AppMetaModule> {
         return {
-            ngModule: AppSharedModule,
+            ngModule: AppMetaModule,
             providers: [
                 AppAnalyticsService,
                 AppBackendService,
@@ -37,5 +37,5 @@ class AppSharedModule {
 
 ////////////////////////////////////////////////////////////////////////////////
 export {
-    AppSharedModule,
+    AppMetaModule,
 }

@@ -3,7 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppSharedModule} from './shared/shared.module';
+import {AppMetaModule} from './meta/meta.module';
 import {AppMainModule} from './main/main.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -17,7 +17,7 @@ import {AppComponent} from './app.component';
         RouterModule.forRoot(appRoutes),
 
         // Custom
-        AppSharedModule.forRoot(),
+        AppMetaModule.forRoot(),
         AppMainModule,
     ],
     declarations: [

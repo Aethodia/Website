@@ -24,7 +24,7 @@
                         "tsConfig": "tsconfig.app.json",
                         "outputPath": "dist",
 
-                        "index": "src/index.xhtml",
+                        "index": "src/index.html",
                         "main": "src/index.ts",
                         "polyfills": "src/env/polyfills.ts",
                         "scripts": [],
@@ -39,7 +39,7 @@
                         }],
 
                         "aot": true,
-                        "extractCss": false
+                        "extractCss": true
                     },
 
                     "configurations": {

@@ -49,6 +49,9 @@ Source
 - TypeScript
 - Sass
 - `XHTML5 (polyglot)`_
+
+  - With limitations: Angular doesn't support XHTML, so we have to leave out XML-specific tags, and use HTML mimetypes and extensions.  Apart from this, we are following the rules of Polyglot XHTML5.
+
 .. _`XHTML5 (polyglot)`: https://dev.w3.org/html5/html-polyglot/html-polyglot.html
 
 Compiled

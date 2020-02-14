@@ -4,9 +4,11 @@ import {Component} from "@angular/core";
 @Component({
     template: '<router-outlet></router-outlet>',
 })
-class AppRoutingComponent {}
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+class AppComponent {}
 
 ////////////////////////////////////////////////////////////////////////////////
 export {
-    AppRoutingComponent,
+    AppComponent,
 }

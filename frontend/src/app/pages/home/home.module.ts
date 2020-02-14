@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppMainComponent} from './main.component';
+import {AppPagesHomeComponent} from './home.component';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -11,16 +11,16 @@ import {AppMainComponent} from './main.component';
     ],
     exports: [],
     declarations: [
-        AppMainComponent,
+        AppPagesHomeComponent,
     ],
     providers: [],
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-class AppMainModule {}
+class AppPagesHomeModule {}
 
 ////////////////////////////////////////////////////////////////////////////////
 export {
-    AppMainModule,
-    AppMainComponent,
+    AppPagesHomeModule,
+    AppPagesHomeComponent,
 }

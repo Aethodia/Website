@@ -5,7 +5,7 @@ import {RouterModule} from '@angular/router';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AppMetaModule} from './meta/meta.module';
 import {AppSharedModule} from './shared/shared.module';
-import {AppMainModule} from './main/main.module';
+import {AppPagesHomeModule} from './pages/home/home.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {appRoutes} from './app.routes';
@@ -20,7 +20,7 @@ import {AppComponent} from './app.component';
         // Custom
         AppMetaModule.forRoot(),
         AppSharedModule,
-        AppMainModule,
+        AppPagesHomeModule,
     ],
     declarations: [
         AppComponent,

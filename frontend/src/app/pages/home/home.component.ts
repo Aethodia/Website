@@ -2,9 +2,9 @@ import {Component} from "@angular/core";
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
-    templateUrl: './main.html',
+    templateUrl: './home.html',
 })
-class AppMainComponent {}
+class AppPagesHomeComponent {}
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppMainComponent}
+export {AppPagesHomeComponent}

@@ -1,12 +1,12 @@
 import {Route} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppMainComponent} from "./main/main.module";
+import {AppPagesHomeComponent} from "./pages/home/home.module";
 
 ////////////////////////////////////////////////////////////////////////////////
 const appRoutes: Route[] = [{
     path: '',
-    component: AppMainComponent,
+    component: AppPagesHomeComponent,
 }];
 
 ////////////////////////////////////////////////////////////////////////////////

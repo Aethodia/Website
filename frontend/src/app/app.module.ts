@@ -3,13 +3,14 @@ import {BrowserModule} from '@angular/platform-browser';
 import {RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {appRoutes} from './app.routes';
+import {AppComponent} from './app.component';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AppMetaModule} from './meta/meta.module';
 import {AppSharedModule} from './shared/shared.module';
 import {AppPagesHomeModule} from './pages/home/home.module';
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {appRoutes} from './app.routes';
-import {AppComponent} from './app.component';
+import {AppPagesErrorModule} from './pages/error/error.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -17,9 +18,12 @@ import {AppComponent} from './app.component';
         BrowserModule,
         RouterModule.forRoot(appRoutes),
 
-        // Custom
+        // Common
         AppMetaModule.forRoot(),
         AppSharedModule,
+
+        // Pages
+        AppPagesErrorModule,
         AppPagesHomeModule,
     ],
     declarations: [

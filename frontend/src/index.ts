@@ -6,19 +6,25 @@ import {environment} from './env/env';
 import {AppModule} from './app/app.module';
 
 ////////////////////////////////////////////////////////////////////////////////
-const index = async(): Promise<void> => {
+class Index {
 
-    if(environment.production) {
-        enableProdMode();
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    constructor() {
+        if(environment.production) {
+            enableProdMode();
+        }
     }
 
-    try {
-        await platformBrowserDynamic().bootstrapModule(AppModule)
-    } catch(error) {
-        console.error(error);
-    }
-};
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    public readonly start = async(): Promise<void> => {
+        try {
+            await platformBrowserDynamic().bootstrapModule(AppModule)
+        } catch(error) {
+            console.error(error);
+        }
+    };
+}
 
 ////////////////////////////////////////////////////////////////////////////////
-export {index}
-index();
+export {Index}
+(new Index()).start();

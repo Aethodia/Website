@@ -1,13 +1,24 @@
 import {enableProdMode} from '@angular/core';
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 
-import {AppModule} from './app/app.module';
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {environment} from './env/env';
+import {AppModule} from './app/app.module';
 
-if(environment.production) {
-    enableProdMode();
-}
+////////////////////////////////////////////////////////////////////////////////
+const index = async(): Promise<void> => {
 
-platformBrowserDynamic()
-    .bootstrapModule(AppModule)
-      	.catch(error => console.error(error));
+    if(environment.production) {
+        enableProdMode();
+    }
+
+    try {
+        await platformBrowserDynamic().bootstrapModule(AppModule)
+    } catch(error) {
+        console.error(error);
+    }
+};
+
+////////////////////////////////////////////////////////////////////////////////
+export {index}
+index();

@@ -35,11 +35,24 @@ Technologies
 Stack
 ================================================================================
 
-- Node.js (webserver)
-- Ignite (database)
-- NestJS (back-end framework)
-- Angular (front-end framework)
-- Angular Material (UI suite)
+- Front-end
+
+  - Angular (framework)
+  - Angular Material (UI suite)
+
+- Back-end
+
+  - NestJS
+  - Fastify
+
+- Server
+
+  - Node.js
+  - Nginx (reverse proxy)
+
+- Database
+
+  - Ignite
 
 Code
 ================================================================================

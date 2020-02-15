@@ -10,7 +10,7 @@ class Index {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor() {
-        if(environment.production) {
+        if(environment.prodMode) {
             enableProdMode();
         }
     }

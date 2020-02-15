@@ -12,7 +12,7 @@ import {environment} from './env/env';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 (window as typeof globalThis).__Zone_enable_cross_context_check = true;
 import 'zone.js/dist/zone';
-if(!environment.production) {
+if(!environment.prodMode) {
     require('zone.js/dist/zone-error');
 }
 

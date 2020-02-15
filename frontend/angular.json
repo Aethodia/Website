@@ -26,7 +26,7 @@
 
                         "index": "src/index.html",
                         "main": "src/index.ts",
-                        "polyfills": "src/env/polyfills.ts",
+                        "polyfills": "src/polyfills.ts",
                         "scripts": [],
                         "styles": [
                             "src/index.scss"
@@ -46,7 +46,7 @@
                         "production": {
                             "fileReplacements": [{
                                 "replace": "src/env/env.ts",
-                                "with": "src/env/env.prod.ts"
+                                "with": "src/env/prod.env.ts"
                             }],
                             "budgets": [{
                                 "type": "initial",

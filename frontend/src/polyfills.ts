@@ -1,4 +1,4 @@
-import {environment} from './env';
+import {environment} from './env/env';
 
 ////////////////////////////////////////////////////////////////////////////////
 // This file contains side-effects required for the application to work correctly.

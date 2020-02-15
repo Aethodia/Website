@@ -39,7 +39,14 @@
                         }],
 
                         "aot": true,
-                        "extractCss": true
+                        "buildOptimizer": true,
+                        "extractCss": true,
+                        "extractLicenses": false,
+                        "namedChunks": true,
+                        "optimization": false,
+                        "outputHashing": "none",
+                        "sourceMap": true,
+                        "vendorChunk": true
                     },
 
                     "configurations": {
@@ -58,13 +65,10 @@
                                 "maximumError": "10kb"
                             }],
 
-                            "buildOptimizer": true,
                             "extractLicenses": true,
                             "namedChunks": false,
                             "optimization": true,
-                            "outputHashing": "all",
-                            "sourceMap": false,
-                            "vendorChunk": false
+                            "sourceMap": false
                         }
                     }
                 },

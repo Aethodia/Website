@@ -35,30 +35,29 @@ Technologies
 Stack
 ================================================================================
 
-- Front-end
+**Front-end**
 
-  - Angular (framework)
-  - Angular Material (UI suite)
+- Angular (framework)
+- Angular Material (UI suite)
 
-- Back-end
+**Back-end**
 
-  - NestJS
-  - Fastify
+- NestJS
+- Fastify
 
-- Server
+**Server**
 
-  - Node.js
-  - Nginx (reverse proxy)
+- Node.js
+- Nginx (reverse proxy)
 
-- Database
+**Database**
 
-  - Ignite
+- Ignite
 
 Code
 ================================================================================
 
-Source
---------------------------------------------------------------------------------
+**Source**
 
 - TypeScript
 - Sass
@@ -68,8 +67,7 @@ Source
 
 .. _`XHTML5 (polyglot)`: https://dev.w3.org/html5/html-polyglot/html-polyglot.html
 
-Compiled
---------------------------------------------------------------------------------
+**Compiled**
 
 - JavaScript (ES6), minified, from TypeScript
 - CSS v3, minified, from Sass
@@ -78,13 +76,11 @@ Compiled
 Documentation
 ================================================================================
 
-Source
---------------------------------------------------------------------------------
+**Source**
 
 - reStructuredText (used for standalone documentation files, and for comments in other languages)
 - ngDoc (used in TypeScript, *etc*)
 
-Compiled
---------------------------------------------------------------------------------
+**Compiled**
 
 - PDF

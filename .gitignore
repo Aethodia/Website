@@ -2,25 +2,27 @@
 .git/
 package-lock.json
 
-## Unversionable
-**/dist/*
-**/node_modules/
-**.bak
-**.db
-**.jar
-**.old
-**.swp
-**.tmp
+## Dynamic/Unversionable
+dist/
+logs/
+node_modules/
+.bak
+.db
+.log
+.jar
+.old
+.swp
+.tmp
 
 ## IDEs
-**/.vscode/
+.vscode/
 
 ## System files
-**/.directory
-**/.DS_Store
-**/desktop.ini
-**/thumbs.db
-**.fuse_hidden*
+.directory
+.DS_Store
+desktop.ini
+thumbs.db
+.fuse_hidden*
 
 # Exceptions
 !.keep

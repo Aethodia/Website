@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+
+      "baseUrl": "./",
+      "outDir": "./dist",
+      "typeRoots": [
+          "node_modules/@types"
+      ],
+
+      "moduleResolution": "node",
+      "module": "CommonJS",
+      "target": "ES6",
+      "lib": [
+          "ESNext",
+          "DOM"
+      ],
+
+      "declaration": false,
+      "removeComments": true,
+      "downlevelIteration": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "incremental": true,
+      "importHelpers": true,
+      "sourceMap": true
+  },
+
+  "exclude": ["node_modules", "dist"]
+}

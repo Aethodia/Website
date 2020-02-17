@@ -1,32 +1,66 @@
 {
-	"name": "@theodia/backend",
-	"version": "0.0.0",
-	"license": "SEE LICENSE IN ../Copyright.txt",
-	"description": "The national website of the Technocratic Republic of Theodia",
-	"keywords": [
-		"micronation",
-		"Theodia",
-		"website"
-	],
-	"homepage": "https://theodia.tech",
-	"private": true,
-	"repository": {
-		"type": "git",
-		"url": "https://GitHub.com/TheodiaGov/Website"
-	},
-	"engines": {
-        "node": "latest",
-        "npm": ">6"
-	},
-	"main": "src/app/main.ts",
-	"directories": {
-		"bin": "dist",
-		"lib": "src"
-	},
-	"scripts": {
-	},
-	"devDependencies": {
-	},
-	"dependencies": {
-	}
+  "name": "@theodia/backend",
+  "version": "0.0.0",
+  "license": "SEE LICENSE IN ../Copyright.txt",
+  "description": "The backend for the national website of the Technocratic Republic of Theodia",
+  "keywords": [
+    "micronation",
+    "Theodia",
+    "website"
+  ],
+  "homepage": "https://theodia.tech",
+  "bugs": "https://GitHub.com/TheodiaGov/Website/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://GitHub.com/TheodiaGov/Website"
+  },
+  "private": true,
+  "directories": {
+    "bin": "./dist",
+    "lib": "./src",
+    "test": "./test"
+  },
+  "type": "commonjs",
+  "main": "./src/main.ts",
+  "scripts": {
+    "postinstall": "npm rebuild && npm dedupe",
+    "format": "npx prettier --write \"src/**/*.ts\"",
+    "lint": "npx eslint \"src/**/*.ts\" --fix",
+    "prebuild": "npx rimraf dist",
+    "build": "npx nest build",
+    "start": "npx nest start",
+    "start:dev": "npx nest start --watch",
+    "start:debug": "npx nest start --watch --debug",
+    "start:prod": "node dist/main"
+  },
+  "engines": {
+    "node": "latest",
+    "npm": ">=6"
+  },
+  "dependencies": {
+    "@nestjs/common": "^6",
+    "@nestjs/core": "^6",
+    "@nestjs/platform-fastify": "^6",
+    "fastify": "^2",
+    "handlebars": "^4",
+    "point-of-view": "^3",
+    "reflect-metadata": "~0.1",
+    "rimraf": "^3",
+    "rxjs": "^6"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^6",
+    "@nestjs/schematics": "^6",
+    "@types/node": "^13",
+    "@typescript-eslint/eslint-plugin": "^2",
+    "@typescript-eslint/parser": "^2",
+    "eslint": "^6",
+    "eslint-config-prettier": "^6",
+    "eslint-plugin-import": "^2",
+    "prettier": "^1",
+    "ts-loader": "^6",
+    "ts-node": "^8",
+    "tsconfig-paths": "^3",
+    "typescript": "^3"
+  }
 }

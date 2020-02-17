@@ -22,10 +22,10 @@
   "main": "./src/index.ts",
   "scripts": {
     "start": "npx ng serve",
-    "build": "npx build",
-    "test": "npx test",
-    "lint": "npx lint",
-    "e2e": "npx e2e",
+    "build": "npx ng build",
+    "test": "npx ng test",
+    "lint": "npx ng lint",
+    "e2e": "npx ng e2e",
     "postinstall": "npm rebuild && npm dedupe"
   },
   "engines": {

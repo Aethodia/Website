@@ -18,7 +18,7 @@ class Index {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public readonly start = async(): Promise<void> => {
         try {
-            await platformBrowserDynamic().bootstrapModule(AppModule)
+            await platformBrowserDynamic().bootstrapModule(AppModule);
         } catch(error) {
             console.error(error);
         }

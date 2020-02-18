@@ -19,7 +19,7 @@
     "bin": "./dist",
     "lib": "./src"
   },
-  "type": "module",
+  "type": "commonjs",
   "main": "./src/index.ts",
   "scripts": {
     "start": "npx ng serve",
@@ -33,6 +33,10 @@
     "npm": ">=6"
   },
   "dependencies": {
+    "@angular-eslint/builder": "~0.0.1",
+    "@angular-eslint/eslint-plugin": "~0.0.1",
+    "@angular-eslint/eslint-plugin-template": "~0.0.1",
+    "@angular-eslint/template-parser": "~0.0.1",
     "@angular/animations": "^9",
     "@angular/cdk": "^9",
     "@angular/common": "^9",

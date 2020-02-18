@@ -93,10 +93,11 @@
                 },
 
                 "lint": {
-                    "builder": "@angular-devkit/build-angular:eslint",
+                    "builder": "@angular-eslint/builder:lint",
                     "options": {
+                        "eslintConfig": ".eslintrc.js",
                         "tsConfig": [
-                            "tsconfig.app.json"
+                          "tsconfig.app.json"
                         ],
                         "exclude": [
                             "**/node_modules/**",

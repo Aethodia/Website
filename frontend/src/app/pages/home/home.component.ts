@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
-    templateUrl: './home.html',
+    templateUrl: './home.component.html',
 })
 class AppPagesHomeComponent {}
 

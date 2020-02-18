@@ -2,7 +2,7 @@ import {Component} from "@angular/core";
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
-    templateUrl: './error.html',
+    templateUrl: './error.component.html',
 })
 class AppPagesErrorComponent {}
 

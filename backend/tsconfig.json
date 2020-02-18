@@ -1,29 +1,29 @@
 {
-  "compilerOptions": {
+    "extends": "../shared/tsconfig.json",
 
-      "baseUrl": "./",
-      "outDir": "./dist",
-      "typeRoots": [
-          "node_modules/@types"
-      ],
+    "compilerOptions": {
 
-      "moduleResolution": "node",
-      "module": "CommonJS",
-      "target": "ES6",
-      "lib": [
-          "ESNext",
-          "DOM"
-      ],
+        "baseUrl": "./",
+        "outDir": "./dist",
 
-      "declaration": false,
-      "removeComments": true,
-      "downlevelIteration": true,
-      "emitDecoratorMetadata": true,
-      "experimentalDecorators": true,
-      "incremental": true,
-      "importHelpers": true,
-      "sourceMap": true
-  },
+        "module": "CommonJS",
+        "lib": [
+            "ESNext",
+            "DOM"
+        ],
+        "typeRoots": [
+            "node_modules/@types"
+        ],
 
-  "exclude": ["node_modules", "dist"]
+        "declaration": false,
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "incremental": true,
+        "sourceMap": true
+    },
+
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
 }

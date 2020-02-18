@@ -1,0 +1,14 @@
+$font-path: '/res/fnt/theodic';
+$font-family: 'Theodic Sans';
+
+////////////////////////////////////////////////////////////////////////////////
+@font-face {
+    font-family: $font-family;
+    src: local('Theodic Sans'),
+         local('TheodicSans'),
+           url($font-path + '5.woff2') format('woff2'),
+           url($font-path + '5.woff')  format('woff');
+   font-weight:    500;
+     font-style:   normal;
+     font-display: block;
+}

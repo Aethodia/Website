@@ -1,5 +1,10 @@
 //NOTE: We can't use variables in @import paths until this GitHub issue is closed:  https://github.com/sass/sass/issues/739
 
+// Font definitions
+// -----------------------------------------------------------------------------
+@import './styles/fonts/theodic-sans.scss';
+$fontpath: '/assets/fonts/'; // This temporary variable is used in the above files.  I'm setting it here to prevent it from being whatever font above comes last in the alphabet.
+
 // Essentials
 // -----------------------------------------------------------------------------
 @import './styles/variables';
@@ -11,6 +16,5 @@
 
 // Classes
 // -----------------------------------------------------------------------------
-@import './styles/fonts';
 @import './styles/grids';
 @import './styles/spacing';

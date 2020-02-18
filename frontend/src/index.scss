@@ -7,14 +7,15 @@ $fontpath: '/assets/fonts/'; // This temporary variable is used in the above fil
 
 // Essentials
 // -----------------------------------------------------------------------------
-@import './styles/variables';
-@import './styles/defaults';
+@import './styles/base/variables';
+@import './styles/base/defaults';
 
 // Libraries
 // -----------------------------------------------------------------------------
-@import './styles/material';
+@import './styles/libs/material';
 
 // Classes
 // -----------------------------------------------------------------------------
-@import './styles/grids';
-@import './styles/spacing';
+@import './styles/classes/fonts';
+@import './styles/classes/grids';
+@import './styles/classes/spacing';

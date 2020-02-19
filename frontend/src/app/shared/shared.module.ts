@@ -15,4 +15,4 @@ import {CommonModule} from '@angular/common';
 class AppSharedModule {}
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppSharedModule}
+export {AppSharedModule};

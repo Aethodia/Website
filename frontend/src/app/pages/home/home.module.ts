@@ -23,4 +23,4 @@ class AppPagesHomeModule {}
 export {
     AppPagesHomeModule,
     AppPagesHomeComponent,
-}
+};

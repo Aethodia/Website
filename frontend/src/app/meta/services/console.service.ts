@@ -36,7 +36,7 @@ class AppConsoleService {
                     // Remove parameters from functions we want to keep
                     case 'warn':
                     case 'error':
-                        console[key] = (message?: any, ...optionalParams: any[]): void => console[key]()
+                        console[key] = (message?: any, ...optionalParams: any[]): void => console[key]();
                         break;
 
                     // Wipe functions we do not want to keep
@@ -52,6 +52,4 @@ class AppConsoleService {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {
-    AppConsoleService,
-}
+export {AppConsoleService};

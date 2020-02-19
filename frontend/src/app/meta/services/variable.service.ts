@@ -43,6 +43,4 @@ class AppVariableService {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {
-    AppVariableService,
-}
+export {AppVariableService};

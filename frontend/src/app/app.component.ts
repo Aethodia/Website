@@ -10,4 +10,4 @@ import {Component} from "@angular/core";
 class AppComponent {}
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppComponent}
+export {AppComponent};

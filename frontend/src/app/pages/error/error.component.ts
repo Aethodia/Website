@@ -7,4 +7,4 @@ import {Component} from "@angular/core";
 class AppPagesErrorComponent {}
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppPagesErrorComponent}
+export {AppPagesErrorComponent};

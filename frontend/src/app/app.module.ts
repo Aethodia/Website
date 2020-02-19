@@ -40,4 +40,4 @@ import {AppPagesErrorModule} from './pages/error/error.module';
 class AppModule {}
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppModule}
+export {AppModule};

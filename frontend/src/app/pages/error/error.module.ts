@@ -23,4 +23,4 @@ class AppPagesErrorModule {}
 export {
     AppPagesErrorModule,
     AppPagesErrorComponent,
-}
+};

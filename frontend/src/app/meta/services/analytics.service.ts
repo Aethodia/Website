@@ -8,6 +8,4 @@ class AppAnalyticsService {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {
-    AppAnalyticsService,
-}
+export {AppAnalyticsService};

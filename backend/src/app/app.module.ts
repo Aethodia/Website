@@ -11,4 +11,4 @@ import {Module} from '@nestjs/common';
 class AppModule {}
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppModule}
+export {AppModule};

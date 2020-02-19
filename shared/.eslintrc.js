@@ -1,10 +1,10 @@
 'use strict';
 module.exports = {
     extends: [],
-    /** https://eslint.org/docs/rules
-     * 0 == 'off'
-     * 1 == 'warn'
-     * 2 == 'error'
+    /**   0 == 'off'
+     * && 1 == 'warn'
+     * && 2 == 'error'
+     * @tutorial https://eslint.org/docs/rules
      */
     rules: {
 
@@ -34,7 +34,7 @@ module.exports = {
         /** disallow `await` inside of loops */
         'no-await-in-loop': 1,
 
-        // Possible Errors
+        //TODO: Possible Errors
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
         /** disallow assignment operators in conditional expressions */
         'no-cond-assign': 0,
@@ -107,7 +107,7 @@ module.exports = {
         /** enforce comparing `typeof` expressions against valid strings */
         'valid-typeof': 0,
 
-        // Best Practices
+        //TODO: Best Practices
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
         /** enforce getter and setter pairs in objects and classes */
         'accessor-pairs': 0,
@@ -268,7 +268,7 @@ module.exports = {
         /** require or disallow "Yoda" conditions */
         'yoda': 0,
 
-        // Variables
+        //TODO: Variables
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
         /** require or disallow initialization in variable declarations */
         'init-declarations': 0,
@@ -293,7 +293,7 @@ module.exports = {
         /** disallow the use of variables before they are defined */
         'no-use-before-define': 0,
 
-        // Node.js and CommonJS
+        //TODO: Node.js and CommonJS
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
         /** require `return` statements after callbacks */
         'callback-return': 0,
@@ -318,7 +318,7 @@ module.exports = {
         /** disallow synchronous methods */
         'no-sync': 0,
 
-        // Stylistic Issues
+        //TODO: Stylistic Issues
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
         /** enforce linebreaks after opening and before closing array brackets */
         'array-bracket-newline': 0,
@@ -505,7 +505,7 @@ module.exports = {
         /** require parenthesis around regex literals */
         'wrap-regex': 0,
 
-        // ECMAScript 6
+        //TODO: ECMAScript 6
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
         /** require braces around arrow function bodies */
         'arrow-body-style': 0,

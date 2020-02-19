@@ -22,30 +22,36 @@ module.exports = {
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
         /** enforce "for" loop update clause moving the counter in the right direction. */
         'for-direction': 2,
-        /** enforce `return` statements in getters */
-        'getter-return': ['error', {allowImplicit: true}],
         /** disallow using an async function as a Promise executor */
         'no-async-promise-executor': 2,
-        /** disallow comparing against -0 */
-        'no-compare-neg-zero': 2,
 
-        // Usually wrong or bad practice
+        // Probable bugs
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        /** enforce `return` statements in getters */
+        'getter-return': ['warn', {allowImplicit: true}],
+        /** disallow comparing against -0 */
+        'no-compare-neg-zero': 1,
+
+        // Bad practices
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
         /** disallow `await` inside of loops */
         'no-await-in-loop': 1,
+
+        // Development-only
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        /** disallow the use of `console` */
+        'no-console': 0,
+        /** disallow constant expressions in conditions */
+        'no-constant-condition': ['off', {checkLoops: false}],
+        /** disallow the use of `debugger` */
+        'no-debugger': 0,
 
         //TODO: Possible Errors
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
         /** disallow assignment operators in conditional expressions */
         'no-cond-assign': 0,
-        /** disallow the use of `console` */
-        'no-console': 0,
-        /** disallow constant expressions in conditions */
-        'no-constant-condition': 0,
         /** disallow control characters in regular expressions */
         'no-control-regex': 0,
-        /** disallow the use of `debugger` */
-        'no-debugger': 0,
         /** disallow duplicate arguments in `function` definitions */
         'no-dupe-args': 0,
         /** disallow duplicate conditions in if-else-if chains */

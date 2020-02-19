@@ -1,17 +1,5 @@
 'use strict';
 module.exports = {
-    parser: '@typescript-eslint/parser',
-    parserOptions: {
-        project: './tsconfig.json',
-        ecmaVersion: '2020',
-        sourceType: 'module',
-        ecmaFeatures: {
-            impliedStrict: true,
-        },
-    },
-    plugins: [
-            '@typescript-eslint',
-    ],
     extends: [],
     /** https://eslint.org/docs/rules
      * 0 == 'off'
@@ -19,6 +7,11 @@ module.exports = {
      * 2 == 'error'
      */
     rules: {
+
+        // Configuration
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        /** require or disallow strict mode directives */
+        'strict': ['warn', 'safe'],
 
         // Syntax errors
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -500,13 +493,6 @@ module.exports = {
         ],
         /** require or disallow "Yoda" conditions */
         'yoda': [
-            'off',
-        ],
-
-        // Strict Mode
-        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        /** require or disallow strict mode directives */
-        'strict': [
             'off',
         ],
 

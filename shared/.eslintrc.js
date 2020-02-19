@@ -2,44 +2,47 @@
 module.exports = {
     parser: '@typescript-eslint/parser',
     parserOptions: {
-        ecmaVersion: 'esnext',
         project: './tsconfig.json',
+        ecmaVersion: '2020',
         sourceType: 'module',
+        ecmaFeatures: {
+            impliedStrict: true,
+        },
     },
     plugins: [
             '@typescript-eslint',
     ],
     extends: [],
-    /** https://eslint.org/docs/rules */
+    /** https://eslint.org/docs/rules
+     * 0 == 'off'
+     * 1 == 'warn'
+     * 2 == 'error'
+     */
     rules: {
+
+        // Syntax errors
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        /** require or disallow semicolons instead of ASI */
+        'semi': 2,
+
+        // Bugs
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        /** enforce "for" loop update clause moving the counter in the right direction. */
+        'for-direction': 2,
+        /** enforce `return` statements in getters */
+        'getter-return': ['error', {allowImplicit: true}],
+        /** disallow using an async function as a Promise executor */
+        'no-async-promise-executor': 2,
+        /** disallow comparing against -0 */
+        'no-compare-neg-zero': 2,
+
+        // Usually wrong or bad practice
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        /** disallow `await` inside of loops */
+        'no-await-in-loop': 1,
 
         // Possible Errors
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-
-        /** enforce "for" loop update clause moving the counter in the right direction. */
-        'for-direction': [
-            'off',
-        ],
-
-        /** enforce `return` statements in getters */
-        'getter-return': [
-            'off',
-        ],
-
-        /** disallow using an async function as a Promise executor */
-        'no-async-promise-executor': [
-            'off',
-        ],
-
-        /** disallow `await` inside of loops */
-        'no-await-in-loop': [
-            'off',
-        ],
-
-        /** disallow comparing against -0 */
-        'no-compare-neg-zero': [
-            'off',
-        ],
 
         /** disallow assignment operators in conditional expressions */
         'no-cond-assign': [
@@ -1128,11 +1131,6 @@ module.exports = {
 
         /** enforce the consistent use of either backticks, double, or single quotes */
         'quotes': [
-            'off',
-        ],
-
-        /** require or disallow semicolons instead of ASI */
-        'semi': [
             'off',
         ],
 

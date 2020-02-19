@@ -25,7 +25,7 @@
     "start": "npx ng serve",
     "build": "npx ng build",
     "test": "npx ng test",
-    "lint": "npx ng lint",
+    "lint": "npx ng lint --fix",
     "e2e": "npx ng e2e",
     "postinstall": "npm rebuild && npm dedupe"
   },

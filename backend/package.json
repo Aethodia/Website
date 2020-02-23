@@ -24,6 +24,7 @@
   "main": "./src/main.ts",
   "scripts": {
     "postinstall": "npm rebuild && npm dedupe",
+    "relock": "rm -rf node_modules && rm -f npm-shrinkwrap.json && npm install && npm shrinkwrap",
     "format": "npx prettier --write \"**/*.{js,ts}\"",
     "lint": "npx eslint \"**/*.{js,ts}\"",
     "lintfix": "npx eslint \"**/*.{js,ts}\" --fix",
@@ -42,8 +43,6 @@
     "@nestjs/common": "^6",
     "@nestjs/core": "^6",
     "@nestjs/platform-fastify": "^6",
-    "fastify": "^2",
-    "handlebars": "^4",
     "point-of-view": "^3",
     "reflect-metadata": "~0.1",
     "rimraf": "^3",

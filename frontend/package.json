@@ -22,13 +22,12 @@
   "type": "commonjs",
   "main": "./src/index.ts",
   "scripts": {
-    "start": "npx ng serve",
-    "build": "npx ng build",
-    "test": "npx ng test",
+    "postinstall": "npm rebuild && npm dedupe",
+    "relock": "rm -rf node_modules && rm -f npm-shrinkwrap.json && npm install && npm shrinkwrap",
     "lint": "npx ng lint",
     "lintfix": "npx ng lint --fix",
-    "e2e": "npx ng e2e",
-    "postinstall": "npm rebuild && npm dedupe"
+    "build": "npx ng build",
+    "start": "npx ng serve"
   },
   "engines": {
     "npm": ">=6"
@@ -60,11 +59,12 @@
     "@angular/language-service": "^9",
     "@types/lodash": "^4",
     "@types/node": "^12",
+    "@types/webpack-env": "^1",
     "@typescript-eslint/eslint-plugin": "^2",
     "@typescript-eslint/parser": "^2",
     "codelyzer": "^5",
     "eslint": "^6",
     "ts-node": "^8",
-    "typescript": "^3"
+    "typescript": "~3.7"
   }
 }

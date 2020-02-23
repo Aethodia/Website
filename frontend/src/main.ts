@@ -6,25 +6,16 @@ import {environment} from './env/env';
 import {AppModule} from './app/app.module';
 
 ////////////////////////////////////////////////////////////////////////////////
-class Index {
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    constructor() {
-        if(environment.prodMode) {
-            enableProdMode();
-        }
-    }
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public readonly start = async(): Promise<void> => {
-        try {
-            await platformBrowserDynamic().bootstrapModule(AppModule);
-        } catch(error) {
-            console.error(error);
-        }
-    };
+if(environment.prodMode) {
+    enableProdMode();
 }
 
-////////////////////////////////////////////////////////////////////////////////
-export {Index};
-(new Index()).start();
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+(async(): Promise<void> => {
+    try {
+        await platformBrowserDynamic().bootstrapModule(AppModule);
+
+    } catch(error) {
+        console.error(error);
+    }
+})();

@@ -25,7 +25,8 @@
   "scripts": {
     "postinstall": "npm rebuild && npm dedupe",
     "format": "npx prettier --write \"src/**/*.ts\"",
-    "lint": "npx eslint \"src/**/*.ts\" --fix",
+    "lint": "npx eslint \"**/*.{js,ts}\"",
+    "lintfix": "npx eslint \"**/*.{js,ts}\" --fix",
     "prebuild": "npx rimraf dist",
     "build": "npx nest build",
     "start": "npx nest start",
@@ -55,8 +56,6 @@
     "@typescript-eslint/eslint-plugin": "^2",
     "@typescript-eslint/parser": "^2",
     "eslint": "^6",
-    "eslint-config-prettier": "^6",
-    "eslint-plugin-import": "^2",
     "prettier": "^1",
     "ts-loader": "^6",
     "ts-node": "^8",

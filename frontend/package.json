@@ -25,7 +25,8 @@
     "start": "npx ng serve",
     "build": "npx ng build",
     "test": "npx ng test",
-    "lint": "npx ng lint --fix",
+    "lint": "npx ng lint",
+    "lintfix": "npx ng lint --fix",
     "e2e": "npx ng e2e",
     "postinstall": "npm rebuild && npm dedupe"
   },
@@ -50,10 +51,10 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900",
-    "@angular-eslint/builder": "~0.0.1",
-    "@angular-eslint/eslint-plugin": "~0.0.1",
-    "@angular-eslint/eslint-plugin-template": "~0.0.1",
-    "@angular-eslint/template-parser": "~0.0.1",
+    "@angular-eslint/builder": "latest",
+    "@angular-eslint/eslint-plugin": "latest",
+    "@angular-eslint/eslint-plugin-template": "latest",
+    "@angular-eslint/template-parser": "latest",
     "@angular/cli": "^9",
     "@angular/compiler-cli": "^9",
     "@angular/language-service": "^9",
@@ -63,11 +64,6 @@
     "@typescript-eslint/parser": "^2",
     "codelyzer": "^5",
     "eslint": "^6",
-    "eslint-config-standard": "^14",
-    "eslint-plugin-import": "^2",
-    "eslint-plugin-node": "^11",
-    "eslint-plugin-promise": "^4",
-    "eslint-plugin-standard": "^4",
     "ts-node": "^8",
     "typescript": "^3"
   }

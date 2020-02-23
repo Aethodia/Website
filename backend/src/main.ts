@@ -1,4 +1,5 @@
 import {NestFactory} from '@nestjs/core';
+import {FastifyAdapter, NestFastifyApplication} from '@nestjs/platform-fastify';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AppModule} from './app/app.module';
@@ -6,7 +7,11 @@ import {AppModule} from './app/app.module';
 ////////////////////////////////////////////////////////////////////////////////
 (async(): Promise<void> => {
     try {
-        const app = await NestFactory.create(AppModule);
+        const app: NestFastifyApplication =
+            await NestFactory.create<NestFastifyApplication>(
+                AppModule,
+                new FastifyAdapter(),
+            );
         await app.listen(3000);
 
     } catch(error) {

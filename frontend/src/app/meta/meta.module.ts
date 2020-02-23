@@ -1,5 +1,6 @@
 import {NgModule, ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AppAnalyticsService} from './services/analytics.service';
@@ -12,6 +13,7 @@ import {AppVariableService} from './services/variable.service';
 @NgModule({
     imports: [
         CommonModule,
+        HttpClientModule,
     ],
 })
 

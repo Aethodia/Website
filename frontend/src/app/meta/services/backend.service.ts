@@ -16,11 +16,33 @@ type httpOptions = {
 
 ////////////////////////////////////////////////////////////////////////////////
 /** A class containing a standard set of Rest calls. */
-interface EndpointType<T> {
-    get:    Function;
-    post:   Function;
-    put:    Function;
-    delete: Function;
+interface Endpoint<T> {
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Sends a GET request to the endpoint.
+     * @returns a response from the endpoint.
+     */
+    get: () => Observable<T>;
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Sends a POST request to the endpoint.
+     * @param payload The payload for the request.
+     * @returns a response from the endpoint.
+     */
+    post: (payload: T) => Observable<T>;
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Sends a PUT request to the endpoint.
+     * @param payload The payload for the request.
+     * @returns a response from the endpoint.
+     */
+    put: (payload: T) => Observable<T>;
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Sends a DELETE request to the endpoint.
+     * @returns a response from the endpoint.
+     */
+    delete: () => Observable<T>;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -46,62 +68,45 @@ class AppBackendService {
         url: string,
         version: number,
         options?: httpOptions,
-    ): EndpointType<T> => {
+    ): Endpoint<T> => {
         url = url.replace(/\/{2,}/, '/'); // Deduplicate redundant slashes
         url = url.replace(/^\//, '').replace(/\/$/, ''); // Strip leading and trailing slashes.
-        return new this.Endpoint<T>(this.http, `v${version}/${url}`, options);
+        return new this._Endpoint<T>(this.http, `v${version}/${url}`, options);
     }
 
     ////////////////////////////////////////////////////////////////////////////////
-    /** A Request containing a standard set of Rest calls. */
-    private readonly Endpoint = class<T> implements EndpointType<T> {
+    private readonly _Endpoint = class<T> implements Endpoint<T> {
         //TODO: Implement caching
         //TODO: Implement mock data
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        /** Construct an Enpoint.
+         * @param url The URL for the endpoint this Endpoint will hit.
+         * @param [options] HTTP request options.
+         */
         constructor(
             private readonly http: HttpClient,
-            /** The URL for the endpoint this Endpoint will hit. */
             private readonly url: string,
-            /** HTTP request options. */
             private readonly options?: httpOptions
-        ) {}
+        ) {
+            return this;
+        }
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        /** Sends a GET request to the endpoint.
-         * @returns a response from the endpoint.
-         */
-        public readonly get = <T>(): Observable<T> => {
+        public readonly get = (): Observable<T> => {
             return this.http.get<T>(this.url, this.options);
         }
-
-        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        /** Sends a POST request to the endpoint.
-         * @param payload The payload for the request.
-         * @returns a response from the endpoint.
-         */
-        public readonly post = <T>(payload: T): Observable<T> => {
+        public readonly post = (payload: T): Observable<T> => {
             return this.http.post<T>(this.url, payload, this.options);
         }
-
-        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        /** Sends a PUT request to the endpoint.
-         * @param payload The payload for the request.
-         * @returns a response from the endpoint.
-         */
-        public readonly put = <T>(payload: T): Observable<T> => {
+        public readonly put = (payload: T): Observable<T> => {
             return this.http.put<T>(this.url, payload, this.options);
         }
-
-        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        /** Sends a DELETE request to the endpoint.
-         * @returns a response from the endpoint.
-         */
-        public readonly delete = <T>(): Observable<T> => {
+        public readonly delete = (): Observable<T> => {
             return this.http.delete<T>(this.url, this.options);
         }
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppBackendService, EndpointType, httpOptions};
+export {AppBackendService, Endpoint, httpOptions};

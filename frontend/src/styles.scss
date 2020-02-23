@@ -2,8 +2,8 @@
 
 // Font definitions
 // -----------------------------------------------------------------------------
-@import './styles/fonts/noto-sans.scss';
-@import './styles/fonts/theodic-sans.scss';
+@import './styles/fonts/noto-sans';
+@import './styles/fonts/theodic-sans';
 // These temporary variables are used in the above files.  I'm setting them here to prevent them from being whatever font above comes last in the alphabet.
 $font-path: '/assets/fonts/';
 $font-family: '';

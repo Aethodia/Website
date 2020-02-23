@@ -25,11 +25,11 @@
                         "outputPath": "dist",
 
                         "index": "src/index.html",
-                        "main": "src/index.ts",
+                        "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
                         "scripts": [],
                         "styles": [
-                            "src/index.scss"
+                            "src/styles.scss"
                         ],
                         "assets": [{
                             "input": "src/assets",

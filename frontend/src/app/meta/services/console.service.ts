@@ -21,7 +21,7 @@ class AppConsoleService {
         this.console = _.cloneDeep(console);
 
         // Figure out whether we're in dev mode
-        this.varSvc.getVar('isDevMode').subscribe((isDevMode: boolean): void => {
+        this.varSvc.getVar<boolean>('isDevMode').subscribe((isDevMode: boolean): void => {
 
             // If dev mode, restore console
             if(isDevMode) {
@@ -41,7 +41,7 @@ class AppConsoleService {
 
                     // Wipe functions we do not want to keep
                     default:
-                        console[key] = AppUtilities.new(console[key]);
+                        (console as AnyObject)[key] = AppUtilities.new((console as AnyObject)[key]);
                 }
             });
         });

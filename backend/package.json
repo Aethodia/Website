@@ -30,10 +30,9 @@
     "lintfix": "npx eslint \"**/*.{js,ts}\" --fix",
     "prebuild": "npx rimraf dist",
     "build": "npx nest build",
-    "start": "npx nest start",
-    "start:dev": "npx nest start --watch",
-    "start:debug": "npx nest start --watch --debug",
-    "start:prod": "node dist/main"
+    "start:prod": "node dist/main",
+    "start": "npx nest start --watch",
+    "start:debug": "npx nest start --watch --debug"
   },
   "engines": {
     "node": "latest",

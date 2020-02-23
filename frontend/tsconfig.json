@@ -3,7 +3,7 @@
 
     "compilerOptions": {
 
-        "baseUrl": "./",
+        "baseUrl": "./src",
         "outDir": "./out-tsc",
 
         "lib": [

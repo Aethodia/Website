@@ -22,7 +22,7 @@ import {AppPagesErrorModule} from './pages/error/error.module';
 
         // Common
         AppMetaModule.forRoot(),
-        AppSharedModule,
+        AppSharedModule.forRoot(),
 
         // Pages
         AppPagesErrorModule,

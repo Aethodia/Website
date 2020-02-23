@@ -16,7 +16,7 @@ type httpOptions = {
 
 ////////////////////////////////////////////////////////////////////////////////
 /** A class containing a standard set of Rest calls. */
-interface EndpointType {
+interface EndpointType<T> {
     get:    Function;
     post:   Function;
     put:    Function;
@@ -37,16 +37,16 @@ class AppBackendService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Create a new Endpoint that can makes various HTTP requests.
-     * @param version The version of the endpoint to use.
      * @param url The URL for the endpoint this Endpoint will hit.
+     * @param version The version of the endpoint to use.
      * @param options HTTP request options.
      * @returns a new Endpoint.
      */
     public readonly new = <T>(
-        version: number,
         url: string,
-        options: httpOptions,
-    ): EndpointType => {
+        version: number,
+        options?: httpOptions,
+    ): EndpointType<T> => {
         url = url.replace(/\/{2,}/, '/'); // Deduplicate redundant slashes
         url = url.replace(/^\//, '').replace(/\/$/, ''); // Strip leading and trailing slashes.
         return new this.Endpoint<T>(this.http, `v${version}/${url}`, options);
@@ -54,7 +54,7 @@ class AppBackendService {
 
     ////////////////////////////////////////////////////////////////////////////////
     /** A Request containing a standard set of Rest calls. */
-    private readonly Endpoint = class<T> implements EndpointType {
+    private readonly Endpoint = class<T> implements EndpointType<T> {
         //TODO: Implement caching
         //TODO: Implement mock data
 
@@ -64,7 +64,7 @@ class AppBackendService {
             /** The URL for the endpoint this Endpoint will hit. */
             private readonly url: string,
             /** HTTP request options. */
-            private readonly options: httpOptions
+            private readonly options?: httpOptions
         ) {}
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

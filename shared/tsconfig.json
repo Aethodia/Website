@@ -6,7 +6,7 @@
         "target": "ES6",
 
         "lib": [
-            "ESNext"
+            "ESNext",
         ],
         "typeRoots": [
             "node_modules/@types"
@@ -15,5 +15,10 @@
         "downlevelIteration": true,
         "experimentalDecorators": true,
         "importHelpers": true,
-    }
+    },
+
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
 }

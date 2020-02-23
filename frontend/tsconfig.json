@@ -10,6 +10,9 @@
             "ESNext",
             "DOM"
         ],
+        "types": [
+            "webpack-env"
+        ],
 
         "declaration": false,
         "sourceMap": true,
@@ -20,5 +23,5 @@
         "strictInjectionParameters": true
     },
 
-    "compileOnSave": false,
+    "compileOnSave": false
 }

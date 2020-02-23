@@ -11,19 +11,11 @@
             "ESNext",
             "DOM"
         ],
-        "typeRoots": [
-            "node_modules/@types"
-        ],
 
         "declaration": false,
         "removeComments": true,
         "emitDecoratorMetadata": true,
         "incremental": true,
         "sourceMap": true
-    },
-
-    "exclude": [
-        "node_modules",
-        "dist"
-    ]
+    }
 }

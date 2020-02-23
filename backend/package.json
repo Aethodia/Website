@@ -24,7 +24,7 @@
   "main": "./src/main.ts",
   "scripts": {
     "postinstall": "npm rebuild && npm dedupe",
-    "format": "npx prettier --write \"src/**/*.ts\"",
+    "format": "npx prettier --write \"**/*.{js,ts}\"",
     "lint": "npx eslint \"**/*.{js,ts}\"",
     "lintfix": "npx eslint \"**/*.{js,ts}\" --fix",
     "prebuild": "npx rimraf dist",

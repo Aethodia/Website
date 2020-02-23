@@ -53,7 +53,7 @@
                         "production": {
                             "fileReplacements": [{
                                 "replace": "src/env/env.ts",
-                                "with": "src/env/prod.env.ts"
+                                "with": "src/env/env.prod.ts"
                             }],
                             "budgets": [{
                                 "type": "initial",

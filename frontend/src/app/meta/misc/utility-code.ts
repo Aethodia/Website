@@ -5,7 +5,7 @@ class AppUtilities {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Returns a brand new instance with the same type as the input.
      * @param variable The variable whose type to instantiate
-     * @return an instantation of the input's type.
+     * @returns an instantation of the input's type.
      */
     public static readonly new = (variable: any): bigint|boolean|Function|number|object|string|symbol|undefined => {
         const type = typeof(variable);

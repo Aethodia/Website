@@ -14,7 +14,7 @@ class AppPagesHomeComponent {
     constructor(
         private readonly rest: AppRestService
     ) {
-        this.testText = 'Hello World!';
+        this.testText = 'Loading...';
         this.rest.endpoints.test.get().subscribe({
             next: (response: string) => {
                 this.testText = response;

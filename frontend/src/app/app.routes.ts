@@ -10,7 +10,7 @@ const appRoutes: Route[] = [{
     pathMatch: 'full',
     component: AppPagesHomeComponent,
 }, {
-    path: '404',
+    path: 'error',
     pathMatch: 'full',
     component: AppPagesErrorComponent,
 }, {

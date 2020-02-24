@@ -6,9 +6,7 @@ import {AppRestService} from './services/rest.service';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
-    imports: [
-        CommonModule,
-    ],
+    imports: [CommonModule],
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

@@ -28,12 +28,8 @@ import {AppPagesErrorModule} from './pages/error/error.module';
         AppPagesErrorModule,
         AppPagesHomeModule,
     ],
-    declarations: [
-        AppComponent,
-    ],
-    bootstrap: [
-        AppComponent,
-    ],
+    declarations: [AppComponent],
+    bootstrap: [AppComponent],
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

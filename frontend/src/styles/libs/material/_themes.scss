@@ -1,0 +1,19 @@
+// Light theme
+$light-primary: mat-palette(map-get($custom-palettes, 'grey'),    '400');
+$light-accent:  mat-palette(map-get($custom-palettes, 'green'),   '400');
+$light-warn:    mat-palette(map-get($custom-palettes, 'magenta'), '400');
+$light-theme:   mat-light-theme($light-primary, $light-accent, $light-warn);
+
+// Dark theme
+$dark-primary: mat-palette(map-get($custom-palettes, 'grey'),    '600');
+$dark-accent:  mat-palette(map-get($custom-palettes, 'green'),   '600');
+$dark-warn:    mat-palette(map-get($custom-palettes, 'magenta'), '600');
+$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+// Include the default theme styles.
+.light-theme {
+    @include angular-material-theme($light-theme);
+}
+.dark-theme {
+    @include angular-material-theme($dark-theme);
+}

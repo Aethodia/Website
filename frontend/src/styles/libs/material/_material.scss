@@ -10,25 +10,3 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     @extend .mat-typography;
 }
-
-// Light theme
-$light-primary: mat-palette(#777);
-$light-accent:  mat-palette(#438543);
-$light-warn:    mat-palette(#ac56ac);
-$light-theme:   mat-light-theme($light-primary, $light-accent, $light-warn);
-
-// Dark theme
-$dark-primary: mat-palette(#777);
-$dark-accent:  mat-palette(#438543);
-$dark-warn:    mat-palette(#ac56ac);
-$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-
-// Include the default theme styles.
-.light-theme {
-    @include angular-material-theme($light-theme);
-}
-.dark-theme {
-    @include angular-material-theme($dark-theme);
-}
-
-// Available color palettes:  https://material.io/design/color

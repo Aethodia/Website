@@ -1,0 +1,60 @@
+// Default palettes:  https://material.io/design/color
+// Color generator:   http://colorizer.org
+// Palette generator: http://mcg.mbitson.com
+
+/** A map of hues, each of which is a map of Material UI shades.
+ *  To use, first access the degree of hue want;
+ *  then access the Material UI shade you want.
+ *  For all hues, shade 500 is 50% brightness in CIELAB and 50% saturation in HSL/HSV.
+ *  Grey does not have a hue, and so is represented by a dash (-).
+ */
+$custom-palettes: (
+    '-': (
+         '50': #efefef,
+        '100': #d6d6d6,
+        '200': #bbbbbb,
+        '300': #a0a0a0,
+        '400': #8b8b8b,
+        '500': #777777,
+        '600': #6f6f6f,
+        '700': #646464,
+        '800': #5a5a5a,
+        '900': #474747,
+       'A100': #ffffff,
+       'A200': #ffffff,
+       'A400': #ffffff,
+       'A700': #ffffff,
+    ),
+    '120': (
+         '50': #e8f0e8,
+        '100': #c7dac7,
+        '200': #a1c2a1,
+        '300': #7baa7b,
+        '400': #5f975f,
+        '500': #438543,
+        '600': #3d7d3d,
+        '700': #347234,
+        '800': #2c682c,
+        '900': #1e551e,
+       'A100': #96ff96,
+       'A200': #63ff63,
+       'A400': #30ff30,
+       'A700': #16ff16,
+  ),
+  '300': (
+       '50': #f5ebf5,
+      '100': #e6cce6,
+      '200': #d6abd6,
+      '300': #c589c5,
+      '400': #b86fb8,
+      '500': #ac56ac,
+      '600': #a54fa5,
+      '700': #9b459b,
+      '800': #923c92,
+      '900': #822b82,
+     'A100': #ffc8ff,
+     'A200': #ff95ff,
+     'A400': #ff62ff,
+     'A700': #ff48ff,
+  ),
+);

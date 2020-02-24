@@ -8,8 +8,8 @@ import {Observable} from 'rxjs';
 type httpOptions = {
     headers?: HttpHeaders;
     params?: HttpParams;
-    responseType?: "json";
-    observe?: "body";
+    responseType?: string|any; //BUG: Angular seems to have typed this incorrectly;  adding `any` type as a work-around.
+    observe?: string|any;      //BUG: Angular seems to have typed this incorrectly;  adding `any` type as a work-around.
     reportProgress?: boolean;
     withCredentials?: boolean;
 };
@@ -71,7 +71,7 @@ class AppBackendService {
     ): Endpoint<T> => {
         url = url.replace(/\/{2,}/, '/'); // Deduplicate redundant slashes
         url = url.replace(/^\//, '').replace(/\/$/, ''); // Strip leading and trailing slashes.
-        return new this._Endpoint<T>(this.http, `v${version}/${url}`, options);
+        return new this._Endpoint<T>(this.http, `api/v${version}/${url}`, options);
     }
 
     ////////////////////////////////////////////////////////////////////////////////

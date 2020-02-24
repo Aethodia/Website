@@ -1,0 +1,16 @@
+
+import {Controller, Get} from '@nestjs/common';
+
+////////////////////////////////////////////////////////////////////////////////
+@Controller('api/v0/test')
+class TestController {
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    @Get()
+    get(): string {
+        return 'This is a test message from the server.';
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+export {TestController};

@@ -17,7 +17,7 @@ class AppRestService {
     public readonly endpoints: {
         test: Endpoint<string>,
     } = {
-        test: this.backend.new<string>('test', 0),
+        test: this.backend.new<string>('test', 0, {responseType: 'text'}),
     };
 }
 

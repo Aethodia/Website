@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AppRestService} from './services/rest.service';
-import {AppVariableService} from './services/variable.service';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -23,7 +22,6 @@ class AppSharedModule {
             ngModule: AppSharedModule,
             providers: [
                 AppRestService,
-                AppVariableService,
             ],
         };
     }

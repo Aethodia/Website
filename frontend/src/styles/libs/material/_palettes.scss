@@ -6,7 +6,8 @@
  *  To use, first access the degree of hue want;
  *  then access the Material UI shade you want.
  *  For all hues, shade 500 is 50% brightness in CIELAB and 50% saturation in HSL/HSV.
- *  Grey does not have a hue, and so is represented by a dash (-).
+ *  All hues are three digits (red is '000', yellow is '060', and green is '120').
+ *  Grey does not have a hue, and so is represented by dashes ('---').
  */
 $custom-palettes: (
     '-': (

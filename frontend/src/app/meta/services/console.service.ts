@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import * as _ from 'lodash';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppUtilities} from '../misc/utility-code';
+import {AppUtilities} from '../misc/utilities';
 import {AppEnvService} from './env.service';
 
 ////////////////////////////////////////////////////////////////////////////////

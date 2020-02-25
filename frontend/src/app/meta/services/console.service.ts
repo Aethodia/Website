@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AppUtilities} from '../misc/utility-code';
-import {AppVariableService} from './variable.service';
+import {AppEnvService} from './env.service';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
@@ -15,7 +15,7 @@ class AppConsoleService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
-        private readonly varSvc: AppVariableService
+        private readonly varSvc: AppEnvService
     ) {
         // Back up the original console
         this.console = _.cloneDeep(console);

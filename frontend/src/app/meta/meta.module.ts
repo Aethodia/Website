@@ -7,7 +7,7 @@ import {AppAnalyticsService} from './services/analytics.service';
 import {AppBackendService} from './services/backend.service';
 import {AppConsoleService} from './services/console.service';
 import {AppLocaleService} from './services/locale.service';
-import {AppVariableService} from './services/variable.service';
+import {AppEnvService} from './services/env.service';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -31,7 +31,7 @@ class AppMetaModule {
                 AppBackendService,
                 AppConsoleService,
                 AppLocaleService,
-                AppVariableService,
+                AppEnvService,
             ],
         };
     }

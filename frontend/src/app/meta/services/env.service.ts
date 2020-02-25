@@ -3,10 +3,10 @@ import {AsyncVar} from '../misc/async-var';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
-/** Asynchronously stores and distributes variables.
+/** Asynchronously stores and distributes environment variables.
  *  A great way to share data across the app.
  */
-class AppVariableService {
+class AppEnvService {
     constructor() {return this;}
     readonly [key: string]: AsyncVar<any>;
 
@@ -15,4 +15,4 @@ class AppVariableService {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppVariableService};
+export {AppEnvService};

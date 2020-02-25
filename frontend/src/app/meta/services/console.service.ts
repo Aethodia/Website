@@ -21,29 +21,31 @@ class AppConsoleService {
         this.console = _.cloneDeep(console);
 
         // Figure out whether we're in dev mode
-        this.varSvc.getVar<boolean>('isDevMode').subscribe((isDevMode: boolean): void => {
+        this.varSvc.isDevMode.get().subscribe({
+            next: (isDevMode): void => {
 
-            // If dev mode, restore console
-            if(isDevMode) {
-                console = _.cloneDeep(this.console);
-                return;
-            }
-
-            // If not dev mode, gut console
-            Object.keys(console).forEach((key: string): void => {
-                switch(key) {
-
-                    // Remove parameters from functions we want to keep
-                    case 'warn':
-                    case 'error':
-                        console[key] = (): void => console[key]();
-                        break;
-
-                    // Wipe functions we do not want to keep
-                    default:
-                        (console as AnyObject)[key] = AppUtilities.new((console as AnyObject)[key]);
+                // If dev mode, restore console
+                if(isDevMode) {
+                    console = _.cloneDeep(this.console);
+                    return;
                 }
-            });
+
+                // If not dev mode, gut console
+                Object.keys(console).forEach((key: string): void => {
+                    switch(key) {
+
+                        // Remove parameters from functions we want to keep
+                        case 'warn':
+                        case 'error':
+                            console[key] = (): void => console[key]();
+                            break;
+
+                        // Wipe functions we do not want to keep
+                        default:
+                            (console as AnyObject)[key] = AppUtilities.new((console as AnyObject)[key]);
+                    }
+                });
+            }
         });
 
         // Done

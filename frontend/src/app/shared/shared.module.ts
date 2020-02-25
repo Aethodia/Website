@@ -11,7 +11,7 @@ import {AppVariableService} from './services/variable.service';
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-/** Contains code that is shared between different modules in the application. */
+/** Application-specific code that is shared between multiple modules. */
 class AppSharedModule {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

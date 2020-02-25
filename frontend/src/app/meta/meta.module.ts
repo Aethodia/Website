@@ -18,7 +18,9 @@ import {AppEnvService} from './services/env.service';
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-/** Contains code that is essential to the basic functioning of the application. */
+/** Code that is essential to the basic functioning of the application.
+ *  Amounts to a custom framework on-top of Angular.
+ */
 class AppMetaModule {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

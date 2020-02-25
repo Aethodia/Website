@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppRestService} from 'app/shared/services/rest.service';
+import {AppEndpointService} from 'app/shared/services/endpoint.service';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
@@ -12,10 +12,10 @@ class AppPagesHomeComponent {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
-        private readonly rest: AppRestService
+        private readonly restSvc: AppEndpointService
     ) {
         this.testText = 'Loading...';
-        this.rest.endpoints.test.get().subscribe({
+        this.restSvc.test.get().subscribe({
             next: (response: string): void => {
                 this.testText = response;
             },

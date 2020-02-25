@@ -4,22 +4,16 @@ import {AppBackendService, Endpoint} from 'app/meta/services/backend.service';
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
 /** Contains a keyring of endpoints that can be hit. */
-class AppRestService {
+class AppEndpointService {
+    readonly [key: string]: Endpoint<any>;
+    public readonly test: Endpoint<string>;
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    constructor(
-        private readonly backend: AppBackendService,
-    ) {
+    constructor(backend: AppBackendService) {
+        this.test = backend.new<string>('test', 0, {responseType: 'text'});
         return this;
     }
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public readonly endpoints: {
-        test: Endpoint<string>,
-    } = {
-        test: this.backend.new<string>('test', 0, {responseType: 'text'}),
-    };
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppRestService};
+export {AppEndpointService};

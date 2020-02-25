@@ -2,7 +2,7 @@ import {NgModule, ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppRestService} from './services/rest.service';
+import {AppEndpointService} from './services/endpoint.service';
 import {AppVariableService} from './services/variable.service';
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -20,7 +20,7 @@ class AppSharedModule {
         return {
             ngModule: AppSharedModule,
             providers: [
-                AppRestService,
+                AppEndpointService,
                 AppVariableService,
             ],
         };

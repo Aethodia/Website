@@ -16,7 +16,7 @@ class AppPagesHomeComponent {
     ) {
         this.testText = 'Loading...';
         this.rest.endpoints.test.get().subscribe({
-            next: (response: string) => {
+            next: (response: string): void => {
                 this.testText = response;
             },
         });

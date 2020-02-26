@@ -8,10 +8,10 @@ import {appRoutes} from './app.routes';
 import {AppComponent} from './app.component';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppMetaModule} from './meta/meta.module';
-import {AppSharedModule} from './shared/shared.module';
-import {AppPagesHomeModule} from './pages/home/home.module';
-import {AppPagesErrorModule} from './pages/error/error.module';
+import {MetaModule} from './meta/meta.module';
+import {SharedModule} from './shared/shared.module';
+import {HomeModule} from './pages/home/home.module';
+import {ErrorModule} from './pages/error/error.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -21,12 +21,12 @@ import {AppPagesErrorModule} from './pages/error/error.module';
         RouterModule.forRoot(appRoutes),
 
         // Common
-        AppMetaModule.forRoot(),
-        AppSharedModule.forRoot(),
+        MetaModule.forRoot(),
+        SharedModule.forRoot(),
 
         // Pages
-        AppPagesErrorModule,
-        AppPagesHomeModule,
+        ErrorModule,
+        HomeModule,
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent],

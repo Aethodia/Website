@@ -4,7 +4,7 @@ import {Component} from "@angular/core";
 @Component({
     templateUrl: './error.component.html',
 })
-class AppPagesErrorComponent {}
+class ErrorComponent {}
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppPagesErrorComponent};
+export {ErrorComponent};

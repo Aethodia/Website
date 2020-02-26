@@ -1,18 +1,18 @@
 import {Component} from "@angular/core";
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppEndpointService} from 'app/shared/services/endpoint.service';
+import {EndpointService} from 'app/shared/services/endpoint.service';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
     templateUrl: './home.component.html',
 })
-class AppPagesHomeComponent {
+class HomeComponent {
     public testText: string;
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
-        private readonly restSvc: AppEndpointService
+        private readonly restSvc: EndpointService
     ) {
         this.testText = 'Loading...';
         this.restSvc.test.get().subscribe({
@@ -25,4 +25,4 @@ class AppPagesHomeComponent {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppPagesHomeComponent};
+export {HomeComponent};

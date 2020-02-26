@@ -10,9 +10,9 @@ import {Keyring} from '../../meta/misc/keyring';
  *  A great way to share data across the app.
  * @alias varSvc
  */
-class AppVariableService extends Keyring<AsyncVar<any>> {
+class VariableService extends Keyring<AsyncVar<any>> {
     // Variables go here
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppVariableService};
+export {VariableService};

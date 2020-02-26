@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppPagesErrorComponent} from './error.component';
+import {ErrorComponent} from './error.component';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -11,16 +11,16 @@ import {AppPagesErrorComponent} from './error.component';
     ],
     exports: [],
     declarations: [
-        AppPagesErrorComponent,
+        ErrorComponent,
     ],
     providers: [],
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-class AppPagesErrorModule {}
+class ErrorModule {}
 
 ////////////////////////////////////////////////////////////////////////////////
 export {
-    AppPagesErrorModule,
-    AppPagesErrorComponent,
+    ErrorModule,
+    ErrorComponent,
 };

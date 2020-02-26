@@ -2,20 +2,20 @@ import {Injectable} from '@angular/core';
 import * as _ from 'lodash';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppUtilities} from '../misc/utilities';
-import {AppEnvService} from './env.service';
+import {Utilities} from '../misc/utilities';
+import {EnvService} from './env.service';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
 /** Manages the `console` object.  Primary purpose is to disable logging in prod. */
-class AppConsoleService {
+class ConsoleService {
 
     /** A backup of `console`. */
     private readonly console: Console;
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
-        private readonly varSvc: AppEnvService
+        private readonly varSvc: EnvService
     ) {
         // Back up the original console
         this.console = _.cloneDeep(console);
@@ -42,7 +42,7 @@ class AppConsoleService {
 
                         // Wipe functions we do not want to keep
                         default:
-                            (console as AnyObject)[key] = AppUtilities.new((console as AnyObject)[key]);
+                            (console as AnyObject)[key] = Utilities.new((console as AnyObject)[key]);
                     }
                 });
             }
@@ -54,4 +54,4 @@ class AppConsoleService {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppConsoleService};
+export {ConsoleService};

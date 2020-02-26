@@ -10,9 +10,9 @@ import {Keyring} from '../misc/keyring';
  *  A great way to share data across the app.
  * @alias envSvc
  */
-class AppEnvService extends Keyring<AsyncVar<any>> {
+class EnvService extends Keyring<AsyncVar<any>> {
     public readonly isDevMode = new AsyncVar<boolean>(isDevMode());
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppEnvService};
+export {EnvService};

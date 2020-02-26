@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppPagesHomeComponent} from './home.component';
+import {HomeComponent} from './home.component';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -11,16 +11,16 @@ import {AppPagesHomeComponent} from './home.component';
     ],
     exports: [],
     declarations: [
-        AppPagesHomeComponent,
+        HomeComponent,
     ],
     providers: [],
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-class AppPagesHomeModule {}
+class HomeModule {}
 
 ////////////////////////////////////////////////////////////////////////////////
 export {
-    AppPagesHomeModule,
-    AppPagesHomeComponent,
+    HomeModule,
+    HomeComponent,
 };

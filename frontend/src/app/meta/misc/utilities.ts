@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 /** Contains general reusable utility code. */
-class AppUtilities {
+class Utilities {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Returns a brand new instance with the same type as the input.
@@ -33,4 +33,4 @@ class AppUtilities {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppUtilities};
+export {Utilities};

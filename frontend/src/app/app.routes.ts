@@ -1,18 +1,18 @@
 import {Route} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppPagesErrorComponent} from './pages/error/error.module';
-import {AppPagesHomeComponent} from "./pages/home/home.module";
+import {ErrorComponent} from './pages/error/error.module';
+import {HomeComponent} from "./pages/home/home.module";
 
 ////////////////////////////////////////////////////////////////////////////////
 const appRoutes: Route[] = [{
     path: '',
     pathMatch: 'full',
-    component: AppPagesHomeComponent,
+    component: HomeComponent,
 }, {
     path: 'error',
     pathMatch: 'full',
-    component: AppPagesErrorComponent,
+    component: ErrorComponent,
 }, {
     path: '**',
     redirectTo: '404'

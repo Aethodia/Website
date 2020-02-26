@@ -50,7 +50,7 @@ interface EndpointType<T> {
 /** Handles all calls to the backend, and provides the option to cache them.
  * @alias backSvc
  */
-class AppBackendService {
+class BackendService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
@@ -111,4 +111,4 @@ class AppBackendService {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppBackendService, EndpointType, httpOptions};
+export {BackendService, EndpointType, httpOptions};

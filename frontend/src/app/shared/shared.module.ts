@@ -2,8 +2,8 @@ import {NgModule, ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppEndpointService} from './services/endpoint.service';
-import {AppVariableService} from './services/variable.service';
+import {EndpointService} from './services/endpoint.service';
+import {VariableService} from './services/variable.service';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -12,20 +12,20 @@ import {AppVariableService} from './services/variable.service';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 /** Application-specific code that is shared between multiple modules. */
-class AppSharedModule {
+class SharedModule {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Provides singleton services that should only be initialized once. */
-    public static forRoot(): ModuleWithProviders<AppSharedModule> {
+    public static forRoot(): ModuleWithProviders<SharedModule> {
         return {
-            ngModule: AppSharedModule,
+            ngModule: SharedModule,
             providers: [
-                AppEndpointService,
-                AppVariableService,
+                EndpointService,
+                VariableService,
             ],
         };
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppSharedModule};
+export {SharedModule};

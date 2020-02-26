@@ -3,11 +3,11 @@ import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppAnalyticsService} from './services/analytics.service';
-import {AppBackendService} from './services/backend.service';
-import {AppConsoleService} from './services/console.service';
-import {AppLocaleService} from './services/locale.service';
-import {AppEnvService} from './services/env.service';
+import {AnalyticsService} from './services/analytics.service';
+import {BackendService} from './services/backend.service';
+import {ConsoleService} from './services/console.service';
+import {LocaleService} from './services/locale.service';
+import {EnvService} from './services/env.service';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -21,23 +21,23 @@ import {AppEnvService} from './services/env.service';
 /** Code that is essential to the basic functioning of the application.
  *  Amounts to a custom framework on-top of Angular.
  */
-class AppMetaModule {
+class MetaModule {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Provides singleton services that should only be initialized once. */
-    public static forRoot(): ModuleWithProviders<AppMetaModule> {
+    public static forRoot(): ModuleWithProviders<MetaModule> {
         return {
-            ngModule: AppMetaModule,
+            ngModule: MetaModule,
             providers: [
-                AppAnalyticsService,
-                AppBackendService,
-                AppConsoleService,
-                AppLocaleService,
-                AppEnvService,
+                AnalyticsService,
+                BackendService,
+                ConsoleService,
+                LocaleService,
+                EnvService,
             ],
         };
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppMetaModule};
+export {MetaModule};

@@ -16,7 +16,7 @@ type httpOptions = {
 
 ////////////////////////////////////////////////////////////////////////////////
 /** A class containing a standard set of Rest calls. */
-interface Endpoint<T> {
+interface EndpointType<T> {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Sends a GET request to the endpoint.
@@ -47,7 +47,9 @@ interface Endpoint<T> {
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
-/** Handles all calls to the backend, and provides the option to cache them. */
+/** Handles all calls to the backend, and provides the option to cache them.
+ * @alias backSvc
+ */
 class AppBackendService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -68,14 +70,14 @@ class AppBackendService {
         url: string,
         version: number,
         options?: httpOptions,
-    ): Endpoint<T> => {
+    ): EndpointType<T> => {
         url = url.replace(/\/{2,}/, '/'); // Deduplicate redundant slashes
         url = url.replace(/^\//, '').replace(/\/$/, ''); // Strip leading and trailing slashes.
-        return new this._Endpoint<T>(this.http, `api/v${version}/${url}`, options);
+        return new this.Endpoint<T>(this.http, `api/v${version}/${url}`, options);
     }
 
     ////////////////////////////////////////////////////////////////////////////////
-    private readonly _Endpoint = class<T> implements Endpoint<T> {
+    private readonly Endpoint = class<T> implements EndpointType<T> {
         //TODO: Implement caching
         //TODO: Implement mock data
 
@@ -109,4 +111,4 @@ class AppBackendService {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {AppBackendService, Endpoint, httpOptions};
+export {AppBackendService, EndpointType, httpOptions};

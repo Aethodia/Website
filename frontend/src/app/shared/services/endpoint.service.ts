@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AppBackendService, Endpoint} from 'app/meta/services/backend.service';
+import {AppBackendService, EndpointType} from 'app/meta/services/backend.service';
 import {Keyring} from '../../meta/misc/keyring';
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -9,10 +9,10 @@ import {Keyring} from '../../meta/misc/keyring';
 /** Contains a Keyring of endpoints that can be hit.
  * @alias endSvc
 */
-class AppEndpointService extends Keyring<Endpoint<any>> {
+class AppEndpointService extends Keyring<EndpointType<any>> {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public readonly test: Endpoint<string>;
+    public readonly test: EndpointType<string>;
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(backend: AppBackendService) {

@@ -1,16 +1,16 @@
 import {Injectable, isDevMode} from '@angular/core';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AsyncVar} from '../misc/async-var';
+import {Keyring} from '../misc/keyring';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
 /** Asynchronously stores and distributes environment variables.
  *  A great way to share data across the app.
+ * @alias envSvc
  */
-class AppEnvService {
-    constructor() {return this;}
-    readonly [key: string]: AsyncVar<any>;
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+class AppEnvService extends Keyring<AsyncVar<any>> {
     public readonly isDevMode = new AsyncVar<boolean>(isDevMode());
 }
 

@@ -2,8 +2,8 @@ import {NgModule, ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {EndpointService} from './services/endpoint.service';
-import {VariableService} from './services/variable.service';
+import {EndpointsService} from './services/endpoints.service';
+import {ShariablesService} from './services/shariables.service';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -20,8 +20,8 @@ class SharedModule {
         return {
             ngModule: SharedModule,
             providers: [
-                EndpointService,
-                VariableService,
+                EndpointsService,
+                ShariablesService,
             ],
         };
     }

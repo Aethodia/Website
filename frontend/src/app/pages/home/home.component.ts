@@ -1,7 +1,7 @@
 import {Component} from "@angular/core";
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {EndpointService} from 'app/shared/services/endpoint.service';
+import {EndpointsService} from 'app/shared/services/endpoints.service';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
@@ -12,10 +12,10 @@ class HomeComponent {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
-        private readonly restSvc: EndpointService
+        private readonly endpoints: EndpointsService
     ) {
         this.testText = 'Loading...';
-        this.restSvc.test.get().subscribe({
+        this.endpoints.test.get().subscribe({
             next: (response: string): void => {
                 this.testText = response;
             },

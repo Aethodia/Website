@@ -3,7 +3,7 @@ import * as _ from 'lodash';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {Utilities} from '../misc/utilities';
-import {EnvService} from './env.service';
+import {EnvironmentService} from './environment.service';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
@@ -15,13 +15,13 @@ class ConsoleService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
-        private readonly varSvc: EnvService
+        private readonly environment: EnvironmentService,
     ) {
         // Back up the original console
         this.console = _.cloneDeep(console);
 
         // Figure out whether we're in dev mode
-        this.varSvc.isDevMode.get().subscribe({
+        this.environment.isDevMode.get().subscribe({
             next: (isDevMode): void => {
 
                 // If dev mode, restore console

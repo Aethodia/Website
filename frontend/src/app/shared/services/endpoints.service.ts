@@ -6,10 +6,8 @@ import {Keyring} from '../../meta/misc/keyring';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
-/** Contains a Keyring of endpoints that can be hit.
- * @alias endSvc
-*/
-class EndpointService extends Keyring<EndpointType<any>> {
+/** Contains a Keyring of endpoints that can be hit. */
+class EndpointsService extends Keyring<EndpointType<any>> {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public readonly test: EndpointType<string>;
@@ -17,10 +15,10 @@ class EndpointService extends Keyring<EndpointType<any>> {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(backend: BackendService) {
         super();
-        this.test = backend.new<string>('test', 0, {responseType: 'text'});
+        this.test = backend.newEndpoint<string>('test', 0, {responseType: 'text'});
         return this;
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {EndpointService};
+export {EndpointsService};

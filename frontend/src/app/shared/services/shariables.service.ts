@@ -8,11 +8,10 @@ import {Keyring} from '../../meta/misc/keyring';
 @Injectable()
 /** Asynchronously stores and distributes variables.
  *  A great way to share data across the app.
- * @alias varSvc
  */
-class VariableService extends Keyring<AsyncVar<any>> {
+class ShariablesService extends Keyring<AsyncVar<any>> {
     // Variables go here
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {VariableService};
+export {ShariablesService};

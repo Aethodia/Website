@@ -47,9 +47,7 @@ interface EndpointType<T> {
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
-/** Handles all calls to the backend, and provides the option to cache them.
- * @alias backSvc
- */
+/** Handles all calls to the backend, and provides the option to cache them. */
 class BackendService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -66,7 +64,7 @@ class BackendService {
      * @param options HTTP request options.
      * @returns a new Endpoint.
      */
-    public readonly new = <T>(
+    public readonly newEndpoint = <T>(
         url: string,
         version: number,
         options?: httpOptions,

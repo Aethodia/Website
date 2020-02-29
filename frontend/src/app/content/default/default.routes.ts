@@ -1,5 +1,8 @@
 import {Route} from '@angular/router';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {HomeComponent} from './home/home.component';
+import {LoginComponent} from './login/login.component';
 
 ////////////////////////////////////////////////////////////////////////////////
 const defaultRoutes: Route[] = [{
@@ -14,6 +17,10 @@ const defaultRoutes: Route[] = [{
     path: 'index',
     pathMatch: 'full',
     redirectTo: '',
+}, {
+    path: 'login',
+    pathMatch: 'full',
+    component: LoginComponent,
 }];
 
 ////////////////////////////////////////////////////////////////////////////////

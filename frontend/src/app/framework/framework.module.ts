@@ -21,13 +21,13 @@ import {EnvironmentService} from './services/environment.service';
 /** Code that is essential to the basic functioning of the application.
  *  Amounts to a custom framework on-top of Angular.
  */
-class MetaModule {
+class FrameworkModule {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Provides singleton services that should only be initialized once. */
-    public static forRoot(): ModuleWithProviders<MetaModule> {
+    public static forRoot(): ModuleWithProviders<FrameworkModule> {
         return {
-            ngModule: MetaModule,
+            ngModule: FrameworkModule,
             providers: [
                 AnalyticsService,
                 BackendService,
@@ -40,4 +40,4 @@ class MetaModule {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {MetaModule};
+export {FrameworkModule};

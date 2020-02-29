@@ -2,9 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {ErrorComponent} from './error/error.component';
-import {HomeComponent} from './home/home.component';
-import {I18nComponent} from './i18n/i18n.component';
+import {Error404Component} from './error-404/error-404.component';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -13,18 +11,16 @@ import {I18nComponent} from './i18n/i18n.component';
     ],
     exports: [],
     declarations: [
-        I18nComponent,
+        Error404Component,
     ],
     providers: [],
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-class PagesModule {}
+class ResponseCodesModule {}
 
 ////////////////////////////////////////////////////////////////////////////////
 export {
-    PagesModule,
-    ErrorComponent,
-    HomeComponent,
-    I18nComponent,
+    ResponseCodesModule,
+    Error404Component,
 };

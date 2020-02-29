@@ -1,8 +1,9 @@
 import {Route} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {ErrorComponent} from './pages/pages.module';
-import {HomeComponent} from "./pages/pages.module";
+import {Error404Component} from './content/response-codes/response-codes.module';
+import {I18nComponent} from './content/admin/admin.module';
+import {HomeComponent} from './content/pages/pages.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 const appRoutes: Route[] = [{
@@ -10,9 +11,13 @@ const appRoutes: Route[] = [{
     pathMatch: 'full',
     component: HomeComponent,
 }, {
-    path: 'error',
+    path: 'i18n',
     pathMatch: 'full',
-    component: ErrorComponent,
+    component: I18nComponent,
+}, {
+    path: '404',
+    pathMatch: 'full',
+    component: Error404Component,
 }, {
     path: '**',
     redirectTo: '404'

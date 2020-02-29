@@ -1,8 +1,8 @@
 import {Injectable} from '@angular/core';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {BackendService, EndpointType} from 'app/meta/services/backend.service';
-import {Keyring} from '../../meta/misc/keyring';
+import {BackendService, EndpointType} from 'app/framework/services/backend.service';
+import {Keyring} from 'app/framework/misc/keyring';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()

@@ -2,9 +2,9 @@ import {Component} from "@angular/core";
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
-    templateUrl: './error.component.html',
+    templateUrl: './error-404.component.html',
 })
-class ErrorComponent {}
+class Error404Component {}
 
 ////////////////////////////////////////////////////////////////////////////////
-export {ErrorComponent};
+export {Error404Component};

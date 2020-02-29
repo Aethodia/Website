@@ -8,22 +8,29 @@ import {appRoutes} from './app.routes';
 import {AppComponent} from './app.component';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {MetaModule} from './meta/meta.module';
+import {FrameworkModule} from './framework/framework.module';
 import {SharedModule} from './shared/shared.module';
-import {PagesModule} from './pages/pages.module';
+import {ResponseCodesModule} from './content/response-codes/response-codes.module';
+import {AdminModule} from './content/admin/admin.module';
+import {PagesModule} from './content/pages/pages.module';
 
 ////////////////////////////////////////////////////////////////////////////////
+//TODO: SSR (https://angular.io/guide/universal)
 @NgModule({
     imports: [
+
+        // Libraries
         BrowserModule,
         BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes),
 
         // Common
-        MetaModule.forRoot(),
+        FrameworkModule.forRoot(),
         SharedModule.forRoot(),
 
-        // Pages
+        // Content
+        ResponseCodesModule,
+        AdminModule,
         PagesModule,
     ],
     declarations: [AppComponent],

@@ -4,7 +4,7 @@ import {Injectable} from '@angular/core';
 @Injectable()
 /** Handles analytics. */
 class AnalyticsService {
-    //TODO
+    //TODO:  Set up analytics with Matomo.
 }
 
 ////////////////////////////////////////////////////////////////////////////////

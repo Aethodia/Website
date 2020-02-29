@@ -1,13 +1,16 @@
 import {Route} from '@angular/router';
 
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {HomeComponent} from './home/home.component';
+
 ////////////////////////////////////////////////////////////////////////////////
 const routes: Route[] = [{
-    path: 'admin',
+    path: '',
     pathMatch: 'full',
-    loadChildren: async() => (await import('./content/admin/admin.module')).AdminModule,
+    component: HomeComponent,
 }, {
     path: '**',
-    loadChildren: async() => (await import('./content/default/default.module')).DefaultModule,
+    loadChildren: async() => (await import('../response-codes/response-codes.module')).ResponseCodesModule,
 }];
 
 ////////////////////////////////////////////////////////////////////////////////

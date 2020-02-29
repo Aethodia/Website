@@ -4,7 +4,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {appRoutes} from './app.routes';
+import {routes} from './app.routes';
 import {AppComponent} from './app.component';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -12,8 +12,7 @@ import {FrameworkModule} from './framework/framework.module';
 import {SharedModule} from './shared/shared.module';
 import {ResponseCodesModule} from './content/response-codes/response-codes.module';
 import {AdminModule} from './content/admin/admin.module';
-import {AuthModule} from './content/auth/auth.module';
-import {PagesModule} from './content/pages/pages.module';
+import {DefaultModule} from './content/default/default.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 //TODO: SSR (https://angular.io/guide/universal)
@@ -23,7 +22,7 @@ import {PagesModule} from './content/pages/pages.module';
         // Libraries
         BrowserModule,
         BrowserAnimationsModule,
-        RouterModule.forRoot(appRoutes),
+        RouterModule.forRoot(routes),
 
         // Common
         FrameworkModule.forRoot(),
@@ -32,8 +31,7 @@ import {PagesModule} from './content/pages/pages.module';
         // Content
         ResponseCodesModule,
         AdminModule,
-        AuthModule,
-        PagesModule,
+        DefaultModule,
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent],

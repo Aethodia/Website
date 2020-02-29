@@ -26,7 +26,7 @@ class Helpers {
             }
 
             //@ts-ignore: The above switch statement makes sure this is safe.
-            return module[moduleName]();
+            return module[moduleName];
 
         } catch(error) {
             console.error(error);

@@ -4,7 +4,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {routes} from './app.routes';
+import {appRoutes} from './app.routes';
 import {AppComponent} from './app.component';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -22,7 +22,9 @@ import {DefaultModule} from './content/default/default.module';
         // Libraries
         BrowserModule,
         BrowserAnimationsModule,
-        RouterModule.forRoot(routes),
+        RouterModule.forRoot(appRoutes, {
+            // enableTracing: true, //DEBUG
+        }),
 
         // Common
         FrameworkModule.forRoot(),

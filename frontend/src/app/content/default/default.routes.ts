@@ -1,11 +1,8 @@
 import {Route} from '@angular/router';
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {Helpers} from 'app/framework/framework.module';
 import {HomeComponent} from './home/home.component';
 
 ////////////////////////////////////////////////////////////////////////////////
-const routes: Route[] = [{
+const defaultRoutes: Route[] = [{
     path: '',
     pathMatch: 'full',
     component: HomeComponent,
@@ -17,10 +14,7 @@ const routes: Route[] = [{
     path: 'index',
     pathMatch: 'full',
     redirectTo: '',
-}, {
-    path: '**',
-    loadChildren: Helpers.loadChildren('ResponseCodesModule'),
 }];
 
 ////////////////////////////////////////////////////////////////////////////////
-export {routes};
+export {defaultRoutes};

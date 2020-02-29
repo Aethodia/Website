@@ -6,7 +6,7 @@ import {Error403Component} from './error-403/error-403.component';
 import {Error404Component} from './error-404/error-404.component';
 
 ////////////////////////////////////////////////////////////////////////////////
-const routes: Route[] = [{
+const responseCodeRoutes: Route[] = [{
     path: '401',
     pathMatch: 'full',
     component: Error401Component,
@@ -24,4 +24,4 @@ const routes: Route[] = [{
 }];
 
 ////////////////////////////////////////////////////////////////////////////////
-export {routes};
+export {responseCodeRoutes};

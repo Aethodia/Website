@@ -12,6 +12,7 @@ import {MetaModule} from './meta/meta.module';
 import {SharedModule} from './shared/shared.module';
 import {HomeModule} from './pages/home/home.module';
 import {ErrorModule} from './pages/error/error.module';
+import {I18nModule} from './pages/i18n/i18n.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -25,6 +26,7 @@ import {ErrorModule} from './pages/error/error.module';
         SharedModule.forRoot(),
 
         // Pages
+        I18nModule,
         ErrorModule,
         HomeModule,
     ],

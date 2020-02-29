@@ -27,7 +27,7 @@ class Utilities {
             case 'undefined':
                 return undefined;
             default:
-                throw new TypeError(`Unsupported type: '${type}'`);
+                throw new ReferenceError(`Unsupported type: '${type}'`);
         }
     }
 }

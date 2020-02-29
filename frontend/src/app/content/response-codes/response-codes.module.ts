@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {responseCodeRoutes} from './response-codes.routes';
 import {Error401Component} from './error-401/error-401.component';
 import {Error403Component} from './error-403/error-403.component';
 import {Error404Component} from './error-404/error-404.component';
@@ -29,4 +30,5 @@ class ResponseCodesModule {}
 ////////////////////////////////////////////////////////////////////////////////
 export {
     ResponseCodesModule,
+    responseCodeRoutes,
 };

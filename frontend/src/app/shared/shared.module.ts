@@ -2,6 +2,7 @@ import {NgModule, ModuleWithProviders} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {Helpers} from './misc/helpers';
 import {EndpointsService} from './services/endpoints.service';
 import {ShariablesService} from './services/shariables.service';
 
@@ -28,4 +29,13 @@ class SharedModule {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {SharedModule};
+export {
+    SharedModule,
+
+    // Misc
+    Helpers,
+
+    // Services
+    EndpointsService,
+    ShariablesService,
+};

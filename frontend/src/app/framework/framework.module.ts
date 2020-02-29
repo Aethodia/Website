@@ -4,7 +4,6 @@ import {HttpClientModule} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AsyncVar} from './misc/async-var';
-import {Helpers} from './misc/helpers';
 import {Keyring} from './misc/keyring';
 import {Utilities} from './misc/utilities';
 
@@ -51,7 +50,6 @@ export {
 
     // Misc
     AsyncVar,
-    Helpers,
     Keyring,
     Utilities,
 

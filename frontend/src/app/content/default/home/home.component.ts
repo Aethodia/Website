@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {EndpointsService} from 'app/shared/services/endpoints.service';
+import {EndpointsService} from 'app/shared/shared.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({

@@ -1,9 +1,9 @@
 import {Route} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {Helpers} from './framework/framework.module';
-import {defaultRoutes} from './content/default/default.routes';
-import {responseCodeRoutes} from './content/response-codes/response-codes.routes';
+import {Helpers} from './shared/shared.module';
+import {defaultRoutes} from './content/default/default.module';
+import {responseCodeRoutes} from './content/response-codes/response-codes.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 const appRoutes: Route[] = ([] as Route[]).concat(

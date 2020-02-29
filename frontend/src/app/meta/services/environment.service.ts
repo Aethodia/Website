@@ -9,8 +9,17 @@ import {Keyring} from '../misc/keyring';
 /** Asynchronously stores and distributes environment variables.
  *  A great way to share data across the app.
  */
-class EnvironmentService extends Keyring<AsyncVar<any>> {
-    public readonly isDevMode = new AsyncVar<boolean>(isDevMode());
+class EnvironmentService extends Keyring<any> {
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Asynchronous environment variables. */
+    public readonly vars = class extends Keyring<AsyncVar<any>> {}
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Synchronous environment constants. */
+    public readonly consts = class extends Keyring<any> {
+        public static readonly isDevMode: boolean = isDevMode();
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////

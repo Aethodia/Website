@@ -17,6 +17,9 @@ import {Error404Component} from './error-404/error-404.component';
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+/** Pages for HTTP response status codes.
+ * {@link https://en.wikipedia.org/wiki/List_of_HTTP_status_codes}
+ */
 class ResponseCodesModule {}
 
 ////////////////////////////////////////////////////////////////////////////////

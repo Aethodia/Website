@@ -2,10 +2,10 @@ import {Component} from "@angular/core";
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
-    templateUrl: './error-404.component.html',
+    templateUrl: './error-403.component.html',
 })
-/** Error 404: Not Found. */
-class Error404Component {}
+/** Error 403: Forbidden. */
+class Error403Component {}
 
 ////////////////////////////////////////////////////////////////////////////////
-export {Error404Component};
+export {Error403Component};

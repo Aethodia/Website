@@ -1,8 +1,5 @@
 import {Injectable} from '@angular/core';
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {BackendService, EndpointType} from 'app/framework/services/backend.service';
-import {Keyring} from 'app/framework/misc/keyring';
+import {BackendService, EndpointType, Keyring} from 'app/framework/framework.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()

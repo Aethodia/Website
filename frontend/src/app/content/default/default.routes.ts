@@ -1,6 +1,7 @@
 import {Route} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {Helpers} from 'app/framework/framework.module';
 import {HomeComponent} from './home/home.component';
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -9,8 +10,16 @@ const routes: Route[] = [{
     pathMatch: 'full',
     component: HomeComponent,
 }, {
+    path: 'home',
+    pathMatch: 'full',
+    redirectTo: '',
+}, {
+    path: 'index',
+    pathMatch: 'full',
+    redirectTo: '',
+}, {
     path: '**',
-    loadChildren: async() => (await import('../response-codes/response-codes.module')).ResponseCodesModule,
+    loadChildren: Helpers.loadChildren('ResponseCodesModule'),
 }];
 
 ////////////////////////////////////////////////////////////////////////////////

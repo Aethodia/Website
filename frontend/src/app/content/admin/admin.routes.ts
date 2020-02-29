@@ -1,6 +1,7 @@
 import {Route} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {Helpers} from 'app/framework/framework.module';
 import {I18nComponent} from './i18n/i18n.component';
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -10,7 +11,7 @@ const routes: Route[] = [{
     component: I18nComponent,
 }, {
     path: '**',
-    loadChildren: async() => (await import('../response-codes/response-codes.module')).ResponseCodesModule,
+    loadChildren: Helpers.loadChildren('ResponseCodesModule'),
 }];
 
 ////////////////////////////////////////////////////////////////////////////////

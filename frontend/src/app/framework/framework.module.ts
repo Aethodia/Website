@@ -3,8 +3,14 @@ import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {AsyncVar} from './misc/async-var';
+import {Helpers} from './misc/helpers';
+import {Keyring} from './misc/keyring';
+import {Utilities} from './misc/utilities';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AnalyticsService} from './services/analytics.service';
-import {BackendService} from './services/backend.service';
+import {BackendService, EndpointType, httpOptions} from './services/backend.service';
 import {ConsoleService} from './services/console.service';
 import {LocaleService} from './services/locale.service';
 import {EnvironmentService} from './services/environment.service';
@@ -40,4 +46,23 @@ class FrameworkModule {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {FrameworkModule};
+export {
+    FrameworkModule,
+
+    // Misc
+    AsyncVar,
+    Helpers,
+    Keyring,
+    Utilities,
+
+    // Services
+    AnalyticsService,
+    BackendService,
+    ConsoleService,
+    EnvironmentService,
+    LocaleService,
+
+    // Types
+    EndpointType,
+    httpOptions,
+};

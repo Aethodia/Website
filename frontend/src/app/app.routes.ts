@@ -1,13 +1,14 @@
 import {Route} from '@angular/router';
+import {Helpers} from './framework/framework.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 const routes: Route[] = [{
     path: 'admin',
     pathMatch: 'full',
-    loadChildren: async() => (await import('./content/admin/admin.module')).AdminModule,
+    loadChildren: Helpers.loadChildren('AdminModule'),
 }, {
     path: '**',
-    loadChildren: async() => (await import('./content/default/default.module')).DefaultModule,
+    loadChildren: Helpers.loadChildren('DefaultModule'),
 }];
 
 ////////////////////////////////////////////////////////////////////////////////

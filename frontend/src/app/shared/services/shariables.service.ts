@@ -1,8 +1,5 @@
 import {Injectable} from '@angular/core';
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AsyncVar} from 'app/framework/misc/async-var';
-import {Keyring} from 'app/framework/misc/keyring';
+import {AsyncVar, Keyring} from 'app/framework/framework.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()

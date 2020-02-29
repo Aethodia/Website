@@ -12,6 +12,7 @@ import {FrameworkModule} from './framework/framework.module';
 import {SharedModule} from './shared/shared.module';
 import {ResponseCodesModule} from './content/response-codes/response-codes.module';
 import {AdminModule} from './content/admin/admin.module';
+import {AuthModule} from './content/auth/auth.module';
 import {PagesModule} from './content/pages/pages.module';
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -31,6 +32,7 @@ import {PagesModule} from './content/pages/pages.module';
         // Content
         ResponseCodesModule,
         AdminModule,
+        AuthModule,
         PagesModule,
     ],
     declarations: [AppComponent],

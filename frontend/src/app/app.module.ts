@@ -10,9 +10,7 @@ import {AppComponent} from './app.component';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {MetaModule} from './meta/meta.module';
 import {SharedModule} from './shared/shared.module';
-import {HomeModule} from './pages/home/home.module';
-import {ErrorModule} from './pages/error/error.module';
-import {I18nModule} from './pages/i18n/i18n.module';
+import {PagesModule} from './pages/pages.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
@@ -26,9 +24,7 @@ import {I18nModule} from './pages/i18n/i18n.module';
         SharedModule.forRoot(),
 
         // Pages
-        I18nModule,
-        ErrorModule,
-        HomeModule,
+        PagesModule,
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent],

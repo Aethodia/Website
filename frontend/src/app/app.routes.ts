@@ -1,8 +1,8 @@
 import {Route} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {ErrorComponent} from './pages/error/error.module';
-import {HomeComponent} from "./pages/home/home.module";
+import {ErrorComponent} from './pages/pages.module';
+import {HomeComponent} from "./pages/pages.module";
 
 ////////////////////////////////////////////////////////////////////////////////
 const appRoutes: Route[] = [{

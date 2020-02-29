@@ -20,12 +20,8 @@ const appRoutes: Route[] = [{
     pathMatch: 'full',
     component: LoginComponent,
 }, {
-    path: '404',
-    pathMatch: 'full',
-    component: Error404Component,
-}, {
     path: '**',
-    redirectTo: '404'
+    component: Error404Component,
 }];
 
 ////////////////////////////////////////////////////////////////////////////////

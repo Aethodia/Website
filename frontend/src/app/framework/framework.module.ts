@@ -4,7 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AsyncVar} from './misc/async-var';
-import {Keyring} from './misc/keyring';
+import {HashMap} from './misc/hash-map';
 import {Utilities} from './misc/utilities';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -50,7 +50,7 @@ export {
 
     // Misc
     AsyncVar,
-    Keyring,
+    HashMap,
     Utilities,
 
     // Services

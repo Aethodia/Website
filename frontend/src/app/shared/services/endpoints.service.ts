@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
-import {BackendService, EndpointType, Keyring} from 'app/framework/framework.module';
+import {BackendService, EndpointType, HashMap} from 'app/framework/framework.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
-/** Contains a Keyring of endpoints that can be hit. */
-class EndpointsService extends Keyring<EndpointType<any>> {
+/** Contains a HashMap of endpoints that can be hit. */
+class EndpointsService extends HashMap<EndpointType<any>> {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public readonly test: EndpointType<string>;

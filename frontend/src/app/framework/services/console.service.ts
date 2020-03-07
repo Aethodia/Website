@@ -38,7 +38,7 @@ class ConsoleService {
 
                 // Wipe functions we do not want to keep
                 default:
-                    (console as AnyObject)[key] = Utilities.new((console as AnyObject)[key]);
+                    (console as Table<any>)[key] = Utilities.new((console as Table<any>)[key]);
             }
         });
 

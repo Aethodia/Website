@@ -1,7 +1,11 @@
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-/** An object with any keys.
- * @deprecated Discouraged;  please try to type things more-strictly wherever possible.
+/** An object with all values being the same type.
+ * @deprecated Not particularly type-safe — use stricter types wherever possible.
  */
-type AnyObject = {
-    [key: string]: any,
+declare class Table<Value> extends Object {
+    [key: string]: Value|Function;
+    [key: number]: Value|Function;
 }
+// type Table<Value> = Object & {
+//     [key in string|number]: Value;
+// };

@@ -30,6 +30,37 @@ class Utilities {
                 throw new ReferenceError(`Unsupported type: '${type}'`);
         }
     }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Recursively copies all properties of one object to another, and returns the result.
+     * @param from The object to get the properties from.
+     * @param to The object to save the properties of `from` to.
+     */
+    public static readonly transferProperties = <T>(from: Table<any>, to: T|any): T => { //TODO: We shouldn't need to use `any` in `T|any`.
+        for(const key of Object.keys(from)) {
+            if(to[key] != null) {
+                if(typeof(from[key]) !== 'object') {
+                    to[key] = from[key];
+                } else {
+                    to[key] = Utilities.transferProperties<Object>(from[key], to[key]);
+                }
+            }
+        }
+        return to;
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** A shorthand for when you need to use a `for...in` loop.
+     * @param table The object whose keys to iterate over.
+     * @param callback The function to execute for each iteration.
+     */
+    public static readonly forEach = (table: Table<any>, callback: (key: string|number) => void): void => {
+        for(const key in table) {
+            if(table.hasOwnProperty(key)) {
+                callback(key);
+            }
+        }
+    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////

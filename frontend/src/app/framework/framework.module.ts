@@ -4,11 +4,12 @@ import {HttpClientModule} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AsyncVar} from './misc/async-var';
+import {HttpOptions} from './misc/http-options';
 import {Utilities} from './misc/utilities';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AnalyticsService} from './services/analytics.service';
-import {BackendService, EndpointType, httpOptions} from './services/backend.service';
+import {BackendService, EndpointType} from './services/backend.service';
 import {ConsoleService} from './services/console.service';
 import {LocaleService} from './services/locale.service';
 import {EnvironmentService} from './services/environment.service';
@@ -49,6 +50,7 @@ export {
 
     // Misc
     AsyncVar,
+    HttpOptions,
     Utilities,
 
     // Services
@@ -60,5 +62,4 @@ export {
 
     // Types
     EndpointType,
-    httpOptions,
 };

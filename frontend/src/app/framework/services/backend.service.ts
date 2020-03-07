@@ -1,18 +1,10 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {HttpHeaders, HttpParams} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
-////////////////////////////////////////////////////////////////////////////////
-/** HTTP request options. */
-type httpOptions = {
-    headers?: HttpHeaders;
-    params?: HttpParams;
-    responseType?: string|any; //BUG: Angular seems to have typed this incorrectly;  adding `any` type as a work-around.
-    observe?: string|any;      //BUG: Angular seems to have typed this incorrectly;  adding `any` type as a work-around.
-    reportProgress?: boolean;
-    withCredentials?: boolean;
-};
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {HttpOptions} from '../misc/http-options';
+import {Utilities} from '../misc/utilities';
 
 ////////////////////////////////////////////////////////////////////////////////
 /** A class containing a standard set of Rest calls. */
@@ -67,7 +59,7 @@ class BackendService {
     public readonly newEndpoint = <T>(
         url: string,
         version: number,
-        options?: httpOptions,
+        options?: HttpOptions,
     ): EndpointType<T> => {
         url = url.replace(/\/{2,}/, '/'); // Deduplicate redundant slashes
         url = url.replace(/^\//, '').replace(/\/$/, ''); // Strip leading and trailing slashes.
@@ -81,32 +73,67 @@ class BackendService {
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
         /** Construct an Enpoint.
+         * @param http Angular's HttpClient
          * @param url The URL for the endpoint this Endpoint will hit.
-         * @param [options] HTTP request options.
+         * @param [options] Default HTTP request options.
          */
         constructor(
             private readonly http: HttpClient,
             private readonly url: string,
-            private readonly options?: httpOptions
+            private readonly options: HttpOptions = new HttpOptions(),
         ) {
+            // Ensure that the HttpOptions they are passing in have been properly instantiated.
+            this.options = Utilities.transferProperties<HttpOptions>(new HttpOptions(), this.options);
             return this;
         }
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        public readonly get = (): Observable<T> => {
-            return this.http.get<T>(this.url, this.options);
+        private readonly mergeOptions = (options?: HttpOptions): HttpOptions => {
+            if(options != null) {
+                return Utilities.transferProperties<HttpOptions>(options, this.options);
+            }
+            return this.options;
         }
-        public readonly post = (payload: T): Observable<T> => {
-            return this.http.post<T>(this.url, payload, this.options);
+
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        /** Sends a GET request to the endpoint.
+         * @param [options] Request options — overrides the defaults for this Endpoint.
+         * @returns a response from the endpoint.
+         */
+        public readonly get = (options?: HttpOptions): Observable<T> => {
+            return this.http.get<T>(this.url, this.mergeOptions(options));
         }
-        public readonly put = (payload: T): Observable<T> => {
-            return this.http.put<T>(this.url, payload, this.options);
+
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        /** Sends a GET request to the endpoint.
+         * @param payload The data to send to the endpoint.
+         * @param [options] Request options — overrides the defaults for this Endpoint.
+         * @returns a response from the endpoint.
+         */
+        public readonly post = (payload: T, options?: HttpOptions): Observable<T> => {
+            return this.http.post<T>(this.url, payload, this.mergeOptions(options));
         }
-        public readonly delete = (): Observable<T> => {
-            return this.http.delete<T>(this.url, this.options);
+
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        /** Sends a GET request to the endpoint.
+         * @param payload The data to send to the endpoint.
+         * @param [options] Request options — overrides the defaults for this Endpoint.
+         * @returns a response from the endpoint.
+         */
+        public readonly put = (payload: T, options?: HttpOptions): Observable<T> => {
+            return this.http.put<T>(this.url, payload, this.mergeOptions(options));
+        }
+
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        /** Sends a GET request to the endpoint.
+         * @param [options] Request options — overrides the defaults for this Endpoint.
+         * @returns a response from the endpoint.
+         */
+        public readonly delete = (options?: HttpOptions): Observable<T> => {
+            return this.http.delete<T>(this.url, this.mergeOptions(options));
         }
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {BackendService, EndpointType, httpOptions};
+export {BackendService, EndpointType, HttpOptions};

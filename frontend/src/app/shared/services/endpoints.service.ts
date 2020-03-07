@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
-import {BackendService, EndpointType} from 'app/framework/framework.module';
+import {BackendService, Endpoint} from 'app/framework/framework.module';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
 /** Contains a HashMap of endpoints that can be hit. */
-class EndpointsService extends Table<EndpointType<any>> {
+class EndpointsService extends Table<Endpoint<any>> {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public readonly test: EndpointType<string>;
+    public readonly test: Endpoint<string>;
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(backend: BackendService) {

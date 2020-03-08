@@ -1,4 +1,16 @@
 {
   "collection": "@nestjs/schematics",
-  "sourceRoot": "src"
+  "sourceRoot": "src",
+  "compilerOptions": {
+    "webpack": true,
+    "tsConfigPath": "tsconfig.app.json",
+    "deleteOutDir": true,
+    "assets": [
+      "**/*.graphql",
+      "**/*.sql"
+    ]
+  },
+  "generateOptions": {
+    "spec": true
+  }
 }

@@ -4,7 +4,7 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     parserOptions: {
         tsconfigRootDir: '.',
-        project: './tsconfig.eslint.json',
+        project: 'tsconfig.json',
         createDefaultProgram: true, //BUG:  Workaround for parserOptions.project not working correctly in editors (https://github.com/typescript-eslint/typescript-eslint/issues/864#issuecomment-523213273)
         ecmaVersion: '2020',
         sourceType: 'module',

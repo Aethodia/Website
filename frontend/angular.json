@@ -98,7 +98,7 @@
                     "options": {
                         "eslintConfig": ".eslintrc.js",
                         "tsConfig": [
-                          "tsconfig.app.json"
+                          "tsconfig.json"
                         ],
                         "exclude": [
                             "**/node_modules/**",

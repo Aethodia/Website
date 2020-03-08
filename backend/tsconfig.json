@@ -3,19 +3,20 @@
 
     "compilerOptions": {
 
-        "baseUrl": "./src",
-        "outDir": "./dist",
+        "baseUrl": "src",
+        "outDir": "dist",
 
         "module": "CommonJS",
         "lib": [
             "ESNext",
             "DOM"
-        ],
+        ]
+    },
 
-        "declaration": false,
-        "removeComments": true,
-        "emitDecoratorMetadata": true,
-        "incremental": true,
-        "sourceMap": true
-    }
+    "include": [
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.js",
+        "**/*.jsx"
+    ]
 }

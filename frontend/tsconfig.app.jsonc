@@ -1,5 +1,5 @@
 {
-    "extends": "./tsconfig.json",
+    "extends": "./tsconfig.jsonc",
     "types": [
         "node"
     ],
@@ -9,6 +9,6 @@
     ],
     "exclude": [
         "**/*.spec.*",
-        "**/*.prod.*",
+        "**/*.prod.*"
     ]
 }

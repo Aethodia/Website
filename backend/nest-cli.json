@@ -3,7 +3,7 @@
   "sourceRoot": "src",
   "compilerOptions": {
     "webpack": true,
-    "tsConfigPath": "tsconfig.app.json",
+    "tsConfigPath": "tsconfig.app.jsonc",
     "deleteOutDir": true,
     "assets": [
       "**/*.graphql",

@@ -1,5 +1,5 @@
 {
-    "extends": "../shared/tsconfig.json",
+    "extends": "../shared/tsconfig.jsonc",
 
     "compilerOptions": {
 
@@ -12,7 +12,7 @@
         ],
         "types": [
             "webpack-env"
-        ],
+        ]
     },
 
     "include": [

@@ -1,5 +1,5 @@
 {
-    "extends": "./tsconfig.jsonc",
+    "extends": "./.tsconfig.jsonc",
     "exclude": [
         "**/*.spec.*"
     ]

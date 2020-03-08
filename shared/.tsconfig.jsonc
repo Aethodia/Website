@@ -39,8 +39,7 @@
         "esModuleInterop": true,
         "importHelpers": true,
         // "importsNotUsedAsValues": "preserve",
-        "removeComments": true,
-
+        "removeComments": true
     },
 
     "exclude": [

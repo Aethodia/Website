@@ -1,5 +1,5 @@
 {
-    "extends": "../shared/tsconfig.jsonc",
+    "extends": "../shared/.tsconfig.jsonc",
 
     "compilerOptions": {
 

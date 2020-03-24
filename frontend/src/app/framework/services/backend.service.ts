@@ -24,13 +24,11 @@ class BackendService {
      * @param options HTTP request options.
      * @returns a new Endpoint.
      */
-    public readonly newEndpoint = <T>(
+    public readonly newEndpoint = <SendType, ReceiveType, BodyType>(
         url: string,
         version: number,
         options?: HttpOptions,
-    ): Endpoint<T> => {
-        return new Endpoint<T>(this.http, `api/v${version}/${url}`, options);
-    }
+    ) => new Endpoint<SendType, ReceiveType, BodyType>(this.http, `api/v${version}/${url}`, options);
 }
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -4,7 +4,7 @@ import {HttpClientModule} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AsyncVar} from './misc/async-var';
-import {Endpoint} from './misc/endpoint';
+import {Endpoint, EndpointSettings} from './misc/endpoint';
 import {HttpOptions} from './misc/http-options';
 import {Utilities} from './misc/utilities';
 
@@ -52,6 +52,7 @@ export {
     // Misc
     AsyncVar,
     Endpoint,
+    EndpointSettings,
     HttpOptions,
     Utilities,
 

@@ -15,7 +15,7 @@ class HomeComponent {
         private readonly endpoints: EndpointsService
     ) {
         this.testText = 'Loading...';
-        this.endpoints.test.get().subscribe({
+        this.endpoints.test.receive().subscribe({
             next: (response: string): void => {
                 this.testText = response;
             },

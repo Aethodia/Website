@@ -6,12 +6,12 @@ import {HttpOptions} from '../misc/http-options';
 import {Utilities} from '../misc/utilities';
 
 ////////////////////////////////////////////////////////////////////////////////
-interface EndpointSettings {
-    idempotent: boolean;
+class EndpointSettings {
+    idempotent?: boolean = false;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-class Endpoint<SendType, ReceiveType, BodyType> {
+class Endpoint<SendResponse, ReceiveResponse, RequestBody> {
     //TODO: Implement caching
     //TODO: Implement mock data
 
@@ -25,7 +25,7 @@ class Endpoint<SendType, ReceiveType, BodyType> {
         private readonly http: HttpClient,
         private readonly url: string,
         private readonly options: HttpOptions = new HttpOptions(),
-        private readonly settings: EndpointSettings,
+        private readonly settings: EndpointSettings = new EndpointSettings(),
     ) {
         // Clean up hte URL
         this.url = this.url.replace(/\/{2,}/, '/'); // Deduplicate redundant slashes
@@ -47,17 +47,17 @@ class Endpoint<SendType, ReceiveType, BodyType> {
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    /** Sends a PUT or POST request to the endpoint,
-     *  depending on whether `Endpoint` is configured to be idempotent.
-     *  If `body` is `null` or `undefined`, sends a DELETE request to the endpoint.
+    /** If `body` is `null` or `undefined`, sends a DELETE request to the endpoint.
+     *  Else if `Endpoint` is not idempotent, sends a POST request.
+     *  Else sends a PUT request.
      * @param body The data to send to the endpoint.
      * @param [options] Request options — overrides the defaults for this `Endpoint`.
      * @returns a response from the endpoint.
      */
-    public readonly send = (body: BodyType, options?: HttpOptions): Observable<SendType> => {
+    public readonly send = (body: RequestBody, options?: HttpOptions): Observable<SendResponse> => {
         options = this.mergeOptions(options);
-        if(body == null) return this.http.delete<SendType>(this.url, options);
-        return this.http[this.settings.idempotent ? 'put' : 'post']<SendType>(this.url, body, options);
+        if(body == null) return this.http.delete<SendResponse>(this.url, options);
+        return this.http[!this.settings.idempotent ? 'post' : 'put']<SendResponse>(this.url, body, options);
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -65,10 +65,13 @@ class Endpoint<SendType, ReceiveType, BodyType> {
      * @param [options] Request options — overrides the defaults for this `Endpoint`.
      * @returns a response from the endpoint.
      */
-    public readonly receive = (options?: HttpOptions): Observable<ReceiveType> => {
-        return this.http.get<ReceiveType>(this.url, this.mergeOptions(options));
+    public readonly receive = (options?: HttpOptions): Observable<ReceiveResponse> => {
+        return this.http.get<ReceiveResponse>(this.url, this.mergeOptions(options));
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {Endpoint};
+export {
+    Endpoint,
+    EndpointSettings,
+};

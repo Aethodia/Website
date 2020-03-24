@@ -21,6 +21,10 @@
         "**/*.js",
         "**/*.jsx"
     ],
+    "exclude": [
+        "node_modules/**",
+        "dist/**"
+    ],
 
     "angularCompilerOptions": {
         "fullTemplateTypeCheck": true,

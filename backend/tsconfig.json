@@ -18,5 +18,9 @@
         "**/*.tsx",
         "**/*.js",
         "**/*.jsx"
+    ],
+    "exclude": [
+        "node_modules/**",
+        "dist/**",
     ]
 }

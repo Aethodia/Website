@@ -21,7 +21,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "tsConfig": ".tsconfig.app.jsonc",
+                        "tsConfig": "tsconfig.app.json",
                         "outputPath": "dist",
 
                         "index": "src/index.html",
@@ -98,7 +98,7 @@
                     "options": {
                         "eslintConfig": ".eslintrc.js",
                         "tsConfig": [
-                          ".tsconfig.jsonc"
+                          "tsconfig.json"
                         ],
                         "exclude": [
                             "**/node_modules/**",

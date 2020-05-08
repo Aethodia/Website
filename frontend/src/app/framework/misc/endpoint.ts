@@ -39,7 +39,7 @@ class Endpoint<SendResponse, ReceiveResponse, RequestBody> {
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    private readonly mergeOptions = (options?: HttpOptions): HttpOptions => {
+    private readonly mergeOptions = (options: HttpOptions|nil): HttpOptions => {
         if(options != null) {
             return Utilities.transferProperties<HttpOptions>(options, this.options);
         }

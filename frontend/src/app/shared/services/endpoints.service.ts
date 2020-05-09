@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BackendService, Endpoint} from 'app/framework/framework.module';
+export {EndpointsService};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
@@ -7,15 +8,14 @@ import {BackendService, Endpoint} from 'app/framework/framework.module';
 class EndpointsService extends Table<Endpoint<any, any, any>> {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public readonly test: Endpoint<unknown, string, undefined>;
+    public readonly graphql: Endpoint<object,  object, object>;
+    public readonly test:    Endpoint<unknown, string, undefined>;
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(backend: BackendService) {
         super();
-        this.test = backend.newEndpoint('test', 0, {responseType: 'text'});
+        this.graphql = backend.newEndpoint('grarphql', 0, {responseType: 'json'});
+        this.test    = backend.newEndpoint('test',     0, {responseType: 'text'});
         return this;
     }
 }
-
-////////////////////////////////////////////////////////////////////////////////
-export {EndpointsService};

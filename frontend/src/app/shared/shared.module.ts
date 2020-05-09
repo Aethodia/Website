@@ -6,6 +6,18 @@ import {Helpers} from './misc/helpers';
 import {EndpointsService} from './services/endpoints.service';
 import {ShariablesService} from './services/shariables.service';
 
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+export {
+    SharedModule,
+
+    // Misc
+    Helpers,
+
+    // Services
+    EndpointsService,
+    ShariablesService,
+};
+
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
     imports: [CommonModule],
@@ -27,15 +39,3 @@ class SharedModule {
         };
     }
 }
-
-////////////////////////////////////////////////////////////////////////////////
-export {
-    SharedModule,
-
-    // Misc
-    Helpers,
-
-    // Services
-    EndpointsService,
-    ShariablesService,
-};

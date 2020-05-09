@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+export {Error403Component};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
@@ -6,6 +7,3 @@ import {Component} from "@angular/core";
 })
 /** Error 403: Forbidden. */
 class Error403Component {}
-
-////////////////////////////////////////////////////////////////////////////////
-export {Error403Component};

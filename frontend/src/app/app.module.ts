@@ -14,6 +14,9 @@ import {ResponseCodesModule} from './content/response-codes/response-codes.modul
 import {AdminModule} from './content/admin/admin.module';
 import {DefaultModule} from './content/default/default.module';
 
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+export {AppModule};
+
 ////////////////////////////////////////////////////////////////////////////////
 //TODO: SSR (https://angular.io/guide/universal)
 @NgModule({
@@ -38,9 +41,4 @@ import {DefaultModule} from './content/default/default.module';
     declarations: [AppComponent],
     bootstrap: [AppComponent],
 })
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 class AppModule {}
-
-////////////////////////////////////////////////////////////////////////////////
-export {AppModule};

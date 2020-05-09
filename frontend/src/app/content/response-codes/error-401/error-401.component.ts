@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+export {Error401Component};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
@@ -6,6 +7,3 @@ import {Component} from "@angular/core";
 })
 /** Error 401: Unauthorized. */
 class Error401Component {}
-
-////////////////////////////////////////////////////////////////////////////////
-export {Error401Component};

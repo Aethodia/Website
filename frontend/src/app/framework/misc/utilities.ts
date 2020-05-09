@@ -1,3 +1,5 @@
+export {Utilities};
+
 ////////////////////////////////////////////////////////////////////////////////
 /** Contains general reusable utility code. */
 class Utilities {
@@ -7,7 +9,7 @@ class Utilities {
      * @param variable The variable whose type to instantiate
      * @returns an instantation of the input's type.
      */
-    public static readonly new = (variable: any): bigint|boolean|Function|number|object|string|symbol|undefined => {
+    public static new (variable: any): bigint|boolean|Function|number|object|string|symbol|undefined|never {
         const type = typeof(variable);
         switch(type) {
             case 'bigint':
@@ -33,17 +35,24 @@ class Utilities {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Recursively copies all properties of one object to another, and returns the result.
+     * @param to The object to save the properties to.
      * @param from The object to get the properties from.
-     * @param to The object to save the properties of `from` to.
      */
-    public static readonly transferProperties = <T>(from: Table<any>, to: T|any): T => { //TODO: We shouldn't need to use `any` in `T|any`.
-        for(const key of Object.keys(from)) {
-            if(to[key] != null) {
-                if(typeof(from[key]) !== 'object') {
-                    to[key] = from[key];
-                } else {
-                    to[key] = Utilities.transferProperties<Object>(from[key], to[key]);
-                }
+    public static transferProperties<
+        ToType   extends FromType,
+        FromType extends object = object,
+    >(
+        to:   ToType,
+        from: FromType,
+    ): ToType {
+
+        for(const key of Object.keys(from) as Array<keyof FromType>) { // `keyof` is safe here, because we're only going to assign like types to like types.
+            switch(typeof(from[key])) {
+                case 'object':
+                    to[key] = Utilities.transferProperties(to[key] as any, from[key] as any); //NOTE: `any` should be type-safe here, given the checks we've done.
+                    break;
+                default:
+                    to[key] = (from as ToType)[key];
             }
         }
         return to;
@@ -54,14 +63,9 @@ class Utilities {
      * @param table The object whose keys to iterate over.
      * @param callback The function to execute for each iteration.
      */
-    public static readonly forEach = (table: Table<any>, callback: (key: string|number) => void): void => {
-        for(const key in table) {
-            if(table.hasOwnProperty(key)) {
-                callback(key);
-            }
+    public static forEach<Type extends object>(table: Type, callback: (key: string|number) => void): void {
+        for(const key of Object.keys(table)) {
+            callback(key);
         }
     }
 }
-
-////////////////////////////////////////////////////////////////////////////////
-export {Utilities};

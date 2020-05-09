@@ -5,6 +5,9 @@ import * as _ from 'lodash';
 import {Utilities} from '../misc/utilities';
 import {EnvironmentService} from './environment.service';
 
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+export {ConsoleService};
+
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
 /** Manages the `console` object.  Primary purpose is to disable logging in prod. */
@@ -27,25 +30,22 @@ class ConsoleService {
         }
 
         // If not dev mode, gut console
-        Object.keys(console).forEach((key: string): void => {
+        for(const key of Object.keys(console) as Array<keyof Console>) { // `keyof` is safe here, because we're only going to assign like types to like types.
             switch(key) {
 
-                // Remove parameters from functions we want to keep
-                case 'warn':
-                case 'error':
-                    console[key] = (): void => console[key]();
-                    break;
+                // // Remove parameters from functions we want to keep
+                // case 'warn':
+                // case 'error':
+                //     console[key] = (): void => console[key](key);
+                //     break;
 
                 // Wipe functions we do not want to keep
                 default:
-                    (console as Table<any>)[key] = Utilities.new((console as Table<any>)[key]);
+                    console[key] = Utilities.new(console[key]);
             }
-        });
+        };
 
         // Done
         return this;
     }
 }
-
-////////////////////////////////////////////////////////////////////////////////
-export {ConsoleService};

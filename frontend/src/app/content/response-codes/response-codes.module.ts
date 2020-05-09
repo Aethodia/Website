@@ -7,6 +7,12 @@ import {Error401Component} from './error-401/error-401.component';
 import {Error403Component} from './error-403/error-403.component';
 import {Error404Component} from './error-404/error-404.component';
 
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+export {
+    ResponseCodesModule,
+    responseCodeRoutes,
+};
+
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
     imports: [
@@ -26,9 +32,3 @@ import {Error404Component} from './error-404/error-404.component';
  * {@link https://en.wikipedia.org/wiki/List_of_HTTP_status_codes}
  */
 class ResponseCodesModule {}
-
-////////////////////////////////////////////////////////////////////////////////
-export {
-    ResponseCodesModule,
-    responseCodeRoutes,
-};

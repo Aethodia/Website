@@ -1,12 +1,15 @@
-import {Route} from '@angular/router';
+import {Route, Routes} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {Error401Component} from './error-401/error-401.component';
 import {Error403Component} from './error-403/error-403.component';
 import {Error404Component} from './error-404/error-404.component';
 
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+export {responseCodeRoutes};
+
 ////////////////////////////////////////////////////////////////////////////////
-const responseCodeRoutes: Route[] = [{
+const responseCodeRoutes: Routes = Array<Route>({
     path: '401',
     pathMatch: 'full',
     component: Error401Component,
@@ -21,7 +24,4 @@ const responseCodeRoutes: Route[] = [{
 }, {
     path: '**',
     component: Error404Component,
-}];
-
-////////////////////////////////////////////////////////////////////////////////
-export {responseCodeRoutes};
+});

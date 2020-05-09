@@ -6,6 +6,12 @@ import {defaultRoutes} from './default.routes';
 import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
 
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+export {
+    DefaultModule,
+    defaultRoutes,
+};
+
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
     imports: [
@@ -21,9 +27,3 @@ import {LoginComponent} from './login/login.component';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 class DefaultModule {}
-
-////////////////////////////////////////////////////////////////////////////////
-export {
-    DefaultModule,
-    defaultRoutes,
-};

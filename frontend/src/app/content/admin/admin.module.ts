@@ -6,6 +6,9 @@ import {RouterModule} from '@angular/router';
 import {adminRoutes} from './admin.routes';
 import {I18nComponent} from './i18n/i18n.component';
 
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+export {AdminModule};
+
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
     imports: [
@@ -18,11 +21,4 @@ import {I18nComponent} from './i18n/i18n.component';
     ],
     providers: [],
 })
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 class AdminModule {}
-
-////////////////////////////////////////////////////////////////////////////////
-export {
-    AdminModule,
-};

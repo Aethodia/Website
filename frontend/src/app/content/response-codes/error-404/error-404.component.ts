@@ -1,4 +1,5 @@
 import {Component} from "@angular/core";
+export {Error404Component};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
@@ -6,6 +7,3 @@ import {Component} from "@angular/core";
 })
 /** Error 404: Not Found. */
 class Error404Component {}
-
-////////////////////////////////////////////////////////////////////////////////
-export {Error404Component};

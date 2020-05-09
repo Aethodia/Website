@@ -3,10 +3,14 @@
 declare type nil = null|undefined|void;
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+/** An empty `class` that can be used as a type for all `class`es. */
+declare class Class {}
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 /** An `object` with unknown members of a given or `any` type.
  * @warn Not type-safe — use stricter types wherever possible.
  */
-declare type table<Value = any> = object & {
+declare type table<Value = unknown> = object & {
     [key in string|number]: Value;
 };
 
@@ -15,5 +19,5 @@ declare type table<Value = any> = object & {
  * @warn Not type-safe — use stricter types wherever possible.
  * @note Use `table` instead, wherever possible.
  */
-declare interface Table<Value = any> extends table<Value> {}
-declare class Table<Value = any> implements Table<Value> {}
+declare interface Table<Value = unknown> extends Object,           table<Value> {}
+declare class     Table<Value = unknown> extends Object implements Table<Value> {}

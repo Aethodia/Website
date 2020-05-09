@@ -1,11 +1,12 @@
-import {Route} from '@angular/router';
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {Route, Routes} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {LoginComponent} from './login/login.component';
 
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+export {defaultRoutes};
+
 ////////////////////////////////////////////////////////////////////////////////
-const defaultRoutes: Route[] = [{
+const defaultRoutes: Routes = Array<Route>({
     path: '',
     pathMatch: 'full',
     component: HomeComponent,
@@ -21,7 +22,4 @@ const defaultRoutes: Route[] = [{
     path: 'login',
     pathMatch: 'full',
     component: LoginComponent,
-}];
-
-////////////////////////////////////////////////////////////////////////////////
-export {defaultRoutes};
+});

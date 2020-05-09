@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+export {AnalyticsService};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
@@ -6,6 +7,3 @@ import {Injectable} from '@angular/core';
 class AnalyticsService {
     //TODO:  Set up analytics with Matomo.
 }
-
-////////////////////////////////////////////////////////////////////////////////
-export {AnalyticsService};

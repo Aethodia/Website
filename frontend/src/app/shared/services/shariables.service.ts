@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {AsyncVar} from 'app/framework/framework.module';
+export {ShariablesService};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
@@ -9,6 +10,3 @@ import {AsyncVar} from 'app/framework/framework.module';
 class ShariablesService extends Table<AsyncVar<any>> {
     // Variables go here
 }
-
-////////////////////////////////////////////////////////////////////////////////
-export {ShariablesService};

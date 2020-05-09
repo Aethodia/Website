@@ -5,6 +5,9 @@ import {HttpClient} from '@angular/common/http';
 import {Endpoint} from '../misc/endpoint';
 import {HttpOptions} from '../misc/http-options';
 
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+export {BackendService};
+
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
 /** Handles all calls to the backend, and provides the option to cache them. */
@@ -30,6 +33,3 @@ class BackendService {
         options?: HttpOptions,
     ) => new Endpoint<SendType, ReceiveType, BodyType>(this.http, `api/v${version}/${url}`, options);
 }
-
-////////////////////////////////////////////////////////////////////////////////
-export {BackendService};

@@ -15,6 +15,25 @@ import {ConsoleService} from './services/console.service';
 import {LocaleService} from './services/locale.service';
 import {EnvironmentService} from './services/environment.service';
 
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+export {
+    FrameworkModule,
+
+    // Misc
+    AsyncVar,
+    Endpoint,
+    EndpointSettings,
+    HttpOptions,
+    Utilities,
+
+    // Services
+    AnalyticsService,
+    BackendService,
+    ConsoleService,
+    EnvironmentService,
+    LocaleService,
+};
+
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
     imports: [
@@ -44,22 +63,3 @@ class FrameworkModule {
         };
     }
 }
-
-////////////////////////////////////////////////////////////////////////////////
-export {
-    FrameworkModule,
-
-    // Misc
-    AsyncVar,
-    Endpoint,
-    EndpointSettings,
-    HttpOptions,
-    Utilities,
-
-    // Services
-    AnalyticsService,
-    BackendService,
-    ConsoleService,
-    EnvironmentService,
-    LocaleService,
-};

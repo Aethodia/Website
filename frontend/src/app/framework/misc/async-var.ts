@@ -1,32 +1,37 @@
 import {BehaviorSubject} from 'rxjs';
+export {AsyncVar};
 
 ////////////////////////////////////////////////////////////////////////////////
 /** A variable that can be get and set asynchronously. */
-class AsyncVar<T> {
-    private value: BehaviorSubject<T|undefined>;
+class AsyncVar<Type> {
+    private readonly subject: BehaviorSubject<Type|null|undefined>;
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    constructor(value?: T|undefined) {
-        this.value = new BehaviorSubject<T|undefined>(value);
+    constructor(value?: Type|null) {
+        this.subject = new BehaviorSubject<Type|null|undefined>(value);
         return this;
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    /** Gets the variable
-     * @return the variable inside of a Subject.
+    /** Gets the variable asynchronously.
+     * @return the variable inside of a subscribable.
      */
-    public readonly get = (): BehaviorSubject<T|undefined> => {
-        return this.value;
+    public get(): BehaviorSubject<Type|null|undefined> {
+        return this.subject;
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    /** Sets the variable
-     * @param value What you want to set the variable to.
+    /** Sets the variable and updates all of its subscribers.
+     * @param value The variable's new value.
      */
-    public readonly set = (value: T): void => {
-        this.value.next(value);
+    public set(value: Type|null): void {
+        this.subject.next(value);
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Deletes the stored variable and updates all of its subscribers. */
+    public delete(): void {
+        this.subject.next(undefined);
+        this.subject.complete();
     }
 }
-
-////////////////////////////////////////////////////////////////////////////////
-export {AsyncVar};

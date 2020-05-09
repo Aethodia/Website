@@ -1,25 +1,21 @@
 import {Injectable, isDevMode} from '@angular/core';
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AsyncVar} from '../misc/async-var';
+export {EnvironmentService};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
 /** Asynchronously stores and distributes environment variables.
  *  A great way to share data across the app.
  */
-class EnvironmentService extends Table<any> {
+class EnvironmentService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Asynchronous environment variables. */
-    public readonly vars = class extends Table<AsyncVar<any>> {}
+    public readonly vars = class Vars extends Table<AsyncVar<unknown>> {}
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Synchronous environment constants. */
-    public readonly consts = class extends Table<any> {
+    public readonly consts = class Consts extends Object {
         public static readonly isDevMode: boolean = isDevMode();
     }
 }
-
-////////////////////////////////////////////////////////////////////////////////
-export {EnvironmentService};

@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {EndpointsService} from 'app/shared/shared.module';
+export {HomeComponent};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
@@ -23,6 +22,3 @@ class HomeComponent {
         return this;
     }
 }
-
-////////////////////////////////////////////////////////////////////////////////
-export {HomeComponent};

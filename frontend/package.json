@@ -22,41 +22,36 @@
   "type": "commonjs",
   "main": "./src/index.ts",
   "scripts": {
-    "postinstall": "npm rebuild && npm dedupe",
+    "postinstall": "npm rebuild && npm dedupe && npx ngcc",
     "relock": "rm -rf node_modules && rm -f npm-shrinkwrap.json && npm install && npm shrinkwrap",
     "lint": "npx ng lint",
-    "lintfix": "npx ng lint --fix",
+    "lint:fix": "npx ng lint --fix",
     "build": "npx ng build",
     "start": "npx ng serve"
   },
   "engines": {
-    "npm": ">=6"
+    "npm": "^6"
   },
-  "dependencies": {
-    "@angular/animations": "^9",
-    "@angular/cdk": "^9",
-    "@angular/common": "^9",
-    "@angular/compiler": "^9",
-    "@angular/core": "^9",
-    "@angular/forms": "^9",
-    "@angular/material": "^9",
-    "@angular/platform-browser": "^9",
-    "@angular/platform-browser-dynamic": "^9",
-    "@angular/router": "^9",
-    "lodash": "^4",
-    "rxjs": "^6",
-    "tslib": "^1",
-    "zone.js": "~0.10"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.900",
     "@angular-eslint/builder": "latest",
     "@angular-eslint/eslint-plugin": "latest",
     "@angular-eslint/eslint-plugin-template": "latest",
     "@angular-eslint/template-parser": "latest",
+    "@angular/animations": "^9",
+    "@angular/cdk": "^9",
     "@angular/cli": "^9",
+    "@angular/common": "^9",
+    "@angular/compiler": "^9",
     "@angular/compiler-cli": "^9",
+    "@angular/core": "^9",
+    "@angular/forms": "^9",
     "@angular/language-service": "^9",
+    "@angular/material": "^9",
+    "@angular/platform-browser": "^9",
+    "@angular/platform-browser-dynamic": "^9",
+    "@angular/router": "^9",
     "@types/lodash": "^4",
     "@types/node": "^12",
     "@types/webpack-env": "^1",
@@ -64,7 +59,11 @@
     "@typescript-eslint/parser": "^2",
     "codelyzer": "^5",
     "eslint": "^6",
+    "lodash": "^4",
+    "rxjs": "^6",
     "ts-node": "^8",
-    "typescript": "~3.7"
+    "tslib": "^1",
+    "typescript": "^3",
+    "zone.js": "~0.10"
   }
 }

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import * as _ from 'lodash';
+import _ from 'lodash';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {Utilities} from '../misc/utilities';
@@ -13,8 +13,8 @@ export {ConsoleService};
 /** Manages the `console` object.  Primary purpose is to disable logging in prod. */
 class ConsoleService {
 
-    /** A backup of `console`. */
-    private readonly console: Console;
+    /** A backup of `console` that will work in production. */
+    public readonly console: Console;
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
@@ -23,29 +23,40 @@ class ConsoleService {
         // Back up the original console
         this.console = _.cloneDeep(console);
 
-        // If dev mode, restore console
-        if(this.environment.consts.isDevMode) {
-            console = _.cloneDeep(this.console);
-            return;
+        // If not dev mode, gut the console
+        if(!this.environment.consts.isDevMode) {
+            this.sanitizeConsole();
         }
 
-        // If not dev mode, gut console
+        // Done
+        return this;
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Removes most of `console`'s functionality in order to prevent displaying
+     *  potentially sensitive information to the user.
+     */
+    public sanitizeConsole(): void {
         for(const key of Object.keys(console) as Array<keyof Console>) { // `keyof` is safe here, because we're only going to assign like types to like types.
             switch(key) {
 
-                // // Remove parameters from functions we want to keep
-                // case 'warn':
-                // case 'error':
-                //     console[key] = (): void => console[key](key);
-                //     break;
+                // Remove parameters from functions we want to keep
+                case 'warn':
+                case 'error':
+                    const oldFn = console[key];
+                    console[key] = (): void => oldFn(key);
+                    break;
 
                 // Wipe functions we do not want to keep
                 default:
                     console[key] = Utilities.new(console[key]);
             }
         };
+    }
 
-        // Done
-        return this;
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Restores the default `console` from backup. */
+    public restoreConsole(): void {
+        console = _.cloneDeep(this.console);
     }
 }

@@ -31,5 +31,9 @@ class BackendService {
         url: string,
         version: number,
         options?: HttpOptions,
-    ) => new Endpoint<SendType, ReceiveType, BodyType>(this.http, `api/v${version}/${url}`, options);
+    ) => new Endpoint<SendType, ReceiveType, BodyType>(
+        this.http,
+        `api/v${version}/${url}`,
+        options
+    );
 }

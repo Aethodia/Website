@@ -54,10 +54,10 @@ class FrameworkModule {
         return {
             ngModule: FrameworkModule,
             providers: [
-                AnalyticsService,
-                BackendService,
-                ConsoleService,
                 EnvironmentService,
+                ConsoleService,
+                BackendService,
+                AnalyticsService,
                 LocaleService,
             ],
         };

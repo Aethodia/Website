@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import _ from 'lodash';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -11,7 +11,7 @@ export {ConsoleService};
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
 /** Manages the `console` object.  Primary purpose is to disable logging in prod. */
-class ConsoleService {
+class ConsoleService implements OnInit {
 
     /** A backup of `console` that will work in production. */
     public readonly console: Console;
@@ -23,13 +23,17 @@ class ConsoleService {
         // Back up the original console
         this.console = _.cloneDeep(console);
 
+        // Done
+        return this;
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    public ngOnInit(): void {
+
         // If not dev mode, gut the console
         if(!this.environment.consts.isDevMode) {
             this.sanitizeConsole();
         }
-
-        // Done
-        return this;
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

@@ -9,11 +9,11 @@ class Utilities {
      * @param variable The variable whose type to instantiate
      * @returns an instantation of the input's type.
      */
-    public static new (variable: any): bigint|boolean|Function|number|object|string|symbol|undefined|never {
+    public static new(variable: unknown): bigint|boolean|Function|number|object|string|symbol|undefined|never {
         const type = typeof(variable);
         switch(type) {
             case 'bigint':
-                return BigInt(0);
+                return BigInt(0); //TODO: Update the syntax to `0n`.
             case 'boolean':
                 return false;
             case 'function':
@@ -46,13 +46,15 @@ class Utilities {
         from: FromType,
     ): ToType {
 
-        for(const key of Object.keys(from) as Array<keyof FromType>) { // `keyof` is safe here, because we're only going to assign like types to like types.
+        for(const key of Reflect.ownKeys(from) as Array<keyof FromType>) { // `keyof` is safe here, because we're only going to assign like types to like types.
+            if(typeof(to[key]) !== typeof(from[key])) continue;
+
             switch(typeof(from[key])) {
                 case 'object':
                     to[key] = Utilities.transferProperties(to[key] as any, from[key] as any); //NOTE: `any` should be type-safe here, given the checks we've done.
                     break;
                 default:
-                    to[key] = (from as ToType)[key];
+                    to[key] = (from as any)[key]; //NOTE: `any` should be type-safe here, given the checks we've done.
             }
         }
         return to;
@@ -63,8 +65,8 @@ class Utilities {
      * @param table The object whose keys to iterate over.
      * @param callback The function to execute for each iteration.
      */
-    public static forEach<Type extends object>(table: Type, callback: (key: string|number) => void): void {
-        for(const key of Object.keys(table)) {
+    public static forEach<Type extends object>(table: Type, callback: (key: index) => void): void {
+        for(const key of Reflect.ownKeys(table)) {
             callback(key);
         }
     }

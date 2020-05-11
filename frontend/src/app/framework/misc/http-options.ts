@@ -48,7 +48,7 @@ class HttpOptions extends Object {
     /** Populates the class with user input. */
     private readonly build? = (input: HttpOptions): void => {
         const merged = Utilities.transferProperties<HttpOptions, HttpOptions>(this, input);
-        for(const key of Object.keys(merged) as Array<keyof HttpOptions>) {
+        for(const key of Reflect.ownKeys(merged) as Array<keyof HttpOptions>) {
             this[key] = merged[key];
         }
     }

@@ -10,7 +10,7 @@ import {environment} from './env/env';
 
 // Framework-required
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-(globalThis as Table<any>).__Zone_enable_cross_context_check = true;
+(globalThis as table<any>).__Zone_enable_cross_context_check = true;
 import 'zone.js/dist/zone';
 if(!environment.prodMode) {
     require('zone.js/dist/zone-error');

@@ -18,7 +18,7 @@ import {DefaultModule} from './content/default/default.module';
 export {AppModule};
 
 ////////////////////////////////////////////////////////////////////////////////
-//TODO: SSR (https://angular.io/guide/universal)
+//TODO: Server-Side Rendering (https://angular.io/guide/universal)
 @NgModule({
     imports: [
 

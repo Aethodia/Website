@@ -41,7 +41,7 @@ class ConsoleService implements OnInit {
      *  potentially sensitive information to the user.
      */
     public sanitizeConsole(): void {
-        for(const key of Object.keys(console) as Array<keyof Console>) { // `keyof` is safe here, because we're only going to assign like types to like types.
+        for(const key of Reflect.ownKeys(console) as Array<keyof Console>) { // `keyof` is safe here, because we're only going to assign like types to like types.
             switch(key) {
 
                 // Remove parameters from functions we want to keep

@@ -33,8 +33,8 @@ class SharedModule {
         return {
             ngModule: SharedModule,
             providers: [
-                EndpointsService,
                 ShariablesService,
+                EndpointsService,
             ],
         };
     }

@@ -1,5 +1,5 @@
 import {Injectable, isDevMode} from '@angular/core';
-import {AsyncVar} from '../misc/async-var';
+import {AsyncVar} from '../misc/async-var.class';
 export {EnvironmentService};
 
 ////////////////////////////////////////////////////////////////////////////////

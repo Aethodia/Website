@@ -2,8 +2,8 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {HttpOptions} from '../misc/http-options';
-import {Utilities} from '../misc/utilities';
+import {HttpOptions} from './http-options.class';
+import {Utilities} from './utilities.class';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {EndpointSettings};

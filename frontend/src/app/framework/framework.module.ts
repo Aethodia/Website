@@ -3,10 +3,10 @@ import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AsyncVar} from './misc/async-var';
-import {Endpoint, EndpointSettings} from './misc/endpoint';
-import {HttpOptions} from './misc/http-options';
-import {Utilities} from './misc/utilities';
+import {AsyncVar} from './misc/async-var.class';
+import {Endpoint, EndpointSettings} from './misc/endpoint.class';
+import {HttpOptions} from './misc/http-options.class';
+import {Utilities} from './misc/utilities.class';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AnalyticsService} from './services/analytics.service';
@@ -14,6 +14,18 @@ import {BackendService} from './services/backend.service';
 import {ConsoleService} from './services/console.service';
 import {LocaleService} from './services/locale.service';
 import {EnvironmentService} from './services/environment.service';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {DatetimePipe} from './pipes/datetime.pipe';
+import {I18nPipe} from './pipes/i18n.pipe';
+import {NumberPipe} from './pipes/number.pipe';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {AuthInterceptor} from './interceptors/auth.interceptor';
+import {CacheInterceptor} from './interceptors/cache.interceptor';
+import {LogInterceptor} from './interceptors/log.interceptor';
+import {MockInterceptor} from './interceptors/mock.interceptor';
+import {RetryInterceptor} from './interceptors/retry.interceptor';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {
@@ -32,6 +44,18 @@ export {
     ConsoleService,
     EnvironmentService,
     LocaleService,
+
+    // Pipes
+    DatetimePipe,
+    I18nPipe,
+    NumberPipe,
+
+    // Interceptors
+    AuthInterceptor,
+    CacheInterceptor,
+    LogInterceptor,
+    MockInterceptor,
+    RetryInterceptor,
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -39,6 +63,11 @@ export {
     imports: [
         CommonModule,
         HttpClientModule,
+    ],
+    declarations: [
+        I18nPipe,
+        DatetimePipe,
+        NumberPipe,
     ],
 })
 
@@ -54,11 +83,19 @@ class FrameworkModule {
         return {
             ngModule: FrameworkModule,
             providers: [
+                // Services
                 EnvironmentService,
                 ConsoleService,
                 BackendService,
                 AnalyticsService,
                 LocaleService,
+
+                // Interceptors
+                LogInterceptor,
+                CacheInterceptor,
+                MockInterceptor,
+                AuthInterceptor,
+                RetryInterceptor,
             ],
         };
     }

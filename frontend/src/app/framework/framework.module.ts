@@ -12,7 +12,7 @@ import {Utilities} from './misc/utilities.class';
 import {AnalyticsService} from './services/analytics.service';
 import {BackendService} from './services/backend.service';
 import {ConsoleService} from './services/console.service';
-import {LocaleService} from './services/locale.service';
+import {I18nService} from './services/i18n.service';
 import {EnvironmentService} from './services/environment.service';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -43,7 +43,7 @@ export {
     BackendService,
     ConsoleService,
     EnvironmentService,
-    LocaleService,
+    I18nService,
 
     // Pipes
     DatetimePipe,
@@ -87,8 +87,8 @@ class FrameworkModule {
                 EnvironmentService,
                 ConsoleService,
                 BackendService,
+                I18nService,
                 AnalyticsService,
-                LocaleService,
 
                 // Interceptors
                 LogInterceptor,

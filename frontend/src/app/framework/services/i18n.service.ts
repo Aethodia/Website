@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-export {LocaleService};
+export {I18nService};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
 /** Handles the localization. */
-class LocaleService {
+class I18nService {
     //TODO
 }

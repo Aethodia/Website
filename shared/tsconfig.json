@@ -23,13 +23,13 @@
         "strict": true,
 
         // Maps
-        // "declaration": false,
         "declarationMap": true,
         "sourceMap": true,
         "mapRoot": "debug/maps",
         "sourceRoot": "debug/src",
 
-        //
+        // Misc
+        // "declaration": false,
         "composite": true,
         "preserveSymlinks": true,
 

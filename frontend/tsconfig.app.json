@@ -4,12 +4,17 @@
         "node"
     ],
     "files": [
-        "src/main.ts",
-        "src/polyfills.ts"
+        "./src/main.ts",
+        "./src/polyfills.ts"
+    ],
+    "include": [
+        "./**/*.ts",
+        "./**/*.js"
     ],
     "exclude": [
         "node_modules/**",
         "dist/**",
+        "**/*.min.*",
         "**/*.spec.*",
         "**/*.prod.*"
     ]

@@ -2,7 +2,7 @@ import {Injectable, OnInit} from '@angular/core';
 import _ from 'lodash';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {Utilities} from '../misc/utilities.class';
+import {Utils} from '../misc/utils.class';
 import {EnvironmentService} from './environment.service';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -53,7 +53,7 @@ class ConsoleService implements OnInit {
 
                 // Wipe functions we do not want to keep
                 default:
-                    console[key] = Utilities.new(console[key]);
+                    console[key] = Utils.new(console[key]);
             }
         };
     }

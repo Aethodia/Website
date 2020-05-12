@@ -1,4 +1,4 @@
-export {Utilities};
+export {Utils};
 
 ////////////////////////////////////////////////////////////////////////////////
 enum CAPS {
@@ -11,7 +11,7 @@ enum CAPS {
 
 ////////////////////////////////////////////////////////////////////////////////
 /** Contains general reusable utility code. */
-class Utilities {
+class Utils {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Returns a brand new instance with the same type as the input.
@@ -60,7 +60,7 @@ class Utilities {
 
             switch(typeof(from[key])) {
                 case 'object':
-                    to[key] = Utilities.transferProperties(to[key] as any, from[key] as any); //NOTE: `any` should be type-safe here, given the checks we've done.
+                    to[key] = Utils.transferProperties(to[key] as any, from[key] as any); //NOTE: `any` should be type-safe here, given the checks we've done.
                     break;
                 default:
                     to[key] = (from as any)[key]; //NOTE: `any` should be type-safe here, given the checks we've done.
@@ -89,7 +89,7 @@ class Utilities {
     public static changeCaps(string: string, which: CAPS): string {
 
         const capitalize = (substring: string): string => {
-            return Utilities.changeCaps(substring, CAPS.UPPER)
+            return Utils.changeCaps(substring, CAPS.UPPER)
         }
 
         switch(which) {
@@ -103,12 +103,12 @@ class Utilities {
                 break;
 
             case CAPS.SENTENCE:
-                string = Utilities.changeCaps(string, CAPS.LOWER);
+                string = Utils.changeCaps(string, CAPS.LOWER);
                 string = string.replace(/^\w{1}/gm, capitalize);
                 break;
 
             case CAPS.TITLE:
-                string = Utilities.changeCaps(string, CAPS.SENTENCE);
+                string = Utils.changeCaps(string, CAPS.SENTENCE);
                 string = string.replace(/\s{1}\w{1}/g, capitalize);
                 break;
 
@@ -168,9 +168,9 @@ class Utilities {
 
         // Re-assemble the string
         return (
-            Utilities.changeCaps(segments[0], caps[0]) +
+            Utils.changeCaps(segments[0], caps[0]) +
             format.separator +
-            Utilities.changeCaps(segments[1], caps[1])
+            Utils.changeCaps(segments[1], caps[1])
         );
     }
 }

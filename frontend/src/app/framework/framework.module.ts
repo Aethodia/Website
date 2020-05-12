@@ -6,7 +6,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {AsyncVar} from './misc/async-var.class';
 import {Endpoint, EndpointSettings} from './misc/endpoint.class';
 import {HttpOptions} from './misc/http-options.class';
-import {Utilities} from './misc/utilities.class';
+import {Utils} from './misc/utils.class';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AnalyticsService} from './services/analytics.service';
@@ -36,7 +36,7 @@ export {
     Endpoint,
     EndpointSettings,
     HttpOptions,
-    Utilities,
+    Utils,
 
     // Services
     AnalyticsService,

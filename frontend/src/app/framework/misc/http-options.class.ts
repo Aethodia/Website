@@ -1,5 +1,5 @@
 import {HttpHeaders, HttpParams} from '@angular/common/http';
-import {Utilities} from './utilities.class';
+import {Utils} from './utils.class';
 export {HttpOptions};
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -47,7 +47,7 @@ class HttpOptions extends Object {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Populates the class with user input. */
     private readonly build? = (input: HttpOptions): void => {
-        const merged = Utilities.transferProperties<HttpOptions, HttpOptions>(this, input);
+        const merged = Utils.transferProperties<HttpOptions, HttpOptions>(this, input);
         for(const key of Reflect.ownKeys(merged) as Array<keyof HttpOptions>) {
             this[key] = merged[key];
         }

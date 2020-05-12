@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {HttpOptions} from './http-options.class';
-import {Utilities} from './utilities.class';
+import {Utils} from './utils.class';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {EndpointSettings};
@@ -36,7 +36,7 @@ export class Endpoint<SendResponse, ReceiveResponse, RequestBody> {
         this.url = this.url.replace(/^\//, '').replace(/\/$/, ''); // Strip leading and trailing slashes.
 
         // Ensure that the HttpOptions they are passing in have been properly instantiated.
-        this.options = Utilities.transferProperties<HttpOptions>(this.options, new HttpOptions());
+        this.options = Utils.transferProperties<HttpOptions>(this.options, new HttpOptions());
 
         // Done.
         return this;
@@ -44,7 +44,7 @@ export class Endpoint<SendResponse, ReceiveResponse, RequestBody> {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     private mergeOptions(options: HttpOptions): HttpOptions {
-        return Utilities.transferProperties<HttpOptions>(this.options, options);
+        return Utils.transferProperties<HttpOptions>(this.options, options);
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

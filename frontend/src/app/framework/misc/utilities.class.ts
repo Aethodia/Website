@@ -1,6 +1,15 @@
 export {Utilities};
 
 ////////////////////////////////////////////////////////////////////////////////
+enum CAPS {
+    'SAME',
+    'UPPER',
+    'LOWER',
+    'SENTENCE',
+    'TITLE',
+}
+
+////////////////////////////////////////////////////////////////////////////////
 /** Contains general reusable utility code. */
 class Utilities {
 
@@ -69,5 +78,99 @@ class Utilities {
         for(const key of Reflect.ownKeys(table)) {
             callback(key);
         }
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Changes the capitalization of a string.
+     * @param string The string whose capitalization to change.
+     * @param which How to capitalize.
+     * @returns the capitalized string.
+     */
+    public static changeCaps(string: string, which: CAPS): string {
+
+        const capitalize = (substring: string): string => {
+            return Utilities.changeCaps(substring, CAPS.UPPER)
+        }
+
+        switch(which) {
+
+            case CAPS.UPPER:
+                string = string.toLocaleUpperCase();
+                break;
+
+            case CAPS.LOWER:
+                string = string.toLocaleLowerCase();
+                break;
+
+            case CAPS.SENTENCE:
+                string = Utilities.changeCaps(string, CAPS.LOWER);
+                string = string.replace(/^\w{1}/gm, capitalize);
+                break;
+
+            case CAPS.TITLE:
+                string = Utilities.changeCaps(string, CAPS.SENTENCE);
+                string = string.replace(/\s{1}\w{1}/g, capitalize);
+                break;
+
+            default:
+        }
+        return string;
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Takes a character and figures out whether it's alphanumeric.
+     * @param char The character to check
+     * @returns `true` if `char` is alphanumeric.
+     */
+    public static checkAlphanumericity(char: string) {
+        return char.charAt(0).match(/[a-z\d]/i);
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Takes a locale and returns it with the specified format.
+     * @param locale The locale string to format.
+     * @param format The format to use.
+     * @returns the formatted locale string.
+     */
+    public static formatLocale(
+        locale: string,
+        format: {
+            separator: ''|' '|'_'|'-',
+            capitalization: CAPS.SAME|CAPS.UPPER|CAPS.LOWER|CAPS.TITLE,
+        } = {
+            separator: '-',
+            capitalization: CAPS.TITLE,
+        },
+    ): string|never {
+
+        // Validate
+        if(!locale.match(/(^[a-z\d]+([ -_][a-z\d]+)?$)/gim)) throw new Error('Invalid BCP47 locale string.');
+
+        // Change the separator
+        locale.replace(/[^a-z\d]/gi, format.separator);
+
+        // Change case
+        const segments: string[] = locale.split(format.separator); // Split the string at the separator
+        let caps: [CAPS, CAPS];
+        switch(format.capitalization) {
+            case CAPS.UPPER:
+                caps = [CAPS.UPPER, CAPS.UPPER];
+                break;
+            case CAPS.LOWER:
+                caps = [CAPS.LOWER, CAPS.LOWER];
+                break;
+            case CAPS.TITLE:
+                caps = [CAPS.LOWER, CAPS.UPPER];
+                break;
+            default:
+                caps = [CAPS.SAME, CAPS.SAME];
+        }
+
+        // Re-assemble the string
+        return (
+            Utilities.changeCaps(segments[0], caps[0]) +
+            format.separator +
+            Utilities.changeCaps(segments[1], caps[1])
+        );
     }
 }

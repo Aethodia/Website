@@ -11,7 +11,11 @@ class EnvironmentService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Asynchronous environment variables. */
-    public readonly vars = class Vars extends Table<AsyncVar<unknown>> {}
+    public readonly vars = class Vars extends Table<AsyncVar<unknown>> {
+        public static readonly language: AsyncVar<string> = new AsyncVar();
+        public static readonly country:  AsyncVar<string> = new AsyncVar();
+        public static readonly monetary: AsyncVar<string> = new AsyncVar();
+    }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Synchronous environment constants. */

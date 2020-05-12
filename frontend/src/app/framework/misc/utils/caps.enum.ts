@@ -1,0 +1,9 @@
+////////////////////////////////////////////////////////////////////////////////
+enum CAPS {
+    'SAME',
+    'UPPER',
+    'LOWER',
+    'SENTENCE',
+    'TITLE',
+}
+export default CAPS;

@@ -53,7 +53,7 @@ class ConsoleService implements OnInit {
 
                 // Wipe functions we do not want to keep
                 default:
-                    console[key] = Utils.new(console[key]);
+                    console[key] = Utils.reinitType(console[key]);
             }
         };
     }

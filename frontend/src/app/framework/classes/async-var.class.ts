@@ -3,11 +3,12 @@ export {AsyncVar};
 
 ////////////////////////////////////////////////////////////////////////////////
 /** A variable that can be get and set asynchronously. */
-class AsyncVar<Type> {
+class AsyncVar<Type> extends Object {
     private readonly subject: BehaviorSubject<Type|null|undefined>;
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(value?: Type|null) {
+        super();
         this.subject = new BehaviorSubject<Type|null|undefined>(value);
         return this;
     }

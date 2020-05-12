@@ -1,4 +1,4 @@
-import CAPS from './caps.enum';
+import CAPS from '../misc/caps.enum';
 import changeCaps from './change-caps.function';
 
 ////////////////////////////////////////////////////////////////////////////////

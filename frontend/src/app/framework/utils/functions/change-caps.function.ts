@@ -1,4 +1,4 @@
-import CAPS from './caps.enum';
+import CAPS from '../misc/caps.enum';
 
 ////////////////////////////////////////////////////////////////////////////////
 /** Changes the capitalization of a string.

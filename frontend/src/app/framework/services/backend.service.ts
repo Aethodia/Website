@@ -2,8 +2,8 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {Endpoint} from '../misc/endpoint.class';
-import {HttpOptions} from '../misc/http-options.class';
+import {Endpoint} from '../classes/endpoint.class';
+import {HttpOptions} from '../classes/http-options.class';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {BackendService};

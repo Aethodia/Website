@@ -3,10 +3,12 @@ import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AsyncVar} from './misc/async-var.class';
-import {Endpoint, EndpointSettings} from './misc/endpoint.class';
-import {HttpOptions} from './misc/http-options.class';
-import {Utils} from './misc/utils.class';
+import {Utils} from './utils/utils';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {AsyncVar} from './classes/async-var.class';
+import {Endpoint, EndpointSettings} from './classes/endpoint.class';
+import {HttpOptions} from './classes/http-options.class';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AnalyticsService} from './services/analytics.service';
@@ -32,11 +34,13 @@ export {
     FrameworkModule,
 
     // Misc
+    Utils,
+
+    // Classes
     AsyncVar,
     Endpoint,
     EndpointSettings,
     HttpOptions,
-    Utils,
 
     // Services
     AnalyticsService,

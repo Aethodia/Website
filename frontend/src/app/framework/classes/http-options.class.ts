@@ -1,5 +1,5 @@
 import {HttpHeaders, HttpParams} from '@angular/common/http';
-import {Utils} from './utils.class';
+import {Utils} from '../utils/utils';
 export {HttpOptions};
 
 ////////////////////////////////////////////////////////////////////////////////

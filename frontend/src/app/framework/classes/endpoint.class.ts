@@ -3,7 +3,7 @@ import {Observable} from 'rxjs';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {HttpOptions} from './http-options.class';
-import {Utils} from './utils.class';
+import {Utils} from '../utils/utils';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {EndpointSettings};

@@ -15,8 +15,6 @@ class EndpointSettings {
 
 ////////////////////////////////////////////////////////////////////////////////
 export class Endpoint<SendResponse, ReceiveResponse, RequestBody> {
-    //TODO: Implement caching
-    //TODO: Implement mock data
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Construct an Enpoint.

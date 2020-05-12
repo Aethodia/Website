@@ -12,6 +12,6 @@ class LogInterceptor implements HttpInterceptor {
         request: HttpRequest<unknown>,
         next: HttpHandler,
     ): Observable<HttpEvent<unknown>> {
-        return of();
+        return next.handle(request); //TODO
     }
 }

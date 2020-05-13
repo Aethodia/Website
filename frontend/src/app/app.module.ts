@@ -30,7 +30,7 @@ export {AppModule};
         }),
 
         // Common
-        FrameworkModule.forRoot(),
+        FrameworkModule,
         SharedModule.forRoot(),
 
         // Content

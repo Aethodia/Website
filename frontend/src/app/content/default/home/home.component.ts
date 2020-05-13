@@ -17,7 +17,7 @@ class HomeComponent implements OnInit{
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public ngOnInit(): void {
-        this.docSvc.title.set('Theodia, the Technocratic Republic');
+        // this.docSvc.title.set('Theodia, the Technocratic Republic'); //FIXME: This crashes the app for some reason.
         this.docSvc.description.set('The official website of the Technocratic Republic of Theodia');
         this.docSvc.keywords.set(['Theodia', 'micronation', 'technocracy']);
     }

@@ -77,36 +77,26 @@ export {
         DatetimePipe,
         NumberPipe,
     ],
-})
+    providers: [
+        // Services
+        EnvironmentService,
+        ConsoleService,
+        BackendService,
+        DocumentService,
+        I18nService,
+        AnalyticsService,
 
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        // Interceptors
+        I18nInterceptor,
+        LogInterceptor,
+        CacheInterceptor,
+        MockInterceptor,
+        AuthInterceptor,
+        RetryInterceptor,
+    ],
+})
 /** Code that is essential to the basic functioning of the application.
  *  Amounts to a custom framework on-top of Angular.
+ * @warn Should only be included in the root-most module.
  */
-class FrameworkModule {
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    /** Provides singleton services that should only be initialized once. */
-    public static forRoot(): ModuleWithProviders<FrameworkModule> {
-        return {
-            ngModule: FrameworkModule,
-            providers: [
-                // Services
-                EnvironmentService,
-                ConsoleService,
-                BackendService,
-                DocumentService,
-                I18nService,
-                AnalyticsService,
-
-                // Interceptors
-                I18nInterceptor,
-                LogInterceptor,
-                CacheInterceptor,
-                MockInterceptor,
-                AuthInterceptor,
-                RetryInterceptor,
-            ],
-        };
-    }
-}
+class FrameworkModule {}

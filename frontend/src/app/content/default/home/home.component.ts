@@ -23,8 +23,10 @@ class HomeComponent implements OnInit{
     public ngOnInit(): void {
         this.endpoints.graphql.receive().subscribe();
 
-        // this.docSvc.title.set('Theodia, the Technocratic Republic'); //FIXME: This crashes the app for some reason.
-        this.meta.description.set('The official website of the Technocratic Republic of Theodia');
-        this.meta.keywords.set(['Theodia', 'micronation', 'technocracy']);
+        this.meta.set({
+            title: 'Theodia, the Technocratic Republic', //FIXME: This crashes the app for some reason.
+            description: 'The official website of the Technocratic Republic of Theodia',
+            keywords: ['Theodia', 'micronation', 'technocracy'],
+        });
     }
 }

@@ -20,6 +20,19 @@ class DocumentService {
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    public set(metadata: {
+        description?: string,
+        keywords?: string[],
+        lang?: string,
+        title?: string,
+    }): void {
+        for(const key of Reflect.ownKeys(metadata) as Array<keyof typeof metadata>) {
+            if(metadata[key] == null) continue;
+            this[key].set(metadata[key] as any); //TODO: Make this type-safe.
+        }
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public readonly description = {
         get: () => '', //TODO
         set: (description: string): void => {
@@ -47,7 +60,7 @@ class DocumentService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public readonly title = {
-        get: this.titleSvc.getTitle,
-        set: this.titleSvc.setTitle,
+        get: (): string => this.titleSvc.getTitle(),
+        set: (title: string): void => this.titleSvc.setTitle(title),
     }
 }

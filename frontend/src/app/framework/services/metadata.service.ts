@@ -3,12 +3,12 @@ import {DOCUMENT} from '@angular/common';
 import {Title, Meta} from '@angular/platform-browser';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-export {DocumentService};
+export {MetadataService};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
-/** Manipulates the DOM. */
-class DocumentService {
+/** Manipulates the Document's metadata. */
+class MetadataService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(

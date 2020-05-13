@@ -2,7 +2,7 @@ import {Injectable, LOCALE_ID, Inject} from '@angular/core';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AsyncVar} from '../classes/async-var.class';
-import {DocumentService} from './document.service';
+import {MetadataService} from './metadata.service';
 import {Utils} from '../utils/utils';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -20,7 +20,7 @@ class I18nService {
     ////////////////////////////////////////////////////////////////////////////////
     constructor(
         @Inject(LOCALE_ID) private readonly DEFAULT_LOCALE: string,
-        meta: DocumentService,
+        meta: MetadataService,
     ) {
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

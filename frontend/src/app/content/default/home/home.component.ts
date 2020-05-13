@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {DocumentService} from 'app/framework/framework.module';
+import {MetadataService} from 'app/framework/framework.module';
 import {EndpointsService} from 'app/shared/shared.module';
 export {HomeComponent};
 
@@ -13,7 +13,7 @@ class HomeComponent implements OnInit{
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
-        private readonly meta: DocumentService,
+        private readonly meta: MetadataService,
         private readonly endpoints: EndpointsService,
     ) {
         return this;

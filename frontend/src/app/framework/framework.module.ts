@@ -14,7 +14,7 @@ import {HttpOptions} from './classes/http-options.class';
 import {AnalyticsService} from './services/analytics.service';
 import {BackendService} from './services/backend.service';
 import {ConsoleService} from './services/console.service';
-import {DocumentService} from './services/document.service';
+import {MetadataService} from './services/metadata.service';
 import {I18nService} from './services/i18n.service';
 import {EnvironmentService} from './services/environment.service';
 
@@ -48,7 +48,7 @@ export {
     AnalyticsService,
     BackendService,
     ConsoleService,
-    DocumentService,
+    MetadataService,
     EnvironmentService,
     I18nService,
 
@@ -89,7 +89,7 @@ export {
         EnvironmentService,
         ConsoleService,
         BackendService,
-        DocumentService,
+        MetadataService,
         I18nService,
         AnalyticsService,
 
@@ -116,7 +116,7 @@ class FrameworkModule {
         EnvironmentService: EnvironmentService,
         ConsoleService:     ConsoleService,
         BackendService:     BackendService,
-        DocumentService:    DocumentService,
+        MetadataService:    MetadataService,
         I18nService:        I18nService,
         AnalyticsService:   AnalyticsService,
 

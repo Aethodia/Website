@@ -21,10 +21,11 @@ class HomeComponent implements OnInit{
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public ngOnInit(): void {
-        this.endpoints.graphql.receive().subscribe();
+        // this.endpoints.graphql.receive().subscribe();
 
         this.meta.set({
-            title: 'Theodia, the Technocratic Republic', //FIXME: This crashes the app for some reason.
+            //TODO: Pass these through the I18nPipe.
+            title: 'Theodia, the Technocratic Republic',
             description: 'The official website of the Technocratic Republic of Theodia',
             keywords: ['Theodia', 'micronation', 'technocracy'],
         });

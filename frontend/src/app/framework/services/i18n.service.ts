@@ -1,23 +1,51 @@
 import {Injectable, OnInit, LOCALE_ID, Inject} from '@angular/core';
-import {EnvironmentService} from './environment.service';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {AsyncVar} from '../classes/async-var.class';
+import {DocumentService} from './document.service';
+import {Utils} from '../utils/utils';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {I18nService};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
-/** Handles the localization. */
+/** Handles localization. */
 class I18nService implements OnInit{
 
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    public readonly language: AsyncVar<string>;
+    public readonly country:  AsyncVar<string>;
+    public readonly monetary: AsyncVar<string>;
+
+    ////////////////////////////////////////////////////////////////////////////////
     constructor(
-        private readonly envSvc: EnvironmentService,
         @Inject(LOCALE_ID) private readonly DEFAULT_LOCALE: string,
+        docSvc: DocumentService,
     ) {
-        this.envSvc.vars.language.set(this.DEFAULT_LOCALE);
+
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        this.language = new (
+            class extends AsyncVar<string> {
+                public set(locale: string): void {
+                    locale = Utils.formatLocale(locale);
+                    this.subject.next(locale);
+                    docSvc.set.lang(locale);
+                    docSvc.set.title(''); //TODO
+                    docSvc.set.description(''); //TODO
+                }
+            }
+        )();
+
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        this.country  = new AsyncVar();
+        this.monetary = new AsyncVar();
+
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
         return this;
     }
 
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    ////////////////////////////////////////////////////////////////////////////////
     public ngOnInit(): void {
-        //TODO
+        this.language.set(this.DEFAULT_LOCALE);
     }
 }

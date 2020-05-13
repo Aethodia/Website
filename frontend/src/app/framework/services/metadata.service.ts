@@ -59,6 +59,16 @@ class MetadataService {
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    public readonly robots = {
+        get: () => {
+            //TODO
+        },
+        set: (robots: string[]): void => {
+            //TODO
+        },
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public readonly title = {
         get: (): string => this.titleSvc.getTitle(),
         set: (title: string): void => this.titleSvc.setTitle(title),

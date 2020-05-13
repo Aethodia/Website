@@ -35,8 +35,8 @@ class I18nService {
         )();
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        this.country  = new AsyncVar();
-        this.monetary = new AsyncVar();
+        this.country  = new AsyncVar(); //TODO
+        this.monetary = new AsyncVar(); //TODO
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
         this.ngOnInit();

@@ -10,7 +10,7 @@ export {BackendService};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
-/** Handles all calls to the backend, and provides the option to cache them. */
+/** Provides a friendly way to interact with the backend. */
 class BackendService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

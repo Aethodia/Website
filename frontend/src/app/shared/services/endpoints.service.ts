@@ -5,7 +5,7 @@ export {EndpointsService};
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
 /** Contains a HashMap of endpoints that can be hit. */
-class EndpointsService extends Table<Endpoint<unknown, unknown, unknown>> {
+class EndpointsService /*extends Table<Endpoint<unknown, unknown, unknown>>*/ { //FIXME: This `extends` *should* work...
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public readonly graphql: Endpoint<object,  object, object>;
@@ -13,7 +13,7 @@ class EndpointsService extends Table<Endpoint<unknown, unknown, unknown>> {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(backend: BackendService) {
-        super();
+        //super();
         this.graphql = backend.newEndpoint('grarphql', 0, {responseType: 'json'});
         this.test    = backend.newEndpoint('test',     0, {responseType: 'text'});
         return this;

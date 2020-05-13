@@ -7,7 +7,7 @@ export {EnvironmentService};
 /** Asynchronously stores and distributes environment variables.
  *  A great way to share data across the app.
  */
-class EnvironmentService {
+class EnvironmentService extends Object {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Asynchronous environment variables. */

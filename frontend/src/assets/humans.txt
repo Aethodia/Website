@@ -1,6 +1,6 @@
 /* SITE */
 	Language:  English / Theodian
-	License:  LAGPL / CC BY-SA v4
+	License:  LAGPL v3+ / CC BY-SA v4+
 	GitHub:  https://GitHub.com/TheodiaGov/Website
 
 /* TEAM */

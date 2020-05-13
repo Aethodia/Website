@@ -30,8 +30,6 @@ class I18nService implements OnInit{
                     locale = Utils.formatLocale(locale);
                     this.subject.next(locale);
                     docSvc.set.lang(locale);
-                    docSvc.set.title(''); //TODO
-                    docSvc.set.description(''); //TODO
                 }
             }
         )();

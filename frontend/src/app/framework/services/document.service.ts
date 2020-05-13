@@ -27,6 +27,7 @@ class DocumentService {
         description: (description: string): void => {
             this.meta.updateTag({name: 'description', content: description});
         },
+        keywords: (keywords: string[]): void => {}, //TODO
         title: this.title.setTitle,
     }
 
@@ -34,6 +35,7 @@ class DocumentService {
     public readonly get = {
         lang: (): string => this.document.documentElement.lang,
         description: () => '', //TODO
+        keywords: () => [], //TODO
         title: this.title.getTitle,
     }
 }

@@ -31,7 +31,7 @@ export {AppModule};
 
         // Common
         FrameworkModule,
-        SharedModule.forRoot(),
+        SharedModule,
 
         // Content
         ResponseCodesModule,

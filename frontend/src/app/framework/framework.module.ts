@@ -1,4 +1,4 @@
-import {NgModule, ModuleWithProviders} from '@angular/core';
+import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule} from '@angular/common/http';
 
@@ -72,7 +72,14 @@ export {
         CommonModule,
         HttpClientModule,
     ],
+    exports: [
+        // Pipes
+        I18nPipe,
+        DatetimePipe,
+        NumberPipe,
+    ],
     declarations: [
+        // Pipes
         I18nPipe,
         DatetimePipe,
         NumberPipe,
@@ -95,8 +102,17 @@ export {
         RetryInterceptor,
     ],
 })
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 /** Code that is essential to the basic functioning of the application.
  *  Amounts to a custom framework on-top of Angular.
- * @warn Should only be included in the root-most module.
+ * @warn Should only be included in the top-most module.
  */
-class FrameworkModule {}
+class FrameworkModule {
+    constructor (
+        @Optional() @SkipSelf() parent?: FrameworkModule,
+    ) {
+        if(parent) throw new Error('`FrameworkModule` is already loaded.');
+        return this;
+    }
+}

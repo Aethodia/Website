@@ -1,4 +1,4 @@
-import {NgModule, ModuleWithProviders} from '@angular/core';
+import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -20,22 +20,22 @@ export {
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
-    imports: [CommonModule],
+    imports: [
+        CommonModule,
+    ],
+    providers: [
+        ShariablesService,
+        EndpointsService,
+    ],
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 /** Application-specific code that is shared between multiple modules. */
 class SharedModule {
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    /** Provides singleton services that should only be initialized once. */
-    public static forRoot(): ModuleWithProviders<SharedModule> {
-        return {
-            ngModule: SharedModule,
-            providers: [
-                ShariablesService,
-                EndpointsService,
-            ],
-        };
+    constructor (
+        @Optional() @SkipSelf() parent?: SharedModule,
+    ) {
+        if(parent) throw new Error('`SharedModule` is already loaded.');
+        return this;
     }
 }

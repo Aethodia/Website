@@ -20,14 +20,6 @@ class DocumentService {
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public readonly lang = {
-        get: (): string => this.document.documentElement.lang,
-        set: (lang: string): void => {
-            this.document.documentElement.lang = lang;
-        },
-    }
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public readonly description = {
         get: () => '', //TODO
         set: (description: string): void => {
@@ -42,6 +34,14 @@ class DocumentService {
         },
         set: (keywords: string[]): void => {
             //TODO
+        },
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    public readonly lang = {
+        get: (): string => this.document.documentElement.lang,
+        set: (lang: string): void => {
+            this.document.documentElement.lang = lang;
         },
     }
 

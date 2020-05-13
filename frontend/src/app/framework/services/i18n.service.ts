@@ -23,7 +23,7 @@ class I18nService {
         @Inject(LOCALE_ID) private readonly DEFAULT_LOCALE: string,
         meta: MetadataService,
     ) {
-        this.language = new AsyncLanguageVar(meta, this.detect.language());
+        this.language = newAsyncLanguageVar(meta, this.detect.language());
         this.country  = new AsyncVar(this.detect.country());
         this.currency = new AsyncVar(this.detect.currency());
 
@@ -68,24 +68,21 @@ class I18nService {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-/** An `AsyncVar` designed to handle locales.
- *  Has a custom setter and a predetermined type.
+/**
+ * @returns An `AsyncVar` designed to handle locales,
+ *  with a custom setter and a predetermined type.
  */
-class AsyncLanguageVar extends AsyncVar<string> {
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    constructor(
-        private readonly meta: MetadataService,
-        value?: string|null
-    ) {
-        super(value);
-        return this;
-    }
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public set(locale: string|null): void {
-        if(locale !== null) locale = Utils.formatLocale(locale);
-        this.subject.next(locale);
-        this.meta.lang.set(locale ?? '');
-    }
+function newAsyncLanguageVar(
+    meta: MetadataService,
+    value?: string|null,
+) {
+    return new (
+        class AsyncLanguageVar extends AsyncVar<string> {
+            public set(locale: string|null): void {
+                if(locale !== null) locale = Utils.formatLocale(locale);
+                this.subject.next(locale);
+                meta.lang.set(locale ?? '');
+            }
+        }
+    )(value);
 }

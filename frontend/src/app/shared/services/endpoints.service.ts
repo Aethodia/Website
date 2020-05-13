@@ -13,7 +13,7 @@ class EndpointsService /*extends Table<Endpoint<unknown, unknown, unknown>>*/ { 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(backend: BackendService) {
         //super();
-        this.graphql = backend.newEndpoint('grarphql', 0, {responseType: 'json'});
+        this.graphql = backend.newEndpoint('graphql', 0, {responseType: 'json'});
         return this;
     }
 }

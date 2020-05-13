@@ -1,6 +1,6 @@
 import {NgModule, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {Utils} from './utils/utils';
@@ -94,12 +94,12 @@ export {
         AnalyticsService,
 
         // Interceptors
-        I18nInterceptor,
-        LogInterceptor,
-        CacheInterceptor,
-        MockInterceptor,
-        AuthInterceptor,
-        RetryInterceptor,
+        {provide: HTTP_INTERCEPTORS, useClass:  I18nInterceptor, multi: true},
+        {provide: HTTP_INTERCEPTORS, useClass:   LogInterceptor, multi: true},
+        {provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true},
+        {provide: HTTP_INTERCEPTORS, useClass:  MockInterceptor, multi: true},
+        {provide: HTTP_INTERCEPTORS, useClass:  AuthInterceptor, multi: true},
+        {provide: HTTP_INTERCEPTORS, useClass: RetryInterceptor, multi: true},
     ],
 })
 
@@ -110,6 +110,17 @@ export {
  */
 class FrameworkModule {
     constructor (
+        //FIXME: The below insanity should not be necessary in order to get Angular to load these Injectables at start.
+
+        // Services
+        EnvironmentService: EnvironmentService,
+        ConsoleService:     ConsoleService,
+        BackendService:     BackendService,
+        DocumentService:    DocumentService,
+        I18nService:        I18nService,
+        AnalyticsService:   AnalyticsService,
+
+        // Misc
         @Optional() @SkipSelf() parent?: FrameworkModule,
     ) {
         if(parent) throw new Error('`FrameworkModule` is already loaded.');

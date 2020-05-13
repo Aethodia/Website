@@ -1,5 +1,5 @@
 import {Injectable, isDevMode} from '@angular/core';
-import {AsyncVar} from '../classes/async-var.class';
+// import {AsyncVar} from '../classes/async-var.class';
 export {EnvironmentService};
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -11,7 +11,7 @@ class EnvironmentService extends Object {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Asynchronous environment variables. */
-    public readonly vars = class Vars extends Table<AsyncVar<unknown>> {}
+    public readonly vars = class Vars /*extends Table<AsyncVar<unknown>>*/ {} //FIXME: This `extends` *should* work...
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Synchronous environment constants. */

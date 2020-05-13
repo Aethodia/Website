@@ -1,4 +1,4 @@
-import {Injectable, OnInit, LOCALE_ID, Inject} from '@angular/core';
+import {Injectable, LOCALE_ID, Inject} from '@angular/core';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AsyncVar} from '../classes/async-var.class';
@@ -11,7 +11,7 @@ export {I18nService};
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
 /** Handles localization. */
-class I18nService implements OnInit{
+class I18nService {
 
     public readonly language: AsyncVar<string>;
     public readonly country:  AsyncVar<string>;
@@ -20,7 +20,7 @@ class I18nService implements OnInit{
     ////////////////////////////////////////////////////////////////////////////////
     constructor(
         @Inject(LOCALE_ID) private readonly DEFAULT_LOCALE: string,
-        docSvc: DocumentService,
+        meta: DocumentService,
     ) {
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -29,7 +29,7 @@ class I18nService implements OnInit{
                 public set(locale: string): void {
                     locale = Utils.formatLocale(locale);
                     this.subject.next(locale);
-                    docSvc.lang.set(locale);
+                    meta.lang.set(locale);
                 }
             }
         )();
@@ -39,6 +39,7 @@ class I18nService implements OnInit{
         this.monetary = new AsyncVar();
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        this.ngOnInit();
         return this;
     }
 

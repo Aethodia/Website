@@ -11,7 +11,12 @@ class AsyncVar<Type> extends Object {
         value?: Type|null,
     ) {
         super();
-        this.subject = new BehaviorSubject<Type|null|undefined>(value);
+
+        //NOTE: While we *could* just pass `value` to BehaviourSubject's constructor, we need to send it through `this.set` so that child classes with custom setters will work as expected.
+        this.subject = new BehaviorSubject<Type|null|undefined>(undefined);
+        if(value !== undefined) this.set(value);
+
+        // Done
         return this;
     }
 
@@ -32,9 +37,10 @@ class AsyncVar<Type> extends Object {
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    /** Deletes the stored variable and updates all of its subscribers. */
+    /** Cancels all subscriptions and deletes the stored variable. */
+    //TODO: Test.
     public delete(): void {
-        this.subject.next(undefined);
         this.subject.complete();
+        this.subject.next(undefined);
     }
 }

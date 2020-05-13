@@ -29,7 +29,7 @@ class I18nService implements OnInit{
                 public set(locale: string): void {
                     locale = Utils.formatLocale(locale);
                     this.subject.next(locale);
-                    docSvc.set.lang(locale);
+                    docSvc.lang.set(locale);
                 }
             }
         )();

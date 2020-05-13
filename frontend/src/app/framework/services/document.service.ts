@@ -13,29 +13,41 @@ class DocumentService {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
         @Inject(DOCUMENT) private readonly document: Document,
-        private readonly meta:  Meta,
-        private readonly title: Title,
+        private readonly metaSvc:  Meta,
+        private readonly titleSvc: Title,
     ) {
         return this;
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public readonly set = {
-        lang: (lang: string): void => {
+    public readonly lang = {
+        get: (): string => this.document.documentElement.lang,
+        set: (lang: string): void => {
             this.document.documentElement.lang = lang;
         },
-        description: (description: string): void => {
-            this.meta.updateTag({name: 'description', content: description});
-        },
-        keywords: (keywords: string[]): void => {}, //TODO
-        title: this.title.setTitle,
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public readonly get = {
-        lang: (): string => this.document.documentElement.lang,
-        description: () => '', //TODO
-        keywords: () => [], //TODO
-        title: this.title.getTitle,
+    public readonly description = {
+        get: () => '', //TODO
+        set: (description: string): void => {
+            this.metaSvc.updateTag({name: 'description', content: description});
+        },
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    public readonly keywords = {
+        get: () => {
+            //TODO
+        },
+        set: (keywords: string[]): void => {
+            //TODO
+        },
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    public readonly title = {
+        get: this.titleSvc.getTitle,
+        set: this.titleSvc.setTitle,
     }
 }

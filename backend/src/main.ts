@@ -5,7 +5,7 @@ import {FastifyAdapter, NestFastifyApplication} from '@nestjs/platform-fastify';
 import {AppModule} from './app/app.module';
 
 ////////////////////////////////////////////////////////////////////////////////
-(async(): Promise<void> => {
+export default (async(): Promise<void> => {
     try {
         const app: NestFastifyApplication = (
             await NestFactory.create<NestFastifyApplication>(
@@ -18,4 +18,4 @@ import {AppModule} from './app/app.module';
     } catch(error) {
         console.error(error);
     }
-})();
+})().catch(error => console.error(error));

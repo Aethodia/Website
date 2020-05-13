@@ -2,15 +2,17 @@
 import {Controller, Get} from '@nestjs/common';
 
 ////////////////////////////////////////////////////////////////////////////////
-@Controller('api/v0/test')
-class TestController {
+@Controller('api/v0/graphql')
+class GraphQlController {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     @Get()
-    get(): string {
-        return 'This is a test message from the server.';
+    get(): unknown {
+        return {
+            message: 'This is a test message from the server.'
+        };
     }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-export {TestController};
+export {GraphQlController};

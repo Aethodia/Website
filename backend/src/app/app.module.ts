@@ -1,10 +1,10 @@
 import {Module} from '@nestjs/common';
-import {TestController} from './test.controller';
+import {GraphQlController} from './graphql.controller';
 
 ////////////////////////////////////////////////////////////////////////////////
 @Module({
   imports: [],
-  controllers: [TestController],
+  controllers: [GraphQlController],
   providers: [],
 })
 

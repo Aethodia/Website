@@ -9,13 +9,11 @@ class EndpointsService /*extends Table<Endpoint<unknown, unknown, unknown>>*/ { 
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public readonly graphql: Endpoint<object,  object, object>;
-    public readonly test:    Endpoint<unknown, string, undefined>;
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(backend: BackendService) {
         //super();
         this.graphql = backend.newEndpoint('grarphql', 0, {responseType: 'json'});
-        this.test    = backend.newEndpoint('test',     0, {responseType: 'text'});
         return this;
     }
 }

@@ -25,6 +25,7 @@ import {NumberPipe} from './pipes/number.pipe';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AuthInterceptor} from './interceptors/auth.interceptor';
 import {CacheInterceptor} from './interceptors/cache.interceptor';
+import {I18nInterceptor} from './interceptors/i18n.interceptor';
 import {LogInterceptor} from './interceptors/log.interceptor';
 import {MockInterceptor} from './interceptors/mock.interceptor';
 import {RetryInterceptor} from './interceptors/retry.interceptor';
@@ -57,6 +58,7 @@ export {
     // Interceptors
     AuthInterceptor,
     CacheInterceptor,
+    I18nInterceptor,
     LogInterceptor,
     MockInterceptor,
     RetryInterceptor,
@@ -95,6 +97,7 @@ class FrameworkModule {
                 AnalyticsService,
 
                 // Interceptors
+                I18nInterceptor,
                 LogInterceptor,
                 CacheInterceptor,
                 MockInterceptor,

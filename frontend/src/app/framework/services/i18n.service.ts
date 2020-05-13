@@ -11,55 +11,59 @@ export {I18nService};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
-/** Handles localization. */
+/** Initializes, stores, and shares the application's locale data. */
 class I18nService {
 
     public readonly language: AsyncVar<string>;
     public readonly country:  AsyncVar<string>;
     public readonly currency: AsyncVar<string>;
 
-    ////////////////////////////////////////////////////////////////////////////////
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
         @Inject(LOCALE_ID) private readonly DEFAULT_LOCALE: string,
         meta: MetadataService,
     ) {
-        this.language = new AsyncLanguageVar(meta, this.detectLanguage());
-        this.country  = new AsyncVar(this.detectCountry());
-        this.currency = new AsyncVar(this.detectCurrency());
+        this.language = new AsyncLanguageVar(meta, this.detect.language());
+        this.country  = new AsyncVar(this.detect.country());
+        this.currency = new AsyncVar(this.detect.currency());
 
         return this;
     }
 
     ////////////////////////////////////////////////////////////////////////////////
-    private detectLanguage(): string|null {
-        let language: string|null;
+    private readonly detect = {
 
-        //TODO
-        language = this.DEFAULT_LOCALE;
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        language: (): string|null => {
+            let language: string|null;
 
-        return language;
-    }
+            //TODO
+            language = this.DEFAULT_LOCALE;
 
-    ////////////////////////////////////////////////////////////////////////////////
-    private detectCountry(): string|null {
-        let country: string|null;
+            return language;
+        },
 
-        //TODO
-        const language = this.language.get().value;
-        country = language?.split('-')[1] || null;
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        country: (): string|null => {
+            let country: string|null;
 
-        return country;
-    }
+            //TODO
+            const language = this.language.get().value;
+            country = language?.split('-')[1] || null;
 
-    ////////////////////////////////////////////////////////////////////////////////
-    private detectCurrency(): string|null {
-        let currency: string|null;
+            return country;
+        },
 
-        //TODO
-        const language = this.language.get().value;
-        currency = getLocaleCurrencyCode(language ?? '');
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        currency: (): string|null => {
+            let currency: string|null;
 
-        return currency;
+            //TODO
+            const language = this.language.get().value;
+            currency = getLocaleCurrencyCode(language ?? '');
+
+            return currency;
+        },
     }
 }
 

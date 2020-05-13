@@ -6,13 +6,13 @@ package-lock.json
 dist/
 logs/
 node_modules/
-.bak
-.db
-.log
-.jar
-.old
-.swp
-.tmp
+*.bak
+*.db
+*.log
+*.jar
+*.old
+*.swp
+*.tmp
 
 ## IDEs
 .vscode/
@@ -23,7 +23,3 @@ node_modules/
 desktop.ini
 thumbs.db
 .fuse_hidden*
-
-# Exceptions
-!.keep
-!.nojekyll

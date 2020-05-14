@@ -8,6 +8,8 @@ export {ShariablesService};
 /** Asynchronously stores and distributes variables.
  *  A great way to share data across the app.
  */
-class ShariablesService /*extends Table<AsyncVar<unknown>>*/ { //FIXME: This `extends` *should* work...
-    // Variables go here
+class ShariablesService {
+    [key: string]: nil|AsyncVar<unknown>;
+
+    //TODO; Variables go here
 }

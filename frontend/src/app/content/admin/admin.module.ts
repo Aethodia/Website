@@ -3,8 +3,9 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {FrameworkModule} from 'app/framework/framework.module';
+import {SharedModule} from 'app/shared/shared.module';
 import {adminRoutes} from './admin.routes';
-import {I18nComponent} from './i18n/i18n.component';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {AdminModule};
@@ -13,12 +14,12 @@ export {AdminModule};
 @NgModule({
     imports: [
         CommonModule,
+        FrameworkModule,
+        SharedModule,
         RouterModule.forChild(adminRoutes),
     ],
     exports: [],
-    declarations: [
-        I18nComponent,
-    ],
+    declarations: [],
     providers: [],
 })
 class AdminModule {}

@@ -1,4 +1,4 @@
-import {NgModule, Optional, SkipSelf} from '@angular/core';
+import {NgModule, ModuleWithProviders, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -23,19 +23,37 @@ export {
     imports: [
         CommonModule,
     ],
-    providers: [
-        ShariablesService,
-        EndpointsService,
-    ],
+    exports: [],
+    declarations: [],
+    providers: [],
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 /** Application-specific code that is shared between multiple modules. */
 class SharedModule {
     constructor (
+        //FIXME: The below insanity should not be necessary in order to get Angular to load these Injectables at start.
+
+        // Services
+        ShariablesService: ShariablesService,
+        EndpointsService: EndpointsService,
+
         @Optional() @SkipSelf() parent?: SharedModule,
     ) {
         if(parent) throw new Error('`SharedModule` is already loaded.');
         return this;
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Provides singleton services that should only be initialized once. */
+    public static forRoot(): ModuleWithProviders<SharedModule> {
+        return {
+            ngModule: SharedModule,
+            providers: [
+                // Services
+                ShariablesService,
+                EndpointsService,
+            ],
+        };
     }
 }

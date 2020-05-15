@@ -30,8 +30,8 @@ export {AppModule};
         }),
 
         // Common
-        FrameworkModule,
-        SharedModule,
+        FrameworkModule.forRoot(),
+        SharedModule.forRoot(),
 
         // Content
         ResponseCodesModule,

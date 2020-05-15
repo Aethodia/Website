@@ -1,4 +1,4 @@
-import {NgModule, Optional, SkipSelf} from '@angular/core';
+import {NgModule, ModuleWithProviders, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
@@ -84,23 +84,7 @@ export {
         DatetimePipe,
         NumberPipe,
     ],
-    providers: [
-        // Services
-        EnvironmentService,
-        ConsoleService,
-        BackendService,
-        MetadataService,
-        I18nService,
-        AnalyticsService,
-
-        // Interceptors
-        {provide: HTTP_INTERCEPTORS, useClass:  I18nInterceptor, multi: true},
-        {provide: HTTP_INTERCEPTORS, useClass:   LogInterceptor, multi: true},
-        {provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true},
-        {provide: HTTP_INTERCEPTORS, useClass:  MockInterceptor, multi: true},
-        {provide: HTTP_INTERCEPTORS, useClass:  AuthInterceptor, multi: true},
-        {provide: HTTP_INTERCEPTORS, useClass: RetryInterceptor, multi: true},
-    ],
+    providers: [],
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -125,5 +109,30 @@ class FrameworkModule {
     ) {
         if(parent) throw new Error('`FrameworkModule` is already loaded.');
         return this;
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Provides singleton services that should only be initialized once. */
+    public static forRoot(): ModuleWithProviders<FrameworkModule> {
+        return {
+            ngModule: FrameworkModule,
+            providers: [
+                // Services
+                EnvironmentService,
+                ConsoleService,
+                BackendService,
+                MetadataService,
+                I18nService,
+                AnalyticsService,
+
+                // Interceptors
+                {provide: HTTP_INTERCEPTORS, useClass:  I18nInterceptor, multi: true},
+                {provide: HTTP_INTERCEPTORS, useClass:   LogInterceptor, multi: true},
+                {provide: HTTP_INTERCEPTORS, useClass: CacheInterceptor, multi: true},
+                {provide: HTTP_INTERCEPTORS, useClass:  MockInterceptor, multi: true},
+                {provide: HTTP_INTERCEPTORS, useClass:  AuthInterceptor, multi: true},
+                {provide: HTTP_INTERCEPTORS, useClass: RetryInterceptor, multi: true},
+            ],
+        };
     }
 }

@@ -1,19 +1,9 @@
 import {Route, Routes} from '@angular/router';
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {LoginComponent} from './login/login.component';
-import {LogoutComponent} from './logout/logout.component';
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {AuthComponent} from './auth.component';
 export {authRoutes};
 
 ////////////////////////////////////////////////////////////////////////////////
 const authRoutes: Routes = Array<Route>({
-    path: 'login',
-    pathMatch: 'full',
-    component: LoginComponent,
-}, {
-    path: 'logout',
-    pathMatch: 'full',
-    component: LogoutComponent,
+    path: '',
+    component: AuthComponent,
 });

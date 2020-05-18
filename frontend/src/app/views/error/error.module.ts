@@ -1,21 +1,20 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
+import {RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {CoreModule, setI18n} from 'app/core/core.module';
 import {SharedModule} from 'app/shared/shared.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {mainRoutes} from './main.routes';
-import {MAIN_I18N} from './main.i18n';
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {HomeComponent} from './home/home.component';
+import {errorRoutes} from './error.routes';
+import {ERROR_I18N} from './error.i18n';
+import {ErrorComponent} from './error.component';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {
-    MainModule,
-    mainRoutes,
+    ErrorModule,
+    errorRoutes,
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -24,13 +23,19 @@ export {
         CommonModule,
         CoreModule,
         SharedModule,
+        RouterModule.forChild(errorRoutes),
     ],
     exports: [],
     declarations: [
-        HomeComponent,
+        ErrorComponent,
     ],
     providers: [
-        setI18n(MAIN_I18N),
+        setI18n(ERROR_I18N),
     ],
 })
-class MainModule {}
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+/** Pages for HTTP response status codes.
+ * {@link https://en.wikipedia.org/wiki/List_of_HTTP_status_codes}
+ */
+class ErrorModule {}

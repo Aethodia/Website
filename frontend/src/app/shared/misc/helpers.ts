@@ -1,8 +1,4 @@
-// import {AdminModule} from 'app/content/admin/admin.module';
-// import {DefaultModule} from 'app/content/default/default.module';
-// import {ResponseCodesModule} from 'app/content/response-codes/response-codes.module';
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {UrlMatcher, UrlMatchResult, UrlSegment} from '@angular/router';
 export {Helpers};
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -11,9 +7,10 @@ class Helpers {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     private static readonly modules: table<Promise<any>> = {
-        AdminModule:         import('app/views/admin/admin.module'),                   //as Promise<AdminModule>,
-        MainModule:       import('app/views/main/main.module'),               //as Promise<DefaultModule>,
-        ResponseCodesModule: import('app/views/response-codes/response-codes.module'), //as Promise<ResponseCodesModule>,
+        AdminModule: import('app/views/admin/admin.module'),
+        AuthModule:  import('app/views/auth/auth.module'),
+        HomeModule:  import('app/views/home/home.module'),
+        ErrorModule: import('app/views/error/error.module'),
     };
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -28,5 +25,17 @@ class Helpers {
                 console.error(error);
             }
         }
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    public static genMatcher(segments: string[]): UrlMatcher {
+        const result: UrlMatchResult = {
+            consumed: [],
+        };
+        for(const segment of segments) {
+            const urlSeg = new UrlSegment(segment, {});
+            result.consumed.push(urlSeg)
+        }
+        return () => result;
     }
 }

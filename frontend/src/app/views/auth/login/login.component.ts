@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
-export {LoginComponent};
+export {AuthComponent};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
-    templateUrl: './login.component.html',
+    templateUrl: './auth.component.html',
 })
-class LoginComponent {}
+class AuthComponent {}

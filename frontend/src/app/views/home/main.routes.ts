@@ -1,11 +1,9 @@
 import {Route, Routes} from '@angular/router';
-import {HomeComponent} from './home/home.component';
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-export {mainRoutes};
+import {HomeComponent} from './home.component';
+export {homeRoutes};
 
 ////////////////////////////////////////////////////////////////////////////////
-const mainRoutes: Routes = Array<Route>({
+const homeRoutes: Routes = Array<Route>({
     path: '',
     pathMatch: 'full',
     component: HomeComponent,

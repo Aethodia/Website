@@ -7,16 +7,16 @@ import {CoreModule, setI18n} from 'app/core/core.module';
 import {SharedModule} from 'app/shared/shared.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {authRoutes} from './auth.routes';
-import {AUTH_I18N} from './auth.i18n';
+import {homeRoutes} from './main.routes';
+import {HOME_I18N} from './home.i18n';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {AuthComponent} from './auth.component';
+import {HomeComponent} from './home.component';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {
-    AuthModule,
-    authRoutes,
+    HomeModule,
+    homeRoutes,
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -25,14 +25,14 @@ export {
         CommonModule,
         CoreModule,
         SharedModule,
-        RouterModule.forChild(authRoutes),
+        RouterModule.forChild(homeRoutes),
     ],
     exports: [],
     declarations: [
-        AuthComponent,
+        HomeComponent,
     ],
     providers: [
-        setI18n(AUTH_I18N),
+        setI18n(HOME_I18N),
     ],
 })
-class AuthModule {}
+class HomeModule {}

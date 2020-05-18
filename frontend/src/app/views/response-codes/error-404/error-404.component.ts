@@ -1,9 +1,12 @@
 import {Component} from "@angular/core";
-export {Error404Component};
+export {ErrorComponent};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
-    templateUrl: './error-404.component.html',
+    templateUrl: './error.component.html',
 })
-/** Error 404: Not Found. */
-class Error404Component {}
+/** Displays messages for various errors.. */
+class ErrorComponent {
+    public errorMessageKey: string = '';
+    //TODO
+}

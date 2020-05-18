@@ -60,16 +60,8 @@ class I18nPipe implements PipeTransform {
     ): string {
 
         // Validate key
-        const parts = key.split('.');
-        if(parts.length > 2) throw new Error('`key` is not a valid `I18nKey`.');
-
-        // Validate i18nModule
-        if(this.bundle[parts[0]] === undefined) return key;
-        const i18nModule = this.bundle[parts[0]] as I18nModule;
-
-        // Validate i18nKey
-        if(!i18nModule[parts[1]] === undefined) return key;
-        const i18nKey = i18nModule[parts[1]] as I18nKey;
+        if(this.bundle[key] === undefined) return key;
+        const i18nKey = this.bundle[key] as I18nKey;
 
         // Look up long-form locale
         if(i18nKey[lang] !== undefined) return i18nKey[lang] as string;

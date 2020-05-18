@@ -10,9 +10,9 @@ import {AppComponent} from './app.component';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {CoreModule} from './core/core.module';
 import {SharedModule} from './shared/shared.module';
-import {ResponseCodesModule} from './views/response-codes/response-codes.module';
+import {ErrorModule} from './views/error/error.module';
 import {AdminModule} from './views/admin/admin.module';
-import {MainModule} from './views/main/main.module';
+import {HomeModule} from './views/home/home.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {AppModule};
@@ -34,9 +34,9 @@ export {AppModule};
         SharedModule.forRoot(),
 
         // Content
-        ResponseCodesModule,
+        ErrorModule,
         AdminModule,
-        MainModule,
+        HomeModule,
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent],

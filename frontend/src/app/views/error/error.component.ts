@@ -7,6 +7,10 @@ export {ErrorComponent};
 })
 /** Displays messages for various errors.. */
 class ErrorComponent {
-    public errorMessageKey: string = 'UNKNOWN';
-    //TODO
+    private errorCode: number = NaN;
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    public getErrorKey(): string {
+        return String(this.errorCode);
+    }
 }

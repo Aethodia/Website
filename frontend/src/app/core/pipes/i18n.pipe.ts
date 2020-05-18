@@ -70,11 +70,8 @@ class I18nPipe implements PipeTransform {
         lang = lang.split('-')[0];
         if(i18nKey[lang] !== undefined) return i18nKey[lang] as string;
 
-        // Fall back to English
-        lang = 'en';
-        if(i18nKey[lang] !== undefined) return i18nKey[lang] as string;
-
         // If all else fails, just return the key.
+        console.warn(`No \`${lang}\` localization for \`${key}\`.`);
         return key;
     }
 

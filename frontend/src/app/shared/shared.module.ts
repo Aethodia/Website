@@ -2,7 +2,7 @@ import {NgModule, ModuleWithProviders, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {FrameworkModule, I18N_BUNDLE} from 'app/framework/framework.module';
+import {FrameworkModule, setI18n} from 'app/framework/framework.module';
 import {SHARED_I18N} from './shared.i18n';
 import {Helpers} from './misc/helpers';
 import {EndpointsService} from './services/endpoints.service';
@@ -29,7 +29,7 @@ export {
     exports: [],
     declarations: [],
     providers: [
-        {provide: I18N_BUNDLE, useValue: SHARED_I18N},
+        setI18n(SHARED_I18N),
     ],
 })
 

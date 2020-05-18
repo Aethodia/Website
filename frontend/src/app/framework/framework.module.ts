@@ -3,7 +3,7 @@ import {AsyncPipe, CommonModule} from '@angular/common';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {I18N_BUNDLE} from './consts/i18n.const';
+import {setI18n} from './consts/i18n.const';
 import {Utils} from './utils/utils';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -37,7 +37,7 @@ export {
     FrameworkModule,
 
     // Misc
-    I18N_BUNDLE,
+    setI18n,
     Utils,
 
     // Classes
@@ -87,7 +87,7 @@ export {
         NumberPipe,
     ],
     providers: [
-        {provide: I18N_BUNDLE, useValue: {} as I18nBundle},
+        setI18n({}),
 
         // Pipes
         AsyncPipe,

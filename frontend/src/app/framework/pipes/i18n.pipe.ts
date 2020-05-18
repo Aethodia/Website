@@ -19,7 +19,7 @@ class I18nPipe implements PipeTransform {
         private readonly i18nSvc: I18nService,
         private readonly async:   AsyncPipe,
 
-        @Optional() @Inject(I18N_BUNDLE) private readonly bundle?: I18nBundle,
+        @Inject(I18N_BUNDLE) private readonly bundle: I18nBundle,
     ) {
         return this;
     }

@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {FrameworkModule, I18N_BUNDLE} from 'app/framework/framework.module';
+import {FrameworkModule, setI18n} from 'app/framework/framework.module';
 import {SharedModule} from 'app/shared/shared.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -27,7 +27,7 @@ export {
     exports: [],
     declarations: [],
     providers: [
-        {provide: I18N_BUNDLE, useValue: ADMIN_I18N},
+        setI18n(ADMIN_I18N),
     ],
 })
 class AdminModule {}

@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {FrameworkModule, I18N_BUNDLE} from 'app/framework/framework.module';
+import {FrameworkModule, setI18n} from 'app/framework/framework.module';
 import {SharedModule} from 'app/shared/shared.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -32,7 +32,7 @@ export {
         LoginComponent,
     ],
     providers: [
-        {provide: I18N_BUNDLE, useValue: DEFAULT_I18N},
+        setI18n(DEFAULT_I18N),
     ],
 })
 class DefaultModule {}

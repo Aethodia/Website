@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {Endpoint} from '../classes/endpoint.class';
+import {Endpoint, EndpointSettings} from '../classes/endpoint.class';
 import {HttpOptions} from '../classes/http-options.class';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -31,9 +31,11 @@ class BackendService {
         url: string,
         version: number,
         options?: HttpOptions,
+        settings?: EndpointSettings,
     ) => new Endpoint<SendType, ReceiveType, BodyType>(
         this.http,
         `api/v${version}/${url}`,
-        options
+        options,
+        settings,
     );
 }

@@ -13,8 +13,7 @@ class EndpointsService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(backend: BackendService) {
-        //super();
-        this.graphql = backend.newEndpoint('graphql', 0, {responseType: 'json'});
+        this.graphql = backend.newEndpoint('graphql', 0, {responseType: 'json'}, {partial: true});
         return this;
     }
 }

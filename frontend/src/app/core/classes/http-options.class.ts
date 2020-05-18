@@ -6,7 +6,7 @@ export {HttpOptions};
 /** HTTP request options.
  * @note This should be included in upstream Angular...
  */
-class HttpOptions extends Object {
+class HttpOptions {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public headers?:         HttpHeaders;
@@ -18,7 +18,6 @@ class HttpOptions extends Object {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(input?: HttpOptions|table) {
-        super();
 
         // We want this class to match ad-hoc objects, so we need to make its custom member functions optional.
         if(this.initialize != null) {

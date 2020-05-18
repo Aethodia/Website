@@ -1,9 +1,10 @@
-import {Pipe, PipeTransform} from '@angular/core';
+import {Pipe, PipeTransform, Optional, Inject} from '@angular/core';
 import {AsyncPipe} from '@angular/common';
 import {map} from 'rxjs/operators';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {I18nService} from '../services/i18n.service';
+import {I18N_BUNDLE} from '../consts/i18n.const';
 export {I18nPipe};
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -17,6 +18,8 @@ class I18nPipe implements PipeTransform {
     constructor(
         private readonly i18nSvc: I18nService,
         private readonly async:   AsyncPipe,
+
+        @Optional() @Inject(I18N_BUNDLE) private readonly bundle?: I18nBundle,
     ) {
         return this;
     }

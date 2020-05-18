@@ -1,4 +1,4 @@
-export const I18N_DEFAULT = {
+export const DEFAULT_I18N = {
     SHARED: {},
     HOME: {
         WELCOME: {
@@ -12,4 +12,4 @@ export const I18N_DEFAULT = {
         },
     },
 };
-export default I18N_DEFAULT as I18nBundle; // This is a hack that ensures our bundle is the correct type.
+export default DEFAULT_I18N as I18nBundle; // This is a hack that ensures our bundle is the correct type.

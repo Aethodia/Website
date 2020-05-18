@@ -1,8 +1,9 @@
-import {NgModule, ModuleWithProviders, Optional, SkipSelf} from '@angular/core';
-import {CommonModule} from '@angular/common';
+import {ModuleWithProviders, NgModule, Optional, SkipSelf} from '@angular/core';
+import {AsyncPipe, CommonModule} from '@angular/common';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {I18N_BUNDLE} from './consts/i18n.const';
 import {Utils} from './utils/utils';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -36,6 +37,7 @@ export {
     FrameworkModule,
 
     // Misc
+    I18N_BUNDLE,
     Utils,
 
     // Classes
@@ -84,7 +86,15 @@ export {
         DatetimePipe,
         NumberPipe,
     ],
-    providers: [],
+    providers: [
+        {provide: I18N_BUNDLE, useValue: {} as I18nBundle},
+
+        // Pipes
+        AsyncPipe,
+        I18nPipe,
+        DatetimePipe,
+        NumberPipe,
+    ],
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -94,8 +104,6 @@ export {
  */
 class FrameworkModule {
     constructor (
-        //FIXME: The below insanity should not be necessary in order to get Angular to load these Injectables at start.
-
         // Services
         EnvironmentService: EnvironmentService,
         ConsoleService:     ConsoleService,
@@ -107,7 +115,7 @@ class FrameworkModule {
         // Misc
         @Optional() @SkipSelf() parent?: FrameworkModule,
     ) {
-        if(parent) throw new Error('`FrameworkModule` is already loaded.');
+        // if(parent) throw new Error('`FrameworkModule` is already loaded.');
         return this;
     }
 

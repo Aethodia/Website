@@ -6,8 +6,8 @@ import {FrameworkModule, setI18n} from 'app/framework/framework.module';
 import {SharedModule} from 'app/shared/shared.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {defaultRoutes} from './default.routes';
-import {DEFAULT_I18N} from './default.i18n';
+import {mainRoutes} from './main.routes';
+import {MAIN_I18N} from './main.i18n';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {HomeComponent} from './home/home.component';
@@ -15,8 +15,8 @@ import {LoginComponent} from './login/login.component';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {
-    DefaultModule,
-    defaultRoutes,
+    MainModule,
+    mainRoutes,
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -32,7 +32,7 @@ export {
         LoginComponent,
     ],
     providers: [
-        setI18n(DEFAULT_I18N),
+        setI18n(MAIN_I18N),
     ],
 })
-class DefaultModule {}
+class MainModule {}

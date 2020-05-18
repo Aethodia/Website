@@ -12,7 +12,7 @@ import {FrameworkModule} from './framework/framework.module';
 import {SharedModule} from './shared/shared.module';
 import {ResponseCodesModule} from './content/response-codes/response-codes.module';
 import {AdminModule} from './content/admin/admin.module';
-import {DefaultModule} from './content/default/default.module';
+import {MainModule} from './content/main/main.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {AppModule};
@@ -36,7 +36,7 @@ export {AppModule};
         // Content
         ResponseCodesModule,
         AdminModule,
-        DefaultModule,
+        MainModule,
     ],
     declarations: [AppComponent],
     bootstrap: [AppComponent],

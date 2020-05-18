@@ -1,4 +1,13 @@
 export const AUTH_I18N = {
+    META_TITLE: {
+        en: `Authentication - Theodia, the Technocratic Republic`,
+    },
+    META_DESCRIPTION: {
+        en: `The official website of the Technocratic Republic of Theodia`,
+    },
+    META_KEYWORDS: {
+        en: `Theodia micronation technocracy`,
+    },
     LOGIN: {
         en: `Login`,
         art: `lɔ́-kix`,

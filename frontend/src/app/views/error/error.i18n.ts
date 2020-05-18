@@ -1,4 +1,13 @@
 export const ERROR_I18N = {
+    META_TITLE: {
+        en: `Error - Theodia, the Technocratic Republic`,
+    },
+    META_DESCRIPTION: {
+        en: `The official website of the Technocratic Republic of Theodia`,
+    },
+    META_KEYWORDS: {
+        en: `Theodia micronation technocracy error`,
+    },
     NaN: {
         en: 'An unknown error has occurred.',
     },

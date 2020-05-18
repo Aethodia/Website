@@ -39,7 +39,7 @@ class SharedModule {
     constructor (
         // Services
         ShariablesService: ShariablesService,
-        EndpointsService: EndpointsService,
+        EndpointsService:  EndpointsService,
 
         // Misc
         @Optional() @SkipSelf() parent?: SharedModule,

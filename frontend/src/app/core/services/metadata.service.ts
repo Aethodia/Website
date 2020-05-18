@@ -3,6 +3,9 @@ import {DOCUMENT} from '@angular/common';
 import {Title, Meta} from '@angular/platform-browser';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {I18nPipe} from '../pipes/i18n.pipe';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {MetadataService};
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -17,6 +20,15 @@ class MetadataService {
         private readonly titleSvc: Title,
     ) {
         return this;
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    public quickSet(i18n: I18nPipe): void {
+        this.set({
+            title: i18n.transform('META_TITLE'),
+            description: i18n.transform('META_DESCRIPTION'),
+            keywords: i18n.transform('META_KEYWORDS'),
+        });
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

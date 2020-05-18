@@ -33,9 +33,4 @@ export {
         setI18n(ERROR_I18N),
     ],
 })
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-/** Pages for HTTP response status codes.
- * {@link https://en.wikipedia.org/wiki/List_of_HTTP_status_codes}
- */
 class ErrorModule {}

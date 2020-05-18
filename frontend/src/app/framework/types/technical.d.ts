@@ -12,6 +12,9 @@ type index = string|number|symbol;
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 /** An `object` with unknown members of a given or `unknown` type. */
-type table<Type = unknown> = object & {
-    [key in index]?: Type|null;
+type table<
+    ValueType = unknown,
+    KeyType extends index = index,
+> = object & {
+    [key in KeyType]?: ValueType|null;
 };

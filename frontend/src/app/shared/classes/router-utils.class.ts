@@ -1,9 +1,8 @@
-import {UrlMatcher, UrlMatchResult, UrlSegment} from '@angular/router';
-export {Helpers};
+export {RouterUtils};
 
 ////////////////////////////////////////////////////////////////////////////////
-/** This is a dumping-ground for helper functions that need to be used across multiple files. */
-class Helpers {
+/** This file provides some functions that facilitate routing. */
+class RouterUtils {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     private static readonly modules: table<Promise<any>> = {
@@ -17,25 +16,13 @@ class Helpers {
     public static loadChildren(moduleName: string) {
         return async(): Promise<Class|void> => {
             try {
-                if(this.modules[moduleName] === undefined) {
+                if(RouterUtils.modules[moduleName] === undefined) {
                     throw ReferenceError(`Invalid \`moduleName\`: ${moduleName}`);
                 }
-                return (await this.modules[moduleName])[moduleName];
+                return (await RouterUtils.modules[moduleName])[moduleName];
             } catch(error) {
                 console.error(error);
             }
         }
-    }
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public static genMatcher(segments: string[]): UrlMatcher {
-        const result: UrlMatchResult = {
-            consumed: [],
-        };
-        for(const segment of segments) {
-            const urlSeg = new UrlSegment(segment, {});
-            result.consumed.push(urlSeg)
-        }
-        return () => result;
     }
 }

@@ -4,7 +4,7 @@ import {CommonModule} from '@angular/common';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {CoreModule, setI18n} from 'app/core/core.module';
 import {SHARED_I18N} from './shared.i18n';
-import {Helpers} from './misc/helpers';
+import {RouterUtils} from './classes/router-utils.class';
 import {EndpointsService} from './services/endpoints.service';
 import {ShariablesService} from './services/shariables.service';
 
@@ -13,7 +13,7 @@ export {
     SharedModule,
 
     // Misc
-    Helpers,
+    RouterUtils,
 
     // Services
     EndpointsService,

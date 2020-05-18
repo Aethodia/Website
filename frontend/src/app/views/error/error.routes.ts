@@ -5,5 +5,6 @@ export {errorRoutes};
 ////////////////////////////////////////////////////////////////////////////////
 const errorRoutes: Routes = Array<Route>({
     path: '',
+    pathMatch: 'full',
     component: ErrorComponent,
 });

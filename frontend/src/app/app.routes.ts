@@ -9,28 +9,35 @@ const appRoutes: Routes = Array<Route>(
     // Primary routes
     {
         path: 'admin',
+        pathMatch: 'full',
         loadChildren: Helpers.loadChildren('AdminModule'),
     }, {
         path: 'auth',
+        pathMatch: 'full',
         loadChildren: Helpers.loadChildren('AuthModule'),
     }, {
         path: 'error',
-        loadChildren: Helpers.loadChildren('ResponseCodesModule'),
+        pathMatch: 'full',
+        loadChildren: Helpers.loadChildren('ErrorModule'),
     }, {
-        path: 'home',
-        loadChildren: Helpers.loadChildren('MainModule'),
+        path: '',
+        pathMatch: 'full',
+        loadChildren: Helpers.loadChildren('HomeModule'),
     },
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     // Alias routes
     {
-        path: '',
-        redirectTo: 'home',
+        path: 'home',
+        pathMatch: 'full',
+        redirectTo: '',
     }, {
         path: 'index',
-        redirectTo: 'home',
+        pathMatch: 'full',
+        redirectTo: '',
     }, {
         path: 'login',
+        pathMatch: 'full',
         redirectTo: 'auth',
     },
 

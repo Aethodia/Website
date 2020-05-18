@@ -7,6 +7,6 @@ export {ErrorComponent};
 })
 /** Displays messages for various errors.. */
 class ErrorComponent {
-    public errorMessageKey: string = '';
+    public errorMessageKey: string = 'UNKNOWN';
     //TODO
 }

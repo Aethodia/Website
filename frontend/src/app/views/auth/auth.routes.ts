@@ -5,5 +5,6 @@ export {authRoutes};
 ////////////////////////////////////////////////////////////////////////////////
 const authRoutes: Routes = Array<Route>({
     path: '',
+    pathMatch: 'full',
     component: AuthComponent,
 });

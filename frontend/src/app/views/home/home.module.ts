@@ -7,7 +7,7 @@ import {CoreModule, setI18n} from 'app/core/core.module';
 import {SharedModule} from 'app/shared/shared.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {homeRoutes} from './main.routes';
+import {homeRoutes} from './home.routes';
 import {HOME_I18N} from './home.i18n';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

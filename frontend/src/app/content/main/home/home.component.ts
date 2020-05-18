@@ -9,7 +9,7 @@ export {HomeComponent};
 @Component({
     templateUrl: './home.component.html',
 })
-class HomeComponent implements OnInit{
+class HomeComponent implements OnInit {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(

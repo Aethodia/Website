@@ -12,6 +12,8 @@ export {appRoutes};
 const appRoutes: Routes = Array<Route>({
     path: 'admin',
     loadChildren: Helpers.loadChildren('AdminModule'),
+}, {
+    loadChildren: Helpers.loadChildren('AuthModule'),
 }).concat(
     mainRoutes,
     responseCodeRoutes,

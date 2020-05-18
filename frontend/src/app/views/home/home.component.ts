@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {MetadataService} from 'app/core/core.module';
-import {EndpointsService} from 'app/shared/shared.module';
+import {MetadataService, I18nPipe} from 'app/core/core.module';
+// import {EndpointsService} from 'app/shared/shared.module';
 export {HomeComponent};
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -14,7 +14,8 @@ class HomeComponent implements OnInit {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
         private readonly meta: MetadataService,
-        private readonly endpoints: EndpointsService,
+        // private readonly endpoints: EndpointsService,
+        private readonly i18n: I18nPipe,
     ) {
         return this;
     }
@@ -23,11 +24,11 @@ class HomeComponent implements OnInit {
     public ngOnInit(): void {
         // this.endpoints.graphql.receive().subscribe();
 
+        //TODO: Automatically set `meta` tags for every module.
         this.meta.set({
-            //TODO: Pass these through the I18nPipe.
-            title: 'Theodia, the Technocratic Republic',
-            description: 'The official website of the Technocratic Republic of Theodia',
-            keywords: ['Theodia', 'micronation', 'technocracy'],
+            title: this.i18n.transform('META_TITLE'),
+            description: this.i18n.transform('META_DESCRIPTION'),
+            keywords: this.i18n.transform('META_KEYWORDS'),
         });
     }
 }

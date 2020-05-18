@@ -22,7 +22,7 @@ class MetadataService {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public set(metadata: {
         description?: string,
-        keywords?: string[],
+        keywords?: string,
         lang?: string,
         title?: string,
     }): void {
@@ -45,7 +45,7 @@ class MetadataService {
         get: () => {
             //TODO
         },
-        set: (keywords: string[]): void => {
+        set: (keywords: string|string[]): void => {
             //TODO
         },
     }

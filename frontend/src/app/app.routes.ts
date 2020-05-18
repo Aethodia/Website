@@ -6,28 +6,11 @@ export {appRoutes};
 const appRoutes: Routes = Array<Route>(
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    // Primary routes
     {
-        path: 'admin',
-        pathMatch: 'full',
-        loadChildren: Helpers.loadChildren('AdminModule'),
-    }, {
-        path: 'auth',
-        pathMatch: 'full',
-        loadChildren: Helpers.loadChildren('AuthModule'),
-    }, {
-        path: 'error',
-        pathMatch: 'full',
-        loadChildren: Helpers.loadChildren('ErrorModule'),
-    }, {
         path: '',
         pathMatch: 'full',
         loadChildren: Helpers.loadChildren('HomeModule'),
-    },
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    // Alias routes
-    {
+    }, {
         path: 'home',
         pathMatch: 'full',
         redirectTo: '',
@@ -35,6 +18,20 @@ const appRoutes: Routes = Array<Route>(
         path: 'index',
         pathMatch: 'full',
         redirectTo: '',
+    },
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    {
+        path: 'admin',
+        pathMatch: 'full',
+        loadChildren: Helpers.loadChildren('AdminModule'),
+    },
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    {
+        path: 'auth',
+        pathMatch: 'full',
+        loadChildren: Helpers.loadChildren('AuthModule'),
     }, {
         path: 'login',
         pathMatch: 'full',
@@ -42,8 +39,11 @@ const appRoutes: Routes = Array<Route>(
     },
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    // Default route
     {
+        path: 'error',
+        pathMatch: 'full',
+        loadChildren: Helpers.loadChildren('ErrorModule'),
+    }, {
         path: '**',
         redirectTo: 'error?code=404',
     }

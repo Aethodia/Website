@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {FrameworkModule, setI18n} from 'app/framework/framework.module';
+import {CoreModule, setI18n} from 'app/core/core.module';
 import {SharedModule} from 'app/shared/shared.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -20,7 +20,7 @@ export {
 @NgModule({
     imports: [
         CommonModule,
-        FrameworkModule,
+        CoreModule,
         SharedModule,
         RouterModule.forChild(adminRoutes),
     ],

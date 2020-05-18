@@ -34,7 +34,7 @@ import {RetryInterceptor} from './interceptors/retry.interceptor';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {
-    FrameworkModule,
+    CoreModule,
 
     // Misc
     setI18n,
@@ -102,7 +102,7 @@ export {
  *  Amounts to a custom framework on-top of Angular.
  * @warn Should only be included in the top-most module.
  */
-class FrameworkModule {
+class CoreModule {
     constructor (
         // Services
         EnvironmentService: EnvironmentService,
@@ -113,17 +113,17 @@ class FrameworkModule {
         AnalyticsService:   AnalyticsService,
 
         // Misc
-        @Optional() @SkipSelf() parent?: FrameworkModule,
+        @Optional() @SkipSelf() parent?: CoreModule,
     ) {
-        // if(parent) throw new Error('`FrameworkModule` is already loaded.');
+        // if(parent) throw new Error('`CoreModule` is already loaded.');
         return this;
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Provides singleton services that should only be initialized once. */
-    public static forRoot(): ModuleWithProviders<FrameworkModule> {
+    public static forRoot(): ModuleWithProviders<CoreModule> {
         return {
-            ngModule: FrameworkModule,
+            ngModule: CoreModule,
             providers: [
                 // Services
                 EnvironmentService,

@@ -2,7 +2,7 @@ import {NgModule, ModuleWithProviders, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {FrameworkModule, setI18n} from 'app/framework/framework.module';
+import {CoreModule, setI18n} from 'app/core/core.module';
 import {SHARED_I18N} from './shared.i18n';
 import {Helpers} from './misc/helpers';
 import {EndpointsService} from './services/endpoints.service';
@@ -24,7 +24,7 @@ export {
 @NgModule({
     imports: [
         CommonModule,
-        FrameworkModule,
+        CoreModule,
     ],
     exports: [],
     declarations: [],

@@ -8,11 +8,11 @@ import {appRoutes} from './app.routes';
 import {AppComponent} from './app.component';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {FrameworkModule} from './framework/framework.module';
+import {CoreModule} from './core/core.module';
 import {SharedModule} from './shared/shared.module';
-import {ResponseCodesModule} from './content/response-codes/response-codes.module';
-import {AdminModule} from './content/admin/admin.module';
-import {MainModule} from './content/main/main.module';
+import {ResponseCodesModule} from './views/response-codes/response-codes.module';
+import {AdminModule} from './views/admin/admin.module';
+import {MainModule} from './views/main/main.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {AppModule};
@@ -30,7 +30,7 @@ export {AppModule};
         }),
 
         // Common
-        FrameworkModule.forRoot(),
+        CoreModule.forRoot(),
         SharedModule.forRoot(),
 
         // Content

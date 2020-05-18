@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {MetadataService} from 'app/framework/framework.module';
+import {MetadataService} from 'app/core/core.module';
 import {EndpointsService} from 'app/shared/shared.module';
 export {HomeComponent};
 

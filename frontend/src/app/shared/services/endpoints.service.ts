@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {BackendService, Endpoint} from 'app/framework/framework.module';
+import {BackendService, Endpoint} from 'app/core/core.module';
 export {EndpointsService};
 
 ////////////////////////////////////////////////////////////////////////////////

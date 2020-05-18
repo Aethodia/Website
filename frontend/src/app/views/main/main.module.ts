@@ -2,37 +2,35 @@ import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {FrameworkModule, setI18n} from 'app/framework/framework.module';
+import {CoreModule, setI18n} from 'app/core/core.module';
 import {SharedModule} from 'app/shared/shared.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {authRoutes} from './auth.routes';
-import {AUTH_I18N} from './auth.i18n';
+import {mainRoutes} from './main.routes';
+import {MAIN_I18N} from './main.i18n';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {LoginComponent} from './login/login.component';
-import {LogoutComponent} from './logout/logout.component';
+import {HomeComponent} from './home/home.component';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {
-    AuthModule,
-    authRoutes,
+    MainModule,
+    mainRoutes,
 };
 
 ////////////////////////////////////////////////////////////////////////////////
 @NgModule({
     imports: [
         CommonModule,
-        FrameworkModule,
+        CoreModule,
         SharedModule,
     ],
     exports: [],
     declarations: [
-        LoginComponent,
-        LogoutComponent,
+        HomeComponent,
     ],
     providers: [
-        setI18n(AUTH_I18N),
+        setI18n(MAIN_I18N),
     ],
 })
-class AuthModule {}
+class MainModule {}

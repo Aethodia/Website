@@ -11,9 +11,9 @@ class Helpers {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     private static readonly modules: table<Promise<any>> = {
-        AdminModule:         import('app/content/admin/admin.module'),                   //as Promise<AdminModule>,
-        MainModule:       import('app/content/main/main.module'),               //as Promise<DefaultModule>,
-        ResponseCodesModule: import('app/content/response-codes/response-codes.module'), //as Promise<ResponseCodesModule>,
+        AdminModule:         import('app/views/admin/admin.module'),                   //as Promise<AdminModule>,
+        MainModule:       import('app/views/main/main.module'),               //as Promise<DefaultModule>,
+        ResponseCodesModule: import('app/views/response-codes/response-codes.module'), //as Promise<ResponseCodesModule>,
     };
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

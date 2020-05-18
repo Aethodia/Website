@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AsyncVar} from 'app/framework/framework.module';
+import {AsyncVar} from 'app/core/core.module';
 export {ShariablesService};
 
 ////////////////////////////////////////////////////////////////////////////////

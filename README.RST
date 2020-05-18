@@ -44,15 +44,16 @@ Stack
 
 - NestJS
 - Fastify
+- GraphQL
+
+**Database**
+
+- Ignite
 
 **Server**
 
 - Node.js
 - Nginx (reverse proxy)
-
-**Database**
-
-- Ignite
 
 Code
 ================================================================================
@@ -60,17 +61,17 @@ Code
 **Source**
 
 - TypeScript
-- Sass
+- SCSS
 - `XHTML5 (polyglot)`_
 
-  - With limitations: Angular doesn't support XHTML, so we have to leave out XML-specific tags, and use HTML mimetypes and extensions.  Apart from this, we are following the rules of Polyglot XHTML5.
+  - With limitations: Angular support for XHTML is currently broken, so we have to leave out XML-specific tags, and use HTML mimetypes and extensions.  Apart from this, we are following the rules of Polyglot XHTML5.
 
 .. _`XHTML5 (polyglot)`: https://dev.w3.org/html5/html-polyglot/html-polyglot.html
 
 **Compiled**
 
 - JavaScript (ES6), minified, from TypeScript
-- CSS v3, minified, from Sass
+- CSS v3, minified, from SCSS
 - HTML v5, minified, from XHTML
 
 Documentation

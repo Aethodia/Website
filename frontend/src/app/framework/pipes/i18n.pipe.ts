@@ -14,7 +14,7 @@ class I18nPipe implements PipeTransform {
      * @param params The variables used in the translation.
      * @returns a completed translation.
      */
-    transform(key: string, params: string[] = []): string {
+    public transform(key: string, params: string[] = []): string {
         return key; //TODO
     }
 }

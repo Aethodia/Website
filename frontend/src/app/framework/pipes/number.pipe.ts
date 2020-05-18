@@ -6,7 +6,7 @@ export {NumberPipe};
     name: 'number',
 })
 class NumberPipe implements PipeTransform {
-    transform(number: number, display: string = ''): string {
+    public transform(number: number, display: string = ''): string {
         return String(number); //TODO
     }
 }

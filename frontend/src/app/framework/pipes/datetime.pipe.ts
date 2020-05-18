@@ -6,7 +6,7 @@ export {DatetimePipe};
     name: 'datetime',
 })
 class DatetimePipe implements PipeTransform {
-    transform(datetime: Date|string, format: string = ''): string {
+    public transform(datetime: Date|string, format: string = ''): string {
         return String(datetime); //TODO
     }
 }

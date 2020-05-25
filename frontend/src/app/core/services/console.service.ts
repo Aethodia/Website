@@ -18,7 +18,7 @@ class ConsoleService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
-        private readonly environment: EnvironmentService,
+        private readonly envSvc: EnvironmentService,
     ) {
         // Back up the original console
         this.console = _.cloneDeep(console);
@@ -32,7 +32,7 @@ class ConsoleService {
     public ngOnInit(): void {
 
         // If not dev mode, gut the console
-        if(!this.environment.consts.isDevMode) {
+        if(!this.envSvc.vars.isDevMode) {
             this.sanitizeConsole();
         }
     }

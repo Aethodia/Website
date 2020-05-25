@@ -12,7 +12,7 @@ class I18nInterceptor implements HttpInterceptor {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
-        private readonly envSvc: EnvironmentService,
+        private readonly environment: EnvironmentService,
     ) {
         return this;
     }
@@ -22,7 +22,7 @@ class I18nInterceptor implements HttpInterceptor {
         request: HttpRequest<unknown>,
         next: HttpHandler,
     ): Observable<HttpEvent<unknown>> {
-        const lang = this.envSvc.vars.language.get().value;
+        const lang = this.environment.language.get().value;
         if(lang != null) {
             request.headers.set('Accept-Language', lang);
             if(request.body != null) {

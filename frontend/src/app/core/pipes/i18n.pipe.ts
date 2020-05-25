@@ -16,7 +16,7 @@ class I18nPipe implements PipeTransform {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
-        private readonly envSvc: EnvironmentService,
+        private readonly environment: EnvironmentService,
         private readonly async:  AsyncPipe,
 
         @Inject(I18N_BUNDLE) private readonly bundle: I18nBundle,
@@ -36,7 +36,7 @@ class I18nPipe implements PipeTransform {
         params: table<string, string> = {},
     ): string {
         return this.async.transform(
-            this.envSvc.vars.language.get().pipe(map(
+            this.environment.language.get().pipe(map(
                 (lang: string|nil): string => {
                     if(lang == null) return key;
                     let string: string;

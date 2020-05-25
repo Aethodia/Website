@@ -19,72 +19,56 @@ export {
  */
 class EnvironmentService {
 
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    /** Environment variables. */
-    public readonly vars: {
-        isDevMode: boolean;
-        browser:   browserEnum;
+    public readonly isDevMode: boolean     = isDevMode();
+    public readonly browser:   browserEnum = this.detectBrowser();
 
-        language: AsyncVar<string>;
-        country:  AsyncVar<string>;
-        currency: AsyncVar<string>;
-    };
+    public readonly language: AsyncVar<string> = newAsyncLanguageVar(this.meta, this.detectLanguage());
+    public readonly country:  AsyncVar<string> = new AsyncVar(this.detectCountry());
+    public readonly currency: AsyncVar<string> = new AsyncVar(this.detectCurrency());
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
         @Inject(LOCALE_ID) private readonly DEFAULT_LOCALE: string,
-        meta: MetadataService,
+        private readonly meta: MetadataService,
     ) {
-        this.vars = {
-            isDevMode: isDevMode(),
-            browser:   this.detect.browser(),
-
-            language: newAsyncLanguageVar(meta, this.detect.language()),
-            country:  new AsyncVar(this.detect.country()),
-            currency: new AsyncVar(this.detect.currency()),
-        }
         return this;
     }
 
-    ////////////////////////////////////////////////////////////////////////////////
-    private readonly detect = {
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    private detectBrowser(): browserEnum {
+        return browserEnum.other; //TODO
+    }
 
-        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        browser: (): browserEnum => {
-            return browserEnum.other; //TODO
-        },
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    private detectCountry(): string|null {
+        let country: string|null;
 
-        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        language: (): string|null => {
-            let language: string|null;
+        //TODO
+        const language = this.language.get().value;
+        country = language?.split('-')[1] || null;
 
-            //TODO
-            language = this.DEFAULT_LOCALE;
+        return country;
+    }
 
-            return language;
-        },
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    private detectCurrency(): string|null {
+        let currency: string|null;
 
-        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        country: (): string|null => {
-            let country: string|null;
+        //TODO
+        const language = this.language.get().value;
+        currency = getLocaleCurrencyCode(language ?? '');
 
-            //TODO
-            const language = this.vars.language.get().value;
-            country = language?.split('-')[1] || null;
+        return currency;
+    }
 
-            return country;
-        },
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    private detectLanguage(): string|null {
+        let language: string|null;
 
-        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        currency: (): string|null => {
-            let currency: string|null;
+        //TODO
+        language = this.DEFAULT_LOCALE;
 
-            //TODO
-            const language = this.vars.language.get().value;
-            currency = getLocaleCurrencyCode(language ?? '');
-
-            return currency;
-        },
+        return language;
     }
 }
 

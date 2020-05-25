@@ -16,7 +16,6 @@ import {AnalyticsService} from './services/analytics.service';
 import {BackendService} from './services/backend.service';
 import {ConsoleService} from './services/console.service';
 import {MetadataService} from './services/metadata.service';
-import {I18nService} from './services/i18n.service';
 import {EnvironmentService} from './services/environment.service';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -52,7 +51,6 @@ export {
     ConsoleService,
     MetadataService,
     EnvironmentService,
-    I18nService,
 
     // Pipes
     DatetimePipe,
@@ -109,7 +107,6 @@ class CoreModule {
         ConsoleService:     ConsoleService,
         BackendService:     BackendService,
         MetadataService:    MetadataService,
-        I18nService:        I18nService,
         AnalyticsService:   AnalyticsService,
 
         // Misc
@@ -130,7 +127,6 @@ class CoreModule {
                 ConsoleService,
                 BackendService,
                 MetadataService,
-                I18nService,
                 AnalyticsService,
 
                 // Interceptors

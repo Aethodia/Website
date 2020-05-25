@@ -3,7 +3,7 @@ import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/com
 import {Observable} from 'rxjs';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {I18nService} from '../services/i18n.service';
+import {EnvironmentService} from '../services/environment.service';
 export {I18nInterceptor};
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -12,7 +12,7 @@ class I18nInterceptor implements HttpInterceptor {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
-        private readonly i18nSvc: I18nService,
+        private readonly envSvc: EnvironmentService,
     ) {
         return this;
     }
@@ -22,7 +22,7 @@ class I18nInterceptor implements HttpInterceptor {
         request: HttpRequest<unknown>,
         next: HttpHandler,
     ): Observable<HttpEvent<unknown>> {
-        const lang = this.i18nSvc.language.get().value;
+        const lang = this.envSvc.vars.language.get().value;
         if(lang != null) {
             request.headers.set('Accept-Language', lang);
             if(request.body != null) {

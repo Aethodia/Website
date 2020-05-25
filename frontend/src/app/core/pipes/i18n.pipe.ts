@@ -3,7 +3,7 @@ import {AsyncPipe} from '@angular/common';
 import {map} from 'rxjs/operators';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {I18nService} from '../services/i18n.service';
+import {EnvironmentService} from '../services/environment.service';
 import {I18N_BUNDLE} from '../consts/i18n.const';
 export {I18nPipe};
 
@@ -16,8 +16,8 @@ class I18nPipe implements PipeTransform {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
-        private readonly i18nSvc: I18nService,
-        private readonly async:   AsyncPipe,
+        private readonly envSvc: EnvironmentService,
+        private readonly async:  AsyncPipe,
 
         @Inject(I18N_BUNDLE) private readonly bundle: I18nBundle,
     ) {
@@ -36,7 +36,7 @@ class I18nPipe implements PipeTransform {
         params: table<string, string> = {},
     ): string {
         return this.async.transform(
-            this.i18nSvc.language.get().pipe(map(
+            this.envSvc.vars.language.get().pipe(map(
                 (lang: string|nil): string => {
                     if(lang == null) return key;
                     let string: string;

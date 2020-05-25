@@ -1,4 +1,4 @@
-import CAPS from '../misc/caps.enum';
+import capsEnum from '../misc/caps.enum';
 import changeCaps from './change-caps.function';
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -11,10 +11,10 @@ export default function formatLocale(
     locale: string,
     format: {
         separator: ''|' '|'_'|'-',
-        capitalization: CAPS.SAME|CAPS.UPPER|CAPS.LOWER|CAPS.TITLE,
+        capitalization: capsEnum.same|capsEnum.upper|capsEnum.lower|capsEnum.title,
     } = {
         separator: '-',
-        capitalization: CAPS.TITLE,
+        capitalization: capsEnum.title,
     },
 ): string|never {
 
@@ -26,19 +26,19 @@ export default function formatLocale(
 
     // Change case
     const segments: string[] = locale.split(format.separator); // Split the string at the separator
-    let caps: [CAPS, CAPS];
+    let caps: [capsEnum, capsEnum];
     switch(format.capitalization) {
-        case CAPS.UPPER:
-            caps = [CAPS.UPPER, CAPS.UPPER];
+        case capsEnum.upper:
+            caps = [capsEnum.upper, capsEnum.upper];
             break;
-        case CAPS.LOWER:
-            caps = [CAPS.LOWER, CAPS.LOWER];
+        case capsEnum.lower:
+            caps = [capsEnum.lower, capsEnum.lower];
             break;
-        case CAPS.TITLE:
-            caps = [CAPS.LOWER, CAPS.UPPER];
+        case capsEnum.title:
+            caps = [capsEnum.lower, capsEnum.upper];
             break;
         default:
-            caps = [CAPS.SAME, CAPS.SAME];
+            caps = [capsEnum.same, capsEnum.same];
     }
 
     // Re-assemble the string

@@ -1,4 +1,4 @@
-import CAPS from '../misc/caps.enum';
+import capsEnum from '../misc/caps.enum';
 
 ////////////////////////////////////////////////////////////////////////////////
 /** Changes the capitalization of a string.
@@ -6,29 +6,29 @@ import CAPS from '../misc/caps.enum';
  * @param which How to capitalize.
  * @returns the capitalized string.
  */
-export default function changeCaps(string: string, which: CAPS): string {
+export default function changeCaps(string: string, which: capsEnum): string {
 
     const capitalize = (substring: string): string => {
-        return changeCaps(substring, CAPS.UPPER)
+        return changeCaps(substring, capsEnum.upper)
     }
 
     switch(which) {
 
-        case CAPS.UPPER:
+        case capsEnum.upper:
             string = string.toLocaleUpperCase();
             break;
 
-        case CAPS.LOWER:
+        case capsEnum.lower:
             string = string.toLocaleLowerCase();
             break;
 
-        case CAPS.SENTENCE:
-            string = changeCaps(string, CAPS.LOWER);
+        case capsEnum.sentence:
+            string = changeCaps(string, capsEnum.lower);
             string = string.replace(/^\w{1}/gm, capitalize);
             break;
 
-        case CAPS.TITLE:
-            string = changeCaps(string, CAPS.SENTENCE);
+        case capsEnum.title:
+            string = changeCaps(string, capsEnum.sentence);
             string = string.replace(/\s{1}\w{1}/g, capitalize);
             break;
 

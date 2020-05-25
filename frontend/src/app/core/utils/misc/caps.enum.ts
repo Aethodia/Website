@@ -1,9 +1,9 @@
 ////////////////////////////////////////////////////////////////////////////////
-enum CAPS {
-    'SAME',
-    'UPPER',
-    'LOWER',
-    'SENTENCE',
-    'TITLE',
+enum capsEnum {
+    same,
+    upper,
+    lower,
+    sentence,
+    title,
 }
-export default CAPS;
+export default capsEnum;

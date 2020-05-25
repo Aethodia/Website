@@ -1,4 +1,4 @@
-import CAPS from './misc/caps.enum';
+import capsEnum from './misc/caps.enum';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import changeCaps from './functions/change-caps.function';
@@ -16,7 +16,7 @@ export {Utils};
 const Utils = {
 
     // Other
-    CAPS,
+    capsEnum,
 
     // Functions
     changeCaps,

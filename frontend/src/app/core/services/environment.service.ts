@@ -9,7 +9,7 @@ import {Utils} from '../utils/utils';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {
     EnvironmentService,
-    BROWSER,
+    browserEnum,
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -23,7 +23,7 @@ class EnvironmentService {
     /** Environment variables. */
     public readonly vars: {
         isDevMode: boolean;
-        browser:   BROWSER;
+        browser:   browserEnum;
 
         language: AsyncVar<string>;
         country:  AsyncVar<string>;
@@ -50,8 +50,8 @@ class EnvironmentService {
     private readonly detect = {
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        browser: (): BROWSER => {
-            return BROWSER.OTHER; //TODO
+        browser: (): browserEnum => {
+            return browserEnum.other; //TODO
         },
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -89,10 +89,10 @@ class EnvironmentService {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-enum BROWSER {
-    'CHROME',
-    'FIREFOX',
-    'OTHER',
+enum browserEnum {
+    chrome,
+    firefox,
+    other,
 }
 
 ////////////////////////////////////////////////////////////////////////////////

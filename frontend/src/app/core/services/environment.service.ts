@@ -7,7 +7,17 @@ import {MetadataService} from './metadata.service';
 import {Utils} from '../utils/utils';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-export {EnvironmentService};
+export {
+    EnvironmentService,
+    BROWSER,
+};
+
+////////////////////////////////////////////////////////////////////////////////
+enum BROWSER {
+    'CHROME',
+    'FIREFOX',
+    'OTHER',
+}
 
 ////////////////////////////////////////////////////////////////////////////////
 @Injectable()
@@ -18,7 +28,8 @@ class EnvironmentService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Synchronous environment constants. */
-    public readonly consts = class Consts {
+    public readonly consts = class Consts extends Object {
+        [key: string]: nil|unknown;
         public static readonly isDevMode: boolean = isDevMode();
     }
 
@@ -26,6 +37,7 @@ class EnvironmentService {
     /** Asynchronous environment variables. */
     public readonly vars = class Vars {
         [key: string]: nil|AsyncVar<unknown>;
+        public static browser:  AsyncVar<BROWSER>;
         public static language: AsyncVar<string>;
         public static country:  AsyncVar<string>;
         public static currency: AsyncVar<string>;
@@ -36,6 +48,7 @@ class EnvironmentService {
         @Inject(LOCALE_ID) private readonly DEFAULT_LOCALE: string,
         meta: MetadataService,
     ) {
+        this.vars.browser  = new AsyncVar(this.detect.browser())
         this.vars.country  = new AsyncVar(this.detect.country());
         this.vars.currency = new AsyncVar(this.detect.currency());
         this.vars.language = newAsyncLanguageVar(meta, this.detect.language());
@@ -45,6 +58,12 @@ class EnvironmentService {
 
     ////////////////////////////////////////////////////////////////////////////////
     private readonly detect = {
+
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        browser: (): BROWSER|null => {
+            let browser: BROWSER|null = null;
+            return browser;
+        },
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
         country: (): string|null => {

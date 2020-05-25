@@ -13,10 +13,13 @@ export {
 };
 
 ////////////////////////////////////////////////////////////////////////////////
-enum BROWSER {
-    'CHROME',
-    'FIREFOX',
-    'OTHER',
+interface EnvironmentServiceType {
+    readonly consts: {
+        readonly [key: string]: any;
+    };
+    readonly vars: {
+        [key: string]: nil|AsyncVar<any>;
+    };
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -24,35 +27,37 @@ enum BROWSER {
 /** Determine the environment in which the application is running.
  *  This generally means browser detection, among other things.
  */
-class EnvironmentService {
+class EnvironmentService implements EnvironmentServiceType {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Synchronous environment constants. */
-    public readonly consts = class Consts extends Object {
-        [key: string]: nil|unknown;
-        public static readonly isDevMode: boolean = isDevMode();
-    }
+    public readonly consts: {
+        browser:   BROWSER;
+        country:   string|null;
+        isDevMode: boolean;
+    };
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Asynchronous environment variables. */
-    public readonly vars = class Vars {
-        [key: string]: nil|AsyncVar<unknown>;
-        public static browser:  AsyncVar<BROWSER>;
-        public static language: AsyncVar<string>;
-        public static country:  AsyncVar<string>;
-        public static currency: AsyncVar<string>;
-    }
+    public readonly vars: {
+        language: AsyncVar<string>;
+        currency: AsyncVar<string>;
+    };
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
         @Inject(LOCALE_ID) private readonly DEFAULT_LOCALE: string,
         meta: MetadataService,
     ) {
-        this.vars.browser  = new AsyncVar(this.detect.browser())
-        this.vars.country  = new AsyncVar(this.detect.country());
-        this.vars.currency = new AsyncVar(this.detect.currency());
-        this.vars.language = newAsyncLanguageVar(meta, this.detect.language());
-
+        this.consts = {
+            browser: this.detect.browser(),
+            country: this.detect.country(),
+            isDevMode: isDevMode(),
+        }
+        this.vars = {
+            language: newAsyncLanguageVar(meta, this.detect.language()),
+            currency: new AsyncVar(this.detect.currency()),
+        }
         return this;
     }
 
@@ -60,9 +65,18 @@ class EnvironmentService {
     private readonly detect = {
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        browser: (): BROWSER|null => {
-            let browser: BROWSER|null = null;
-            return browser;
+        browser: (): BROWSER => {
+            return BROWSER.OTHER; //TODO
+        },
+
+        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+        language: (): string|null => {
+            let language: string|null;
+
+            //TODO
+            language = this.DEFAULT_LOCALE;
+
+            return language;
         },
 
         //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -86,17 +100,14 @@ class EnvironmentService {
 
             return currency;
         },
-
-        //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-        language: (): string|null => {
-            let language: string|null;
-
-            //TODO
-            language = this.DEFAULT_LOCALE;
-
-            return language;
-        },
     }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+enum BROWSER {
+    'CHROME',
+    'FIREFOX',
+    'OTHER',
 }
 
 ////////////////////////////////////////////////////////////////////////////////

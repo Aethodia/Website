@@ -5,7 +5,7 @@ export {RouterUtils};
 class RouterUtils {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    private static readonly modules: table<() => Promise<any>> = {
+    private static readonly modules: table<() => Promise<table<unknown>>> = {
         AdminModule: () => import('app/views/admin/admin.module'),
         AuthModule:  () => import('app/views/auth/auth.module'),
         HomeModule:  () => import('app/views/home/home.module'),
@@ -13,15 +13,17 @@ class RouterUtils {
     };
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public static loadChildren<ModuleType>(moduleName: string) {
-        return async(): Promise<ModuleType|void> => {
+    public static loadChildren(moduleName: string) {
+        return async(): Promise<unknown> => {
             try {
                 if(RouterUtils.modules[moduleName] === undefined) {
                     throw ReferenceError(`Invalid \`moduleName\`: ${moduleName}`);
                 }
-                return (await RouterUtils.modules[moduleName]!())[moduleName];
+                const module = await RouterUtils.modules[moduleName]!();
+                return module[moduleName];
             } catch(error) {
                 console.error(error);
+                return;
             }
         }
     }

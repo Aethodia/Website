@@ -21,13 +21,20 @@ export {
  *  This generally means browser detection, among other things.
  */
 class EnvironmentService {
+
+    /** Whether we are in dev mode. */
     public readonly isDevMode: boolean = isDevMode();
 
+    /** The type of device the client is using. */
     public readonly device:   deviceEnum   = this.detectDevice();
+    /** The rendering engine that the client is using. */
     public readonly renderer: rendererEnum = this.detectRenderer();
 
+    /** The user's language. */
     public readonly language: AsyncVar<string> = newAsyncLanguageVar(this.meta, this.detectLanguage());
+    /** The user's country. */
     public readonly country:  AsyncVar<string> = new AsyncVar(this.detectCountry());
+    /** The user's currency. */
     public readonly currency: AsyncVar<string> = new AsyncVar(this.detectCurrency());
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

@@ -1,3 +1,4 @@
+import {I18nBundle} from 'app/core/types/i18n.type';
 export const HOME_I18N = {
     META_TITLE: {
         en: `Theodia, the Technocratic Republic`,

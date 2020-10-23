@@ -1,4 +1,5 @@
 import {InjectionToken, Provider} from '@angular/core';
+import {I18nBundle} from '../types/i18n.type';
 
 ////////////////////////////////////////////////////////////////////////////////
 /** Provide this constant to configure the `I18nPipe`. */

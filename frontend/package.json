@@ -61,6 +61,7 @@
     "codelyzer": "^5",
     "eslint": "^6",
     "lodash-es": "^4",
+    "ngx-device-detector": "^2",
     "rxjs": "^6",
     "ts-node": "^8",
     "tslib": "^1",

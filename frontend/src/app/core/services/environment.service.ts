@@ -1,6 +1,7 @@
 import {Injectable, isDevMode, Inject, LOCALE_ID} from '@angular/core';
 import {getLocaleCurrencyCode} from '@angular/common';
 import {Platform} from '@angular/cdk/platform';
+import {DeviceDetectorService} from 'ngx-device-detector';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AsyncVar} from '../classes/async-var.class';
@@ -10,7 +11,8 @@ import {Utils} from '../utils/utils';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {
     EnvironmentService,
-    browserEnum,
+    rendererEnum,
+    deviceEnum,
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -19,9 +21,10 @@ export {
  *  This generally means browser detection, among other things.
  */
 class EnvironmentService {
+    public readonly isDevMode: boolean = isDevMode();
 
-    public readonly isDevMode: boolean     = isDevMode();
-    public readonly browser:   browserEnum = this.detectBrowser();
+    public readonly device:   deviceEnum   = this.detectDevice();
+    public readonly renderer: rendererEnum = this.detectRenderer();
 
     public readonly language: AsyncVar<string> = newAsyncLanguageVar(this.meta, this.detectLanguage());
     public readonly country:  AsyncVar<string> = new AsyncVar(this.detectCountry());
@@ -30,18 +33,27 @@ class EnvironmentService {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
         @Inject(LOCALE_ID) private readonly DEFAULT_LOCALE: string,
-        private readonly platform: Platform,
+        private readonly detector: DeviceDetectorService,
         private readonly meta: MetadataService,
+        private readonly platform: Platform,
     ) {
         return this;
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    private detectBrowser(): browserEnum {
-        if(this.platform.WEBKIT || this.platform.BLINK) return browserEnum.chromium;
-        if(this.platform.FIREFOX) return browserEnum.mozilla;
-        if(this.platform.TRIDENT) return browserEnum.dead;
-        return browserEnum.other;
+    private detectDevice(): deviceEnum {
+        if(this.detector.isDesktop()) return deviceEnum.desktop;
+        if(this.detector.isTablet())  return deviceEnum.tablet;
+        if(this.detector.isMobile())  return deviceEnum.mobile;
+        return deviceEnum.unknown;
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    private detectRenderer(): rendererEnum {
+        if(this.platform.WEBKIT || this.platform.BLINK) return rendererEnum.chromium;
+        if(this.platform.FIREFOX) return rendererEnum.mozilla;
+        if(this.platform.TRIDENT) return rendererEnum.microsoft;
+        return rendererEnum.other;
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -78,11 +90,17 @@ class EnvironmentService {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-enum browserEnum {
-    dead = -1,
-    other = 0,
-    chromium = 1,
-    mozilla = 2,
+enum deviceEnum {
+    unknown = -1,
+    desktop = 0,
+    tablet = 1,
+    mobile = 2,
+}
+enum rendererEnum {
+    other = -1,
+    chromium = 0,
+    mozilla = 1,
+    microsoft = 2,
 }
 
 ////////////////////////////////////////////////////////////////////////////////

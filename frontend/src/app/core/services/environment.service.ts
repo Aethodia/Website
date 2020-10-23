@@ -1,5 +1,6 @@
 import {Injectable, isDevMode, Inject, LOCALE_ID} from '@angular/core';
 import {getLocaleCurrencyCode} from '@angular/common';
+import {Platform} from '@angular/cdk/platform';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AsyncVar} from '../classes/async-var.class';
@@ -29,6 +30,7 @@ class EnvironmentService {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
         @Inject(LOCALE_ID) private readonly DEFAULT_LOCALE: string,
+        private readonly platform: Platform,
         private readonly meta: MetadataService,
     ) {
         return this;
@@ -36,7 +38,10 @@ class EnvironmentService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     private detectBrowser(): browserEnum {
-        return browserEnum.other; //TODO
+        if(this.platform.WEBKIT || this.platform.BLINK) return browserEnum.chromium;
+        if(this.platform.FIREFOX) return browserEnum.mozilla;
+        if(this.platform.TRIDENT) return browserEnum.dead;
+        return browserEnum.other;
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -74,9 +79,10 @@ class EnvironmentService {
 
 ////////////////////////////////////////////////////////////////////////////////
 enum browserEnum {
-    chrome,
-    firefox,
-    other,
+    dead = -1,
+    other = 0,
+    chromium = 1,
+    mozilla = 2,
 }
 
 ////////////////////////////////////////////////////////////////////////////////

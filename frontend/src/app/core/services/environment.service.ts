@@ -16,6 +16,20 @@ export {
 };
 
 ////////////////////////////////////////////////////////////////////////////////
+enum deviceEnum {
+    unknown = -1,
+    desktop = 0,
+    tablet = 1,
+    mobile = 2,
+}
+enum rendererEnum {
+    other = -1,
+    chromium = 0,
+    mozilla = 1,
+    microsoft = 2,
+}
+
+////////////////////////////////////////////////////////////////////////////////
 @Injectable()
 /** Determine the environment in which the application is running.
  *  This generally means browser detection, among other things.
@@ -64,6 +78,16 @@ class EnvironmentService {
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    private detectLanguage(): string|null {
+        let language: string|null;
+
+        //TODO
+        language = this.DEFAULT_LOCALE;
+
+        return language;
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     private detectCountry(): string|null {
         let country: string|null;
 
@@ -84,48 +108,19 @@ class EnvironmentService {
 
         return currency;
     }
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    private detectLanguage(): string|null {
-        let language: string|null;
-
-        //TODO
-        language = this.DEFAULT_LOCALE;
-
-        return language;
-    }
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-enum deviceEnum {
-    unknown = -1,
-    desktop = 0,
-    tablet = 1,
-    mobile = 2,
-}
-enum rendererEnum {
-    other = -1,
-    chromium = 0,
-    mozilla = 1,
-    microsoft = 2,
-}
-
-////////////////////////////////////////////////////////////////////////////////
-/**
- * @returns An `AsyncVar` designed to handle locales,
- *  with a custom setter and a predetermined type.
- */
-function newAsyncLanguageVar(
+/** @returns An `AsyncVar` designed to handle locales, with a custom setter and a predetermined type. */
+const newAsyncLanguageVar = (
     meta: MetadataService,
     value?: string|null,
-) {
-    return new (
-        class AsyncLanguageVar extends AsyncVar<string> {
-            public set(locale: string|null): void {
-                if(locale !== null) locale = Utils.formatLocale(locale);
-                this.subject.next(locale);
-                meta.lang.set(locale ?? '');
-            }
+) => new (
+    class AsyncLanguageVar extends AsyncVar<string> {
+        public set(locale: string|null): void {
+            if(locale !== null) locale = Utils.formatLocale(locale);
+            this.subject.next(locale);
+            meta.lang.set(locale ?? '');
         }
-    )(value);
-}
+    }
+)(value);

@@ -79,12 +79,21 @@ class EnvironmentService {
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /** Detect the user's preferred language and attempt to match it up with our supported languages. */
     private detectLanguage(): string|null {
         for(const userLocale of navigator.languages) {
             for(const supportedLocale of supported.locales) {
-                // We only need to check if the user's locale's language is supported;  `I18nPipe` is able to handle any country suffix appropriately.
                 if(userLocale.split('-')[0] === supportedLocale.split('-')[0]) {
-                    // Returning `userLang` instead of `supportedLang` preserves the original country, and is safe per the above.
+                    /* Returning `userLocale` instead of `supportedLocale` preserves the original country,
+                     * and is safe because `I18nPipe` is able to handle any country suffix appropriately.
+                     *
+                     * Note that this means that the page will more-or-less *claim* to be in a national locale *even if it isn't*.
+                     * For example, if the `userLocle` is 'en-GB', then we'll say we're displaying in 'en-GB', even if we only have translations for 'en-US'.
+                     * TODO: Write something that doesn't have this caveat.
+                     *
+                     * However, since this is a greedy search, returning `supportedLocale` instead can actually get us a non-ideal locale, in terms of country:
+                     * if we support both 'en-US' and 'en-GB' and the user requests 'en-GB', we would (incorrectly) give them 'en-US' if 'en-US' occurs before 'en-GB' in the `supportedLocales` array.
+                     */
                     return userLocale;
                 }
             }

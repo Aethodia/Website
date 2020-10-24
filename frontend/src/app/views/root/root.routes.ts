@@ -1,5 +1,5 @@
 import {Route, Routes} from '@angular/router';
-import {RouterUtils} from '../shared/shared.module';
+import {RouterUtils} from 'app/shared/shared.module';
 export {appRoutes};
 
 ////////////////////////////////////////////////////////////////////////////////

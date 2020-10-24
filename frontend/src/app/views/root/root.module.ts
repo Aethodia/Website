@@ -4,8 +4,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {CoreModule, setI18n} from '../core/core.module';
-import {SharedModule} from '../shared/shared.module';
+import {CoreModule, setI18n} from 'app/core/core.module';
+import {SharedModule} from 'app/shared/shared.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {appRoutes} from './root.routes';

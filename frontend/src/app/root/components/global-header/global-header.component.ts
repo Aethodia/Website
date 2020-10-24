@@ -11,6 +11,7 @@ interface Button {
 @Component({
     selector: 'global-header',
     templateUrl: './global-header.template.html',
+    styleUrls: ['./global-header.style.scss'],
 })
 class GlobalHeaderComponent {
 

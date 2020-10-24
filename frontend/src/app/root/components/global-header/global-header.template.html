@@ -1,7 +1,7 @@
 <ul>
     <li *ngFor="let button of buttons">
-        <a (click)="changeState(button.state)">
+        <button (click)="changeState(button.state)">
             {{button.text | i18n}}
-        </a>
+        </button>
     </li>
 </ul>

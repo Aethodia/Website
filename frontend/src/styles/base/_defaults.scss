@@ -1,5 +1,5 @@
 * {
-	background: $bg-view;
+	background: transparent;
 	border: 0em solid $fg-view;
 	border-collapse: collapse;
 	border-image-width: 0em;
@@ -16,5 +16,5 @@
 	text-indent: 0em;
 	vertical-align: top;
 	width: auto;
-	z-index: 0;
+	// z-index: 0;
 }

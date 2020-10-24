@@ -1,0 +1,12 @@
+:host {
+    display: block;
+    width: 100%;
+    background-color: white;
+    &, * {
+        color: black;
+    }
+    padding: 1rem;
+    margin-top: 1rem;
+    position: fixed;
+    bottom: 0;
+}

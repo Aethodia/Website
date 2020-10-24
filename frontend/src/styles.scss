@@ -1,3 +1,4 @@
-@import 'config/config.module';
+//IMPORTANT: Only include styles that need to apply app-wide here.
 @import 'app/core/core.module';
 @import 'app/shared/shared.module';
+//NOTE: Store configurable, re-useable variables in 'config/config.module'.

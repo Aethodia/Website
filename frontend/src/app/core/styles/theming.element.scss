@@ -1,5 +1,7 @@
 @import '~@angular/material/theming';
 @include mat-core(); // The common styles for Angular Material
-body {
-    @extend .mat-typography;
-}
+body {@extend .mat-typography;}
+
+@import 'config/styles/material/themes.const';
+// .light-theme {@include angular-material-theme($light-theme);}
+// .dark-theme  {@include angular-material-theme($dark-theme);}

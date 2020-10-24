@@ -1,3 +1,4 @@
+@import 'palette.const';
 // https://material.angular.io/guide/theming
 
 // Light theme
@@ -5,11 +6,9 @@
 // $light-accent:  mat-palette(map-get($custom-palettes, '120'));
 // $light-warn:    mat-palette(map-get($custom-palettes, '300'));
 // $light-theme:   mat-light-theme($light-primary, $light-accent, $light-warn);
-// .light-theme   {@include angular-material-theme($light-theme);}
 
 // Dark theme
 // $dark-primary: mat-palette(map-get($custom-palettes, '---'));
 // $dark-accent:  mat-palette(map-get($custom-palettes, '120'));
 // $dark-warn:    mat-palette(map-get($custom-palettes, '300'));
 // $dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-// .dark-theme   {@include angular-material-theme($dark-theme);}

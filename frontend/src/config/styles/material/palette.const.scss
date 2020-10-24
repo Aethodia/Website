@@ -10,7 +10,7 @@
  *  Grey does not have a hue, and so is represented by dashes ('---').
  */
 $custom-palettes: (
-    '-': (
+    '---': (
          '50': #efefef,
         '100': #d6d6d6,
         '200': #bbbbbb,
@@ -32,7 +32,7 @@ $custom-palettes: (
         '200': #a1c2a1,
         '300': #7baa7b,
         '400': #5f975f,
-        '500': #438543,
+        '500': #438543, // Theodian green
         '600': #3d7d3d,
         '700': #347234,
         '800': #2c682c,
@@ -48,7 +48,7 @@ $custom-palettes: (
       '200': #d6abd6,
       '300': #c589c5,
       '400': #b86fb8,
-      '500': #ac56ac,
+      '500': #ac56ac, // Theodian magenta
       '600': #a54fa5,
       '700': #9b459b,
       '800': #923c92,

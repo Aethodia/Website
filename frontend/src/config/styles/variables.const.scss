@@ -24,12 +24,3 @@ $font-mono: monospace;
 $pad-1-1: 1em;
 $pad-1-2: $pad-1-1 / 2;
 $pad-2-1: $pad-1-1 * 2;
-
-// Definitions
-// -----------------------------------------------------------------------------
-// Fonts
-@font-face {
-	font-family: "TheodicSans";
-	src: url("/res/TheodicSans.ttf");
-	font-weight: 400;
-}

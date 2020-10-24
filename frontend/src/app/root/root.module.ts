@@ -4,9 +4,12 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {appRoutes} from './root.routes';
-import {CoreModule} from '../core/core.module';
+import {CoreModule, setI18n} from '../core/core.module';
 import {SharedModule} from '../shared/shared.module';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {appRoutes} from './root.routes';
+import {ROOT_I18N} from './root.i18n';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {RootComponent} from './root.component';
@@ -38,5 +41,8 @@ export {RootModule};
         GlobalFooterComponent,
     ],
     bootstrap: [RootComponent],
+    providers: [
+        setI18n(ROOT_I18N),
+    ],
 })
 class RootModule {}

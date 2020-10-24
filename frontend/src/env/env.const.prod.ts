@@ -1,4 +1,4 @@
-import {envType} from './env.d';
+import {envType} from './env.type';
 export const environment: envType = {
     prodMode: true,
 };

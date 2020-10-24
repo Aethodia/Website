@@ -18,4 +18,4 @@ export default (async(): Promise<void> => {
     } catch(error) {
         console.error(error);
     }
-})().catch(error => console.error(error));
+})().catch(console.error);

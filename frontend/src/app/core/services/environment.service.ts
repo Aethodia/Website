@@ -6,7 +6,7 @@ import {DeviceDetectorService} from 'ngx-device-detector';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AsyncVar} from '../classes/async-var.class';
 import {MetadataService} from './metadata.service';
-import {supported} from 'env/supported.const';
+import {supported} from 'config/vars/supported.const';
 import {Utils} from '../utils/utils';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

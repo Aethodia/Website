@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 import {enableProdMode} from '@angular/core';
-import {environment} from './env/env.const';
+import {environment} from './config/env/env.const';
 if(environment.prodMode) {
     enableProdMode();
 }

@@ -1,7 +1,7 @@
 <ul>
     <li *ngFor="let button of buttons">
-        <button (click)="changeState(button.state)">
+        <a [routerLink]="button.route">
             {{button.text | i18n}}
-        </button>
+        </a>
     </li>
 </ul>

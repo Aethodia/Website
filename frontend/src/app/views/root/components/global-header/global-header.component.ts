@@ -4,7 +4,7 @@ export {GlobalHeaderComponent};
 ////////////////////////////////////////////////////////////////////////////////
 interface Button {
     text: string;
-    state: string;
+    route: string;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -18,14 +18,9 @@ class GlobalHeaderComponent {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public readonly buttons: Button[] = [{
         text: 'THEODIA',
-        state: 'home',
+        route: '/',
     }, {
         text: 'LOGIN',
-        state: 'auth',
+        route: '/auth',
     }];
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public changeState(state: string): void {
-        //TODO
-    }
 }

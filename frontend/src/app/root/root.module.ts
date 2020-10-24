@@ -5,11 +5,13 @@ import {RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {appRoutes} from './root.routes';
-import {RootComponent} from './root.component';
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {CoreModule} from '../core/core.module';
 import {SharedModule} from '../shared/shared.module';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {RootComponent} from './root.component';
+import {GlobalHeaderComponent} from './components/global-header/global-header.component';
+import {GlobalFooterComponent} from './components/global-footer/global-footer.component';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {RootModule};
@@ -30,7 +32,11 @@ export {RootModule};
         CoreModule.forRoot(),
         SharedModule.forRoot(),
     ],
-    declarations: [RootComponent],
+    declarations: [
+        RootComponent,
+        GlobalHeaderComponent,
+        GlobalFooterComponent,
+    ],
     bootstrap: [RootComponent],
 })
 class RootModule {}

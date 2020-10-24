@@ -1,7 +1,6 @@
-export {supportedLanguages}
-
-//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-/** A list of locales supported by the application. */
-const supportedLanguages = [
-    'en',
-];
+export const supported = {
+    /** A list of locales supported by the application. */
+    locales: [
+        'en',
+    ],
+}

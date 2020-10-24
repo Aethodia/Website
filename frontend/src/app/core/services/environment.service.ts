@@ -6,6 +6,7 @@ import {DeviceDetectorService} from 'ngx-device-detector';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {AsyncVar} from '../classes/async-var.class';
 import {MetadataService} from './metadata.service';
+import {supported} from 'env/supported.const';
 import {Utils} from '../utils/utils';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -79,14 +80,23 @@ class EnvironmentService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     private detectLanguage(): string|null {
-        return navigator.language || this.DEFAULT_LOCALE;
+        for(const userLocale of navigator.languages) {
+            for(const supportedLocale of supported.locales) {
+                // We only need to check if the user's locale's language is supported;  `I18nPipe` is able to handle any country suffix appropriately.
+                if(userLocale.split('-')[0] === supportedLocale.split('-')[0]) {
+                    // Returning `userLang` instead of `supportedLang` preserves the original country, and is safe per the above.
+                    return userLocale;
+                }
+            }
+        }
+        return this.DEFAULT_LOCALE;
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     private detectCountry(): string|null {
         let country: string|null;
 
-        //TODO
+        //TODO: This is a lousy way to detect country.
         const language = this.language.get().value;
         country = language?.split('-')[1] || null;
 
@@ -97,7 +107,7 @@ class EnvironmentService {
     private detectCurrency(): string|null {
         let currency: string|null;
 
-        //TODO
+        //TODO: This is not a good way to detect currency.
         const language = this.language.get().value;
         currency = getLocaleCurrencyCode(language ?? '');
 

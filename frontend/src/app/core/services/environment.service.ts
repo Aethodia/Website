@@ -79,12 +79,7 @@ class EnvironmentService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     private detectLanguage(): string|null {
-        let language: string|null;
-
-        //TODO
-        language = this.DEFAULT_LOCALE;
-
-        return language;
+        return navigator.language || this.DEFAULT_LOCALE;
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

@@ -7,7 +7,7 @@ if(environment.prodMode) {
 
 ////////////////////////////////////////////////////////////////////////////////
 import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
-import {AppModule} from './app/app.module';
+import {RootModule} from './app/root/root.module';
 export default platformBrowserDynamic()
-    .bootstrapModule(AppModule)
+    .bootstrapModule(RootModule)
     .catch(console.error);

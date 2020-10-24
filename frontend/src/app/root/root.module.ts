@@ -4,15 +4,15 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {RouterModule} from '@angular/router';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {appRoutes} from './app.routes';
-import {AppComponent} from './app.component';
+import {appRoutes} from './root.routes';
+import {RootComponent} from './root.component';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {CoreModule} from './core/core.module';
-import {SharedModule} from './shared/shared.module';
+import {CoreModule} from '../core/core.module';
+import {SharedModule} from '../shared/shared.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-export {AppModule};
+export {RootModule};
 
 ////////////////////////////////////////////////////////////////////////////////
 //TODO: Server-Side Rendering (https://angular.io/guide/universal)
@@ -30,7 +30,7 @@ export {AppModule};
         CoreModule.forRoot(),
         SharedModule.forRoot(),
     ],
-    declarations: [AppComponent],
-    bootstrap: [AppComponent],
+    declarations: [RootComponent],
+    bootstrap: [RootComponent],
 })
-class AppModule {}
+class RootModule {}

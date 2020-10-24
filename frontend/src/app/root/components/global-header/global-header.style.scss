@@ -1,20 +1,18 @@
+@import 'src/styles/base/_variables.scss';
 :host {
-    display: block;
     width: 100%;
     user-select: none;
-    background-color: white;
+    background-color: $fg-view;
     &, * {
-        color: black;
+        color: $bg-view;
     }
     >ul {
         display: flex;
+        flex-wrap: wrap;
         list-style-type: none;
-        >li {
+        >li >button {
             padding: 1rem;
-            &, * {
-                cursor: pointer;
-            }
+            cursor: pointer;
         }
     }
-    margin-bottom: 1rem;
 }

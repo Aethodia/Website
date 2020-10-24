@@ -1,12 +1,11 @@
+@import 'src/styles/base/_variables.scss';
 :host {
-    display: block;
     width: 100%;
-    background-color: white;
+    background-color: $fg-view;
     &, * {
-        color: black;
+        color: $bg-view;
     }
     padding: 1rem;
-    margin-top: 1rem;
-    position: fixed;
+    position: sticky;
     bottom: 0;
 }

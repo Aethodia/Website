@@ -40,7 +40,7 @@ class MetadataService {
     }): void {
         for(const key of Reflect.ownKeys(metadata) as Array<keyof typeof metadata>) {
             if(metadata[key] == null) continue;
-            this[key].set(metadata[key] as any); //TODO: Make this type-safe.
+            this[key].set(metadata[key]!);
         }
     }
 

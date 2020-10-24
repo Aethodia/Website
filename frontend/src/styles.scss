@@ -1,5 +1,3 @@
-/* Each folder in `styles/` has a `_` file that includes
- * all Sass files in its directory, and
- * all `_` files in its subdirectories (recursively).
- */
-@import 'styles/_';
+@import 'config/styles/styles.module';
+@import 'core/core.module';
+@import 'shared/shared.module';

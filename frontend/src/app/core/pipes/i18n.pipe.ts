@@ -18,7 +18,7 @@ class I18nPipe implements PipeTransform {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
         private readonly environment: EnvironmentService,
-        private readonly async:  AsyncPipe,
+        private readonly async: AsyncPipe,
 
         @Inject(I18N_BUNDLE) private readonly bundle: I18nBundle,
     ) {

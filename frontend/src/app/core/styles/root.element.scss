@@ -1,3 +1,8 @@
 :root {
-	background: white;
+	background: $bg-view;
+
+	&, >body {
+	    width: 100%;
+	    height: 100%;
+	}
 }

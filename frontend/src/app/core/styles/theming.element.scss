@@ -1,12 +1,5 @@
 @import '~@angular/material/theming';
 @include mat-core(); // The common styles for Angular Material
-
-// Styles added by the CLI
-html, body {
-    height: 100%;
-}
 body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
     @extend .mat-typography;
 }

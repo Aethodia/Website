@@ -4,7 +4,7 @@ export {AuthComponent};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
-    templateUrl: './auth.component.html',
+    templateUrl: './auth.template.html',
 })
 class AuthComponent {
 

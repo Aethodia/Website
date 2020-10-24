@@ -4,7 +4,7 @@ export {ErrorComponent};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
-    templateUrl: './error.component.html',
+    templateUrl: './error.template.html',
 })
 /** Displays messages for various errors.. */
 class ErrorComponent {

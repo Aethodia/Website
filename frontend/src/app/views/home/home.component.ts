@@ -5,7 +5,7 @@ export {HomeComponent};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
-    templateUrl: './home.component.html',
+    templateUrl: './home.template.html',
 })
 class HomeComponent implements OnInit {
 

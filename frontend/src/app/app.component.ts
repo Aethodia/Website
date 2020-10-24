@@ -4,6 +4,6 @@ export {AppComponent};
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
     selector: 'app-root',
-    template: '<router-outlet></router-outlet>',
+    templateUrl: './app.template.html',
 })
 class AppComponent {}

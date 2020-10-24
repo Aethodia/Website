@@ -22,4 +22,4 @@ export const ERROR_I18N = {
         en: 'Error 404: Not found.',
     },
 };
-export default ERROR_I18N as I18nBundle; // This is a hack that ensures our bundle is the correct type.
+export default ERROR_I18N as I18nBundle; // This is a hack that ensures our bundle is the correct type without losing strictness.

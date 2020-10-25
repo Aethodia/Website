@@ -17,10 +17,10 @@ class GlobalHeaderComponent {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public readonly buttons: Button[] = [{
-        text: 'THEODIA',
+        text: 'HOME_NAV_BUTTON',
         route: '/',
     }, {
-        text: 'LOGIN',
+        text: 'LOGIN_NAV_BUTTON',
         route: '/auth',
     }];
 }

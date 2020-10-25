@@ -1,12 +1,12 @@
 import {I18nBundle} from 'app/core/types/i18n.type';
 export const ROOT_I18N = {
-    THEODIA: {
+    HOME_NAV_BUTTON: {
         en: `Theodia`,
     },
-    LOGIN: {
+    LOGIN_NAV_BUTTON: {
         en: `Log in`,
     },
-    COPYRIGHT: {
+    COPYRIGHT_NOTICE: {
         en: `Copyright © from 2018-2020 by Miles B Huff, on behalf of the Technocratic Republic of Theodia.`,
     },
 };

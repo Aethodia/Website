@@ -9,7 +9,7 @@ export const AUTH_I18N = {
     META_KEYWORDS: {
         en: `Theodia micronation technocracy`,
     },
-    LOGIN: {
+    LOGIN_HEADER: {
         en: `Login`,
         art: `lɔ́-kix`,
     },

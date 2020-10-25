@@ -16,10 +16,13 @@ interface Button {
 class GlobalHeaderComponent {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public readonly buttons: Button[] = [{
+    public readonly leftButtons: Button[] = [{
         text: 'HOME_NAV_BUTTON',
         route: '/',
-    }, {
+    }];
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    public readonly rightButtons: Button[] = [{
         text: 'LOGIN_NAV_BUTTON',
         route: '/auth',
     }];

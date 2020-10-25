@@ -1,5 +1,13 @@
 <ul>
-    <li *ngFor="let button of buttons">
+    <li *ngFor="let button of leftButtons">
+        <a [routerLink]="button.route">
+            {{button.text | i18n}}
+        </a>
+    </li>
+</ul>
+<span></span>
+<ul>
+    <li *ngFor="let button of rightButtons">
         <a [routerLink]="button.route">
             {{button.text | i18n}}
         </a>

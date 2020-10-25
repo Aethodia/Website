@@ -16,4 +16,8 @@
             cursor: pointer;
         }
     }
+    display: flex;
+    >span {
+        flex-grow: 1;
+    }
 }

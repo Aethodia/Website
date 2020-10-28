@@ -25,7 +25,7 @@ class GlobalHeaderComponent {
     }, {
         text: 'SERVICES_NAV_BUTTON',
         route: '/services',
-    }, ];
+    }];
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public readonly rightButtons: Button[] = [{

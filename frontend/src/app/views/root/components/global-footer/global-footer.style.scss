@@ -8,7 +8,7 @@
     padding: 1rem;
     position: sticky;
     bottom: 0;
-    >p {
+    >slot >p {
         margin: 0;
     }
 }

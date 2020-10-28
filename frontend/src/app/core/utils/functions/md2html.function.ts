@@ -7,6 +7,10 @@ import marked from 'marked';
  */
 export default function md2html(string: string): string {
     return marked(string, {
-        // Options go here
+        breaks: true,
+        gfm: true,
+        headerIds: false,
+        smartypants: true,
+        xhtml: true,
     });
 }

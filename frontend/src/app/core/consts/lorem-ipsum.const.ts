@@ -1,5 +1,6 @@
+import { Utils } from '../utils/utils';
 export {LOREM_IPSUM};
-const LOREM_IPSUM = `
+const LOREM_IPSUM = Utils.md2html(`
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Nulla ut ipsum ut ex gravida aliquam.
 Ut quis nisl eu nulla rhoncus tincidunt.
@@ -69,4 +70,4 @@ Nam mollis nisl a dui aliquet, non elementum elit sodales.
 Integer aliquet orci at augue eleifend iaculis vel sed sapien.
 Nullam sodales ante nec sapien accumsan tristique.
 In mollis risus quis justo scelerisque gravida a ut velit.
-`;
+`);

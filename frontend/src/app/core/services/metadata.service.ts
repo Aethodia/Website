@@ -4,7 +4,7 @@ import {Title, Meta} from '@angular/platform-browser';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {I18nPipe} from '../pipes/i18n.pipe';
-import {TextDirectionType, Utils} from '../utils/utils';
+import {TextDirectionEnum, TextDirectionTuple, Utils} from '../utils/utils';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {MetadataService};
@@ -55,23 +55,34 @@ class MetadataService {
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    /**  */
     public readonly direction = {
-        get: (): TextDirectionType|null => {
-            let currentDirection: TextDirectionType|null = null;
+        /** Gets the current text flow axes. */
+        get: (): Partial<TextDirectionTuple> => {
+            let direction: Partial<TextDirectionTuple> = [undefined, undefined, undefined];
             this.body.classList.forEach((cssClass: string): void => {
-                for(const possibleDirection of Reflect.ownKeys(TextDirectionType) as Array<keyof typeof TextDirectionType>) {
-                    if(cssClass === possibleDirection) {
-                        currentDirection = TextDirectionType[possibleDirection];
-                    }
+                for(const axis of [TextDirectionEnum.ltr, TextDirectionEnum.rtl] as [TextDirectionEnum.ltr, TextDirectionEnum.rtl]) {
+                    if(cssClass === axis) direction[0] = axis;
+                }
+                for(const axis of [TextDirectionEnum.ttb, TextDirectionEnum.btt] as [TextDirectionEnum.ttb, TextDirectionEnum.btt]) {
+                    if(cssClass === axis) direction[1] = axis;
+                }
+                for(const axis of [TextDirectionEnum.hor, TextDirectionEnum.ver] as [TextDirectionEnum.hor, TextDirectionEnum.ver]) {
+                    if(cssClass === axis) direction[2] = axis;
                 }
             });
-            return currentDirection;
+            return direction;
         },
-        set: (direction: TextDirectionType): void => {
-            for(const oldClass of Reflect.ownKeys(TextDirectionType) as Array<keyof typeof TextDirectionType>) {
+        /** Sets CSS classes on the `body` element to control how text flows. */
+        set: (tuple: TextDirectionTuple): void => {
+            // Remove old directions
+            for(const oldClass of Reflect.ownKeys(TextDirectionEnum) as Array<keyof typeof TextDirectionEnum>) {
                 this.body.classList.remove(oldClass);
             }
-            this.body.classList.add(direction);
+            // Add new directions
+            for(const axis of tuple) {
+                this.body.classList.add(axis);
+            }
         },
     }
 

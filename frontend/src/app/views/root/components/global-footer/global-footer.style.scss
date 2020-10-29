@@ -11,14 +11,10 @@
     }
 }
 
-:host-context(.ltr),
-:host-context(.rtl) {
-    width: 100%;
-    bottom: 0;
-}
+:host-context(body.hor) {width:  100%;}
+:host-context(body.ver) {height: 100%;}
 
-:host-context(.ttb),
-:host-context(.btt) {
-    height: 100%;
-    left: 0;
-}
+:host-context(body.hor.ttb) {bottom: 0;}
+:host-context(body.hor.btt) {top:    0;}
+:host-context(body.ver.ltr) {right:  0;}
+:host-context(body.ver.rtl) {left:   0;}

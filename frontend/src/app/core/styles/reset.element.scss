@@ -10,12 +10,15 @@
 	font: 100% $font-sans;
 	line-height: 1em;
 	margin: 0em;
-	overflow: none;
+	overflow: hidden;
 	padding: 0em;
 	text-align: justify;
 	text-decoration: none;
 	text-indent: 0em;
-	vertical-align: top;
+	height: auto;
 	width: auto;
 	// z-index: 0;
 }
+
+:host-context(body.ttb) * {vertical-align: top;}
+:host-context(body.btt) * {vertical-align: bottom;}

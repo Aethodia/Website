@@ -4,14 +4,12 @@
     display: flex;
     >div {
         flex-grow: 1;
-        overflow-y: auto;
     }
 }
 
-:host-context(.ltr),
-:host-context(.rtl) {
-    flex-direction: column;
+:host-context(body.hor) {
     >div {
+        overflow-y: auto;
         margin: 1rem 0;
         padding: 0 1rem;
     }
@@ -19,11 +17,9 @@
         max-width: 60rem;
     }
 }
-
-:host-context(.ttb),
-:host-context(.btt) {
-    flex-direction: row;
+:host-context(body.ver) {
     >div {
+        overflow-x: auto;
         margin: 0 1rem;
         padding: 1rem 0;
     }
@@ -31,3 +27,8 @@
         max-height: 60rem;
     }
 }
+
+:host-context(body.hor.ttb) {flex-direction: column;}
+:host-context(body.hor.btt) {flex-direction: column-reverse;}
+:host-context(body.ver.ltr) {flex-direction: row;}
+:host-context(body.ver.rtl) {flex-direction: row-reverse;}

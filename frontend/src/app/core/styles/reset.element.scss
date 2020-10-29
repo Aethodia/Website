@@ -12,9 +12,9 @@
 	margin: 0em;
 	overflow: hidden;
 	padding: 0em;
-	text-align: justify;
 	text-decoration: none;
 	text-indent: 0em;
+	text-orientation: upright;
 	height: auto;
 	width: auto;
 	// z-index: 0;
@@ -22,3 +22,10 @@
 
 :host-context(html.ttb) * {vertical-align: top;}
 :host-context(html.btt) * {vertical-align: bottom;}
+
+:host-context(html.ltr) * {direction: ltr; text-align: left;}
+:host-context(html.rtl) * {direction: rtl; text-align: right;}
+
+:host-context(html.hor)     * {writing-mode: horizontal-tb;}
+:host-context(html.ver.ltr) * {writing-mode: vertical-lr;}
+:host-context(html.ver.rtl) * {writing-mode: vertical-rl;}

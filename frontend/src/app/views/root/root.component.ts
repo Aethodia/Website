@@ -3,7 +3,7 @@ export {RootComponent};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Component({
-    selector: 'app-root',
+    selector: 'root',
     templateUrl: './root.template.html',
     styleUrls: ['./root.style.scss'],
 })

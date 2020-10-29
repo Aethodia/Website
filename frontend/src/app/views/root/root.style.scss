@@ -7,7 +7,7 @@
     }
 }
 
-:host-context(body.hor) {
+:host-context(html.hor) {
     >div {
         overflow-y: auto;
         margin: 1rem 0;
@@ -17,7 +17,7 @@
         max-width: 60rem;
     }
 }
-:host-context(body.ver) {
+:host-context(html.ver) {
     >div {
         overflow-x: auto;
         margin: 0 1rem;
@@ -28,7 +28,7 @@
     }
 }
 
-:host-context(body.hor.ttb) {flex-direction: column;}
-:host-context(body.hor.btt) {flex-direction: column-reverse;}
-:host-context(body.ver.ltr) {flex-direction: row;}
-:host-context(body.ver.rtl) {flex-direction: row-reverse;}
+:host-context(html.hor.ttb) {flex-direction: column;}
+:host-context(html.hor.btt) {flex-direction: column-reverse;}
+:host-context(html.ver.ltr) {flex-direction: row;}
+:host-context(html.ver.rtl) {flex-direction: row-reverse;}

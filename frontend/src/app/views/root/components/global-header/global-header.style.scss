@@ -21,10 +21,10 @@
     }
 }
 
-:host-context(body.hor) {
+:host-context(html.hor) {
     width: 100%;
 }
 
-:host-context(body.ver) {
+:host-context(html.ver) {
     height: 100%;
 }

@@ -20,5 +20,5 @@
 	// z-index: 0;
 }
 
-:host-context(body.ttb) * {vertical-align: top;}
-:host-context(body.btt) * {vertical-align: bottom;}
+:host-context(html.ttb) * {vertical-align: top;}
+:host-context(html.btt) * {vertical-align: bottom;}

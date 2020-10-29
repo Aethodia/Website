@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////
 /** The directions in which a language's orthography can flow. */
-export enum TextDirectionEnum {
+export enum TextFlowEnum {
     ltr = 'ltr',
     rtl = 'rtl',
     ttb = 'ttb',
@@ -11,10 +11,10 @@ export enum TextDirectionEnum {
 
 ////////////////////////////////////////////////////////////////////////////////
 /** A complete description of how an orthography flows. */
-export type TextDirectionTuple = [
-    TextDirectionEnum.ltr|TextDirectionEnum.rtl,
-    TextDirectionEnum.ttb|TextDirectionEnum.btt,
-    TextDirectionEnum.hor|TextDirectionEnum.ver,
+export type TextFlowTuple = [
+    TextFlowEnum.ltr|TextFlowEnum.rtl,
+    TextFlowEnum.ttb|TextFlowEnum.btt,
+    TextFlowEnum.hor|TextFlowEnum.ver,
 ]
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -22,18 +22,18 @@ export type TextDirectionTuple = [
  * @param lang A valid IETF language tag.
  * @returns the direction in which the language's orthography flows.
  */
-export default function getTextDirection(lang: string): TextDirectionTuple {
+export default function getTextFlow(lang: string): TextFlowTuple {
 
     // For country-specific orthographies
     switch(lang) {
         case 'art-zzz':
-            return [TextDirectionEnum.ltr, TextDirectionEnum.btt, TextDirectionEnum.ver];
+            return [TextFlowEnum.ltr, TextFlowEnum.btt, TextFlowEnum.ver];
     }
 
     // For languages' default orthographies
     switch(lang.split('-')[0]) {
         case 'en':
         default:
-            return [TextDirectionEnum.ltr, TextDirectionEnum.ttb, TextDirectionEnum.hor];
+            return [TextFlowEnum.ltr, TextFlowEnum.ttb, TextFlowEnum.hor];
     }
 }

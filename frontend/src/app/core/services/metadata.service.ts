@@ -4,7 +4,7 @@ import {Title, Meta} from '@angular/platform-browser';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {I18nPipe} from '../pipes/i18n.pipe';
-import {TextDirectionEnum, TextDirectionTuple, Utils} from '../utils/utils';
+import {TextFlowEnum, TextFlowTuple, Utils} from '../utils/utils';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {MetadataService};
@@ -13,7 +13,7 @@ export {MetadataService};
 @Injectable()
 /** Manipulates the Document's metadata. */
 class MetadataService {
-    private readonly body: HTMLBodyElement = this.document.getElementsByTagName('body')[0];
+    private readonly html: HTMLHtmlElement = this.document.getElementsByTagName('html')[0];
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
@@ -58,30 +58,30 @@ class MetadataService {
     /**  */
     public readonly direction = {
         /** Gets the current text flow axes. */
-        get: (): Partial<TextDirectionTuple> => {
-            let direction: Partial<TextDirectionTuple> = [undefined, undefined, undefined];
-            this.body.classList.forEach((cssClass: string): void => {
-                for(const axis of [TextDirectionEnum.ltr, TextDirectionEnum.rtl] as [TextDirectionEnum.ltr, TextDirectionEnum.rtl]) {
+        get: (): Partial<TextFlowTuple> => {
+            let direction: Partial<TextFlowTuple> = [undefined, undefined, undefined];
+            this.html.classList.forEach((cssClass: string): void => {
+                for(const axis of [TextFlowEnum.ltr, TextFlowEnum.rtl] as [TextFlowEnum.ltr, TextFlowEnum.rtl]) {
                     if(cssClass === axis) direction[0] = axis;
                 }
-                for(const axis of [TextDirectionEnum.ttb, TextDirectionEnum.btt] as [TextDirectionEnum.ttb, TextDirectionEnum.btt]) {
+                for(const axis of [TextFlowEnum.ttb, TextFlowEnum.btt] as [TextFlowEnum.ttb, TextFlowEnum.btt]) {
                     if(cssClass === axis) direction[1] = axis;
                 }
-                for(const axis of [TextDirectionEnum.hor, TextDirectionEnum.ver] as [TextDirectionEnum.hor, TextDirectionEnum.ver]) {
+                for(const axis of [TextFlowEnum.hor, TextFlowEnum.ver] as [TextFlowEnum.hor, TextFlowEnum.ver]) {
                     if(cssClass === axis) direction[2] = axis;
                 }
             });
             return direction;
         },
-        /** Sets CSS classes on the `body` element to control how text flows. */
-        set: (tuple: TextDirectionTuple): void => {
+        /** Sets CSS classes on the `html` element to control how text flows. */
+        set: (tuple: TextFlowTuple): void => {
             // Remove old directions
-            for(const oldClass of Reflect.ownKeys(TextDirectionEnum) as Array<keyof typeof TextDirectionEnum>) {
-                this.body.classList.remove(oldClass);
+            for(const oldClass of Reflect.ownKeys(TextFlowEnum) as Array<keyof typeof TextFlowEnum>) {
+                this.html.classList.remove(oldClass);
             }
             // Add new directions
             for(const axis of tuple) {
-                this.body.classList.add(axis);
+                this.html.classList.add(axis);
             }
         },
     }
@@ -101,7 +101,7 @@ class MetadataService {
         get: (): string => this.document.documentElement.lang,
         set: (lang: string): void => {
             this.document.documentElement.lang = lang;
-            this.direction.set(Utils.getTextDirection(lang));
+            this.direction.set(Utils.getTextFlow(lang));
         },
     }
 

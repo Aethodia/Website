@@ -10,22 +10,34 @@
 	font: 100% $font-sans;
 	line-height: 1em;
 	margin: 0em;
-	overflow: hidden;
+	overflow: visible;
 	padding: 0em;
 	text-decoration: none;
 	text-indent: 0em;
-	text-orientation: upright;
+	text-orientation: mixed;
 	height: auto;
 	width: auto;
 	// z-index: 0;
 }
 
-:host-context(html.ttb) * {vertical-align: top;}
-:host-context(html.btt) * {vertical-align: bottom;}
+html.ltr {&, * {direction: ltr;}}
+html.rtl {&, * {direction: rtl;}}
 
-:host-context(html.ltr) * {direction: ltr; text-align: left;}
-:host-context(html.rtl) * {direction: rtl; text-align: right;}
+html.hor.ttb {&, * {writing-mode: horizontal-tb;}}
+html.ver.ltr {&, * {writing-mode: vertical-lr;}}
+html.ver.rtl {&, * {writing-mode: vertical-rl;}}
 
-:host-context(html.hor)     * {writing-mode: horizontal-tb;}
-:host-context(html.ver.ltr) * {writing-mode: vertical-lr;}
-:host-context(html.ver.rtl) * {writing-mode: vertical-rl;}
+html.hor.ltr {&, * {text-align: left;}}
+html.hor.rtl {&, * {text-align: right;}}
+html.ver.ttb {&, * {text-align: left;}}
+html.ver.btt {&, * {text-align: right;}}
+
+html.hor.ttb {&, * {flex-direction: row;}}
+html.hor.btt {&, * {flex-direction: row-reverse;}}
+html.ver.ltr {&, * {flex-direction: row;}}         // `writing-mode` already inverts this;  so we use `row` here instead of `column`.
+html.ver.rtl {&, * {flex-direction: row-reverse;}} // `writing-mode` already inverts this;  so we use `row` here instead of `column`.
+
+html.hor.ttb {&, * {vertical-align: top;}}
+html.hor.btt {&, * {vertical-align: bottom;}}
+html.ver.ltr {&, * {vertical-align: top;}}
+html.ver.rtl {&, * {vertical-align: bottom;}}

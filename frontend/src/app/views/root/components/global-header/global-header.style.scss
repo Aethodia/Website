@@ -21,10 +21,10 @@
     }
 }
 
-:host-context(html.hor) {
-    width: 100%;
-}
+:host-context(html.hor) {width:  100%;}
+:host-context(html.ver) {height: 100%;}
 
-:host-context(html.ver) {
-    height: 100%;
-}
+:host-context(html.ver.ttb.ltr) {flex-direction: row;}
+:host-context(html.ver.btt.ltr) {flex-direction: row-reverse;}
+:host-context(html.ver.ttb.rtl) {flex-direction: row-reverse;}
+:host-context(html.ver.btt.rtl) {flex-direction: row;}

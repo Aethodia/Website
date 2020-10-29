@@ -1,34 +1,37 @@
+@import 'src/config/styles/variables.const';
 :host {
     height: 100%;
     width: 100%;
     display: flex;
     >div {
         flex-grow: 1;
+        padding: 1rem 1rem;
+        background-color: $bg-view;
     }
+    background-color: $bg-win;
 }
 
+$content-max-size: 60rem;
 :host-context(html.hor) {
     >div {
         overflow-y: auto;
-        margin: 1rem 0;
-        padding: 0 1rem;
     }
     >* {
-        max-width: 60rem;
+        max-width: $content-max-size;
     }
+    padding: 0 calc(50% - (#{$content-max-size} / 2));
 }
 :host-context(html.ver) {
     >div {
         overflow-x: auto;
-        margin: 0 1rem;
-        padding: 1rem 0;
     }
     >* {
-        max-height: 60rem;
+        max-height: $content-max-size;
     }
+    padding: calc(50% - (#{$content-max-size} / 2)) 0;
 }
 
+:host-context(html.ver.ltr) {flex-direction: column;}
+:host-context(html.ver.rtl) {flex-direction: column;}
 :host-context(html.hor.ttb) {flex-direction: column;}
 :host-context(html.hor.btt) {flex-direction: column-reverse;}
-:host-context(html.ver.ltr) {flex-direction: row;}
-:host-context(html.ver.rtl) {flex-direction: row-reverse;}

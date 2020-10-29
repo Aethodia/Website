@@ -4,6 +4,7 @@ import {Title, Meta} from '@angular/platform-browser';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {I18nPipe} from '../pipes/i18n.pipe';
+import {TextDirectionType, Utils} from '../utils/utils';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {MetadataService};
@@ -12,6 +13,7 @@ export {MetadataService};
 @Injectable()
 /** Manipulates the Document's metadata. */
 class MetadataService {
+    private readonly body: HTMLBodyElement = this.document.getElementsByTagName('body')[0];
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     constructor(
@@ -46,9 +48,30 @@ class MetadataService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     public readonly description = {
-        get: () => '', //TODO
+        get: (): string => '', //TODO
         set: (description: string): void => {
             this.metaSvc.updateTag({name: 'description', content: description});
+        },
+    }
+
+    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    public readonly direction = {
+        get: (): TextDirectionType|null => {
+            let currentDirection: TextDirectionType|null = null;
+            this.body.classList.forEach((cssClass: string): void => {
+                for(const possibleDirection of Reflect.ownKeys(TextDirectionType) as Array<keyof typeof TextDirectionType>) {
+                    if(cssClass === possibleDirection) {
+                        currentDirection = TextDirectionType[possibleDirection];
+                    }
+                }
+            });
+            return currentDirection;
+        },
+        set: (direction: TextDirectionType): void => {
+            for(const oldClass of Reflect.ownKeys(TextDirectionType) as Array<keyof typeof TextDirectionType>) {
+                this.body.classList.remove(oldClass);
+            }
+            this.body.classList.add(direction);
         },
     }
 
@@ -67,6 +90,7 @@ class MetadataService {
         get: (): string => this.document.documentElement.lang,
         set: (lang: string): void => {
             this.document.documentElement.lang = lang;
+            this.direction.set(Utils.getTextDirection(lang));
         },
     }
 

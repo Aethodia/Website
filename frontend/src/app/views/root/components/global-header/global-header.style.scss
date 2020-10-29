@@ -1,6 +1,5 @@
 @import 'src/config/styles/variables.const';
 :host {
-    width: 100%;
     user-select: none;
     background-color: $fg-view;
     &, * {
@@ -20,4 +19,14 @@
     >span {
         flex-grow: 1;
     }
+}
+
+:host-context(.ltr),
+:host-context(.rtl) {
+    width: 100%;
+}
+
+:host-context(.ttb),
+:host-context(.btt) {
+    height: 100%;
 }

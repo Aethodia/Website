@@ -6,7 +6,6 @@ import {RouterModule} from '@angular/router';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {CoreModule, setI18n} from 'app/core/core.module';
 import {SharedModule} from 'app/shared/shared.module';
-import {MaterialModule} from 'app/lib/material.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {appRoutes} from './root.routes';
@@ -16,6 +15,10 @@ import {ROOT_I18N} from './root.i18n';
 import {RootComponent} from './root.component';
 import {GlobalHeaderComponent} from './components/global-header/global-header.component';
 import {GlobalFooterComponent} from './components/global-footer/global-footer.component';
+
+//  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+import {MatButtonModule} from '@angular/material/button';
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {RootModule};
@@ -28,7 +31,6 @@ export {RootModule};
         // Libraries
         BrowserModule,
         BrowserAnimationsModule,
-        MaterialModule,
         RouterModule.forRoot(appRoutes, {
             // enableTracing: true, //DEBUG
         }),
@@ -36,6 +38,10 @@ export {RootModule};
         // Common
         CoreModule.forRoot(),
         SharedModule.forRoot(),
+
+        // Material
+        MatButtonModule,
+        MatToolbarModule,
     ],
     declarations: [
         RootComponent,

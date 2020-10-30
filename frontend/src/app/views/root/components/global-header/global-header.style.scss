@@ -1,6 +1,6 @@
 @import 'src/config/styles/variables.const';
-:host {
-    user-select: none;
+:host mat-toolbar {
+    padding: 0;
     background-color: $fg-view;
     &, * {
         color: $bg-view;
@@ -10,9 +10,8 @@
         flex-wrap: wrap;
         list-style-type: none;
         >li >a {
-            display: block;
             padding: 1rem;
-            cursor: pointer;
+            line-height: normal;
         }
     }
     display: flex;
@@ -21,10 +20,10 @@
     }
 }
 
-:host-context(html.hor) {width:  100%;}
-:host-context(html.ver) {height: 100%;}
+:host-context(html.hor) mat-toolbar {width:  100%;}
+:host-context(html.ver) mat-toolbar {height: 100%;}
 
-:host-context(html.ver.ttb.ltr) {flex-direction: row;}
-:host-context(html.ver.btt.ltr) {flex-direction: row-reverse;}
-:host-context(html.ver.ttb.rtl) {flex-direction: row-reverse;}
-:host-context(html.ver.btt.rtl) {flex-direction: row;}
+:host-context(html.ver.ttb.ltr) mat-toolbar {flex-direction: row;}
+:host-context(html.ver.btt.ltr) mat-toolbar {flex-direction: row-reverse;}
+:host-context(html.ver.ttb.rtl) mat-toolbar {flex-direction: row-reverse;}
+:host-context(html.ver.btt.rtl) mat-toolbar {flex-direction: row;}

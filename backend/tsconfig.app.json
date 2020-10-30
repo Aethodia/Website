@@ -3,6 +3,9 @@
     "exclude": [
         "node_modules/**",
         "dist/**",
-        "**/*.spec.*"
+        "**/*.min.*",
+        "**/*.spec.*",
+        "**/*.prod.*",
+        "**/*.example.*"
     ]
 }

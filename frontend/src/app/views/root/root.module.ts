@@ -6,6 +6,7 @@ import {RouterModule} from '@angular/router';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {CoreModule, setI18n} from 'app/core/core.module';
 import {SharedModule} from 'app/shared/shared.module';
+import {MaterialModule} from 'app/lib/material.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {appRoutes} from './root.routes';
@@ -27,6 +28,7 @@ export {RootModule};
         // Libraries
         BrowserModule,
         BrowserAnimationsModule,
+        MaterialModule,
         RouterModule.forRoot(appRoutes, {
             // enableTracing: true, //DEBUG
         }),

@@ -1,13 +1,13 @@
 @import 'config/styles/variables.const';
 * {
 	background: transparent;
-	border: 0em solid $fg-view;
+	border: 0em solid /*$fg-view*/;
 	border-collapse: collapse;
 	border-image-width: 0em;
 	border-spacing: 0em;
 	box-sizing: border-box;
-	color: $fg-view;
-	font: 100% $font-sans;
+	/*color: $fg-view;*/
+	font: 100% /*$font-sans*/;
 	line-height: 1em;
 	margin: 0em;
 	overflow: visible;

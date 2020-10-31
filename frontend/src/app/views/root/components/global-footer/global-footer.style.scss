@@ -1,11 +1,10 @@
 @import 'src/config/styles/variables.const';
 :host mat-toolbar {
     font-size: unset;
-    background-color: $fg-view;
-    &, * {
-        color: $bg-view;
-    }
-    padding: 0;
+    // background-color: $fg-view;
+    // &, * {
+    //     color: $bg-view;
+    // }
     >* {
         padding: 1rem;
         margin: 0;

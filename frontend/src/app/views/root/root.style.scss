@@ -1,9 +1,9 @@
 @import 'src/config/styles/variables.const';
 
 body {
-    background-color: $bg-win;
+    // background-color: $bg-win;
     :host {
-        background-color: $bg-view;
+        // background-color: $bg-view;
         display: flex;
         >div {
             flex-grow: 1;

@@ -1,10 +1,9 @@
 @import 'src/config/styles/variables.const';
 :host mat-toolbar {
-    padding: 0;
-    background-color: $fg-view;
-    &, * {
-        color: $bg-view;
-    }
+    // background-color: $fg-view;
+    // &, * {
+    //     color: $bg-view;
+    // }
     >ul {
         display: flex;
         flex-wrap: wrap;

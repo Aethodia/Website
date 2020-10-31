@@ -49,7 +49,7 @@
   },
   "devDependencies": {
     "@nestjs/cli": "^7",
-    "@nestjs/schematics": "^6",
+    "@nestjs/schematics": "^7",
     "@types/node": "^13",
     "@typescript-eslint/eslint-plugin": "^2",
     "@typescript-eslint/parser": "^2",

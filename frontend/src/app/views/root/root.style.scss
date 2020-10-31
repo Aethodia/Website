@@ -1,7 +1,5 @@
 @import 'src/config/styles/variables.const';
 :host {
-    height: 100%;
-    width: 100%;
     display: flex;
     >div {
         flex-grow: 1;
@@ -19,7 +17,8 @@ $content-max-size: 60rem;
     >* {
         max-width: $content-max-size;
     }
-    padding: 0 calc(50% - (#{$content-max-size} / 2));
+    margin: 0 calc(50% - (#{$content-max-size} / 2));
+    height: 100%;
 }
 :host-context(html.ver) {
     >div {
@@ -28,7 +27,8 @@ $content-max-size: 60rem;
     >* {
         max-height: $content-max-size;
     }
-    padding: calc(50% - (#{$content-max-size} / 2)) 0;
+    margin: calc(50% - (#{$content-max-size} / 2)) 0;
+    width: 100%;
 }
 
 :host-context(html.ver.ltr) {flex-direction: column;}

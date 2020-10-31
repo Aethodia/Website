@@ -20,8 +20,10 @@
 	// z-index: 0;
 }
 
-html.ltr {&, * {direction: ltr;}}
-html.rtl {&, * {direction: rtl;}}
+html.hor.ltr {&, * {direction: ltr;}}
+html.hor.rtl {&, * {direction: rtl;}}
+html.ver.ttb {&, * {direction: ltr;}}
+html.ver.btt {&, * {direction: rtl;}}
 
 html.hor.ttb {&, * {writing-mode: horizontal-tb;}}
 html.ver.ltr {&, * {writing-mode: vertical-lr;}}
@@ -32,9 +34,7 @@ html.hor.rtl {&, * {text-align: right;}}
 html.ver.ttb {&, * {text-align: left;}}
 html.ver.btt {&, * {text-align: right;}}
 
-html             {&, * {flex-direction: row;}}
-html.ver.btt.ltr {&, * {flex-direction: row-reverse;}}
-html.ver.ttb.rtl {&, * {flex-direction: row-reverse;}}
+html {&, * {flex-direction: row;}}
 
 html.ttb {&, * {vertical-align: top;}}
 html.btt {&, * {vertical-align: bottom;}}

@@ -9,21 +9,11 @@
         display: flex;
         flex-wrap: wrap;
         list-style-type: none;
-        >li >a {
-            padding: 1rem;
-            line-height: normal;
-        }
     }
     display: flex;
     >span {
         flex-grow: 1;
     }
 }
-
 :host-context(html.hor) mat-toolbar {width:  100%;}
 :host-context(html.ver) mat-toolbar {height: 100%;}
-
-:host-context(html.ver.ttb.ltr) mat-toolbar {flex-direction: row;}
-:host-context(html.ver.btt.ltr) mat-toolbar {flex-direction: row-reverse;}
-:host-context(html.ver.ttb.rtl) mat-toolbar {flex-direction: row-reverse;}
-:host-context(html.ver.btt.rtl) mat-toolbar {flex-direction: row;}

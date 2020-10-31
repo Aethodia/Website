@@ -32,12 +32,9 @@ html.hor.rtl {&, * {text-align: right;}}
 html.ver.ttb {&, * {text-align: left;}}
 html.ver.btt {&, * {text-align: right;}}
 
-html.hor.ttb {&, * {flex-direction: row;}}
-html.hor.btt {&, * {flex-direction: row-reverse;}}
-html.ver.ltr {&, * {flex-direction: row;}}         // `writing-mode` already inverts this;  so we use `row` here instead of `column`.
-html.ver.rtl {&, * {flex-direction: row-reverse;}} // `writing-mode` already inverts this;  so we use `row` here instead of `column`.
+html             {&, * {flex-direction: row;}}
+html.ver.btt.ltr {&, * {flex-direction: row-reverse;}}
+html.ver.ttb.rtl {&, * {flex-direction: row-reverse;}}
 
-html.hor.ttb {&, * {vertical-align: top;}}
-html.hor.btt {&, * {vertical-align: bottom;}}
-html.ver.ltr {&, * {vertical-align: top;}}
-html.ver.rtl {&, * {vertical-align: bottom;}}
+html.ttb {&, * {vertical-align: top;}}
+html.btt {&, * {vertical-align: bottom;}}

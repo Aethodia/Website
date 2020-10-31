@@ -1,3 +1,17 @@
 @import '~@angular/material/theming';
 @include mat-core(); // The common styles for Angular Material
-body {@extend .mat-typography;}
+body {
+    @extend .mat-typography;
+}
+
+// Fixes for vertical scripts
+// (classes doubled to override library without using `!important`.)
+.mat-button.mat-button,
+.mat-icon-button.mat-icon-button,
+.mat-stroked-button.mat-stroked-button,
+.mat-flat-button.mat-flat-button
+{
+    padding: 1rem;
+    line-height: normal;
+    min-width: unset;
+}

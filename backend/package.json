@@ -35,8 +35,8 @@
     "start:debug": "npx nest start --watch --debug"
   },
   "engines": {
-    "node": "latest",
-    "npm": ">=6"
+    "node": "^14",
+    "npm": "^6"
   },
   "dependencies": {
     "@nestjs/common": "^6",
@@ -48,7 +48,7 @@
     "rxjs": "^6"
   },
   "devDependencies": {
-    "@nestjs/cli": "^6",
+    "@nestjs/cli": "^7",
     "@nestjs/schematics": "^6",
     "@types/node": "^13",
     "@typescript-eslint/eslint-plugin": "^2",

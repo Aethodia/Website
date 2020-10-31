@@ -1,5 +1,4 @@
-@import 'styles/reset.element';
+@import 'styles/defaults.element';
 @import 'styles/root.element';
 @import 'styles/utility.element';
-@import 'styles/material.element';
-@import 'styles/themes.class';
+@import 'styles/material/material.module';

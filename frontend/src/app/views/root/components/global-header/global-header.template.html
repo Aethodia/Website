@@ -1,13 +1,17 @@
-<mat-toolbar>
+<mat-toolbar class="mat-elevation-z4">
     <ul>
         <li *ngFor="let button of leftButtons">
-            <a mat-button [routerLink]="button.route" [innerHtml]="button.text | i18n"></a>
+            <a mat-button [routerLink]="button.route">
+                <slot [innerHtml]="button.text | i18n"></slot>
+            </a>
         </li>
     </ul>
     <span></span>
     <ul>
         <li *ngFor="let button of rightButtons">
-            <a mat-button [routerLink]="button.route" [innerHtml]="button.text | i18n"></a>
+            <a mat-button [routerLink]="button.route">
+                <slot [innerHtml]="button.text | i18n"></slot>
+            </a>
         </li>
     </ul>
 </mat-toolbar>

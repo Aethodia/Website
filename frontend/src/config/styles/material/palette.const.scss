@@ -1,6 +1,26 @@
-// Default palettes:  https://material.io/design/color
+// Default palettes:  https://material.io/resources/color
 // Color generator:   http://colorizer.org
 // Palette generator: http://mcg.mbitson.com
+
+/** A map of foreground colors.  Can be re-used for all palettes, so long as the
+ *  palettes all have `500` at 50% CIELAB lightness.
+ */
+$custom-contrasts: (
+     '50': #000,
+    '100': #000,
+    '200': #000,
+    '300': #000,
+    '400': #000,
+    '500': #fff,
+    '600': #fff,
+    '700': #fff,
+    '800': #fff,
+    '900': #fff,
+   'A100': #000,
+   'A200': #000,
+   'A400': #000,
+   'A700': #000,
+);
 
 /** A map of hues, each of which is a map of Material UI shades.
  *  To use, first access the degree of hue want;
@@ -25,6 +45,7 @@ $custom-palettes: (
        'A200': #ffffff,
        'A400': #ffffff,
        'A700': #ffffff,
+     contrast: $custom-contrasts,
     ),
     '120': (
          '50': #e8f0e8,
@@ -41,21 +62,23 @@ $custom-palettes: (
        'A200': #63ff63,
        'A400': #30ff30,
        'A700': #16ff16,
+     contrast: $custom-contrasts,
   ),
   '300': (
-       '50': #f5ebf5,
-      '100': #e6cce6,
-      '200': #d6abd6,
-      '300': #c589c5,
-      '400': #b86fb8,
-      '500': #ac56ac, // Theodian magenta
-      '600': #a54fa5,
-      '700': #9b459b,
-      '800': #923c92,
-      '900': #822b82,
-     'A100': #ffc8ff,
-     'A200': #ff95ff,
-     'A400': #ff62ff,
-     'A700': #ff48ff,
+         '50': #f5ebf5,
+        '100': #e6cce6,
+        '200': #d6abd6,
+        '300': #c589c5,
+        '400': #b86fb8,
+        '500': #ac56ac, // Theodian magenta
+        '600': #a54fa5,
+        '700': #9b459b,
+        '800': #923c92,
+        '900': #822b82,
+       'A100': #ffc8ff,
+       'A200': #ff95ff,
+       'A400': #ff62ff,
+       'A700': #ff48ff,
+     contrast: $custom-contrasts,
   ),
 );

@@ -41,7 +41,7 @@
   "dependencies": {
     "@nestjs/common": "^6",
     "@nestjs/core": "^6",
-    "@nestjs/platform-fastify": "^6",
+    "@nestjs/platform-fastify": "^7",
     "point-of-view": "^4",
     "reflect-metadata": "~0.1",
     "rimraf": "^3",

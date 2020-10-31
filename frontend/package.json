@@ -64,7 +64,7 @@
     "ngx-device-detector": "^2",
     "rxjs": "^6",
     "ts-node": "^8",
-    "tslib": "^1",
+    "tslib": "^2",
     "typescript": "^3",
     "zone.js": "~0.10"
   }

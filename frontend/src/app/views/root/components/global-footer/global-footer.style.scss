@@ -1,13 +1,14 @@
 @import 'src/config/styles/variables.const';
 :host mat-toolbar {
+    display: flex;
     font-size: unset;
     // background-color: $fg-view;
     // &, * {
     //     color: $bg-view;
     // }
     >* {
+        display: block;
         padding: 1rem;
-        margin: 0;
     }
 }
 :host-context(html.hor) mat-toolbar {width:  100%;}

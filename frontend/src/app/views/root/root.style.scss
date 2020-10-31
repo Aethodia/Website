@@ -1,12 +1,15 @@
 @import 'src/config/styles/variables.const';
-:host {
-    display: flex;
-    >div {
-        flex-grow: 1;
-        padding: 1rem 1rem;
-        background-color: $bg-view;
-    }
+
+body {
     background-color: $bg-win;
+    :host {
+        background-color: $bg-view;
+        display: flex;
+        >div {
+            flex-grow: 1;
+            padding: 1rem 1rem;
+        }
+    }
 }
 
 $content-max-size: 60rem;

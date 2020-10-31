@@ -58,7 +58,7 @@
     "@types/webpack-env": "^1",
     "@typescript-eslint/eslint-plugin": "^2",
     "@typescript-eslint/parser": "^2",
-    "codelyzer": "^5",
+    "codelyzer": "^6",
     "eslint": "^6",
     "lodash-es": "^4",
     "ngx-device-detector": "^2",

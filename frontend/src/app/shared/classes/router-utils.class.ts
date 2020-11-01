@@ -13,7 +13,7 @@ class RouterUtils {
     };
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    public static loadChildren(moduleName: string) {
+    public static loadChildren(moduleName: string) /* LoadChildrenCallback */ {
         return async(): Promise<unknown> => {
             try {
                 if(RouterUtils.modules[moduleName] === undefined) {
@@ -21,7 +21,7 @@ class RouterUtils {
                 }
                 const module = await RouterUtils.modules[moduleName]!();
                 return module[moduleName];
-            } catch(error) {
+            } catch(error: unknown) {
                 console.error(error);
                 return;
             }

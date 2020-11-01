@@ -2,13 +2,13 @@
 // https://material.angular.io/guide/theming
 
 // Light theme
-$light-primary: mat-palette(map-get($custom-palettes, '---'), 500, 900, 100);
-$light-accent:  mat-palette(map-get($custom-palettes, '120'), 500, 900, 100);
-$light-warn:    mat-palette(map-get($custom-palettes, '300'), 500, 900, 100);
-$light-theme:   mat-light-theme($light-primary, $light-accent, $light-warn);
+$app-light-primary: mat-palette(map-get($app-palettes, '---'), 500, 100, 900);
+$app-light-accent:  mat-palette(map-get($app-palettes, '120'), 500, 100, 900);
+$app-light-warn:    mat-palette(map-get($app-palettes, '300'), 500, 100, 900);
+$app-light-theme:   mat-light-theme($app-light-primary, $app-light-accent, $app-light-warn);
 
 // Dark theme
-$dark-primary: mat-palette(map-get($custom-palettes, '---'), 500, 900, 100);
-$dark-accent:  mat-palette(map-get($custom-palettes, '120'), 500, 900, 100);
-$dark-warn:    mat-palette(map-get($custom-palettes, '300'), 500, 900, 100);
-$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+$app-dark-primary: mat-palette(map-get($app-palettes, '---'), 500, 900, 100);
+$app-dark-accent:  mat-palette(map-get($app-palettes, '120'), 500, 900, 100);
+$app-dark-warn:    mat-palette(map-get($app-palettes, '300'), 500, 900, 100);
+$app-dark-theme:   mat-dark-theme($app-dark-primary, $app-dark-accent, $app-dark-warn);

@@ -5,7 +5,7 @@
 /** A map of foreground colors.  Can be re-used for all palettes, so long as the
  *  palettes all have `500` at 50% CIELAB lightness.
  */
-$custom-contrasts: (
+$app-contrasts: (
      '50': #000,
     '100': #000,
     '200': #000,
@@ -29,7 +29,7 @@ $custom-contrasts: (
  *  All hues are three digits (red is '000', yellow is '060', and green is '120').
  *  Grey does not have a hue, and so is represented by dashes ('---').
  */
-$custom-palettes: (
+$app-palettes: (
     '---': (
          '50': #efefef,
         '100': #d6d6d6,
@@ -45,7 +45,7 @@ $custom-palettes: (
        'A200': #ffffff,
        'A400': #ffffff,
        'A700': #ffffff,
-     contrast: $custom-contrasts,
+     contrast: $app-contrasts,
     ),
     '120': (
          '50': #e8f0e8,
@@ -62,7 +62,7 @@ $custom-palettes: (
        'A200': #63ff63,
        'A400': #30ff30,
        'A700': #16ff16,
-     contrast: $custom-contrasts,
+     contrast: $app-contrasts,
   ),
   '300': (
          '50': #f5ebf5,
@@ -79,6 +79,6 @@ $custom-palettes: (
        'A200': #ff95ff,
        'A400': #ff62ff,
        'A700': #ff48ff,
-     contrast: $custom-contrasts,
+     contrast: $app-contrasts,
   ),
 );

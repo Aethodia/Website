@@ -4,8 +4,8 @@ export {AppModule};
 
 ////////////////////////////////////////////////////////////////////////////////
 @Module({
-  imports: [],
-  controllers: [GraphQlController],
-  providers: [],
+    imports: [],
+    controllers: [GraphQlController],
+    providers: [],
 })
 class AppModule {}

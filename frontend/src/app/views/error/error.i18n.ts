@@ -1,4 +1,4 @@
-import {I18nBundle} from 'app/core/types/i18n.type';
+import type {I18nBundle} from 'app/core/types/i18n.type';
 export const ERROR_I18N = {
     META_TITLE: {
         en: `Error - Theodia, the Technocratic Republic`,

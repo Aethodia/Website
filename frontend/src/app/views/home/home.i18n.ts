@@ -1,5 +1,5 @@
 import {LOREM_IPSUM} from 'app/core/consts/lorem-ipsum.const';
-import {I18nBundle} from 'app/core/types/i18n.type';
+import type {I18nBundle} from 'app/core/types/i18n.type';
 export const HOME_I18N = {
     META_TITLE: {
         en: `Theodia, the Technocratic Republic`,

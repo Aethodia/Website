@@ -1,5 +1,5 @@
 import {InjectionToken, Provider} from '@angular/core';
-import {I18nBundle} from '../types/i18n.type';
+import type {I18nBundle} from '../types/i18n.type';
 export {
     I18N_BUNDLE,
     setI18n,

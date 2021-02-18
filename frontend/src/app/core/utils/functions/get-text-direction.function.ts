@@ -1,6 +1,9 @@
+export type {TextFlowEnum, TextFlowTuple}
+export default getTextFlow;
+
 ////////////////////////////////////////////////////////////////////////////////
 /** The directions in which a language's orthography can flow. */
-export enum TextFlowEnum {
+enum TextFlowEnum {
     ltr = 'ltr',
     rtl = 'rtl',
     ttb = 'ttb',
@@ -11,7 +14,7 @@ export enum TextFlowEnum {
 
 ////////////////////////////////////////////////////////////////////////////////
 /** A complete description of how an orthography flows. */
-export type TextFlowTuple = [
+type TextFlowTuple = [
     TextFlowEnum.ltr|TextFlowEnum.rtl,
     TextFlowEnum.ttb|TextFlowEnum.btt,
     TextFlowEnum.hor|TextFlowEnum.ver,
@@ -22,7 +25,7 @@ export type TextFlowTuple = [
  * @param lang A valid IETF language tag.
  * @returns the direction in which the language's orthography flows.
  */
-export default function getTextFlow(lang: string): TextFlowTuple {
+function getTextFlow(lang: string): TextFlowTuple {
 
     // For country-specific orthographies
     switch(lang) {

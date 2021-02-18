@@ -1,3 +1,4 @@
-export type envType = {
+export type {envType}
+type envType = {
     prodMode: boolean,
 };

@@ -5,7 +5,7 @@ import {map} from 'rxjs/operators';
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {EnvironmentService} from '../services/environment.service';
 import {I18N_BUNDLE} from '../consts/i18n.const';
-import {I18nBundle, I18nKey} from '../types/i18n.type';
+import type {I18nBundle, I18nKey} from '../types/i18n.type';
 export {I18nPipe};
 
 ////////////////////////////////////////////////////////////////////////////////

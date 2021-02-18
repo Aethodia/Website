@@ -4,8 +4,8 @@
  * @returns an instantation of the input's type.
  */
 export default function reinitType(variable: unknown): bigint|boolean|Function|number|object|string|symbol|undefined|never {
-    const type = typeof(variable);
-    switch(type) {
+    const typeOfVar = typeof(variable);
+    switch(typeOfVar) {
         case 'bigint':
             return BigInt(0); //TODO: Update the syntax to `0n`.
         case 'boolean':
@@ -23,6 +23,6 @@ export default function reinitType(variable: unknown): bigint|boolean|Function|n
         case 'undefined':
             return undefined;
         default:
-            throw new ReferenceError(`Unsupported type: '${type}'`);
+            throw new ReferenceError(`Unsupported type: '${typeOfVar}'`);
     }
 }

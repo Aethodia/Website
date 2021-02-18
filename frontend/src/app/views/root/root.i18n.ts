@@ -1,4 +1,4 @@
-import {I18nBundle} from 'app/core/types/i18n.type';
+import type {I18nBundle} from 'app/core/types/i18n.type';
 export {ROOT_I18N}
 const ROOT_I18N = {
     ACCOUNT_NAV_BUTTON: {

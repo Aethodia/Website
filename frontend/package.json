@@ -40,7 +40,7 @@
     "@angular-eslint/eslint-plugin": "latest",
     "@angular-eslint/eslint-plugin-template": "latest",
     "@angular-eslint/template-parser": "latest",
-    "@angular/animations": "^10",
+    "@angular/animations": "^11",
     "@angular/cdk": "^10",
     "@angular/cli": "^10",
     "@angular/common": "^10",

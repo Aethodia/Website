@@ -30,7 +30,7 @@ function getTextFlow(lang: string): TextFlowTuple {
 
     // For country-specific orthographies
     switch(lang) {
-        case 'art-zzz':
+        case 'art-x':
             return [textFlowEnum.ltr, textFlowEnum.btt, textFlowEnum.ver];
     }
 

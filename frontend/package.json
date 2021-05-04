@@ -36,7 +36,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@angular-devkit/build-angular": ">=0.1000 <0.1100",
+    "@angular-devkit/build-angular": ">=0.1000 <0.1103",
     "@angular-eslint/builder": "^1",
     "@angular-eslint/eslint-plugin": "^1",
     "@angular-eslint/eslint-plugin-template": "^1",

@@ -1,4 +1,4 @@
-Sitemap: https://theodia.tech/sitemap.xml
+Sitemap: https://aethodia.org/sitemap.xml
 
 User-Agent: *
 Disallow:

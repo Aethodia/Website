@@ -32,7 +32,7 @@ export {RootModule};
         BrowserModule,
         BrowserAnimationsModule,
         RouterModule.forRoot(appRoutes, {
-            // enableTracing: true, //DEBUG
+            relativeLinkResolution: 'legacy'
         }),
 
         // Common

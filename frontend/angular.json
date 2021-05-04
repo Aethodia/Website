@@ -40,7 +40,6 @@
 
                         "aot": true,
                         "buildOptimizer": true,
-                        "extractCss": true,
                         "extractLicenses": false,
                         "namedChunks": true,
                         "optimization": false,

@@ -30,7 +30,7 @@
 
         // Misc
         // "declaration": false,
-        // "composite": true,
+        "composite": true,
         "preserveSymlinks": true,
 
         // Compilation options

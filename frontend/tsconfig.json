@@ -12,7 +12,12 @@
         ],
         "types": [
             "webpack-env"
-        ]
+        ],
+
+        // Without these, Angular throws an error.
+        "declaration": false,
+        "declarationMap": false,
+        "composite": false
     },
 
     "include": [

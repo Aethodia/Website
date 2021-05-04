@@ -3,7 +3,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 import {map} from 'rxjs/operators';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {EnvironmentService} from '../core.module';
+import {EnvironmentService} from '../services/environment.service';
 export {DatetimePipe, DatetimePipeOptions};
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -65,6 +65,9 @@ class DatetimePipe implements PipeTransform {
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
+    //TODO: Support Theodian calendar inputs
+    //TODO: Support localized output (English or Theodian)
+    //TODO: Dozenalize output
     private theodianTransform(
         datetime: Date|string,
         options?: DatetimePipeOptions,
@@ -74,8 +77,9 @@ class DatetimePipe implements PipeTransform {
             case 'earthling':
             case 'martian':
             case 'default':
-            case 'reference':
                 throw new ReferenceError(`The '${options?.calendar}' calendar is unimplemented!`);
+            case 'reference':
+                return String(Math.round((new Date(datetime)).getTime() / 1000)); //TODO: Breaks down when timezones are brought into the picture!
             default:
                 throw new TypeError(`'${options?.calendar}' is not a valid calendar!`);
         }

@@ -1,5 +1,5 @@
 import {ModuleWithProviders, NgModule, Optional, SkipSelf} from '@angular/core';
-import {AsyncPipe, CommonModule} from '@angular/common';
+import {AsyncPipe, CommonModule, DatePipe} from '@angular/common';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -87,10 +87,13 @@ export {
     providers: [
         setI18n({}),
 
-        // Pipes
+        // Upstream pipes
         AsyncPipe,
-        I18nPipe,
+        DatePipe,
+
+        // Custom pipes
         DatetimePipe,
+        I18nPipe,
         NumberPipe,
     ],
 })

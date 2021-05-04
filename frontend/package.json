@@ -1,7 +1,7 @@
 {
   "name": "@theodia/frontend",
   "version": "0.0.0",
-  "license": "SEE LICENSE IN ../LICENSE.TXT",
+  "license": "SEE LICENSE IN ../COPYRIGHT.TXT",
   "description": "The frontend for the national website of the Technocratic Republic of Theodia",
   "keywords": [
     "micronation",

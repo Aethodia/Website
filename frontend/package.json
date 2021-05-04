@@ -30,15 +30,16 @@
     "start": "npx ng serve"
   },
   "engines": {
-    "node": "^16",
-    "npm": "^7"
+    "node": "^14",
+    "npm": "^6"
   },
+  "dependencies": {},
   "devDependencies": {
     "@angular-devkit/build-angular": ">=0.1000 <0.1100",
-    "@angular-eslint/builder": "^1",
-    "@angular-eslint/eslint-plugin": "^1",
-    "@angular-eslint/eslint-plugin-template": "^1",
-    "@angular-eslint/template-parser": "^1",
+    "@angular-eslint/builder": "latest",
+    "@angular-eslint/eslint-plugin": "latest",
+    "@angular-eslint/eslint-plugin-template": "latest",
+    "@angular-eslint/template-parser": "latest",
     "@angular/animations": "^10",
     "@angular/cdk": "^10",
     "@angular/cli": "^10",

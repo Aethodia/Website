@@ -38,21 +38,24 @@ class DatetimePipe implements PipeTransform {
                 (lang: string|nil): string => {
                     switch(lang) {
                         case 'art':
-                            return this.transformTheodian(datetime, options);
+                        case 'art-x':
+                        case 'en-x':
+                            return this.theodianTransform(datetime, options, lang);
                         default:
-                            return this.transformNormal(datetime, options, lang ?? undefined);
+                            return this.normalTransform(datetime, options, lang ?? undefined);
                     }
                 },
             )),
-        ) ?? this.transformNormal(datetime, options);
+        ) ?? this.normalTransform(datetime, options);
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    private transformNormal(
+    private normalTransform(
         datetime: Date|string,
         options?: DatetimePipeOptions,
         lang?: string,
     ): string {
+        //TODO: Allow specifying a specific calendar ('gregorian', 'julian', etc).
         return this.date.transform(
             datetime,
             options?.format,
@@ -62,10 +65,19 @@ class DatetimePipe implements PipeTransform {
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    private transformTheodian(
+    private theodianTransform(
         datetime: Date|string,
         options?: DatetimePipeOptions,
+        lang?: string,
     ): string {
-        return String(datetime); //TODO
+        switch(options?.calendar) {
+            case 'earthling':
+            case 'martian':
+            case 'default':
+            case 'reference':
+                throw new ReferenceError(`The '${options?.calendar}' calendar is unimplemented!`);
+            default:
+                throw new TypeError(`'${options?.calendar}' is not a valid calendar!`);
+        }
     }
 }

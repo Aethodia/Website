@@ -22,7 +22,8 @@
   "type": "commonjs",
   "main": "./src/index.ts",
   "scripts": {
-    "postinstall": "npm rebuild && npm dedupe && npx ngcc",
+    "//postinstall": "npm rebuild",
+    "postinstall": "npm dedupe && npx ngcc",
     "relock": "rm -rf node_modules && rm -f npm-shrinkwrap.json && npm install && npm shrinkwrap",
     "lint": "npx ng lint",
     "lint:fix": "npx ng lint --fix",
@@ -31,7 +32,7 @@
   },
   "engines": {
     "node": "^14",
-    "npm": "^6"
+    "npm": "^7"
   },
   "dependencies": {},
   "devDependencies": {

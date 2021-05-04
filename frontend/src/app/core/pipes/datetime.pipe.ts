@@ -38,15 +38,15 @@ class DatetimePipe implements PipeTransform {
                 (lang: string|nil): string => {
                     switch(lang) {
                         case 'art':
-                        case 'art-x':
-                        case 'en-x':
+                        case 'art-X':
+                        case 'en-X':
                             return this.theodianTransform(datetime, options, lang);
                         default:
                             return this.normalTransform(datetime, options, lang ?? undefined);
                     }
                 },
             )),
-        ) ?? this.normalTransform(datetime, options);
+        ) ?? String(datetime);
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -78,8 +78,12 @@ class DatetimePipe implements PipeTransform {
             case 'martian':
             case 'default':
                 throw new ReferenceError(`The '${options?.calendar}' calendar is unimplemented!`);
+
+            case undefined:
+            case null:
             case 'reference':
                 return String(Math.round((new Date(datetime)).getTime() / 1000)); //TODO: Breaks down when timezones are brought into the picture!
+
             default:
                 throw new TypeError(`'${options?.calendar}' is not a valid calendar!`);
         }

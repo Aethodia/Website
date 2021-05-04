@@ -81,6 +81,7 @@ class EnvironmentService {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Detect the user's preferred language and attempt to match it up with our supported languages. */
     private detectLanguage(): string|null {
+        // return 'art-X'; //DEBUG: Force the use of Theodian across the site, regardless of the browser language.
         for(const userLocale of navigator.languages) {
             for(const supportedLocale of supported.locales) {
                 if(userLocale.split('-')[0] === supportedLocale.split('-')[0]) {
@@ -115,10 +116,15 @@ class EnvironmentService {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     private detectCurrency(): string|null {
         let currency: string|null;
+        return ''
 
         //TODO: This is not a good way to detect currency.
         const language = this.language.get().value;
-        currency = getLocaleCurrencyCode(language ?? '');
+        try {
+            currency = getLocaleCurrencyCode(language ?? '');
+        } catch(error) {
+            console.error(error);
+        }
 
         return currency;
     }

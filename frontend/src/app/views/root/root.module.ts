@@ -31,9 +31,7 @@ export {RootModule};
         // Libraries
         BrowserModule,
         BrowserAnimationsModule,
-        RouterModule.forRoot(appRoutes, {
-            relativeLinkResolution: 'legacy'
-        }),
+        RouterModule.forRoot(appRoutes),
 
         // Common
         CoreModule.forRoot(),

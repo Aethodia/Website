@@ -5,14 +5,13 @@ import changeCaps from './functions/change-caps.function';
 import checkAlphanumericity from './functions/check-alphanumericity.function';
 import forEach from './functions/for-each.function';
 import formatLocale from './functions/format-locale.function';
-import getTextFlow, {TextFlowEnum, TextFlowTuple} from './functions/get-text-direction.function';
+import getTextFlow, {textFlowEnum, TextFlowTuple} from './functions/get-text-direction.function';
 import reinitType from './functions/reinit-type.function';
 import transferProperties from './functions/transfer-properties.function';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {
     Utils,
-    TextFlowEnum,
     TextFlowTuple,
 };
 
@@ -22,6 +21,7 @@ const Utils = {
 
     // Other
     capsEnum,
+    textFlowEnum,
 
     // Functions
     changeCaps,

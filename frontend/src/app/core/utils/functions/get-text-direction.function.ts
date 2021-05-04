@@ -1,9 +1,10 @@
-export type {TextFlowEnum, TextFlowTuple}
+export {textFlowEnum}
+export type {TextFlowTuple}
 export default getTextFlow;
 
 ////////////////////////////////////////////////////////////////////////////////
 /** The directions in which a language's orthography can flow. */
-enum TextFlowEnum {
+enum textFlowEnum {
     ltr = 'ltr',
     rtl = 'rtl',
     ttb = 'ttb',
@@ -15,9 +16,9 @@ enum TextFlowEnum {
 ////////////////////////////////////////////////////////////////////////////////
 /** A complete description of how an orthography flows. */
 type TextFlowTuple = [
-    TextFlowEnum.ltr|TextFlowEnum.rtl,
-    TextFlowEnum.ttb|TextFlowEnum.btt,
-    TextFlowEnum.hor|TextFlowEnum.ver,
+    textFlowEnum.ltr|textFlowEnum.rtl,
+    textFlowEnum.ttb|textFlowEnum.btt,
+    textFlowEnum.hor|textFlowEnum.ver,
 ]
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -30,13 +31,13 @@ function getTextFlow(lang: string): TextFlowTuple {
     // For country-specific orthographies
     switch(lang) {
         case 'art-zzz':
-            return [TextFlowEnum.ltr, TextFlowEnum.btt, TextFlowEnum.ver];
+            return [textFlowEnum.ltr, textFlowEnum.btt, textFlowEnum.ver];
     }
 
     // For languages' default orthographies
     switch(lang.split('-')[0]) {
         case 'en':
         default:
-            return [TextFlowEnum.ltr, TextFlowEnum.ttb, TextFlowEnum.hor];
+            return [textFlowEnum.ltr, textFlowEnum.ttb, textFlowEnum.hor];
     }
 }

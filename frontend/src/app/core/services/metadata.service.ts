@@ -4,7 +4,7 @@ import {Title, Meta} from '@angular/platform-browser';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {I18nPipe} from '../pipes/i18n.pipe';
-import {TextFlowEnum, TextFlowTuple, Utils} from '../utils/utils';
+import {TextFlowTuple, Utils} from '../utils/utils';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 export {MetadataService};
@@ -61,13 +61,13 @@ class MetadataService {
         get: (): Partial<TextFlowTuple> => {
             let direction: Partial<TextFlowTuple> = [undefined, undefined, undefined];
             this.html.classList.forEach((cssClass: string): void => {
-                for(const axis of [TextFlowEnum.ltr, TextFlowEnum.rtl] as [TextFlowEnum.ltr, TextFlowEnum.rtl]) {
+                for(const axis of [Utils.textFlowEnum.ltr, Utils.textFlowEnum.rtl] as [typeof Utils.textFlowEnum.ltr, typeof Utils.textFlowEnum.rtl]) {
                     if(cssClass === axis) direction[0] = axis;
                 }
-                for(const axis of [TextFlowEnum.ttb, TextFlowEnum.btt] as [TextFlowEnum.ttb, TextFlowEnum.btt]) {
+                for(const axis of [Utils.textFlowEnum.ttb, Utils.textFlowEnum.btt] as [typeof Utils.textFlowEnum.ttb, typeof Utils.textFlowEnum.btt]) {
                     if(cssClass === axis) direction[1] = axis;
                 }
-                for(const axis of [TextFlowEnum.hor, TextFlowEnum.ver] as [TextFlowEnum.hor, TextFlowEnum.ver]) {
+                for(const axis of [Utils.textFlowEnum.hor, Utils.textFlowEnum.ver] as [typeof Utils.textFlowEnum.hor, typeof Utils.textFlowEnum.ver]) {
                     if(cssClass === axis) direction[2] = axis;
                 }
             });
@@ -76,7 +76,7 @@ class MetadataService {
         /** Sets CSS classes on the `html` element to control how text flows. */
         set: (tuple: TextFlowTuple): void => {
             // Remove old directions
-            for(const oldClass of Reflect.ownKeys(TextFlowEnum) as Array<keyof typeof TextFlowEnum>) {
+            for(const oldClass of Reflect.ownKeys(Utils.textFlowEnum) as Array<keyof typeof Utils.textFlowEnum>) {
                 this.html.classList.remove(oldClass);
             }
             // Add new directions

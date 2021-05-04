@@ -39,14 +39,14 @@ class DatetimePipe implements PipeTransform {
                     switch(lang) {
                         case 'art':
                         case 'art-X':
-                        case 'en-X':
+                        case  'en-X':
                             return this.theodianTransform(datetime, options, lang);
                         default:
                             return this.normalTransform(datetime, options, lang ?? undefined);
                     }
                 },
             )),
-        ) ?? String(datetime);
+        ) ?? datetime.toLocaleString();
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -61,13 +61,13 @@ class DatetimePipe implements PipeTransform {
             options?.format,
             options?.timezone,
             lang,
-        ) ?? String(datetime);
+        ) ?? datetime.toLocaleString();
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     //TODO: Support Theodian calendar inputs
     //TODO: Support localized output (English or Theodian)
-    //TODO: Dozenalize output
+    //TODO: Move sub-functions into other files
     private theodianTransform(
         datetime: Date|string,
         options?: DatetimePipeOptions,

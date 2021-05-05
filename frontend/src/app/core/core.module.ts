@@ -19,7 +19,7 @@ import {MetadataService} from './services/metadata.service';
 import {EnvironmentService} from './services/environment.service';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-import {DatetimePipe} from './pipes/datetime.pipe';
+import {DatetimePipe, DatetimePipeOptions} from './pipes/datetime.pipe';
 import {I18nPipe} from './pipes/i18n.pipe';
 import {NumberPipe} from './pipes/number.pipe';
 
@@ -38,6 +38,9 @@ export {
     // Misc
     setI18n,
     Utils,
+
+    // Types
+    DatetimePipeOptions,
 
     // Classes
     AsyncVar,

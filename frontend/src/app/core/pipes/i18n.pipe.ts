@@ -9,9 +9,7 @@ import type {I18nBundle, I18nKey} from '../types/i18n.type';
 export {I18nPipe};
 
 ////////////////////////////////////////////////////////////////////////////////
-@Pipe({
-    name: 'i18n',
-})
+@Pipe({name: 'i18n'})
 /** Replaces translation keys with actual translations.  Supports parameters. */
 class I18nPipe implements PipeTransform {
 

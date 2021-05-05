@@ -15,9 +15,7 @@ interface DatetimePipeOptions {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
-@Pipe({
-    name: 'datetime',
-})
+@Pipe({name: 'datetime'})
 class DatetimePipe implements PipeTransform {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //

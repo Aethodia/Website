@@ -4,6 +4,7 @@ import {map} from 'rxjs/operators';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {EnvironmentService} from '../services/environment.service';
+import {Utils} from '../utils/utils';
 export {DatetimePipe, DatetimePipeOptions};
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -93,19 +94,13 @@ class DatetimePipe implements PipeTransform {
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    //TODO: This belongs in Utils.
-    private static readonly getSecondsFromUnixEpoch = (datetime: Date|string): number => {
-        return Math.round((new Date(datetime)).getTime() / 1000); //TODO: Breaks down when timezones are brought into the picture!
-    }
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     //TODO: This belongs in some locale definition file.
     private transformToReferenceTheodianCalendar(
         datetime: Date|string,
         options?: DatetimePipeOptions,
         lang?: string,
     ): string {
-        return DatetimePipe.getSecondsFromUnixEpoch(datetime).toString(12);
+        return Utils.getSecondsFromUnixEpoch(datetime).toString(12);
     }
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
@@ -117,7 +112,7 @@ class DatetimePipe implements PipeTransform {
     ): string {
 
         // Calculate base fields
-        const defaultCalendarRaw: number = DatetimePipe.getSecondsFromUnixEpoch(datetime) - DatetimePipe.getSecondsFromUnixEpoch('2010-04-22T12:00:00-04:00');
+        const defaultCalendarRaw: number = Utils.getSecondsFromUnixEpoch(datetime) - Utils.getSecondsFromUnixEpoch('2010-04-22T12:00:00-04:00');
         const positive: boolean = defaultCalendarRaw >= 0;
         let unaccountedSeconds: number = Math.abs(defaultCalendarRaw);
 

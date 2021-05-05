@@ -1,10 +1,10 @@
 import {AsyncPipe, DatePipe} from '@angular/common';
 import {Pipe, PipeTransform} from '@angular/core';
 import {map} from 'rxjs/operators';
+import {ReferenceCalendarPipe, DefaultCalendarPipe, EarthlingCalendarPipe, MartianCalendarPipe } from '../locales/art-x/art-x-locale.module';
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
 import {EnvironmentService} from '../services/environment.service';
-import {Utils} from '../utils/utils';
 export {DatetimePipe, DatetimePipeOptions};
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -35,119 +35,42 @@ class DatetimePipe implements PipeTransform {
         return this.async.transform(
             this.environment.language.get().pipe(map(
                 (lang: string|nil): string => {
+                    lang = lang ?? undefined;
                     switch(lang) {
+
                         case 'art':
                         case 'art-X':
                         case  'en-X':
-                            return this.theodianTransform(datetime, options, lang);
+                            switch(options?.calendar) {
+                                case 'earthling':
+                                    return (new EarthlingCalendarPipe).transform(datetime, lang);
+
+                                case 'martian':
+                                    return (new MartianCalendarPipe).transform(datetime, lang);
+
+                                case undefined:
+                                case null:
+                                case 'default':
+                                    return (new DefaultCalendarPipe).transform(datetime, lang);
+
+                                case 'reference':
+                                    return (new ReferenceCalendarPipe).transform(datetime, lang);
+
+                                default:
+                                    throw new TypeError(`'${options?.calendar}' is not a valid calendar!`);
+                            }
+
                         default:
-                            return this.normalTransform(datetime, options, lang ?? undefined);
+                            //TODO: Allow specifying a specific calendar ('gregorian', 'julian', etc).
+                            return this.date.transform(
+                                datetime,
+                                options?.format,
+                                options?.timezone,
+                                lang,
+                            ) ?? datetime.toLocaleString();
                     }
                 },
             )),
         ) ?? datetime.toLocaleString();
-    }
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    private normalTransform(
-        datetime: Date|string,
-        options?: DatetimePipeOptions,
-        lang?: string,
-    ): string {
-        //TODO: Allow specifying a specific calendar ('gregorian', 'julian', etc).
-        return this.date.transform(
-            datetime,
-            options?.format,
-            options?.timezone,
-            lang,
-        ) ?? datetime.toLocaleString();
-    }
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    //TODO: Support Theodian calendar inputs
-    //TODO: Support localized output (English or Theodian)
-    //TODO: Move sub-functions into other files
-    private theodianTransform(
-        datetime: Date|string,
-        options?: DatetimePipeOptions,
-        lang?: string,
-    ): string {
-
-        switch(options?.calendar) {
-            case 'earthling':
-            case 'martian':
-                throw new ReferenceError(`The '${options?.calendar}' calendar is unimplemented!`);
-
-            case undefined:
-            case null:
-            case 'default':
-                return this.transformToDefaultTheodianCalendar(datetime, options, lang);
-
-            case 'reference':
-                return this.transformToReferenceTheodianCalendar(datetime, options, lang);
-
-            default:
-                throw new TypeError(`'${options?.calendar}' is not a valid calendar!`);
-        }
-    }
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    //TODO: This belongs in some locale definition file.
-    private transformToReferenceTheodianCalendar(
-        datetime: Date|string,
-        options?: DatetimePipeOptions,
-        lang?: string,
-    ): string {
-        return Utils.getSecondsFromUnixEpoch(datetime).toString(12);
-    }
-
-    //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    //TODO: This belongs in some locale definition file.
-    private transformToDefaultTheodianCalendar(
-        datetime: Date|string,
-        options?: DatetimePipeOptions,
-        lang?: string,
-    ): string {
-
-        // Calculate base fields
-        const defaultCalendarRaw: number = Utils.getSecondsFromUnixEpoch(datetime) - Utils.getSecondsFromUnixEpoch('2010-04-22T12:00:00-04:00');
-        const positive: boolean = defaultCalendarRaw >= 0;
-        let unaccountedSeconds: number = Math.abs(defaultCalendarRaw);
-
-        // Calculate seconds
-        const secondsInDay:    number = ((24 * 60) + 11) * 60;
-        const secondsInWeek:   number = 6 * secondsInDay;
-        const secondsInMonth:  number = 6 * secondsInWeek;
-        const secondsInYear:   number = 4 * secondsInMonth;
-        const secondsInHour:   number =     secondsInDay / 12;
-        const secondsInMinute: number =     secondsInHour / 144;
-
-        // Break the seconds up into useful values
-        const years:   number = Math.floor(unaccountedSeconds / secondsInYear);
-          unaccountedSeconds  =            unaccountedSeconds % secondsInYear;
-        const months:  number = Math.floor(unaccountedSeconds / secondsInMonth);
-          unaccountedSeconds  =            unaccountedSeconds % secondsInMonth;
-        const weeks:   number = Math.floor(unaccountedSeconds / secondsInWeek);
-          unaccountedSeconds  =            unaccountedSeconds % secondsInWeek;
-        const days:    number = Math.floor(unaccountedSeconds / secondsInDay);
-          unaccountedSeconds  =            unaccountedSeconds % secondsInDay;
-        const hours:   number = Math.floor(unaccountedSeconds / secondsInHour);
-          unaccountedSeconds  =            unaccountedSeconds % secondsInHour;
-        const minutes: number = Math.floor(unaccountedSeconds / secondsInMinute);
-          unaccountedSeconds  =            unaccountedSeconds % secondsInMinute;
-        console.debug(years, months, weeks, days, hours, minutes, unaccountedSeconds);
-
-        // Stringify the fields
-        let signString   = positive ? '' : '-';
-        let yearString   = ( years     ).toString(12).padStart(3, '0');
-        let monthString  = (months  + 1).toString(12).padStart(1, '0');
-        let weekString   = ( weeks  + 1).toString(12).padStart(1, '0');
-        let dayString    = (  days  + 1).toString(12).padStart(1, '0');
-        let hourString   = ( hours     ).toString(12).padStart(1, '0');
-        let minuteString = (minutes    ).toString(12).padStart(2, '0');
-        let totalDayString = ((months * 36) + (weeks * days) + 1).toString(12).padStart(2, '0');
-
-        // Return result
-        return `${signString}${yearString}.${totalDayString}:${hourString}.${minuteString}`;
     }
 }

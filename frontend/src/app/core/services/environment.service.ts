@@ -115,8 +115,7 @@ class EnvironmentService {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     private detectCurrency(): string|null {
-        let currency: string|null;
-        return ''
+        let currency: string|null = null;
 
         //TODO: This is not a good way to detect currency.
         const language = this.language.get().value;
@@ -124,9 +123,9 @@ class EnvironmentService {
             currency = getLocaleCurrencyCode(language ?? '');
         } catch(error) {
             console.error(error);
+        } finally {
+            return currency;
         }
-
-        return currency;
     }
 }
 

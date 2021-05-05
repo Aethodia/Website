@@ -154,7 +154,7 @@ class DatetimePipe implements PipeTransform {
         let minuteString = (minutes    ).toString(12).padStart(2, '0');
         let totalDayString = ((months * 36) + (weeks * days) + 1).toString(12).padStart(2, '0');
 
-        // Part 3:  Return result
+        // Return result
         return `${signString}${yearString}.${totalDayString}:${hourString}.${minuteString}`;
     }
 }

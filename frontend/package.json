@@ -51,7 +51,7 @@
     "@angular/language-service": "^11",
     "@angular/material": "^11",
     "@angular/platform-browser": "^11",
-    "@angular/platform-browser-dynamic": "^11",
+    "@angular/platform-browser-dynamic": "^12",
     "@angular/router": "^11",
     "@types/lodash-es": "^4",
     "@types/node": "^14",

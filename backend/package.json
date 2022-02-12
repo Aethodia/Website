@@ -57,7 +57,7 @@
     "eslint": "^6",
     "prettier": "^2",
     "ts-loader": "^9",
-    "ts-node": "^9",
+    "ts-node": "^10",
     "tsconfig-paths": "^3",
     "typescript": "^4"
   }

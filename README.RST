@@ -7,10 +7,10 @@ About
 Description
 ================================================================================
 
-This repository contains the current official website of the Technocratic Republic of Theodia.
+This repository contains the current official website of the Technocratic Republic of Aethodia.
 
 The compiled front-end consists of everything under ``/frontend/dist``.
-The contents of this directory are stored in the ``gh-pages`` branch, are are continuously deployed at TheodiaGov.GitHub.com/Website.
+The contents of this directory are stored in the ``gh-pages`` branch, are are continuously deployed at AethodiaGov.GitHub.com/Website.
 
 The compiled back-end consists of everything under ``/backend/dist``.
 

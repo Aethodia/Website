@@ -44,5 +44,5 @@ export {
 })
 
 //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-/** Code necessary for localization into Theodian. */
+/** Code necessary for localization into Aethodian. */
 class ArtXLocaleModule {}

@@ -2,13 +2,13 @@ import {LOREM_IPSUM} from 'app/core/consts/lorem-ipsum.const';
 import type {I18nBundle} from 'app/core/types/i18n.type';
 export const HOME_I18N = {
     META_TITLE: {
-        en: `Theodia, the Technocratic Republic`,
+        en: `Aethodia, the Technocratic Republic`,
     },
     META_DESCRIPTION: {
-        en: `The official website of the Technocratic Republic of Theodia`,
+        en: `The official website of the Technocratic Republic of Aethodia`,
     },
     META_KEYWORDS: {
-        en: `Theodia micronation technocracy`,
+        en: `Aethodia micronation technocracy`,
     },
     INTRO_HEADER: {
         en: `Welcome!`,

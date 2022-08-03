@@ -1,13 +1,13 @@
 import type {I18nBundle} from 'app/core/types/i18n.type';
 export const AUTH_I18N = {
     META_TITLE: {
-        en: `Authentication - Theodia, the Technocratic Republic`,
+        en: `Authentication - Aethodia, the Technocratic Republic`,
     },
     META_DESCRIPTION: {
-        en: `The official website of the Technocratic Republic of Theodia`,
+        en: `The official website of the Technocratic Republic of Aethodia`,
     },
     META_KEYWORDS: {
-        en: `Theodia micronation technocracy`,
+        en: `Aethodia micronation technocracy`,
     },
     LOGIN_HEADER: {
         en: `Login`,

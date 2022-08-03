@@ -81,7 +81,7 @@ class EnvironmentService {
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
     /** Detect the user's preferred language and attempt to match it up with our supported languages. */
     private detectLanguage(): string|null {
-        // return 'art-X'; //DEBUG: Force the use of Theodian across the site, regardless of the browser language.
+        // return 'art-X'; //DEBUG: Force the use of Aethodian across the site, regardless of the browser language.
         for(const userLocale of navigator.languages) {
             for(const supportedLocale of supported.locales) {
                 if(userLocale.split('-')[0] === supportedLocale.split('-')[0]) {

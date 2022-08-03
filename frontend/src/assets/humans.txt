@@ -1,7 +1,7 @@
 /* SITE */
-	Language:  English / Theodian
+	Language:  English / Aethodian
 	License:  LAGPL v3+ / CC BY-SA v4+
-	GitHub:  https://GitHub.com/TheodiaGov/Website
+	GitHub:  https://GitHub.com/AethodiaGov/Website
 
 /* TEAM */
 	Lead Developer:  Miles Bradley Huff

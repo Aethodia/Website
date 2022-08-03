@@ -1,18 +1,18 @@
 {
-  "name": "@theodia/frontend",
+  "name": "@aethodia/frontend",
   "version": "0.0.0",
   "license": "SEE LICENSE IN ../COPYRIGHT.TXT",
-  "description": "The frontend for the national website of the Technocratic Republic of Theodia",
+  "description": "The frontend for the national website of the Technocratic Republic of Aethodia",
   "keywords": [
     "micronation",
-    "Theodia",
+    "Aethodia",
     "website"
   ],
   "homepage": "https://aethodia.org",
-  "bugs": "https://GitHub.com/TheodiaGov/Website/issues",
+  "bugs": "https://GitHub.com/AethodiaGov/Website/issues",
   "repository": {
     "type": "git",
-    "url": "https://GitHub.com/TheodiaGov/Website"
+    "url": "https://GitHub.com/AethodiaGov/Website"
   },
   "private": true,
   "directories": {
@@ -45,7 +45,7 @@
     "@angular/cli": "^11",
     "@angular/common": "^11",
     "@angular/compiler": "^11",
-    "@angular/compiler-cli": "^11",
+    "@angular/compiler-cli": "^14",
     "@angular/core": "^11",
     "@angular/forms": "^11",
     "@angular/language-service": "^11",

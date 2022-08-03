@@ -1,13 +1,13 @@
 import type {I18nBundle} from 'app/core/types/i18n.type';
 export const ERROR_I18N = {
     META_TITLE: {
-        en: `Error - Theodia, the Technocratic Republic`,
+        en: `Error - Aethodia, the Technocratic Republic`,
     },
     META_DESCRIPTION: {
-        en: `The official website of the Technocratic Republic of Theodia`,
+        en: `The official website of the Technocratic Republic of Aethodia`,
     },
     META_KEYWORDS: {
-        en: `Theodia micronation technocracy error`,
+        en: `Aethodia micronation technocracy error`,
     },
     NaN: {
         en: 'An unknown error has occurred.',

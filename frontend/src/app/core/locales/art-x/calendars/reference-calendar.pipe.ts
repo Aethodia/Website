@@ -7,8 +7,8 @@ export {ReferenceCalendarPipe};
 class ReferenceCalendarPipe implements PipeTransform {
 
     //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //  //
-    //TODO: Support Theodian calendar inputs
-    //TODO: Support localized output (English or Theodian)
+    //TODO: Support Aethodian calendar inputs
+    //TODO: Support localized output (English or Aethodian)
     public transform(
         datetime: Date|string,
         lang?: string,

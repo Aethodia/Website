@@ -1,5 +1,5 @@
 // This file supports comments.
-// Documentation: https://www.typescriptlang.org/tsconfig
+// Documentation: https://typescriptlang.org/tsconfig
 {
     "compilerOptions": {
 
@@ -18,7 +18,7 @@
         "checkJs": true,
         "experimentalDecorators": true,
         "forceConsistentCasingInFileNames": true,
-        "noImplicitReturns": true, // Is technically a typing error, so should be handled by TypeScript.
+        "noImplicitReturns": true, // Is technically a typing issue (no return looks like `void`), so should be handled by TypeScript.
         "resolveJsonModule": true,
         "strict": true,
 
